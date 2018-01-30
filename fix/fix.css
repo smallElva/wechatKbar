@@ -1,0 +1,32 @@
+@charset "UTF-8";
+.fix-content{
+    height: 100vh;
+    background: #fff;
+}
+.send-btn-block{
+    padding: 0 .75rem;
+    width: 100%;
+}
+.send-btn{
+    background: #ff2600;
+    color: #fff;
+    border-radius: 1.25rem;
+}
+.send-btn:hover,.send-btn:focus{
+    background: #fb5a3e;
+    color: #fff;
+}
+.fix-problem{
+    padding: 0 .75rem;
+}
+.fix-equip-select{
+    font-size: .75rem!important;
+}
+.fix-textarea{
+    height: 8rem;
+    border: 1px solid #f3f3f3;
+    padding: .5rem;
+    border-radius: 5px;
+    margin: .5rem 0 1rem;
+    font-size: .75rem;
+}

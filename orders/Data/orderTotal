@@ -1,0 +1,57 @@
+{
+  "status":"200",
+  "msg":"success",
+  "list":[
+    {
+      "id": 1,
+      "orderNumId": "A84881234561",
+      "orderEquip": "设备1-0",
+      "orderUserImg": "../img/tx.jpg",
+      "orderUserName": "小树林",
+      "orderMoney": "38.00",
+      "orderBuyTime": "40",
+      "orderState": "已付款",
+      "orderOrderedTime": "2018-01-02 10:28:23"
+    },{
+      "id": 2,
+      "orderNumId": "A84881234562",
+      "orderEquip": "设备1-2",
+      "orderUserImg": "../img/tx.jpg",
+      "orderUserName": "完毕后才能",
+      "orderMoney": "28.00",
+      "orderBuyTime": "30",
+      "orderState": "已付款",
+      "orderOrderedTime": "2018-01-08 10:28:23"
+    },{
+      "id": 3,
+      "orderNumId": "A84881234563",
+      "orderEquip": "设备1-3",
+      "orderUserImg": "../img/tx.jpg",
+      "orderUserName": "文化IC市场",
+      "orderMoney": "58.00",
+      "orderBuyTime": "60",
+      "orderState": "未付款",
+      "orderOrderedTime": "2018-01-14 08:20:23"
+    },{
+      "id": 4,
+      "orderNumId": "A84881234564",
+      "orderEquip": "设备1-4",
+      "orderUserImg": "../img/tx.jpg",
+      "orderUserName": "白衬衫看长沙",
+      "orderMoney": "98.00",
+      "orderBuyTime": "100",
+      "orderState": "未付款",
+      "orderOrderedTime": "2018-01-16 08:20:23"
+    },{
+      "id": 5,
+      "orderNumId": "A84881234565",
+      "orderEquip": "设备1-5",
+      "orderUserImg": "../img/tx.jpg",
+      "orderUserName": "小公主",
+      "orderMoney": "38.00",
+      "orderBuyTime": "40",
+      "orderState": "已付款",
+      "orderOrderedTime": "2018-01-18 08:20:23"
+    }
+  ]
+}

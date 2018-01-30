@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+.store-img-div{
+    width: 70%;
+    max-width: 15rem;
+    margin: .8rem auto;
+}
+.store-img{
+    width: 100%;
+}
+.store_page_content .aui-list.aui-list-in .aui-list-item {
+    border-bottom: 1px solid #f3f3f3;
+    background-image: none;
+}
+
+@media all{
+    .store_page_content .aui-list.aui-list-in .aui-list-item:last-child {
+        background-image: none;
+    }
+}
+
+.store_page_content .aui-list{
+     border-top: none;
+}
+.store_page_content .aui-list.aui-list-in .aui-list-item .aui-iconfont{
+    padding-right: .3rem;
+}
+.store_name,.store_time,.store_state,.store_add,.store_call{
+    font-size: .75rem;
+    color: #777;
+    position: relative;
+    top: .1rem;
+}
+.store_page_content .aui-list .aui-list-item-title {
+    width: 100%;
+}
+.store-page-a{
+    width: 100%;
+}
+
+@media all{
+    .aui-dialog-body input {
+        border: 1px solid #ddd;
+        background-image: none;
+
+    }
+    .aui-dialog-btn {
+        border: 1px solid #ddd;
+        background-image: none;
+        border-bottom: none;
+        border-left:none;
+    }
+    .aui-dialog-btn:last-child {
+        border: 1px solid #ddd;
+        border-right:none;
+        border-bottom: none;
+    }
+}
+
+.store-list-item-media{
+    width: 3.5rem;
+}
+.store_list_name{
+    font-size: .8rem;
+    font-weight: bold;
+    color: #212121;
+    margin-bottom: .25rem;
+}

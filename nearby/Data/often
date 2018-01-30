@@ -1,0 +1,43 @@
+{
+  "status":"200",
+  "msg":"success",
+  "list":[
+    {
+      "id": 13,
+      "nearbyStoreName": "宝安区西乡汇成天虹B1",
+      "nearbyMapHref": "nearbyMap.html",
+      "nearbyStoreDistance": "336m",
+      "nearbyStoreAdd": "宝安区西乡海城路时代城5楼",
+      "room":[
+         {
+            "id": 1,
+            "nearbyEquipName": "01"
+         },{
+            "id": 2,
+            "nearbyEquipName": "02"
+         },{
+            "id": 3,
+            "nearbyEquipName": "03"
+         }
+      ]
+    },{
+      "id": 14,
+      "nearbyStoreName": "宝安区时代城5楼",
+      "nearbyMapHref": "nearbyMap.html",
+      "nearbyStoreDistance": "893m",
+      "nearbyStoreAdd": "西乡大道与新湖路交汇处天虹商场B1层",
+      "room":[
+         {
+            "id": 4,
+            "nearbyEquipName": "01"
+         },{
+            "id": 5,
+            "nearbyEquipName": "02"
+         },{
+            "id": 6,
+            "nearbyEquipName": "03"
+         }
+      ]
+    }
+  ]
+}

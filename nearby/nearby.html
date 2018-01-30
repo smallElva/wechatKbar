@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>搜索附近</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_1yv9g1s7k99ysyvi.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="nearby.css"/>
+</head>
+<body>
+<header class="aui-bar aui-bar-nav nav-header fixed-header-top">
+    <a class="aui-pull-left aui-btn" href="javascript:window.history.go(-1)">
+        <span class="aui-iconfont aui-icon-left"></span>
+    </a>
+    <div class="aui-title">搜索附近</div>
+</header>
+<section class="content2">
+    <div class="aui-searchbar" id="search">
+        <div class="aui-searchbar-input aui-border-radius">
+            <i class="aui-iconfont aui-icon-search"></i>
+            <input type="search" placeholder="请输入搜索内容" id="search-input">
+            <div class="aui-searchbar-clear-btn">
+                <i class="aui-iconfont aui-icon-close"></i>
+            </div>
+        </div>
+        <div class="aui-searchbar-btn" tapmode>取消</div>
+    </div>
+    <div class="aui-tab" id="tab">
+        <div class="aui-tab-item aui-active">附近包房</div>
+        <div class="aui-tab-item">常去包房</div>
+    </div>
+    <div class="tab-title">选择包房</div>
+    <ul class="tab-list" id="tab-content">
+        <!--<li class="nearby-list-item aui-margin-b-15">-->
+            <!--<div class="nearby-list-item-info">-->
+                <!--<div class="nearby-list-store">-->
+                    <!--<div class="nearby-list-store-name">-->
+                        <!--<i class="iconfont icon-jianzhu"></i>-->
+                        <!--<span class="nearby-store-name">宝安区时代城5楼</span>-->
+                    <!--</div>-->
+                    <!--<a class="nearby-list-a" href="#">-->
+                        <!--<i class="iconfont icon-dizhi"></i>-->
+                        <!--<span class="nearby-list-distance">336m</span>-->
+                    <!--</a>-->
+                <!--</div>-->
+                <!--<div class="nearby-list-add">-->
+                    <!--地址：<span class="nearby-store-add">宝安区西乡海城路时代城5楼</span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="nearby-room-block">-->
+                <!--<div class="nearby-room">-->
+                    <!--<div class="nearby-room-img">-->
+                        <!--<img src="../img/ktv.jpg" class="aui-img-round">-->
+                    <!--</div>-->
+                    <!--<div class="nearby-equip-name">01</div>-->
+                <!--</div>-->
+                <!--<div class="nearby-room">-->
+                    <!--<div class="nearby-room-img">-->
+                        <!--<img src="../img/ktv.jpg" class="aui-img-round">-->
+                    <!--</div>-->
+                    <!--<div class="nearby-equip-name">02</div>-->
+                <!--</div>-->
+                <!--<div class="nearby-room">-->
+                    <!--<div class="nearby-room-img">-->
+                        <!--<img src="../img/ktv.jpg" class="aui-img-round">-->
+                    <!--</div>-->
+                    <!--<div class="nearby-equip-name">03</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</li>-->
+        <!--<li class="nearby-list-item aui-margin-b-15">-->
+            <!--<div class="nearby-list-item-info">-->
+                <!--<div class="nearby-list-store">-->
+                    <!--<div class="nearby-list-store-name">-->
+                        <!--<i class="iconfont icon-jianzhu"></i>-->
+                        <!--<span class="nearby-store-name">宝安区时代城5楼</span>-->
+                    <!--</div>-->
+                    <!--<a class="nearby-list-a" href="#">-->
+                        <!--<i class="iconfont icon-dizhi"></i>-->
+                        <!--<span class="nearby-list-distance">336m</span>-->
+                    <!--</a>-->
+                <!--</div>-->
+                <!--<div class="nearby-list-add">-->
+                    <!--地址：<span class="nearby-store-add">宝安区西乡海城路时代城5楼</span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="nearby-room-block">-->
+                <!--<div class="nearby-room">-->
+                    <!--<div class="nearby-room-img">-->
+                        <!--<img src="../img/ktv.jpg" class="aui-img-round">-->
+                    <!--</div>-->
+                    <!--<div class="nearby-equip-name">01</div>-->
+                <!--</div>-->
+                <!--<div class="nearby-room">-->
+                    <!--<div class="nearby-room-img">-->
+                        <!--<img src="../img/ktv.jpg" class="aui-img-round">-->
+                    <!--</div>-->
+                    <!--<div class="nearby-equip-name">02</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</li>-->
+    </ul>
+</section>
+
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
+<script type="text/javascript" src="../js/api.js" ></script>
+<script type="text/javascript" src="../js/aui-tab.js" ></script>
+<script type="text/javascript" src="../js/dropload.min.js" ></script>
+<script type="text/javascript" src="../js/mustache.js" ></script>
+<script type="text/javascript" src="nearby.js" ></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{
+  "status":"200",
+  "msg":"success",
+  "bill":[
+    {
+      "id": 12,
+      "billTotalMoney": "1488",
+      "billCalcMoney": "388",
+      "billNoCalcMoney": "1100.00",
+      "series":[
+         {
+            "id": 15,
+            "billEquipName":"设备13",
+            "billEquipTime":"2017-06-08 11:00:00",
+            "billSeriesName":"60",
+            "billSeriesMoney":"58"
+         },{
+            "id": 16,
+            "billEquipName":"王静安市场59",
+            "billEquipTime":"2018-01-09 11:00:00",
+            "billSeriesName":"60",
+            "billSeriesMoney":"58"
+         },{
+            "id": 17,
+            "billEquipName":"参考书的5",
+            "billEquipTime":"2018-01-05 09:00:00",
+            "billSeriesName":"40",
+            "billSeriesMoney":"38"
+         },{
+            "id": 18,
+            "billEquipName":"充电宝是2",
+            "billEquipTime":"2018-01-07 10:30:00",
+            "billSeriesName":"360",
+            "billSeriesMoney":"300"
+         },{
+            "id": 19,
+            "billEquipName":"设备5",
+            "billEquipTime":"2018-01-03 10:30:18",
+            "billSeriesName":"360",
+            "billSeriesMoney":"300"
+         },{
+            "id": 20,
+            "billEquipName":"设备6",
+            "billEquipTime":"2018-01-06 11:30:18",
+            "billSeriesName":"240",
+            "billSeriesMoney":"200"
+         },{
+            "id": 21,
+            "billEquipName":"设备10",
+            "billEquipTime":"2017-01-06 11:30:18",
+            "billSeriesName":"200",
+            "billSeriesMoney":"190"
+         }
+      ]
+    }
+  ]
+}

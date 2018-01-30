@@ -1,0 +1,65 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>忘记密码</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="login.css" />
+</head>
+<body>
+<section class="fixed-header-top">
+    <header class="aui-bar aui-bar-nav nav-header">
+        <a class="aui-pull-left aui-btn" href="javascript:window.history.go(-1)">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">忘记密码</div>
+    </header>
+</section>
+<section class="aui-content-padded">
+    <div class="login-logo"></div>
+    <form class="login-form">
+        <ul class="aui-list aui-form-list login-aui-list">
+            <li class="aui-list-item login-input-btn">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label-icon">
+                        <i class="aui-iconfont aui-icon-mobile"></i>
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="text" placeholder="请输入手机号" id="findPwd_num">
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="aui-row-padded">
+            <div class="aui-col-xs-6">
+                <div class="aui-list-item-input findPwd-input-div">
+                    <input type="text" placeholder="请输入验证码" id="findPwd_pwd">
+                </div>
+            </div>
+            <div class="aui-col-xs-6">
+                <button class="sendCode" id="send_yz">发送验证码</button>
+            </div>
+            <div class="aui-clearfix"></div>
+        </div>
+        <div class="login-btn-div aui-clearfix">
+            <div class="aui-btn aui-btn-block" id="findPwdSure">确认</div>
+        </div>
+    </form>
+    <div class="login-contact">
+        K伴销售联系电话：<span class="contact-number">400-6123089</span>
+    </div>
+</section>
+
+
+</body>
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
+<script type="text/javascript" src="../js/api.js" ></script>
+<script type="text/javascript" src="../js/aui-toast.js" ></script>
+<script type="text/javascript" src="countDown.js"></script>
+<script type="text/javascript" src="login.js"></script>
+
+</html>

@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+.content-box{
+    padding-top: 2.3rem;
+}
+.box-list-item-header{
+    padding: .5rem 0.75rem;
+    background: #fff;
+}
+.box-list-item{
+    padding-left: 0.75rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+.box-list-header{
+    width: 100%;
+}
+.box-list-store{
+    font-size: .9rem;
+    padding-top: .4rem;
+}
+.box-list-store .aui-icon-location{
+    font-size: .9rem;
+}
+.box-list-benefit .box-list-benefit-p{
+    font-size: .75rem;
+    color: #212121;
+}
+.box-block-text{
+    font-size: 0.7rem;
+    color: #999;
+}
+.box-list-benefit .iconfont{
+    color: #bbb;
+    font-size: .7rem;
+}
+.box-list-benefit-benefits{
+    color: #ff2600;
+}
+.box-state-no-use{
+    color: #03a9f4;
+}
+.box-state-use{
+    color: #ff2600;
+    padding: 0 .5rem;
+}
+.box-state-fix{
+    color: #f3d57d;
+}
+.box-house-block{
+    background: #f3f3f3;
+}
+.box-block{
+    background: #f3d57d;
+    width: 100%;
+    border-radius: 5px;
+    padding: .2rem .5rem;
+}
+.box-block .iconfont{
+    font-size: .7rem;
+    color: #bbb;
+}
+.box-block-room-num{
+    font-size: .8rem;
+    text-align: center;
+    color: #212121;
+}
+.room-benefit-num{
+    color: #ff2600;
+}
+.box-list-state{
+    text-align: center;
+    font-size: .7rem;
+}

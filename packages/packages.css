@@ -1,0 +1,30 @@
+@charset "UTF-8";
+.packages-title{
+    font-size: .85rem;
+    padding: .5rem .75rem;
+    background: #fff;
+    border-bottom: 1px solid #f3f3f3;
+}
+.packages-block{
+    display:flex;
+    display:-webkit-flex;
+    height: 5rem;
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.package-name{
+    font-size: .72rem;
+    color: #000;
+}
+.package-charge{
+    font-size: .7rem;
+}
+.packages-money{
+    color: #ff2600;
+}
+.packages-orig-money{
+    color: #ccc;
+    text-decoration: line-through;
+}

@@ -1,0 +1,226 @@
+@charset "UTF-8";
+
+.account_title{
+    height: 10rem;
+    background: #f3d57d;
+    display:flex;
+    display:-webkit-flex;
+    align-items: center;
+    padding-left: 2rem;
+}
+.account_img{
+    display: inline-block;
+    width: 4rem;
+    border: .1rem solid #ffe392;
+    border-radius: 100%;
+}
+.account_info{
+    padding-left: .75rem;
+    color: #fff;
+}
+.account_user{
+    font-size: .9rem;
+    margin-bottom: .25rem;
+}
+.account_add{
+    font-size: .75rem;
+}
+.account_list_a{
+    color: #212121;
+}
+/*意见反馈*/
+.advice-form{
+    background: #fff;
+    min-height: 100vh;
+    padding: .75rem;
+}
+.advice-t{
+    font-size: .85rem;
+}
+.advice-textarea{
+    height: 8rem;
+    border: 1px solid #ccc;
+    padding: .5rem;
+    border-radius: 5px;
+    margin: .5rem 0 .75rem 0;
+    font-size: .75rem;
+}
+.advice-input{
+    width: 100%;
+    padding: .5rem .75rem;
+    border: 1px solid #ccc;
+    border-radius: .25rem;
+}
+.advice-choose-t{
+    font-size: .76rem;
+    color: #212121;
+    margin: .5rem 0;
+}
+.advice-radio{
+    font-size: .75rem;
+    margin: .5rem 0;
+}
+.advice-btn-block{
+    margin-top: .75rem;
+}
+.advice-btn-block .send-btn{
+    background: #ff2600;
+    color: #fff;
+    border-radius: 1.25rem;
+}
+.advice-btn-block .send-btn:hover,.advice-btn-block .send-btn:focus{
+    background: #fb5a3e;
+    color: #fff;
+}
+/*缺歌反馈*/
+.lackSong_list .aui-list-header{
+    font-size: .68rem;
+    background: transparent;
+    padding-left: 0;
+    justify-content: center;
+    margin-top: .5rem;
+}
+.lackSong_list .aui-list-item {
+    padding: 0;
+    font-size: .7rem;
+}
+/*版权申诉*/
+.copyright-content{
+    padding: .75rem;
+}
+.copyright-text{
+    font-size: .75rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+.copyright-list{
+    margin-bottom: 5rem;
+}
+.copyright-btn-block{
+    padding: 0 .75rem;
+}
+/*我的订单*/
+.myOrder_list{
+    background: transparent;
+}
+.myOrder-title{
+    display:flex;
+    display:-webkit-flex;
+    height: 2rem;
+    background: #fff;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    border-bottom: 1px solid #ccc;
+}
+.myOrder_list .aui-list-item{
+    background: #fff;
+}
+.myOrder-title-num{
+    font-size: .7rem;
+}
+.myOrder-time{
+    font-size: .6rem;
+    color: #666;
+}
+.aui-list .myOrder-list-item-media{
+    width: 5rem;
+    padding-left: .5rem;
+}
+.myOrder-list-img{
+    border-radius: .25rem;
+}
+.myOrder_list .aui-list-item {
+    padding-left: 0;
+}
+.myOrder_list .aui-list-item-inner {
+    padding-right: 0.5rem;
+}
+.myOrder-type{
+    margin-bottom: .3rem;
+}
+.myOrder-add{
+    color: #999;
+    font-size: .72rem;
+    margin-bottom: .2rem;
+}
+.myOrder_list .myOrder-money{
+    color: #ff2600;
+    font-size: .8rem;
+}
+.myOrder_list .myOrder-state{
+    font-size: .8rem;
+    color: #999;
+}
+.noOrder{
+    font-size: .8rem;
+    text-align: center;
+    margin-top: 5rem;
+    display: none;
+}
+/*我的录音*/
+.myRecord-title{
+    height: 10rem;
+    background: #212121;
+    display:flex;
+    display:-webkit-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.myRecord-img{
+    width: 5rem;
+    border: .15rem solid #ff2600;
+    border-radius: 50%;
+}
+.myRecord-name{
+    color: #fff;
+    margin: .5rem 0;
+}
+.myRecord-title-icons{
+    display: inline-block;
+    padding: 0 .5rem;
+}
+.myRecord-title-icons i{
+    padding-right: .3rem;
+    color: #ff2600;
+}
+.myRecord-list{
+    background: transparent;
+    height: calc(100vh - 14.5rem);
+    overflow-y: auto;
+}
+.myRecord-list li{
+    background: #fff;
+}
+.myRecord-list-header{
+    padding: 0 .75rem;
+    height: 2.25rem;
+    line-height: 2.25rem;
+    border-bottom: 1px solid #f3f3f3;
+    color: #757575;
+    font-size: .75rem;
+    background: #fff;
+}
+.myRecord-text-icons{
+    display: inline-block;
+    font-size: .75rem;
+}
+.myRecord-listen-icons{
+    padding-right: .5rem;
+}
+.myRecord-text-icons i{
+    padding-right: .3rem;
+    color: #ff2600;
+}
+.myRecord-list-text{
+    margin-bottom: .75rem;
+}
+.myRecord-list .per-myRecord-time{
+    font-size: .7rem;
+}
+.myRecord-share .iconfont{
+    color: #ff2600;
+}

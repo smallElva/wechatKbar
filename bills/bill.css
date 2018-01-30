@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+
+.bill-popup-top{
+    top: 4.6rem;
+    opacity: 1;
+    display: none;
+}
+.toggleShow{
+    display: block;
+}
+.aui-popup-content{
+    box-shadow: 0 0 2rem #ccc;
+}
+.bill-popup-top .aui-list .aui-list-item-inner{
+    font-size: .75rem;
+}
+.bill-time-content{
+    padding-left: .75rem;
+    padding-right: .75rem;
+    margin-top: 5px;
+}
+.timeInput{
+    display: inline-block!important;
+    width: 45%!important;
+    padding: 1.2rem 0!important;
+    background: #fff!important;
+    border: none;
+    border-radius: 5px!important;
+    text-align: center;
+}
+.bill-time-span{
+    display: inline-block;
+    padding: 0.65rem 0!important;
+}
+.bill-nav-content{
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    background: #fff;
+    text-align: center;
+}
+.bill-total-money,.bill-total-text{
+    font-size: .75rem;
+}
+.bill-nav-content .aui-icon-question{
+    font-size: .55rem;
+    color: #ff2600;
+    padding-left: .25rem;
+}
+.bill-benefit-already{
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+.bill-total-money{
+    color: #333;
+    margin-bottom: .25rem;
+}
+.bill-benefit-total .bill-total-money,.bill-series-money{
+    color: #ff2600;
+}
+.bill-list{
+    background: transparent;
+}
+.bill-list .aui-list-item{
+    background: #fff;
+}
+.aui-list .bill-list-item-title{
+    width: 100%;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+.bill-list-item-text{
+    font-size: .7rem;
+    color: #999;
+    margin-bottom: .25rem;
+}
+@media all{
+    .aui-list.aui-list-in .aui-list-item {
+        border: none;
+        background-size: 100% 2px;
+        background-repeat: no-repeat;
+        background-position: 0.75rem bottom;
+        background-image: linear-gradient(0,#dddddd,#dddddd 50%,transparent 50%);
+        background-image: -webkit-linear-gradient(90deg,#dddddd,#dddddd 50%,transparent 50%);
+    }
+}
+.bill-list{
+    border-top: none;
+}
+@media all{
+    .aui-list.aui-list-in .aui-list-item:last-child {
+        background-image: none;
+    }
+}

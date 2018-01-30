@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>我的订单</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_ta5dwtjnwdygb9.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="account.css" />
+</head>
+<body>
+<header class="aui-bar aui-bar-nav nav-header fixed-header-top">
+    <a class="aui-pull-left aui-btn" href="javascript:window.history.go(-1)">
+        <span class="aui-iconfont aui-icon-left"></span>
+    </a>
+    <div class="aui-title">我的订单</div>
+</header>
+<section class="content2">
+    <div class="aui-content">
+        <ul class="aui-list aui-media-list myOrder_list" id="myOrder_list">
+            <!--<li class="aui-list-item aui-list-item-middle aui-margin-b-15">-->
+                <!--<div class="myOrder-title">-->
+                    <!--<span class="myOrder-title-num">订单号：<span class="myOrder-num">B13610449756663</span></span>-->
+                    <!--<span class="myOrder-time">2017-12-13 18:30:45</span>-->
+                <!--</div>-->
+                <!--<div class="aui-media-list-item-inner">-->
+                    <!--<div class="aui-list-item-media myOrder-list-item-media">-->
+                        <!--<img src="../img/tx.jpg" class="aui-list-img-sm myOrder-list-img">-->
+                    <!--</div>-->
+                    <!--<div class="aui-list-item-inner">-->
+                        <!--<div class="myOrder-info">-->
+                            <!--<div class="aui-list-item-title myOrder-type">畅享60分钟套餐</div>-->
+                            <!--<div class="myOrder-add">宝安区时代城5楼 02</div>-->
+                        <!--</div>-->
+                        <!--<div class="aui-list-item-text">-->
+                            <!--<div class="aui-list-item-title myOrder-money">¥ 58.00</div>-->
+                            <!--<div class="aui-list-item-right myOrder-state">已付款</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</li>-->
+            <!--<li class="aui-list-item aui-list-item-middle aui-margin-b-15">-->
+                <!--<div class="myOrder-title">-->
+                    <!--<span class="myOrder-title-num">订单号：<span class="myOrder-num">B13610449756663</span></span>-->
+                    <!--<span class="myOrder-time">2017-12-13 18:30:45</span>-->
+                <!--</div>-->
+                <!--<div class="aui-media-list-item-inner">-->
+                    <!--<div class="aui-list-item-media myOrder-list-item-media">-->
+                        <!--<img src="../img/tx.jpg" class="aui-list-img-sm myOrder-list-img">-->
+                    <!--</div>-->
+                    <!--<div class="aui-list-item-inner">-->
+                        <!--<div class="myOrder-info">-->
+                            <!--<div class="aui-list-item-title myOrder-type">畅享60分钟套餐</div>-->
+                            <!--<div class="myOrder-add">宝安区时代城5楼 02</div>-->
+                        <!--</div>-->
+                        <!--<div class="aui-list-item-text">-->
+                            <!--<div class="aui-list-item-title myOrder-money">¥ 58.00</div>-->
+                            <!--<div class="aui-list-item-right myOrder-state">已付款</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</li>-->
+        </ul>
+    </div>
+    <!--没有订单的状态-->
+    <div class="noOrder">
+        对不起，您还没有订单~
+    </div>
+</section>
+
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
+<script type="text/javascript" src="../js/api.js" ></script>
+<script type="text/javascript" src="../js/dropload.min.js" ></script>
+<script type="text/javascript" src="../js/mustache.js" ></script>
+<script type="text/javascript" src="myOrder.js" ></script>
+</body>
+</html>

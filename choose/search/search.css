@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+.search-title .aui-searchbar{
+    background: transparent;
+}
+.search-div{
+    margin: 0.125rem 0.5rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 0.75rem;
+}
+.aui-searchbar-input input {
+    height: 2rem;
+    font-size: 0.75rem;
+}
+.search-div .aui-bar-nav .aui-iconfont {
+    color: #ccc;
+    line-height: 2rem;
+    padding-right: .5rem;
+}
+.aui-bar-nav .search-title {
+    right: 3rem;
+    left: 3rem;
+}
+.aui-searchbar .search-div .aui-iconfont {
+    line-height: 2rem;
+}
+.search-title .aui-searchbar-btn{
+    font-size: .75rem;
+    color: #fff;
+    width: auto;
+    padding-right: 0;
+    margin-right: -1.7rem;
+    height: 2.25rem;
+    line-height: 2.25rem;
+}
+#search-result{
+    height: calc(100vh - 7rem);
+    overflow-y: auto;
+}
+.songImg{
+    width: 4rem;
+}
+.songImg img{
+    border-radius: .25rem;
+}
+.aui-list .singerName{
+    font-size: .8rem;
+}
+.songName{
+    font-size: .85rem;
+    margin-bottom: .5rem;
+}
+.perSingerName{
+    font-size: .65rem;
+}
+.choose-btn{
+    border: 1px solid #ccc;
+    outline: none;
+    background: transparent;
+    font-size: .8rem;
+}
+.choose-btn .aui-icon-plus{
+    font-weight: bold;
+}
+.aui-list .list-song-info{
+    max-width: 70%;
+}
+.search-title .aui-searchbar-clear-btn {
+    top: .45rem;
+    line-height: 1.1rem;
+}
+.search-title .aui-searchbar-clear-btn .aui-icon-close{
+    line-height: 1.4rem;
+}

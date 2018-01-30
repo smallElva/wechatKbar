@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+#main{
+    height:20rem;
+    width:100%;
+}
+#main-pie{
+    height:20rem;
+    width:100%;
+}
+.report-title{
+    font-size: .8rem;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    margin: .5rem 0;
+}

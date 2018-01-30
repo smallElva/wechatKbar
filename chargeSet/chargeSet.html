@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>时段计价</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="charge.css" />
+</head>
+<body>
+<section class="fixed-header-top">
+    <header class="aui-bar aui-bar-nav nav-header">
+        <a class="aui-pull-left aui-btn" href="javascript:window.history.go(-1)">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <div class="aui-title">时段计价</div>
+        <a class="aui-pull-right aui-btn" href="chargeSet_2.html">
+            <span class="charge-title-link">按首计价</span>
+        </a>
+    </header>
+    <div class="select-block order-select">
+        <div id="showStore"><span class="charge-store-name">全部门店</span><i class="aui-iconfont aui-icon-down"></i></div>
+    </div>
+</section>
+<!--门店筛选-->
+<div class="aui-popup aui-popup-top order-popup-top store-right" id="store-top">
+    <div class="aui-popup-arrow"></div>
+    <div class="aui-popup-content">
+        <ul class="aui-list">
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner bill-store-name" data-store="0">
+                    坪洲四季城
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner bill-store-name" data-store="1">
+                    宝安中心天虹
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner bill-store-name" data-store="2">
+                    宝安中心cococity
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<section class="content">
+    <ul class="aui-list aui-media-list chargeSet-list" id="chargeContent">
+        <!--{{#list}}-->
+        <!--<li>-->
+            <!--<div class="aui-list-header charge-list-header">-->
+                <!--<span class="aui-pull-left charge-type">畅享{{chargeType}}套餐</span>-->
+                <!--<span class="aui-pull-right order-equip">{{chargeEquip}}</span>-->
+            <!--</div>-->
+            <!--<div class="aui-list-item aui-list-item-middle aui-clearfix">-->
+                <!--<div class="aui-list-item-inner charge-list-item">-->
+                    <!--<div class="charge-list-item-text">时长： <span class="charge-type-time">{{chargeTypeTime}}</span></div>-->
+                    <!--<div class="charge-list-item-text charge-list-item-orig-money">原价: <span class="charge-orig-money">{{chargeOrigMoney}}</span></div>-->
+                    <!--<div class="charge-list-item-text charge-list-item-money">优惠价: <span class="charge-take-money">{{chargeTakeMoney}}</span></div>-->
+                    <!--<div class="charge-list-item-text">用于：<span class="charge-type-series">{{chargeTypeSeries}}</span></div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</li>-->
+        <!--{{/list}}-->
+    </ul>
+
+
+
+        <!--<div class="aui-content aui-margin-b-15">-->
+            <!--<div class="aui-list aui-media-list">-->
+                <!--<div class="aui-list-header charge-list-header">-->
+                    <!--<span class="aui-pull-left charge-type">畅享10分钟套餐</span>-->
+                    <!--<span class="aui-pull-right order-equip">人人唱1-2</span>-->
+                <!--</div>-->
+                <!--<div class="aui-list-item aui-list-item-middle aui-clearfix">-->
+                    <!--<div class="aui-list-item-inner charge-list-item">-->
+                        <!--<div class="charge-list-item-text">时长： <span class="charge-type-time">10</span></div>-->
+                        <!--<div class="charge-list-item-text charge-list-item-orig-money">原价: <span class="charge-orig-money">12.00</span></div>-->
+                        <!--<div class="charge-list-item-text charge-list-item-money">优惠价: <span class="charge-take-money">10.00</span></div>-->
+                        <!--<div class="charge-list-item-text">用于：<span class="charge-type-series">普通套餐</span></div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="aui-content aui-margin-b-15">-->
+            <!--<div class="aui-list aui-media-list">-->
+                <!--<div class="aui-list-header charge-list-header">-->
+                    <!--<span class="aui-pull-left charge-type">畅享20分钟套餐</span>-->
+                    <!--<span class="aui-pull-right order-equip">人人唱1-6</span>-->
+                <!--</div>-->
+                <!--<div class="aui-list-item aui-list-item-middle aui-clearfix">-->
+                    <!--<div class="aui-list-item-inner charge-list-item">-->
+                        <!--<div class="charge-list-item-text">时长： <span class="charge-type-time">20</span></div>-->
+                        <!--<div class="charge-list-item-text charge-list-item-orig-money">原价: <span class="charge-orig-money">40.00</span></div>-->
+                        <!--<div class="charge-list-item-text charge-list-item-money">优惠价: <span class="charge-take-money">38.00</span></div>-->
+                        <!--<div class="charge-list-item-text">用于：<span class="charge-type-series">普通套餐</span></div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="aui-content aui-margin-b-15">-->
+            <!--<div class="aui-list aui-media-list">-->
+                <!--<div class="aui-list-header charge-list-header">-->
+                    <!--<span class="aui-pull-left charge-type">畅享40分钟套餐</span>-->
+                    <!--<span class="aui-pull-right order-equip">人人唱1-1</span>-->
+                <!--</div>-->
+                <!--<div class="aui-list-item aui-list-item-middle aui-clearfix">-->
+                    <!--<div class="aui-list-item-inner charge-list-item">-->
+                        <!--<div class="charge-list-item-text">时长： <span class="charge-type-time">40</span></div>-->
+                        <!--<div class="charge-list-item-text charge-list-item-orig-money">原价: <span class="charge-orig-money">50.00</span></div>-->
+                        <!--<div class="charge-list-item-text charge-list-item-money">优惠价: <span class="charge-take-money">48.00</span></div>-->
+                        <!--<div class="charge-list-item-text">用于：<span class="charge-type-series">普通套餐</span></div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="aui-content aui-margin-b-15">-->
+            <!--<div class="aui-list aui-media-list">-->
+                <!--<div class="aui-list-header charge-list-header">-->
+                    <!--<span class="aui-pull-left charge-type">畅享60分钟套餐</span>-->
+                    <!--<span class="aui-pull-right order-equip">人人唱1-8</span>-->
+                <!--</div>-->
+                <!--<div class="aui-list-item aui-list-item-middle aui-clearfix">-->
+                    <!--<div class="aui-list-item-inner charge-list-item">-->
+                        <!--<div class="charge-list-item-text">时长： <span class="charge-type-time">60</span></div>-->
+                        <!--<div class="charge-list-item-text charge-list-item-orig-money">原价: <span class="charge-orig-money">60.00</span></div>-->
+                        <!--<div class="charge-list-item-text charge-list-item-money">优惠价: <span class="charge-take-money">58.00</span></div>-->
+                        <!--<div class="charge-list-item-text">用于：<span class="charge-type-series">普通套餐</span></div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+</section>
+
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
+<script type="text/javascript" src="../js/api.js" ></script>
+<script type="text/javascript" src="../js/dropload.min.js" ></script>
+<script type="text/javascript" src="../js/mustache.js" ></script>
+<script type="text/javascript" src="chargeSet.js" ></script>
+
+</body>
+</html>

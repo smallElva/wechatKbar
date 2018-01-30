@@ -1,0 +1,221 @@
+@charset "UTF-8";
+
+/*点歌首页*/
+.icon-saoma{
+    padding-left: .5rem;
+    font-size: .8rem;
+}
+.packageBuy{
+    height: 2.8rem;
+    background: #fff;
+    padding-left: .75rem;
+    line-height: 2.8rem;
+    margin-top: .5rem;
+    position: relative;
+}
+.packageBuy .iconfont{
+    font-size: 1.3rem;
+    color: #ffc107;
+    vertical-align: middle;
+}
+.packageBuy-text{
+    font-size: .8rem;
+    color: #212121;
+    padding-left: .5rem;
+    vertical-align: middle;
+}
+.packageBuy-a{
+    height: 2.8rem;
+    line-height: 2.8rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    background: #ff2600;
+    color: #fff;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.choose-way{
+    margin-top: .5rem;
+}
+.choose-content{
+    margin-bottom: 2.25rem;
+}
+.choose-block{
+    display:flex;
+    display:-webkit-flex;
+    height: 4.2rem;
+    background: #fff;
+    justify-content: center;
+    align-items: center;
+}
+.choose-block-icon{
+    text-align: center;
+}
+.choose-block-icon i{
+    font-size: 1.3rem;
+}
+.choose-block-text{
+    font-size: .8rem;
+}
+.new-song-a{
+    margin-top: .5rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    display:flex;
+    display:-webkit-flex;
+    height: 2.6rem;
+    background: #fff;
+    justify-content: space-between;
+    align-items: center;
+    color: #212121;
+    font-size: .85rem;
+    margin-bottom: 2.5rem;
+}
+.new-song-a i{
+    font-size: 1rem;
+}
+.choose-footer{
+    background: #212121;
+}
+.choose-footer .aui-bar-tab-item{
+    color: #fff;
+    font-size: .8rem;
+}
+.choose-footer .aui-bar-tab-item .iconfont{
+    font-size: 1rem;
+}
+.choose-footer .aui-bar-tab-item.aui-active{
+    color: #ffc107;
+}
+
+/*播控*/
+.control-content{
+    color: #fffc00;
+}
+.control-content p{
+    color: #fffc00;
+    font-size: .9rem;
+    margin-top: .5rem;
+}
+.control-block{
+    padding: 8rem 0 2rem 0;
+}
+.aui-icon-block{
+    text-align: center;
+}
+.aui-icon-img{
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    margin: 0 auto;
+}
+.aui-icon-img img{
+    display: inline-block;
+    height: 2.5rem;
+}
+.control-btn{
+    font-size: 1.5rem;
+    text-align: center;
+    width: 80%;
+    margin: .5rem auto;
+}
+.control-btn i{
+    font-size: 1.5rem;
+}
+.aui-bar-btn-sm .aui-bar-btn-item {
+    line-height: 2.4rem;
+    font-size: 1.5rem;
+}
+.aui-bar-btn-item:first-child {
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+}
+.aui-bar-btn-item {
+    border-width: 1px;
+    border-color: #ccc;
+}
+.aui-bar-btn-item:last-child {
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}
+
+/*歌手搜索首页*/
+.singer-slider-img{
+    width: 85%;
+    margin: 0 auto;
+}
+.singer-slider-img img{
+    width: 100%;
+    border-radius: 5px;
+}
+.singer-name{
+    font-size: .75rem;
+    padding: .2rem 0 .3rem;
+    color: #212121;
+    text-align: center;
+}
+.singer-slide-a{
+    display: block;
+}
+.singer-list{
+    background: transparent;
+}
+.singer-list .aui-list-item{
+    background: #fff;
+}
+/*歌手列表页*/
+.aui-bar-nav .search-singer-title {
+    right: 3rem;
+    left: 3rem;
+}
+.search-singer-title .aui-searchbar{
+    background: transparent;
+}
+.search-div{
+    margin: 0.125rem 0.5rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 0.75rem;
+}
+.singer-searchbar .aui-searchbar-input input {
+    height: 2rem;
+    font-size: 0.75rem;
+}
+.search-div .aui-bar-nav .aui-iconfont {
+    color: #ccc;
+    line-height: 2rem;
+    padding-right: .5rem;
+}
+.aui-bar-nav .search-title {
+    right: 3rem;
+    left: 3rem;
+}
+.aui-searchbar .search-div .aui-iconfont {
+    line-height: 2rem;
+}
+.search-singer-title .aui-searchbar-btn{
+    font-size: .75rem;
+    color: #fff;
+    width: auto;
+    padding-right: 0;
+    margin-right: -1.7rem;
+    height: 2.25rem;
+    line-height: 2.25rem;
+}
+.search-singer-title .aui-searchbar-clear-btn {
+    top: .45rem;
+    line-height: 1.1rem;
+}
+.search-singer-title .aui-searchbar-clear-btn .aui-icon-close{
+    line-height: 1.4rem;
+}
+.singerImg{
+    width: 3.5rem;
+}
+.singerImg img{
+    width: 100%;
+    border-radius: 5px;
+}

@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+.order-select .aui-grid .aui-col-xs-6{
+    padding: 0;
+}
+.order-select .aui-grid .aui-iconfont{
+     font-size: .7rem;
+}
+.order-select .aui-grid [class*=aui-col-xs-]:active {
+    background-color: transparent;
+}
+.order-popup-top{
+    top: 4.6rem;
+    opacity: 1;
+    display: none;
+}
+.order-popup-top .aui-popup-content{
+    box-shadow: 0 0 2rem #ccc;
+    min-height: 4rem;
+}
+.toggleShow{
+    display: block;
+}
+.order-popup-top .aui-list .aui-list-item-inner{
+    font-size: .78rem;
+}
+.store-right{
+    left: auto;
+    right: 25%;
+    margin-right: -3.5rem;
+}
+.state-left{
+    right: auto;
+    left: 25%;
+    margin-left: -3.5rem;
+}
+.aui-list .order-buy-time{
+    font-size: .7rem;
+    color: #757575;
+}
+.order_money,.order_state{
+    color: #ff2600;
+}
+.aui-list .order-list-header{
+    background-color: #fff;
+    color: #212121;
+    font-size: 0.7rem;
+    padding: 0.4rem 0.75rem;
+    border-bottom: 1px solid #f3f3f3;
+}
+.order-list-item-media{
+    width: 4rem;
+}
+#state-top .aui-list .aui-list-item-inner {
+    -webkit-justify-content: center;
+    justify-content: center;
+}
