@@ -10,22 +10,14 @@
     <link rel="stylesheet" type="text/css" href="../account.css" />
 </head>
 <body>
-<section class="fixed-header-top">
-    <header class="aui-bar aui-bar-nav nav-header">
-        <a class="aui-pull-left aui-btn" href="javascript:window.history.go(-1)">
-            <span class="aui-iconfont aui-icon-left"></span>
-        </a>
-        <div class="aui-title">意见反馈</div>
-    </header>
-</section>
 <section class="content2">
     <div class="advice-form">
         <div class="advice-t">
             意见反馈
         </div>
-        <textarea placeholder="请输入您的宝贵意见！" class="advice-textarea"></textarea>
-        <input placeholder="请输入您的手机号码！（必填）" class="advice-input">
-        <div class="advice-choose">
+        <textarea placeholder="请输入您的宝贵意见！" class="advice-textarea" id="adviceTextarea"></textarea>
+        <input placeholder="请输入您的手机号码！（必填）" class="advice-input" id="advicePhone">
+        <form class="advice-choose" action="feedback.html" method="post" id="adviceForm">
             <p class="advice-choose-t">您是通过何种渠道了解“人人唱”自助KTV？</p>
             <div class="aui-row">
                 <div class="aui-col-xs-6">
@@ -46,9 +38,9 @@
                 </div>
             </div>
             <div class="advice-btn-block">
-                <div class="aui-btn aui-btn-block send-btn">提交</div>
+                <div class="aui-btn aui-btn-block send-btn" id="submitBtn">提交</div>
             </div>
-        </div>
+        </form>
     </div>
 </section>
 
@@ -56,6 +48,8 @@
 <script type="text/javascript" src="../../js/api.js" ></script>
 <script type="text/javascript" src="../../js/dropload.min.js" ></script>
 <script type="text/javascript" src="../../js/mustache.js" ></script>
+<script type="text/javascript" src="../../js/aui-toast.js" ></script>
+<script type="text/javascript" src="feedback.js" ></script>
 
 
 </body>

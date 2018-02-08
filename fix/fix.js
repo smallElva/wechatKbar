@@ -1,32 +1,115 @@
 /**
- * Created by enter on 2018/1/20.
+ * Created by enter on 2018/2/3.
  */
-$(function() {
-    /***
-     * 点击全部门店筛选
-     */
-    $("#showStore").click(function () {
-        $('#store-top').toggleClass('toggleShow');
-        $(this).find('.aui-iconfont').toggleClass('aui-icon-down aui-icon-top');
-        $('#state-top').removeClass('toggleShow');
-    });
-
-    $('#store-top .aui-list-item').click(function () { //点击门店选择栏里的任何一个选项，切换选项值，并刷新页面
-        var storeName = $(this).find('.bill-store-name').text();
-        $('#showStore .order-store-name').html(storeName);
-    });
-
-    //点击页面除了id="showStore"和id="showOrder"之外的任何区域都关闭该div
-    $(document).on('click', function (e) {
-        var e = e || window.event; //浏览器兼容性
-        var elem = e.target || e.srcElement;
-        while (elem) { //循环判断至跟节点，防止点击的是div子元素
-            if (elem.id && elem.id == 'showStore') {
-                return;
+$(function () {
+    // 动态添加报修设备
+    $.ajax({
+        type:"GET",
+        url:"equip.json",
+        dataType:"json",
+        // data:"department="+$("#fix-equip-name").val(),
+        success:function(data){
+            var $select = $('#fix-equip-name');
+            for(var i=0, len = data.length;i<len;i++){
+                $select.append('<option value="'+data[i]['id']+'">'+data[i]['name']+'</option>');
             }
-            elem = elem.parentNode;
         }
-        $('#store-top').removeClass('toggleShow'); //关闭该div
-
     });
+    //我要报修点击提交按钮
+    $('#submitBtn').click(function () {
+        var contactName=$('#contactName').val();
+        var contactPhone=$('#contactPhone').val();
+        var fixEquipName=$('#fix-equip-name').val();
+        var fixWord=$('#fix-word').val();
+        var reg = /^1[3|4|5|7|8]\d{9}$/;
+        if(!contactName){
+            showDefault('fail_name_empty');
+            return false;
+        }
+        if(!contactPhone){
+            showDefault('fail_phone_empty');
+            return false;
+        }
+        if(!reg.test(contactPhone)){
+            showDefault('fail_phone_error');
+            return false;
+        }
+        if(!fixEquipName){
+            showDefault('fail_equip_empty');
+            return false;
+        }
+        if(!fixWord){
+            showDefault('fail_advice_empty');
+            return false;
+        }
+        $("#fixForm").submit();
+    });
+
 });
+
+apiready = function(){
+    api.parseTapmode();
+};
+var toast = new auiToast({});
+function showDefault(type){
+    switch (type) {
+        case "success":
+            toast.success({
+                title:"提交成功",
+                duration:1000
+            });
+            break;
+        case "fail_phone_empty":
+            toast.fail({
+                title:"请填写您的手机号",
+                duration:1000
+            });
+            break;
+        case "fail_phone_error":
+            toast.fail({
+                title:"请填写正确的手机号",
+                duration:1000
+            });
+            break;
+        case "fail_advice_empty":
+            toast.fail({
+                title:"亲，请描述设备问题！",
+                duration:1000
+            });
+            break;
+        case "fail_name_empty":
+            toast.fail({
+                title:"请填写联系人姓名",
+                duration:1000
+            });
+            break;
+        case "fail_equip_empty":
+            toast.fail({
+                title:"请选择报修设备",
+                duration:1000
+            });
+            break;
+
+        case "fail":
+            toast.fail({
+                title:"提交失败",
+                duration:1000
+            });
+            break;
+
+        case "loading":
+            toast.loading({
+                title:"加载中",
+                duration:2000
+            },function(ret){
+                console.log(ret);
+                setTimeout(function(){
+                    toast.hide();
+                }, 3000)
+            });
+            break;
+        default:
+            // statements_def
+            break;
+    }
+}

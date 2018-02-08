@@ -13,6 +13,7 @@
          {
             "id": 15,
             "myRecordListImg": "../../img/tx.jpg",
+            "myRecordListHref": "myRecord_page.html",
             "myRecordSongName": "匆匆那年",
             "perListenNum": "60",
             "perLikeNum": "58",
@@ -20,6 +21,7 @@
          },{
             "id": 16,
             "myRecordListImg": "../../img/tx.jpg",
+            "myRecordListHref": "myRecord_page.html",
             "myRecordSongName": "小幸运",
             "perListenNum": "30",
             "perLikeNum": "58",
@@ -27,6 +29,7 @@
          },{
             "id": 17,
             "myRecordListImg": "../../img/tx.jpg",
+            "myRecordListHref": "myRecord_page.html",
             "myRecordSongName": "明天会更好",
             "perListenNum": "230",
             "perLikeNum": "258",
@@ -34,6 +37,7 @@
          },{
             "id": 18,
             "myRecordListImg": "../../img/tx.jpg",
+            "myRecordListHref": "myRecord_page.html",
             "myRecordSongName": "人间",
             "perListenNum": "30",
             "perLikeNum": "58",
@@ -41,6 +45,7 @@
          },{
             "id": 19,
             "myRecordListImg": "../../img/tx.jpg",
+            "myRecordListHref": "myRecord_page.html",
             "myRecordSongName": "以后的以后",
             "perListenNum": "330",
             "perLikeNum": "358",

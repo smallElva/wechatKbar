@@ -10,39 +10,33 @@
     <link rel="stylesheet" type="text/css" href="../account.css" />
 </head>
 <body>
-<section class="fixed-header-top">
-    <header class="aui-bar aui-bar-nav nav-header">
-        <a class="aui-pull-left aui-btn" href="javascript:window.history.go(-1)">
-            <span class="aui-iconfont aui-icon-left"></span>
-        </a>
-        <div class="aui-title">缺歌反馈</div>
-    </header>
-</section>
 <section class="content2">
     <div class="advice-form">
         <div class="advice-t">
             缺歌反馈
         </div>
-        <ul class="aui-list aui-form-list lackSong_list">
-            <li class="aui-list-header">在库里找不到的、搜不到的歌？统统反馈给我们吧~</li>
-            <li class="aui-list-item">
-                <div class="aui-list-item-inner">
-                    <div class="aui-list-item-input">
-                        <input type="text" placeholder="歌曲名称（必填）">
+        <div class="advice-text">在库里找不到的、搜不到的歌？统统反馈给我们吧~</div>
+        <form id="lackSongForm" method="post" action="feedback.html">
+            <ul class="aui-list aui-form-list lackSong_list">
+                <li class="aui-list-item">
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-input">
+                            <input type="text" placeholder="歌曲名称（必填）" id="songName">
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="aui-list-item">
-                <div class="aui-list-item-inner">
-                    <div class="aui-list-item-input">
-                        <input type="text" placeholder="歌手姓名（必填）">
+                </li>
+                <li class="aui-list-item">
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-input">
+                            <input type="text" placeholder="歌手姓名（必填）" id="singerName">
+                        </div>
                     </div>
-                </div>
-            </li>
-        </ul>
-        <div class="advice-btn-block">
-            <div class="aui-btn aui-btn-block send-btn">提交</div>
-        </div>
+                </li>
+            </ul>
+            <div class="advice-btn-block">
+                <div class="aui-btn aui-btn-block send-btn" id="submitBtnSong">提交</div>
+            </div>
+        </form>
     </div>
 </section>
 
@@ -50,7 +44,8 @@
 <script type="text/javascript" src="../../js/api.js" ></script>
 <script type="text/javascript" src="../../js/dropload.min.js" ></script>
 <script type="text/javascript" src="../../js/mustache.js" ></script>
-
+<script type="text/javascript" src="../../js/aui-toast.js" ></script>
+<script type="text/javascript" src="feedback.js" ></script>
 
 </body>
 </html>

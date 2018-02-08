@@ -10,14 +10,6 @@
     <link rel="stylesheet" type="text/css" href="../account.css" />
 </head>
 <body>
-<section class="fixed-header-top">
-    <header class="aui-bar aui-bar-nav nav-header">
-        <a class="aui-pull-left aui-btn" href="javascript:window.history.go(-1)">
-            <span class="aui-iconfont aui-icon-left"></span>
-        </a>
-        <div class="aui-title">版权申诉</div>
-    </header>
-</section>
 <section class="content2">
     <div class="copyright-content">
         <div class="advice-t">
@@ -27,40 +19,42 @@
             亲爱的，如果对歌曲版权有疑问，欢迎反馈给我们，请留下您的联系方式，方便我们及时处理情况反馈给您~
         </div>
     </div>
-    <ul class="aui-list aui-form-list copyright-list">
-        <li class="aui-list-item">
-            <div class="aui-list-item-inner">
-                <div class="aui-list-item-input">
-                    <input type="text" placeholder="请输入需要申诉的歌曲名称">
+    <form id="copyForm" action="feedback.html" method="post">
+        <ul class="aui-list aui-form-list copyright-list">
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-input">
+                        <input type="text" placeholder="请输入需要申诉的歌曲名称" id="copySongName">
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li class="aui-list-item">
-            <div class="aui-list-item-inner">
-                <div class="aui-list-item-input">
-                    <input type="text" placeholder="请输入歌手姓名">
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-input">
+                        <input type="text" placeholder="请输入歌手姓名" id="copySingerName">
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li class="aui-list-item">
-            <div class="aui-list-item-inner">
-                <div class="aui-list-item-input">
-                    <input type="text" placeholder="请输入您的手机号">
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-input">
+                        <input type="text" placeholder="请输入您的手机号" id="copyPhoneNum">
+                    </div>
                 </div>
-            </div>
-        </li>
-    </ul>
-    <div class="advice-btn-block copyright-btn-block">
-        <div class="aui-btn aui-btn-block send-btn">提交</div>
-    </div>
-
+            </li>
+        </ul>
+        <div class="advice-btn-block copyright-btn-block">
+            <div class="aui-btn aui-btn-block send-btn" id="copySubmitBtn">提交</div>
+        </div>
+    </form>
 </section>
 
 <script type="text/javascript" src="../../js/jquery-3.2.1.min.js" ></script>
 <script type="text/javascript" src="../../js/api.js" ></script>
 <script type="text/javascript" src="../../js/dropload.min.js" ></script>
 <script type="text/javascript" src="../../js/mustache.js" ></script>
-
+<script type="text/javascript" src="../../js/aui-toast.js" ></script>
+<script type="text/javascript" src="feedback.js" ></script>
 
 </body>
 </html>

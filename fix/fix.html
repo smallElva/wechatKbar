@@ -10,17 +10,9 @@
     <link rel="stylesheet" type="text/css" href="fix.css" />
 </head>
 <body>
-<section class="fixed-header-top">
-    <header class="aui-bar aui-bar-nav nav-header">
-        <a class="aui-pull-left aui-btn" href="javascript:window.history.go(-1)">
-            <span class="aui-iconfont aui-icon-left"></span>
-        </a>
-        <div class="aui-title">我要报修</div>
-    </header>
-</section>
 <section class="content2">
     <div class="aui-content">
-        <div class="fix-content">
+        <form class="fix-content" action="" method="post" id="fixForm">
             <ul class="aui-list aui-form-list">
                 <li class="aui-list-item">
                     <div class="aui-list-item-inner">
@@ -28,7 +20,7 @@
                             联系人
                         </div>
                         <div class="aui-list-item-input">
-                            <input type="text" placeholder="姓名">
+                            <input type="text" placeholder="姓名" id="contactName">
                         </div>
                     </div>
                 </li>
@@ -38,7 +30,7 @@
                             联系电话
                         </div>
                         <div class="aui-list-item-input">
-                            <input type="number" placeholder="手机号">
+                            <input type="text" placeholder="手机号" id="contactPhone">
                         </div>
                     </div>
                 </li>
@@ -48,32 +40,33 @@
                             报修设备
                         </div>
                         <div class="aui-list-item-input">
-                            <select class="fix-equip-select">
-                                <option>请选择要报修的设备</option>
-                                <option>设备1</option>
-                                <option>设备2</option>
-                                <option>设备3</option>
+                            <select class="fix-equip-select" id="fix-equip-name">
+                                <!--<option>请选择要报修的设备</option>-->
+                                <!--<option>设备1</option>-->
+                                <!--<option>设备2</option>-->
+                                <!--<option>设备3</option>-->
                             </select>
                         </div>
                     </div>
                 </li>
             </ul>
             <div class="fix-problem">
-                <div class="aui-list-item-label">
-                    意见反馈
+                <div class="aui-list-item-label fix-textarea-title">
+                    问题反馈
                 </div>
-                <textarea placeholder="请输入问题描述" class="fix-textarea"></textarea>
+                <textarea placeholder="请输入问题描述" class="fix-textarea" id="fix-word"></textarea>
             </div>
             <div class="send-btn-block">
-                <div class="aui-btn aui-btn-block send-btn">提交</div>
+                <div class="aui-btn aui-btn-block send-btn" id="submitBtn">提交</div>
             </div>
-        </div>
+        </form>
     </div>
 </section>
 
 <script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
 <script type="text/javascript" src="../js/api.js" ></script>
 <script type="text/javascript" src="../js/mustache.js" ></script>
+<script type="text/javascript" src="../js/aui-toast.js" ></script>
 <script type="text/javascript" src="../js/dropload.min.js" ></script>
 <script type="text/javascript" src="fix.js" ></script>
 

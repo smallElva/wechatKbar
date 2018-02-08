@@ -14,6 +14,12 @@
     border: .1rem solid #ffe392;
     border-radius: 100%;
 }
+.account-list{
+    background: transparent;
+}
+.account-list .aui-list-item{
+    background: #fff;
+}
 .account_info{
     padding-left: .75rem;
     color: #fff;
@@ -27,6 +33,9 @@
 }
 .account_list_a{
     color: #212121;
+}
+.account-icon{
+    font-size: 1rem!important;
 }
 /*意见反馈*/
 .advice-form{
@@ -73,16 +82,15 @@
     color: #fff;
 }
 /*缺歌反馈*/
-.lackSong_list .aui-list-header{
-    font-size: .68rem;
-    background: transparent;
-    padding-left: 0;
-    justify-content: center;
-    margin-top: .5rem;
-}
 .lackSong_list .aui-list-item {
     padding: 0;
     font-size: .7rem;
+}
+.advice-text{
+    font-size: .68rem;
+    margin-top: .5rem;
+    text-align: center;
+    padding-bottom: .5rem;
 }
 /*版权申诉*/
 .copyright-content{
@@ -223,4 +231,10 @@
 }
 .myRecord-share .iconfont{
     color: #ff2600;
+}
+.aui-dialog-body input {
+    border: none;
+    font-size: 1rem;
+    color: #212121;
+    text-align: center;
 }

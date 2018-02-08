@@ -1,9 +1,13 @@
 @charset "UTF-8";
 
 /*点歌首页*/
+.choose-searchbar{
+    background: #fff;
+}
 .icon-saoma{
     padding-left: .5rem;
-    font-size: .8rem;
+    font-size: 1rem;
+    color: #ff2600;
 }
 .packageBuy{
     height: 2.8rem;
@@ -45,7 +49,7 @@
 .choose-block{
     display:flex;
     display:-webkit-flex;
-    height: 4.2rem;
+    height: 4.8rem;
     background: #fff;
     justify-content: center;
     align-items: center;
@@ -92,10 +96,10 @@
 
 /*播控*/
 .control-content{
-    color: #fffc00;
+    color: #2b2b2b;
 }
 .control-content p{
-    color: #fffc00;
+    color: #2b2b2b;
     font-size: .9rem;
     margin-top: .5rem;
 }
@@ -106,15 +110,15 @@
     text-align: center;
 }
 .aui-icon-img{
-    width: 2.5rem;
-    height: 2.5rem;
-    line-height: 2.5rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 100%;
     text-align: center;
     margin: 0 auto;
 }
 .aui-icon-img img{
+    width: 100%;
     display: inline-block;
-    height: 2.5rem;
 }
 .control-btn{
     font-size: 1.5rem;
@@ -142,7 +146,11 @@
     border-bottom-right-radius: 1.5rem;
 }
 
+
 /*歌手搜索首页*/
+.singer-searchbar{
+    background: #fff;
+}
 .singer-slider-img{
     width: 85%;
     margin: 0 auto;
@@ -181,7 +189,7 @@
     font-size: 0.75rem;
 }
 .singer-searchbar .aui-searchbar-input input {
-    height: 2rem;
+    height: 1.4rem;
     font-size: 0.75rem;
 }
 .search-div .aui-bar-nav .aui-iconfont {
@@ -218,4 +226,148 @@
 .singerImg img{
     width: 100%;
     border-radius: 5px;
+}
+/*歌手点歌详情页*/
+.singerPage_header{
+    position: relative;
+}
+.singerPage_header .aui-btn .aui-iconfont{
+    font-weight: 700;
+    color: #ff2600;
+}
+.singerImg{
+    width: 100%;
+}
+.singer-header{
+    background: transparent;
+}
+.singerPage_header_text{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    padding: 1rem 0;
+}
+.singerPage_name{
+    font-size: .9rem;
+}
+.singerPage-search-title{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-bottom: 1px solid #f3f3f3;
+}
+.singerPage-search-title .aui-searchbar-input input {
+    height: 2rem;
+    font-size: 0.85rem;
+}
+.singerPage-search-title .aui-searchbar {
+    background-color: #fff;
+    color: #9e9e9e;
+    padding: .5rem 0;
+    height: 3rem;
+
+}
+.aui-searchbar-input {
+    margin: 0 0.5rem;
+    background-color: #ebeced;
+    border-radius: 1rem;
+}
+.choose-btn{
+    border: 1px solid #ccc;
+    outline: none;
+    background: transparent;
+    font-size: .8rem;
+}
+.choose-btn .aui-icon-plus{
+    font-weight: bold;
+}
+.songName{
+    font-size: .85rem;
+    color: #000;
+    margin-bottom: .3rem;
+}
+.perSingerName{
+    font-size: .7rem;
+    color: #9e9e9e;
+}
+.song-list-num{
+    color: #848484;
+}
+.song-list{
+    width: 100%;
+}
+.song-list .aui-list-item-inner {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+.song-list li:nth-child(1) .song-list-num,.song-list li:nth-child(2) .song-list-num,.song-list li:nth-child(3) .song-list-num{
+    color: #ff2600;
+}
+.singerPage-search-title .aui-searchbar .aui-iconfont {
+    line-height: 2rem;
+    color: #ff2600 !important;
+    font-size: .85rem;
+    font-weight: bold;
+}
+/*语言点歌*/
+.language-img{
+    position: relative;
+}
+.language-img img{
+    width: 100%;
+}
+.songNum-language{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.song-btn .iconfont{
+    font-size: 1.1rem;
+    color: #ff2600;
+}
+.song-btn .icon-toTop{
+    padding-right: .75rem;
+    color: #efa925;
+}
+/*乐谱点歌*/
+.aui-list .aui-list-item i.musicScore-icon{
+    font-size: 1.2rem;
+    padding-right: .75rem;
+    color: #ff2600;
+    vertical-align: middle;
+}
+.songNum-div{
+    display: inline-block;
+    line-height: 1;
+    padding-right: .75rem;
+    padding-top: .5rem;
+}
+.songNum{
+    width: 1.4rem;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    margin: .08rem 0;
+    text-align: center;
+    border-radius: 0.7rem;
+    background: #fff;
+    border: 1px solid #ff2600;
+    color: #ff2600;
+}
+.songNum-div-text{
+    font-size: .6rem;
+    color: #ff2600;
+}
+
+/*mescroll 滚动区域*/
+.mescroll{
+    position: fixed;
+    top: 3rem;
+    bottom: 0;
+    height: auto;
+}
+.aui-list .aui-list-item{
+    position: relative;
 }

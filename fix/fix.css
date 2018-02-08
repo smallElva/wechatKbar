@@ -22,6 +22,9 @@
 .fix-equip-select{
     font-size: .75rem!important;
 }
+.fix-textarea-title{
+    padding-top: .5rem;
+}
 .fix-textarea{
     height: 8rem;
     border: 1px solid #f3f3f3;

@@ -6,198 +6,137 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>搜索</title>
     <link rel="stylesheet" type="text/css" href="../../css/aui.css"/>
-    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_r87rwq8tdgpq4cxr.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/mescroll.min.css"/>
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_igll0zeyd8jpds4i.css"/>
     <link rel="stylesheet" type="text/css" href="../../css/common.css"/>
     <link rel="stylesheet" type="text/css" href="search.css"/>
 </head>
 <body>
-<section class="fixed-header-top">
-    <header class="aui-bar aui-bar-nav nav-header">
-        <a class="aui-pull-left aui-btn" href="javascript:window.history.go(-1)">
-            <span class="aui-iconfont aui-icon-left"></span>
-        </a>
-        <div class="aui-title search-title">
-            <div class="aui-searchbar" id="search">
-                <div class="aui-searchbar-input aui-border-radius search-div">
-                    <i class="aui-iconfont aui-icon-search"></i>
-                    <input type="search" placeholder="歌名/歌手" id="search-input" value="周杰伦">
-                    <div class="aui-searchbar-clear-btn">
-                        <i class="aui-iconfont aui-icon-close"></i>
-                    </div>
-                </div>
-                <div class="aui-searchbar-btn" tapmode>取消</div>
+<div class="aui-title singerPage-search-title">
+    <div class="aui-searchbar" id="search">
+        <div class="aui-searchbar-input aui-border-radius search-div">
+            <i class="aui-iconfont aui-icon-search"></i>
+            <input type="search" placeholder="歌名/歌星" id="search-input">
+            <div class="aui-searchbar-clear-btn">
+                <i class="aui-iconfont aui-icon-close"></i>
             </div>
         </div>
-    </header>
-</section>
+        <div class="aui-searchbar-btn" tapmode>取消</div>
+    </div>
+    <a class="songNum-div" href="../haveSongs/haveSongs.html">
+        <div class="songNum">10</div>
+        <div class="songNum-div-text">已点</div>
+    </a>
+</div>
 <section class="content2">
-    <div class="aui-list aui-media-list">
-        <div class="aui-list-item aui-list-item-middle">
-            <a class="aui-media-list-item-inner" href="#">
-                <div class="aui-list-item-media songImg">
-                    <img src="../../img/tx.jpg" class="aui-list-img-sm">
-                </div>
-                <div class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title singerName"> 周杰伦</div>
-                </div>
-            </a>
-        </div>
-        <div id="search-result">
-            <div class="aui-list-item aui-list-item-middle">
-                <div class="aui-media-list-item-inner">
-                    <div class="aui-list-item-inner">
-                        <div class="aui-list-item-text">
-                            <div class="aui-list-item-title list-song-info">
-                                <div class="songName aui-ellipsis-1">稻香 [  周杰伦超时代 ] </div>
-                                <div class="perSingerName"> 周杰伦</div>
-                            </div>
-                            <div class="aui-list-item-right">
-                                <button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="aui-list-item aui-list-item-middle">
-                <div class="aui-media-list-item-inner">
-                    <div class="aui-list-item-inner">
-                        <div class="aui-list-item-text">
-                            <div class="aui-list-item-title list-song-info">
-                                <div class="songName aui-ellipsis-1">龙卷风 [ 2015周杰伦摩天轮世界巡演 ] </div>
-                                <div class="perSingerName">周杰伦</div>
-                            </div>
-                            <div class="aui-list-item-right">
-                                <button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="aui-list-item aui-list-item-middle">
-                <div class="aui-media-list-item-inner">
-                    <div class="aui-list-item-inner">
-                        <div class="aui-list-item-text">
-                            <div class="aui-list-item-title list-song-info">
-                                <div class="songName aui-ellipsis-1">我不配 [ <strong class="keyWords"> 周杰伦</strong>超时代 ] </div>
-                                <div class="perSingerName"><strong class="keyWords"> 周杰伦</strong></div>
-                            </div>
-                            <div class="aui-list-item-right">
-                                <button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="aui-list-item aui-list-item-middle">
-                <div class="aui-media-list-item-inner">
-                    <div class="aui-list-item-inner">
-                        <div class="aui-list-item-text">
-                            <div class="aui-list-item-title list-song-info">
-                                <div class="songName aui-ellipsis-1">开不了口 [ <strong class="keyWords"> 周杰伦</strong>超时代 ] </div>
-                                <div class="perSingerName"><strong class="keyWords"> 周杰伦</strong></div>
-                            </div>
-                            <div class="aui-list-item-right">
-                                <button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="aui-list-item aui-list-item-middle">
-                <div class="aui-media-list-item-inner">
-                    <div class="aui-list-item-inner">
-                        <div class="aui-list-item-text">
-                            <div class="aui-list-item-title list-song-info">
-                                <div class="songName aui-ellipsis-1">开不了口 [ <strong class="keyWords"> 周杰伦</strong>超时代 ] </div>
-                                <div class="perSingerName"><strong class="keyWords"> 周杰伦</strong></div>
-                            </div>
-                            <div class="aui-list-item-right">
-                                <button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="aui-list-item aui-list-item-middle">
-                <div class="aui-media-list-item-inner">
-                    <div class="aui-list-item-inner">
-                        <div class="aui-list-item-text">
-                            <div class="aui-list-item-title list-song-info">
-                                <div class="songName aui-ellipsis-1">开不了口 [ <strong class="keyWords"> 周杰伦</strong>超时代 ] </div>
-                                <div class="perSingerName"><strong class="keyWords"> 周杰伦</strong></div>
-                            </div>
-                            <div class="aui-list-item-right">
-                                <button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="aui-list-item aui-list-item-middle">
-                <div class="aui-media-list-item-inner">
-                    <div class="aui-list-item-inner">
-                        <div class="aui-list-item-text">
-                            <div class="aui-list-item-title list-song-info">
-                                <div class="songName aui-ellipsis-1">开不了口 [ <strong class="keyWords"> 周杰伦</strong>超时代 ] </div>
-                                <div class="perSingerName"><strong class="keyWords"> 周杰伦</strong></div>
-                            </div>
-                            <div class="aui-list-item-right">
-                                <button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="aui-list-item aui-list-item-middle">
-                <div class="aui-media-list-item-inner">
-                    <div class="aui-list-item-inner">
-                        <div class="aui-list-item-text">
-                            <div class="aui-list-item-title list-song-info">
-                                <div class="songName aui-ellipsis-1">开不了口 [ <strong class="keyWords"> 周杰伦</strong>超时代 ] </div>
-                                <div class="perSingerName"><strong class="keyWords"> 周杰伦</strong></div>
-                            </div>
-                            <div class="aui-list-item-right">
-                                <button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="aui-list-item aui-list-item-middle">
-                <div class="aui-media-list-item-inner">
-                    <div class="aui-list-item-inner">
-                        <div class="aui-list-item-text">
-                            <div class="aui-list-item-title list-song-info">
-                                <div class="songName aui-ellipsis-1">开不了口 [ <strong class="keyWords"> 周杰伦</strong>超时代 ] </div>
-                                <div class="perSingerName"><strong class="keyWords"> 周杰伦</strong></div>
-                            </div>
-                            <div class="aui-list-item-right">
-                                <button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="aui-list-item aui-list-item-middle">
-                <div class="aui-media-list-item-inner">
-                    <div class="aui-list-item-inner">
-                        <div class="aui-list-item-text">
-                            <div class="aui-list-item-title list-song-info">
-                                <div class="songName aui-ellipsis-1">开不了口 [ <strong class="keyWords"> 周杰伦</strong>超时代 ] </div>
-                                <div class="perSingerName"><strong class="keyWords"> 周杰伦</strong></div>
-                            </div>
-                            <div class="aui-list-item-right">
-                                <button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="mescroll" id="searchScroll">
+        <ul class="aui-list aui-media-list" id="search-result">
+            <!--<li class="aui-list-item aui-list-item-middle">-->
+            <!--<a class="aui-media-list-item-inner" href="../singer/singerPage.html">-->
+            <!--<div class="aui-list-item-media songImg">-->
+            <!--<img src="../../img/tx.jpg" class="aui-list-img-sm">-->
+            <!--</div>-->
+            <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
+            <!--<div class="aui-list-item-title singerName"> 周杰伦</div>-->
+            <!--</div>-->
+            <!--</a>-->
+            <!--</li>-->
+            <!--<li class="aui-list-item aui-list-item-middle">-->
+            <!--<div class="aui-media-list-item-inner">-->
+            <!--<div class="aui-list-item-inner">-->
+            <!--<div class="aui-list-item-text">-->
+            <!--<div class="aui-list-item-title list-song-info">-->
+            <!--<div class="songName aui-ellipsis-1">稻香 [  周杰伦超时代 ] </div>-->
+            <!--<div class="perSingerName"> 周杰伦</div>-->
+            <!--</div>-->
+            <!--<div class="aui-list-item-right">-->
+            <!--<button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</li>-->
+            <!--<li class="aui-list-item aui-list-item-middle">-->
+            <!--<div class="aui-media-list-item-inner">-->
+            <!--<div class="aui-list-item-inner">-->
+            <!--<div class="aui-list-item-text">-->
+            <!--<div class="aui-list-item-title list-song-info">-->
+            <!--<div class="songName aui-ellipsis-1">龙卷风 [ 2015周杰伦摩天轮世界巡演 ] </div>-->
+            <!--<div class="perSingerName">周杰伦</div>-->
+            <!--</div>-->
+            <!--<div class="aui-list-item-right">-->
+            <!--<button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</li>-->
+            <!--<li class="aui-list-item aui-list-item-middle">-->
+            <!--<div class="aui-media-list-item-inner">-->
+            <!--<div class="aui-list-item-inner">-->
+            <!--<div class="aui-list-item-text">-->
+            <!--<div class="aui-list-item-title list-song-info">-->
+            <!--<div class="songName aui-ellipsis-1">我不配 [ 周杰伦超时代 ] </div>-->
+            <!--<div class="perSingerName">周杰伦</div>-->
+            <!--</div>-->
+            <!--<div class="aui-list-item-right">-->
+            <!--<button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</li>-->
+            <!--<li class="aui-list-item aui-list-item-middle">-->
+            <!--<div class="aui-media-list-item-inner">-->
+            <!--<div class="aui-list-item-inner">-->
+            <!--<div class="aui-list-item-text">-->
+            <!--<div class="aui-list-item-title list-song-info">-->
+            <!--<div class="songName aui-ellipsis-1">开不了口 [ 周杰伦超时代 ] </div>-->
+            <!--<div class="perSingerName">周杰伦</div>-->
+            <!--</div>-->
+            <!--<div class="aui-list-item-right">-->
+            <!--<button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</li>-->
+            <!--<li class="aui-list-item aui-list-item-middle">-->
+            <!--<div class="aui-media-list-item-inner">-->
+            <!--<div class="aui-list-item-inner">-->
+            <!--<div class="aui-list-item-text">-->
+            <!--<div class="aui-list-item-title list-song-info">-->
+            <!--<div class="songName aui-ellipsis-1">开不了口 [ 周杰伦超时代 ] </div>-->
+            <!--<div class="perSingerName">周杰伦</div>-->
+            <!--</div>-->
+            <!--<div class="aui-list-item-right">-->
+            <!--<button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</li>-->
+            <!--<li class="aui-list-item aui-list-item-middle">-->
+            <!--<div class="aui-media-list-item-inner">-->
+            <!--<div class="aui-list-item-inner">-->
+            <!--<div class="aui-list-item-text">-->
+            <!--<div class="aui-list-item-title list-song-info">-->
+            <!--<div class="songName aui-ellipsis-1">开不了口 [ 周杰伦超时代 ] </div>-->
+            <!--<div class="perSingerName">周杰伦</div>-->
+            <!--</div>-->
+            <!--<div class="aui-list-item-right">-->
+            <!--<button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</li>-->
+        </ul>
     </div>
 </section>
 
 <script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../../js/mescroll.min.js"></script>
 <script type="text/javascript" src="../../js/api.js"></script>
 <script type="text/javascript" src="../../js/mustache.js"></script>
 <script type="text/javascript" src="search.js"></script>

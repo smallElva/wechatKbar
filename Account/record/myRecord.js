@@ -3,6 +3,7 @@
  */
 $(function () {
 
+
     // 发送请求
     $.ajax({
         type:'GET',
@@ -10,6 +11,10 @@ $(function () {
         dataType: "json",
         success: function (result) {
             renderTpl(result);
+            $('.js-delete-this').click(function (e) {
+                e.preventDefault();
+                openDialog('deleteRecord');
+            });
         },
         error: function () {
             alert('加载失败，请检查网络后重试');
@@ -37,7 +42,7 @@ $(function () {
                         if (arrLen > 0) {
                             for (var i = 0; i < arrLen; i++) {
                                 result += '<li class="aui-list-item aui-list-item-middle aui-margin-b-15">' +
-                                    '<div class="aui-media-list-item-inner">' +
+                                    '<a class="aui-media-list-item-inner" href="'+data.record[0].perRecord[i].myRecordListHref+'">' +
                                         '<div class="aui-list-item-media myRecord-list-item-media">' +
                                             '<img src="'+ data.record[0].perRecord[i].myRecordListImg +'" class="aui-list-img-sm myRecord-list-img">'+
                                         '</div>'+
@@ -45,7 +50,7 @@ $(function () {
                                             '<div class="aui-list-item-text myRecord-list-text">'+
                                                 '<div class="aui-list-item-title myRecord-song-name">'+ data.record[0].perRecord[i].myRecordSongName +'</div>'+
                                                 '<div class="aui-list-item-right myRecord-share">' +
-                                                    '<i class="iconfont icon-more" tapmode onclick="openSharebox()">' +
+                                                    '<i class="aui-iconfont aui-icon-close js-delete-this" tapmode >' +
                                                     '</i>' +
                                                 '</div>'+
                                             '</div>' +
@@ -63,7 +68,7 @@ $(function () {
                                                 '<div class="aui-list-item-right per-myRecord-time">' +data.record[0].perRecord[i].perMyRecordTime + '</div>'+
                                             '</div>' +
                                         '</div>' +
-                                    '</div>' +
+                                    '</a>' +
                                 '</li>'
                             }
                             // 如果没有数据
@@ -115,14 +120,14 @@ function renderTpl(recordList) {
             '</div>\n'+
             '<ul class="aui-list aui-media-list myRecord-list" id="myRecord-list">\n'+
         '{{#perRecord}}<li class="aui-list-item aui-list-item-middle aui-margin-b-15">\n'+
-        '<div class="aui-media-list-item-inner">\n'+
+        '<a class="aui-media-list-item-inner" href="{{myRecordListHref}}">\n'+
             '<div class="aui-list-item-media myRecord-list-item-media">\n'+
                 '<img src="{{myRecordListImg}}" class="aui-list-img-sm myRecord-list-img">\n'+
             '</div>\n'+
             '<div class="aui-list-item-inner">\n'+
                 '<div class="aui-list-item-text myRecord-list-text">\n'+
                     '<div class="aui-list-item-title myRecord-song-name">{{myRecordSongName}}</div>\n'+
-                    '<div class="aui-list-item-right myRecord-share"><i class="iconfont icon-more" tapmode onclick="openSharebox()"></i></div>\n'+
+                    '<div class="aui-list-item-right myRecord-share"><i class="aui-iconfont aui-icon-close js-delete-this" tapmode></i></div>\n'+
                 '</div>\n'+
                 '<div class="aui-list-item-text">\n'+
                     '<div class="aui-list-item-title myRecord-icons">\n'+
@@ -136,7 +141,7 @@ function renderTpl(recordList) {
                     '<div class="aui-list-item-right per-myRecord-time">{{perMyRecordTime}}</div>\n'+
                 '</div>\n'+
             '</div>\n'+
-        '</div>\n'+
+        '</a>\n'+
     '</li>{{/perRecord}}'+
 '</ul>\n'+
 '</div>\n'+
@@ -147,43 +152,25 @@ function renderTpl(recordList) {
     $('#myRecordContent').html(dom);
 }
 
-apiready = function(){
+apiready = function () {
     api.parseTapmode();
 };
-var sharebox = new auiSharebox();
-function openSharebox(){
-    sharebox.init({
-        frameBounces:true,//当前页面是否弹动，（主要针对安卓端）
-        buttons:[{
-            image:'',
-            text:'微信好友',
-            value:'wx'//可选
-        },{
-            image:'',
-            text:'朋友圈',
-            value:'wx-circle'
-        },{
-            image:'',
-            text:'QQ好友',
-            value:'qq'
-        },{
-            image:'',
-            text:'QQ空间',
-            value:'qq-qzone'
-        },{
-            image:'',
-            text:'腾讯微博'
-        },{
-            image:'',
-            text:'新浪微博'
-        },{
-            image:'',
-            text:'短信'
-        }],
-        col:5,
-        cancelTitle:'关闭'//可选,当然也可以采用下面的方式使用图标
-        // cancelTitle:'<i class="aui-iconfont aui-icon-close aui-font-size-16"></i>'//可选
-    },function(ret){
-        console.log(ret);
-    })
+var dialog = new auiDialog();
+function openDialog(type){
+    switch (type) {
+        case "deleteRecord":
+            dialog.prompt({
+                text:'确认删除这条录音吗？',
+                type:'text',
+                buttons:['取消','确定']
+            },function(ret){
+                if(ret.buttonIndex == 2){
+                    console.log(ret);
+                }
+            });
+            break;
+        default:
+            break;
+
+    }
 }

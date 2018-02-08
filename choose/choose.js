@@ -24,10 +24,10 @@ var searchBarBtn = document.querySelector(".aui-searchbar .aui-searchbar-btn");
 if(searchBar){
     searchBarInput.onclick = function(){
         searchBarBtn.style.marginRight = 0;
-        window.location.href='../search/search.html';
+        window.location.href='search/search.html';
     };
     searchBarInput.oninput = function(){
-        window.location.href='../search/search.html';
+        window.location.href='search/search.html';
     }
 }
 
