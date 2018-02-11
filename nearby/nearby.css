@@ -74,7 +74,3 @@
     text-align: center;
     margin-top: 2.8rem;
 }
-.tab-list{
-    height: calc(100vh - 8.65rem);
-    overflow-y: auto;
-}

@@ -1,10 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>按起终点经纬度规划路线</title>
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    <style type="text/css">
+        #container {
+            height: 60%;
+        }
+        #panel {
+            position: absolute;
+            background-color: white;
+            height: 40%;
+            overflow-y: auto;
+            top: 60%;
+            right: 0;
+            width: 100%;
+            border: none;
+        }
+        .amap-call {
+            font-size: 18px;
+            color: #212121;
+            cursor: pointer;
+            text-decoration: none;
+            background-color: #fff;
+            text-align: left;
+            padding: 8px;
+        }
+        .amap-lib-transfer {
+            background-color: #fff;
+            font-size: 12px;
+            border: none;
+        }
+    </style>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.4&key=06fb75f531ce19fd2af711465487d07a&plugin=AMap.Transfer"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
 </head>
 <body>
-
+<div id="container"></div>
+<div id="panel"></div>
+<script type="text/javascript">
+    var map = new AMap.Map("container", {
+        resizeEnable: true,
+        center: [116.397428, 39.90923],
+        zoom: 13 //地图显示的缩放级别
+    });
+    var transOptions = {
+        map: map,
+        city: '北京市',
+        panel: 'panel',
+        //cityd:'乌鲁木齐',
+        policy: AMap.TransferPolicy.LEAST_TIME
+    };
+    //构造公交换乘类
+    var transfer = new AMap.Transfer(transOptions);
+    //根据起、终点坐标查询公交换乘路线
+    transfer.search(new AMap.LngLat(116.291035,39.907899), new AMap.LngLat(116.427281, 39.903719));
+</script>
 </body>
 </html>

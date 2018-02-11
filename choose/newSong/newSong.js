@@ -16,7 +16,7 @@ $(function(){
     //创建MeScroll对象,内部已默认开启下拉刷新,自动执行up.callback,重置列表数据;
     var mescroll = new MeScroll("mescroll", {
         up: {
-            page:{size:1},//每次加载1条数据,模拟loadFull
+            page:{size:5},//每次加载1条数据,模拟loadFull
             loadFull: {
                 use: true, //列表数据过少,是否自动加载下一页,直到满屏或者无更多数据为止;默认false
                 delay: 500 //延时执行的毫秒数; 延时是为了保证列表数据或占位的图片都已初始化完成,且下拉刷新上拉加载中区域动画已执行完毕;
@@ -70,12 +70,14 @@ $(function(){
     function setListData(curPageData){
         var listDom=document.getElementById("singer-song-result");
         var result = '';
+
         for (var i = 0; i < curPageData.length; i++) {
             var pd=curPageData[i];
+            var index = i;
             result +='<div class="aui-list-item aui-list-item-middle">'+
                 '<div class="aui-media-list-item-inner">'+
                 '<div class="aui-list-item-label-icon">'+
-                '<span class="song-list-num">'+ i + '</span>'+
+                '<span class="song-list-num">'+ (index+1) + '</span>'+
                 '</div>'+
                 '<div class="aui-list-item-inner">'+
                 '<div class="aui-list-item-text">'+
