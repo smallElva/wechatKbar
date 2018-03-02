@@ -13,6 +13,12 @@ body{
     background: #f3f3f3;
     width: 100%;
 }
+.white-body{
+    background: #fff;
+}
+.e-hide{
+    display: none;
+}
 .fixed-header-top{
     position: fixed;
     top: 0;
@@ -39,9 +45,9 @@ body{
     font-size: .78rem;
     border-bottom: 1px solid #f3f3f3;
 }
-.aui-list .aui-list-item {
-    border-bottom: 1px solid #f3f3f3;
-}
+/*.aui-list .aui-list-item {*/
+    /*border-bottom: 1px solid #f3f3f3;*/
+/*}*/
 
 /*toast*/
 .aui-toast {
@@ -84,6 +90,31 @@ body{
 }
 .mescroll-empty .empty-icon{
     display: inline-block!important;
+}
+/*ios使用sticky样式实现*/
+.nav-sticky{
+    z-index: 999;/*需设置zIndex,避免在悬停时,可能会被列表数据遮住*/
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;/*相对mescroll的div悬停的位置*/
+}
+/*android和pc端悬停*/
+.nav-fixed{
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+/*mescroll 滚动区域*/
+.mescroll{
+    position: fixed;
+    top: 3rem;
+    bottom: 0;
+    height: auto;
+}
+.aui-list .aui-list-item{
+    position: relative;
 }
 /*dropload.css*/
 .dropload-up,.dropload-down{

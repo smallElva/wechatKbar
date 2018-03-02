@@ -12,20 +12,11 @@
 <body>
 <section class="fixed-header-top">
     <div class="select-block order-select">
-        <div class="aui-grid">
-            <div class="aui-row">
-                <div class="aui-col-xs-6">
-                    <div id="showOrder"><span class="order-state-kinds">订单状态</span><i class="aui-iconfont aui-icon-down"></i></div>
-                </div>
-                <div class="aui-col-xs-6">
-                    <div id="showStore"><span class="order-store-name">全部门店</span><i class="aui-iconfont aui-icon-down"></i></div>
-                </div>
-            </div>
-        </div>
+        <div id="showStore"><span class="order-store-name">全部门店</span><i class="aui-iconfont aui-icon-down"></i></div>
     </div>
 </section>
 <!--门店筛选-->
-<div class="aui-popup aui-popup-top order-popup-top store-right" id="store-top">
+<div class="aui-popup aui-popup-top order-popup-top" id="store-top">
     <div class="aui-popup-arrow"></div>
     <div class="aui-popup-content">
         <ul class="aui-list">
@@ -42,24 +33,6 @@
             <li class="aui-list-item">
                 <div class="aui-list-item-inner bill-store-name" data-store="2">
                     宝安中心cococity
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>
-<!--订单状态筛选-->
-<div class="aui-popup aui-popup-top order-popup-top state-left" id="state-top">
-    <div class="aui-popup-arrow"></div>
-    <div class="aui-popup-content">
-        <ul class="aui-list">
-            <li class="aui-list-item">
-                <div class="aui-list-item-inner order-state-kind-name" data-state="0">
-                    未付款
-                </div>
-            </li>
-            <li class="aui-list-item">
-                <div class="aui-list-item-inner order-state-kind-name" data-state="1">
-                    已付款
                 </div>
             </li>
         </ul>

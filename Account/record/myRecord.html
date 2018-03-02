@@ -6,85 +6,91 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>我的录音</title>
     <link rel="stylesheet" type="text/css" href="../../css/aui.css" />
-    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_1856k5bwqip2pgb9.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/mescroll.min.css" />
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_igll0zeyd8jpds4i.css"/>
     <link rel="stylesheet" type="text/css" href="../../css/common.css" />
     <link rel="stylesheet" type="text/css" href="../account.css" />
 </head>
 <body>
-    <section class="content2" id="myRecordContent">
-        <!--<div class="myRecord-title">-->
+    <section class="content2">
+        <div id="myRecordContent">
+            <!--<div class="myRecord-title">-->
             <!--<div class="myRecord-img">-->
-                <!--<img src="../../img/tx.jpg" class="aui-img-round">-->
+            <!--<img src="../../img/tx.jpg" class="aui-img-round">-->
             <!--</div>-->
             <!--<p class="myRecord-name">Friday</p>-->
             <!--<div class="myRecord-title-text">-->
-                <!--<div class="myRecord-title-icons">-->
-                    <!--<i class="iconfont icon-iconset0270"></i><span class="listen-num">31</span>-->
-                <!--</div>-->
-                <!--<div class="myRecord-title-icons">-->
-                    <!--<i class="iconfont icon-dianzan"></i><span class="like-num">41</span>-->
-                <!--</div>-->
+            <!--<div class="myRecord-title-icons">-->
+            <!--<i class="iconfont icon-iconset0270"></i><span class="listen-num">31</span>-->
             <!--</div>-->
-        <!--</div>-->
-        <!--<div class="aui-content">-->
+            <!--<div class="myRecord-title-icons">-->
+            <!--<i class="iconfont icon-dianzan"></i><span class="like-num">41</span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="aui-content">-->
             <!--<div class="myRecord-list-header">-->
-                <!--全部录音 <span class="myRecord-total-num">20</span>-->
+            <!--全部录音 <span class="myRecord-total-num">20</span>-->
             <!--</div>-->
-            <!--<ul class="aui-list aui-media-list myRecord-list" id="myRecord-list">-->
-                <!--<li class="aui-list-item aui-list-item-middle aui-margin-b-15">-->
-                    <!--<a class="aui-media-list-item-inner" href="myRecord_page.html">-->
-                        <!--<div class="aui-list-item-media myRecord-list-item-media">-->
-                            <!--<img src="../../img/tx.jpg" class="aui-list-img-sm myRecord-list-img">-->
-                        <!--</div>-->
-                        <!--<div class="aui-list-item-inner">-->
-                            <!--<div class="aui-list-item-text myRecord-list-text">-->
-                                <!--<div class="aui-list-item-title myRecord-song-name">匆匆那年</div>-->
-                                <!--<div class="aui-list-item-right myRecord-share"><i class="iconfont icon-more" tapmode onclick="openSharebox()"></i></div>-->
-                            <!--</div>-->
-                            <!--<div class="aui-list-item-text">-->
-                                <!--<div class="aui-list-item-title myRecord-icons">-->
-                                    <!--<div class="myRecord-text-icons myRecord-listen-icons">-->
-                                        <!--<i class="iconfont icon-iconset0270"></i><span class="per-listen-num">31</span>-->
-                                    <!--</div>-->
-                                    <!--<div class="myRecord-text-icons">-->
-                                        <!--<i class="iconfont icon-dianzan"></i><span class="per-like-num">41</span>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="aui-list-item-right per-myRecord-time">2018-01-09</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</a>-->
-                <!--</li>-->
-                <!--<li class="aui-list-item aui-list-item-middle aui-margin-b-15">-->
-                    <!--<div class="aui-media-list-item-inner">-->
-                        <!--<div class="aui-list-item-media myRecord-list-item-media">-->
-                            <!--<img src="../../img/tx.jpg" class="aui-list-img-sm myRecord-list-img">-->
-                        <!--</div>-->
-                        <!--<div class="aui-list-item-inner">-->
-                            <!--<div class="aui-list-item-text myRecord-list-text">-->
-                                <!--<div class="aui-list-item-title myRecord-song-name">匆匆那年</div>-->
-                                <!--<div class="aui-list-item-right myRecord-share"><i class="iconfont icon-more" tapmode onclick="openSharebox()"></i></div>-->
-                            <!--</div>-->
-                            <!--<div class="aui-list-item-text">-->
-                                <!--<div class="aui-list-item-title myRecord-icons">-->
-                                    <!--<div class="myRecord-text-icons myRecord-listen-icons">-->
-                                        <!--<i class="iconfont icon-iconset0270"></i><span class="per-listen-num">31</span>-->
-                                    <!--</div>-->
-                                    <!--<div class="myRecord-text-icons">-->
-                                        <!--<i class="iconfont icon-dianzan"></i><span class="per-like-num">41</span>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="aui-list-item-right per-myRecord-time">2018-01-09</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</li>-->
-            <!--</ul>-->
-        <!--</div>-->
+        </div>
+
+        <div class="mescroll record_mescroll" id="mescroll">
+            <ul class="aui-list aui-media-list myRecord-list" id="myRecord-list">
+            <!--<li class="aui-list-item aui-list-item-middle aui-margin-b-15">-->
+            <!--<div class="aui-media-list-item-inner">-->
+            <!--<a class="aui-list-item-media myRecord-list-item-media" href="myRecord_page.html">-->
+            <!--<img src="../../img/tx.jpg" class="aui-list-img-sm myRecord-list-img">-->
+            <!--</a>-->
+            <!--<div class="aui-list-item-inner">-->
+            <!--<div class="aui-list-item-text myRecord-list-text">-->
+            <!--<div class="aui-list-item-title myRecord-song-name">匆匆那年</div>-->
+            <!--<div class="aui-list-item-right myRecord-share"><i class="aui-iconfont aui-icon-close" tapmode onclick="openSharebox()"></i></div>-->
+            <!--</div>-->
+            <!--<div class="aui-list-item-text">-->
+            <!--<div class="aui-list-item-title myRecord-icons">-->
+            <!--<div class="myRecord-text-icons myRecord-listen-icons">-->
+            <!--<i class="iconfont icon-iconset0270"></i><span class="per-listen-num">31</span>-->
+            <!--</div>-->
+            <!--<div class="myRecord-text-icons">-->
+            <!--<i class="iconfont icon-dianzan"></i><span class="per-like-num">41</span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="aui-list-item-right per-myRecord-time">2018-01-09</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</li>-->
+            <!--<li class="aui-list-item aui-list-item-middle aui-margin-b-15">-->
+            <!--<div class="aui-media-list-item-inner">-->
+            <!--<div class="aui-list-item-media myRecord-list-item-media">-->
+            <!--<img src="../../img/tx.jpg" class="aui-list-img-sm myRecord-list-img">-->
+            <!--</div>-->
+            <!--<div class="aui-list-item-inner">-->
+            <!--<div class="aui-list-item-text myRecord-list-text">-->
+            <!--<div class="aui-list-item-title myRecord-song-name">匆匆那年</div>-->
+            <!--<div class="aui-list-item-right myRecord-share"><i class="iconfont icon-more" tapmode onclick="openSharebox()"></i></div>-->
+            <!--</div>-->
+            <!--<div class="aui-list-item-text">-->
+            <!--<div class="aui-list-item-title myRecord-icons">-->
+            <!--<div class="myRecord-text-icons myRecord-listen-icons">-->
+            <!--<i class="iconfont icon-iconset0270"></i><span class="per-listen-num">31</span>-->
+            <!--</div>-->
+            <!--<div class="myRecord-text-icons">-->
+            <!--<i class="iconfont icon-dianzan"></i><span class="per-like-num">41</span>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="aui-list-item-right per-myRecord-time">2018-01-09</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</li>-->
+            </ul>
+        </div>
+
     </section>
 <script type="text/javascript" src="../../js/jquery-3.2.1.min.js" ></script>
 <script type="text/javascript" src="../../js/api.js" ></script>
-<script type="text/javascript" src="../../js/dropload.min.js" ></script>
+<script type="text/javascript" src="../../js/mescroll.min.js" ></script>
 <script type="text/javascript" src="../../js/mustache.js" ></script>
 <script type="text/javascript" src="../../js/aui-dialog.js" ></script>
 <script type="text/javascript" src="myRecord.js" ></script>

@@ -29,7 +29,7 @@ $(function () {
 /** 渲染模板 */
 function renderTpl(storeList) {
     // 模板
-    var tpl = '{{#list}}<div class="aui-list aui-media-list aui-margin-t-15">\n' +
+    var tpl = '{{#list}}<div class="aui-list aui-media-list aui-margin-b-15">\n' +
         '<div class="aui-list-item aui-list-item-middle">\n' +
         '<a href="{{storePageHref}}">\n'+
         '<div class="aui-list-item-inner aui-list-item-arrow">\n'+

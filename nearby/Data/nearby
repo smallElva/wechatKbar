@@ -38,6 +38,21 @@
             "nearbyEquipName": "03"
          }
       ]
+    },{
+      "id": 12,
+       "nearbyStoreName": "龙华区民治天虹B1",
+       "nearbyMapHref": "nearbyMap.html",
+       "nearbyStoreDistance": "893m",
+       "nearbyStoreAdd": "西乡大道与新湖路交汇处天虹商场B1层",
+       "room":[
+            {
+              "id": 7,
+              "nearbyEquipName": "01"
+            },{
+              "id": 8,
+              "nearbyEquipName": "02"
+            }
+       ]
     }
   ]
 }

@@ -11,18 +11,17 @@
     <link rel="stylesheet" type="text/css" href="../../css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../choose.css"/>
 </head>
-<body>
-
+<body class="white-body">
 <section class="content2">
     <div class="aui-title singerPage-search-title">
         <div class="aui-searchbar" id="search">
-            <div class="aui-searchbar-input aui-border-radius search-div">
+            <form class="aui-searchbar-input aui-border-radius search-div" id="searchForm" action="" onsubmit="return false;">
                 <i class="aui-iconfont aui-icon-search"></i>
                 <input type="search" placeholder="搜索歌曲" id="search-input">
                 <div class="aui-searchbar-clear-btn">
                     <i class="aui-iconfont aui-icon-close"></i>
                 </div>
-            </div>
+            </form>
             <div class="aui-searchbar-btn" tapmode>取消</div>
         </div>
         <a class="songNum-div" href="../haveSongs/haveSongs.html">

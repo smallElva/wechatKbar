@@ -108,6 +108,9 @@
     padding: 0 .75rem;
 }
 /*我的订单*/
+.myOrder_mescroll{
+    top: 0;
+}
 .myOrder_list{
     background: transparent;
 }
@@ -196,9 +199,7 @@
     color: #ff2600;
 }
 .myRecord-list{
-    background: transparent;
-    height: calc(100vh - 14.5rem);
-    overflow-y: auto;
+    background: #f3f3f3;
 }
 .myRecord-list li{
     background: #fff;
@@ -237,4 +238,7 @@
     font-size: 1rem;
     color: #212121;
     text-align: center;
+}
+.record_mescroll{
+    top: 12.25rem;
 }

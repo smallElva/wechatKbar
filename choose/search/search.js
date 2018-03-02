@@ -21,7 +21,7 @@ $(function(){
                 //warpId:null, //父布局的id; 如果此项有值,将不使用clearEmptyId的值;
                 warpId:'searchScroll',
                 icon: "../../img/nodata.png", //图标,默认null
-                tip: "亲,暂无数据~", //提示
+                tip: "亲,请在输入框中输入歌曲或歌星~", //提示
             },
             toTop:{ //配置回到顶部按钮
                 html : "<i class='iconfont icon-zhiding'></i>", //标签内容,默认null; 如果同时设置了src,则优先取src
@@ -33,14 +33,27 @@ $(function(){
     //当前关键词
     var curWord=null;
     //搜索按钮
-    $(".aui-searchbar .aui-searchbar-btn").click(function(){
+    /*移动端按下软键盘搜索按钮触发搜索事件*/
+    $("#search-input").on('keypress',function(e) {
+        var keycode = e.keyCode;
+        if(keycode=='13') {
+            e.preventDefault();
+            searchSongs();
+        }
+    });
+    /*点击搜索符号触发搜索事件*/
+    $(".aui-searchbar .aui-icon-search").click(function(){
+        searchSongs();
+    });
+    /*搜索歌曲方法*/
+    function searchSongs() {
         var keyword= $("#search-input").val();
         if(keyword){
             // setHeightKeyWord('searchScroll', keyword, '#ff2600', false);
             curWord=keyword; //更新关键词
             mescroll.resetUpScroll(); //重新搜索,重置列表数据
         }
-    });
+    }
 
     /*联网加载列表数据  page = {num:1, size:10}; num:当前页 从1开始, size:每页数据条数 */
     function getListData(page){
@@ -182,40 +195,4 @@ function setHeightKeyWord(id, keyword, color, bold) {
 
 apiready = function(){
     api.parseTapmode();
-};
-var searchBar = document.querySelector(".aui-searchbar");
-var searchBarInput = document.querySelector(".aui-searchbar input");
-var searchBarBtn = document.querySelector(".aui-searchbar .aui-searchbar-btn");
-var searchBarClearBtn = document.querySelector(".aui-searchbar .aui-searchbar-clear-btn");
-if(searchBar){
-    searchBarInput.onclick = function(){
-        searchBarBtn.style.marginRight = 0;
-    };
-    searchBarInput.oninput = function(){
-        if(this.value.length){
-            searchBarClearBtn.style.display = 'block';
-            // searchBarBtn.classList.add("aui-text-info");
-            searchBarBtn.textContent = "搜索";
-        }else{
-            searchBarClearBtn.style.display = 'none';
-            // searchBarBtn.classList.remove("aui-text-info");
-            searchBarBtn.textContent = "取消";
-        }
-    }
-}
-searchBarClearBtn.onclick = function(){
-    this.style.display = 'none';
-    searchBarInput.value = '';
-    // searchBarBtn.classList.remove("aui-text-info");
-    searchBarBtn.textContent = "取消";
-};
-searchBarBtn.onclick = function(){
-    var keywords = searchBarInput.value;
-    if(keywords.length){
-        searchBarInput.blur();
-    }else{
-        this.style.marginRight = "-"+this.offsetWidth+"px";
-        searchBarInput.value = '';
-        searchBarInput.blur();
-    }
 };

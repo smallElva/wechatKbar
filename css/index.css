@@ -23,18 +23,13 @@
     height: 2rem;
     line-height: 2.05rem;
 }
-@media all {
-    .index-info-content .aui-list {
-        border: none;
-        background-image: none;
-    }
+.index-mescroll{
+    top: 19.75rem;
 }
-@media all {
-    .index-info-content .aui-list .aui-list-item {
-        border-bottom: 1px solid #f3f3f3;
-        background-image: none;
-    }
+.news_mescroll{
+    top: 0;
 }
+
 .index-info-div{
     padding: .5rem .75rem;
     background: #fff;

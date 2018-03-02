@@ -3,6 +3,7 @@
  */
 
 $(function(){
+
     //创建MeScroll对象,内部已默认开启下拉刷新,自动执行up.callback,刷新列表数据;
     var mescroll = new MeScroll("body", { //id固定"body"
         //上拉加载的配置项
@@ -11,7 +12,7 @@ $(function(){
             noMoreSize: 4, //如果列表已无数据,可设置列表的总数量要大于半页才显示无更多数据;避免列表数据过少(比如只有一条数据),显示无更多数据会不好看; 默认5
             empty: {
                 icon: "../../img/nodata.png", //图标,默认null
-                tip: "亲，还没有演唱完的歌曲哦~" //提示
+                tip: "亲，您还没有点歌哦~" //提示
             },
             clearEmptyId: "songs-result", //相当于同时设置了clearId和empty.warpId; 简化写法;默认null
             toTop:{ //配置回到顶部按钮
@@ -56,9 +57,10 @@ $(function(){
         var listDom=document.getElementById("songs-result");
         for (var i = 0; i < curPageData.length; i++) {
             var list=curPageData[i];
+            var index = i;
             var str='<div class="aui-media-list-item-inner">';
             str+='<div class="aui-list-item-label-icon">';
-            str+='<span class="song-list-num">'+ i +'</span>';
+            str+='<span class="song-list-num">'+ (index+1) +'</span>';
             str+='</div>';
             str+='<div class="aui-list-item-inner">';
             str+='<div class="aui-list-item-text">';
@@ -67,7 +69,7 @@ $(function(){
             str+='<div class="perSingerName">'+ list.singerName +'</div>';
             str+='</div>';
             str+='<div class="aui-list-item-right">';
-            str+='<a class="aui-pull-right song-btn" href="#">';
+            str+='<a class="aui-pull-right song-btn" onclick="deleteThis(this);">';
             str+='<span class="iconfont icon-shanchu"></span>';
             str+='</a>';
             str+='<a class="aui-pull-right song-btn" href="#">';
@@ -112,7 +114,10 @@ $(function(){
     }
 
 });
-
+// 点击删除按钮，删除该歌曲方法
+function deleteThis(rel) {
+  $(rel).parent().parent().parent().parent().parent().remove();
+}
 /** 渲染模板 */
 function renderTpl(songList) {
     // 模板

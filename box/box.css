@@ -1,5 +1,7 @@
 @charset "UTF-8";
-
+.box_mescroll{
+    top: 0;
+}
 .box-list-item-header{
     padding: .5rem 0.75rem;
     background: #fff;
@@ -51,7 +53,7 @@
     background: #f3d57d;
     width: 100%;
     border-radius: 5px;
-    padding: .2rem .5rem;
+    padding: .2rem .25rem;
 }
 .box-block .iconfont{
     font-size: .7rem;

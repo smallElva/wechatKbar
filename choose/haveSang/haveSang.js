@@ -3,6 +3,7 @@
  */
 
 $(function(){
+
     //创建MeScroll对象,内部已默认开启下拉刷新,自动执行up.callback,刷新列表数据;
     var mescroll = new MeScroll("body", { //id固定"body"
         //上拉加载的配置项
@@ -56,9 +57,10 @@ $(function(){
         var listDom=document.getElementById("singer-song-result");
         for (var i = 0; i < curPageData.length; i++) {
             var list=curPageData[i];
+            var index = i;
             var str='<div class="aui-media-list-item-inner">';
             str+='<div class="aui-list-item-label-icon">';
-            str+='<span class="song-list-num">'+ i +'</span>';
+            str+='<span class="song-list-num">'+ (index+1) +'</span>';
             str+='</div>';
             str+='<div class="aui-list-item-inner">';
             str+='<div class="aui-list-item-text">';
@@ -67,9 +69,6 @@ $(function(){
             str+='<div class="perSingerName">'+ list.singerName +'</div>';
             str+='</div>';
             str+='<div class="aui-list-item-right">';
-            str+='<a class="aui-pull-right song-btn" href="#">';
-            str+='<span class="iconfont icon-shanchu"></span>';
-            str+='</a>';
             str+='<a class="aui-pull-right song-btn" href="'+ list.myRecordHref +'">';
             str+='<span class="iconfont icon-jianting2 icon-toTop"></span>';
             str+='</a>';
@@ -128,9 +127,6 @@ function renderTpl(songList) {
                         '<div class="perSingerName"> {{singerName}}</div>\n'+
                     '</div>\n'+
                     '<div class="aui-list-item-right">\n'+
-                        '<a class="aui-pull-right song-btn" href="#">\n' +
-                            '<span class="iconfont icon-shanchu"></span>\n' +
-                        '</a>\n' +
                         '<a class="aui-pull-right song-btn" href="{{myRecordHref}}">\n'+
                             '<span class="iconfont icon-jianting2 icon-toTop"></span>\n'+
                         '</a>\n'+

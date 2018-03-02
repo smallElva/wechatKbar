@@ -303,14 +303,17 @@
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
 }
-.song-list li:nth-child(1) .song-list-num,.song-list li:nth-child(2) .song-list-num,.song-list li:nth-child(3) .song-list-num{
+.song-list .song-list-num{
     color: #ff2600;
 }
 .singerPage-search-title .aui-searchbar .aui-iconfont {
-    line-height: 2rem;
+    line-height: 2.1rem;
     color: #ff2600 !important;
     font-size: .85rem;
     font-weight: bold;
+}
+.singerPage_mescroll{
+    top: 0;
 }
 /*语言点歌*/
 .language-img{
@@ -332,6 +335,7 @@
     padding-right: .75rem;
     color: #efa925;
 }
+
 /*乐谱点歌*/
 .aui-list .aui-list-item i.musicScore-icon{
     font-size: 1.2rem;
@@ -361,13 +365,3 @@
     color: #ff2600;
 }
 
-/*mescroll 滚动区域*/
-.mescroll{
-    position: fixed;
-    top: 3rem;
-    bottom: 0;
-    height: auto;
-}
-.aui-list .aui-list-item{
-    position: relative;
-}

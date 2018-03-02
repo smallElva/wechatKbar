@@ -1,8 +1,34 @@
 /**
- * Created by enter on 2018/1/20.
+ * Created by enter on 2018/2/26.
  */
-$(function(){
 
+$(function(){
+    /*初始化菜单*/
+    var curWord = null;
+    var pdType=0;//全部歌曲0; 搜索1;
+    /*移动端按下软键盘搜索按钮触发搜索事件*/
+    $("#search-input").on('keypress',function(e) {
+        var keycode = e.keyCode;
+        if(keycode=='13') {
+            e.preventDefault();
+            searchSongs();
+        }
+    });
+    /*点击搜索符号触发搜索事件*/
+    $(".aui-searchbar .aui-icon-search").click(function(){
+        searchSongs();
+    });
+    /*搜索歌曲方法*/
+    function searchSongs() {
+        var keyword= $("#search-input").val();
+        if(keyword) {
+            //更改列表条件
+            pdType = 1;
+            //重置列表数据
+            curWord=keyword; //更新关键词
+            mescroll.resetUpScroll();
+        }
+    }
     //创建MeScroll对象,内部已默认开启下拉刷新,自动执行up.callback,重置列表数据;
     var mescroll = new MeScroll("mescroll", {
         up: {
@@ -13,12 +39,12 @@ $(function(){
             },
             callback: getListData, //上拉回调,此处可简写; 相当于 callback: function (page) { getListData(page); }
             isBounce: false, //此处禁止ios回弹,解析(务必认真阅读,特别是最后一点): http://www.mescroll.com/qa.html#q10
-            clearEmptyId: "newsContent", //1.下拉刷新时会自动先清空此列表,再加入数据; 2.无任何数据时会在此列表自动提示空
+            clearEmptyId: "singer-song-result", //1.下拉刷新时会自动先清空此列表,再加入数据; 2.无任何数据时会在此列表自动提示空
             empty: {
                 //列表第一页无任何数据时,显示的空提示布局; 需配置warpId或clearEmptyId才生效;
                 //warpId:null, //父布局的id; 如果此项有值,将不使用clearEmptyId的值;
-                icon: "../img/nodata.png", //图标,默认null
-                tip: "亲,暂无消息~" //提示
+                icon: "../../img/nodata.png", //图标,默认null
+                tip: "亲,暂无相关数据~" //提示
             },
             toTop:{ //配置回到顶部按钮
                 html : "<i class='iconfont icon-zhiding'></i>", //标签内容,默认null; 如果同时设置了src,则优先取src
@@ -30,10 +56,10 @@ $(function(){
     /*联网加载列表数据  page = {num:1, size:10}; num:当前页 从1开始, size:每页数据条数 */
     function getListData(page){
         //联网加载数据
-        getListDataFromNet(page.num, page.size, function(curPageData){
+        getListDataFromNet(pdType,page.num, page.size, function(curPageData){
             //联网成功的回调,隐藏下拉刷新和上拉加载的状态;
             //mescroll会根据传的参数,自动判断列表如果无任何数据,则提示空;列表无下一页数据,则提示无更多数据;
-            console.log("page.num="+page.num+", page.size="+page.size+", curPageData.length="+curPageData.length);
+            console.log("pdType="+pdType+", page.num="+page.num+", page.size="+page.size+", curPageData.length="+curPageData.length);
 
             //方法一(推荐): 后台接口有返回列表的总页数 totalPage
             //mescroll.endByPage(curPageData.length, totalPage); //必传参数(当前页的数据个数, 总页数)
@@ -58,21 +84,27 @@ $(function(){
 
     /*设置列表数据*/
     function setListData(curPageData){
-        var listDom=document.getElementById("newsContent");
+        var listDom=document.getElementById("singer-song-result");
         var result = '';
         for (var i = 0; i < curPageData.length; i++) {
             var pd=curPageData[i];
-            result +='<div class="aui-list-item aui-list-item-arrow">'+
+            var index=i;
+            result +='<div class="aui-list-item aui-list-item-middle">'+
                 '<div class="aui-media-list-item-inner">'+
-                '<i class="iconfont icon-iconfontzhizuobiaozhun023147 aui-text-warning"></i>'+
-                '<div class="aui-list-item-inner">'+
-                '<a href="'+ pd.newsHrefPage+'">'+
-                '<div class="aui-list-item-text">'+
-                '<div class="aui-list-item-title index-info-title">'+pd.newsTitle +'</div>'+
-                '<div class="aui-list-item-right">'+pd.newsTime+'</div>'+
+                '<div class="aui-list-item-label-icon">'+
+                '<span class="song-list-num">'+ (index+1) + '</span>'+
                 '</div>'+
-                '</a>'+
-                '<div class="aui-list-item-text aui-ellipsis-2 index-info-text">'+pd.newsText+'</div>'+
+                '<div class="aui-list-item-inner">'+
+                '<div class="aui-list-item-text">'+
+                '<div class="aui-list-item-title list-song-info">'+
+                '<div class="songName aui-ellipsis-1">'+ pd.songName +'</div>'+
+                '<div class="perSingerName">'+ pd.singerName +'</div>'+
+                '</div>'+
+                '<div class="aui-list-item-right">'+
+                '<i class="iconfont icon-icon-test musicScore-icon"></i>'+
+                '<button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>'+
+                '</div>'+
+                '</div>'+
                 '</div>'+
                 '</div>'+
                 '</div>';
@@ -87,20 +119,32 @@ $(function(){
      请忽略getListDataFromNet的逻辑,这里仅仅是在本地模拟分页数据,本地演示用
      实际项目以您服务器接口返回的数据为准,无需本地处理分页.
      * */
-    function getListDataFromNet(pageNum,pageSize,successCallback,errorCallback) {
+    function getListDataFromNet(pdType,pageNum,pageSize,successCallback,errorCallback) {
         //延时一秒,模拟联网
         setTimeout(function () {
             $.ajax({
                 type: 'GET',
-                url: 'news.json',
+                url: '../language/language.json',
 //		                url: '../res/pdlist1.json?num='+pageNum+"&size="+pageSize,
                 dataType: 'json',
                 success: function(data){
                     var listData=[];
-                    //全部商品 (模拟分页数据)
-                    for (var i = (pageNum-1)*pageSize; i < pageNum*pageSize; i++) {
-                        if(i==data.length) break;
-                        listData.push(data[i]);
+                    //pdType 全部歌曲0; 搜索1;
+                    if(pdType==0){
+                        //全部商品 (模拟分页数据)
+                        for (var i = (pageNum-1)*pageSize; i < pageNum*pageSize; i++) {
+                            if(i==data.length) break;
+                            listData.push(data[i]);
+                        }
+
+                    }else if(pdType==1){
+                        //奶粉
+                        for (var i = 0; i < data.length; i++) {
+                            if (data[i].songName.indexOf(curWord)!=-1) {
+                                listData.push(data[i]);
+                            }
+                        }
+
                     }
                     successCallback(listData);
                 },
@@ -111,27 +155,30 @@ $(function(){
 
 });
 
-
 /** 渲染模板 */
-function renderTpl(newsList) {
+function renderTpl(curPageData) {
     // 模板
-    var tpl = '{{#list}}<li class="aui-list-item aui-list-item-arrow">\n'+
+    var tpl = '{{#curPageData}}<li class="aui-list-item aui-list-item-middle">\n' +
         '<div class="aui-media-list-item-inner">\n'+
-        '<i class="iconfont icon-iconfontzhizuobiaozhun023147 aui-text-warning"></i>\n'+
+        '<div class="aui-list-item-label-icon">\n'+
+        '<span class="song-list-num">{{data.index}}</span>\n'+
+        '</div>\n'+
         '<div class="aui-list-item-inner">\n'+
-        '<a href="{{newsHrefPage}}">\n'+
         '<div class="aui-list-item-text">\n'+
-        '<div class="aui-list-item-title index-info-title">{{newsTitle}}</div>\n'+
-        '<div class="aui-list-item-right">{{newsTime}}</div>\n'+
+        '<div class="aui-list-item-title list-song-info">\n'+
+        '<div class="songName aui-ellipsis-1">{{songName}}</div>\n'+
+        '<div class="perSingerName"> {{singerName}}</div>\n'+
         '</div>\n'+
-        '</a>\n'+
-        '<div class="aui-list-item-text aui-ellipsis-2 index-info-text">{{newsText}} </div>\n'+
+        '<div class="aui-list-item-right">\n'+
+        '<i class="iconfont icon-remen musicScore-icon"></i>\n'+
+        '<button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>\n'+
         '</div>\n'+
-
         '</div>\n'+
-        '</li>{{/list}}';
+        '</div>\n'+
+        '</div>\n' +
+        '</li>{{/curPageData}}';
     // 调用mustache生成dom
-    var dom = Mustache.render(tpl, newsList);
+    var dom = Mustache.render(tpl, curPageData);
     // 插入dom
-    $('#newsContent').html(dom);
+    $('#singer-song-result').html(dom);
 }
