@@ -1,0 +1,145 @@
+{
+  "status": 200,
+  "msg": "success",
+  "orderList":[
+    {
+      "id": 1,
+      "storeName":"坪洲四季城",
+      "list":[
+        {
+          "orderNumId": "A84881234561",
+          "orderEquip": "设备1-0",
+          "orderUserImg": "../img/tx.jpg",
+          "orderUserName": "小树林",
+          "orderType":"15分钟/20元",
+          "orderMoney": "38.00",
+          "orderOrderedTime": "2018-01-02"
+        },{
+          "orderNumId": "A84881234562",
+          "orderEquip": "设备1-2",
+          "orderUserImg": "../img/tx.jpg",
+          "orderUserName": "完毕后才能",
+          "orderType":"20分钟/30元",
+          "orderMoney": "28.00",
+          "orderOrderedTime": "2018-01-08"
+        },{
+          "orderNumId": "A84881234563",
+          "orderEquip": "设备1-3",
+          "orderUserImg": "../img/tx.jpg",
+          "orderUserName": "文化IC市场",
+          "orderMoney": "58.00",
+          "orderType":"20分钟/30元",
+          "orderOrderedTime": "2018-01-14"
+        },{
+          "orderNumId": "A84881234564",
+          "orderEquip": "设备1-4",
+          "orderUserImg": "../img/tx.jpg",
+          "orderUserName": "白衬衫看长沙",
+          "orderMoney": "98.00",
+          "orderType":"20分钟/30元",
+          "orderOrderedTime": "2018-01-16"
+        },{
+          "orderNumId": "A84881234565",
+          "orderEquip": "设备1-5",
+          "orderUserImg": "../img/tx.jpg",
+          "orderUserName": "小公主",
+          "orderMoney": "38.00",
+          "orderType":"20分钟/30元",
+          "orderOrderedTime": "2018-01-18"
+        }
+      ]
+    },{
+      "id": 2,
+      "storeName":"宝安中心天虹",
+      "list": [
+        {
+          "orderNumId": "A8488123456a",
+          "orderEquip": "设备1-0",
+          "orderUserImg": "../img/tx.jpg",
+          "orderUserName": "三巡酒过",
+          "orderMoney": "38.00",
+          "orderType":"20分钟/30元",
+          "orderOrderedTime": "2018-01-02"
+        },{
+          "orderNumId": "A8488123456b",
+          "orderEquip": "设备1-2",
+          "orderUserImg": "../img/tx.jpg",
+          "orderUserName": "一杯敬朝阳",
+          "orderMoney": "28.00",
+          "orderType":"20分钟/30元",
+          "orderOrderedTime": "2018-01-08"
+        },{
+          "orderNumId": "A8488123456c",
+          "orderEquip": "设备1-3",
+          "orderUserImg": "../img/tx.jpg",
+          "orderUserName": "文化IC市场",
+          "orderMoney": "58.00",
+          "orderType":"20分钟/30元",
+          "orderOrderedTime": "2018-01-14"
+        },{
+          "orderNumId": "A8488123456d",
+          "orderEquip": "设备1-4",
+          "orderUserImg": "../img/tx.jpg",
+          "orderUserName": "以北京月光",
+          "orderMoney": "98.00",
+          "orderType":"20分钟/30元",
+          "orderOrderedTime": "2018-01-16"
+        },{
+          "orderNumId": "A8488123456e",
+          "orderEquip": "设备1-5",
+          "orderUserImg": "../img/tx.jpg",
+          "orderUserName": "远方",
+          "orderMoney": "38.00",
+          "orderType":"20分钟/30元",
+          "orderOrderedTime": "2018-01-18"
+        }
+      ]
+    },{
+      "id": 3,
+      "storeName":"民治天虹",
+      "list":[
+        {
+          "orderNumId": "A8488123456a",
+          "orderEquip": "设备1-0",
+          "orderUserImg": "../img/tx.jpg",
+          "orderUserName": "山高水长",
+          "orderMoney": "38.00",
+          "orderType":"20分钟/30元",
+          "orderOrderedTime": "2018-01-02"
+        },{
+          "orderNumId": "A8488123456b",
+          "orderEquip": "设备1-2",
+          "orderUserImg": "../img/tx.jpg",
+          "orderUserName": "人生苦短",
+          "orderMoney": "28.00",
+          "orderType":"20分钟/30元",
+          "orderOrderedTime": "2018-01-08"
+        },{
+          "orderNumId": "A8488123456c",
+          "orderEquip": "设备1-3",
+          "orderUserImg": "../img/tx.jpg",
+          "orderUserName": "自由死亡",
+          "orderMoney": "58.00",
+          "orderType":"20分钟/30元",
+          "orderOrderedTime": "2018-01-14"
+        },{
+          "orderNumId": "A8488123456d",
+          "orderEquip": "设备1-4",
+          "orderUserImg": "../img/tx.jpg",
+          "orderUserName": "清醒的人",
+          "orderMoney": "98.00",
+          "orderType":"20分钟/30元",
+          "orderOrderedTime": "2018-01-16"
+        },{
+          "orderNumId": "A8488123456e",
+          "orderEquip": "设备1-5",
+          "orderUserImg": "../img/tx.jpg",
+          "orderUserName": "荒唐",
+          "orderMoney": "38.00",
+          "orderType":"20分钟/30元",
+          "orderOrderedTime": "2018-01-18"
+        }
+      ]
+    }
+  ]
+}
