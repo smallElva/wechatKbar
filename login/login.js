@@ -196,18 +196,6 @@ function showDefault(type){
                 duration:1000
             });
             break;
-
-        case "loading":
-            toast.loading({
-                title:"加载中",
-                duration:2000
-            },function(ret){
-                console.log(ret);
-                setTimeout(function(){
-                    toast.hide();
-                }, 3000)
-            });
-            break;
         default:
             // statements_def
             break;

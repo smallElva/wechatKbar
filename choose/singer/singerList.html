@@ -6,114 +6,41 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>歌手列表</title>
     <link rel="stylesheet" type="text/css" href="../../css/aui.css"/>
-    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_igll0zeyd8jpds4i.css"/>
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_yx7xe6udij7zaor.css"/>
     <link rel="stylesheet" type="text/css" href="../../css/mescroll.min.css"/>
     <link rel="stylesheet" type="text/css" href="../../css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../choose.css"/>
 </head>
 <body class="white-body">
-<div class="aui-title singerPage-search-title">
-    <div class="aui-searchbar" id="search">
-        <form class="aui-searchbar-input aui-border-radius search-div" id="searchForm" action="" onsubmit="return false;">
-            <i class="aui-iconfont aui-icon-search"></i>
-            <input type="search" placeholder="搜索歌手" id="search-input">
-            <div class="aui-searchbar-clear-btn">
-                <i class="aui-iconfont aui-icon-close"></i>
+<section class="content-choose">
+    <div class="aui-title page-search-title">
+        <div class="prev-div-page" onclick="window.history.go(-1);">
+            <i class="iconfont icon-zhixiangzuo"></i>
+        </div>
+        <div class="aui-searchbar" id="search">
+            <div class="aui-searchbar-input aui-border-radius search-div">
+                <i class="iconfont icon-sousuo"></i>
+                <input type="search" placeholder="搜索歌星" id="search-input">
             </div>
-        </form>
-        <div class="aui-searchbar-btn" tapmode>取消</div>
+            <a class="songNum-div" href="../haveSongs/haveSongs.html">
+                <div class="songNum-div-text">已点</div>
+            </a>
+        </div>
     </div>
-    <a class="songNum-div" href="../haveSongs/haveSongs.html">
-        <div class="songNum">10</div>
-        <div class="songNum-div-text">已点</div>
-    </a>
-</div>
-<section class="content2">
-    <div id="mescroll" class="mescroll">
-        <ul class="aui-list aui-media-list" id="singer-result">
-            <!--<li class="aui-list-item aui-list-item-middle">-->
+    <section class="content2">
+        <div id="mescroll" class="mescroll">
+            <ul class="aui-list aui-media-list" id="singer-result">
+                <!--<li class="aui-list-item aui-list-item-middle">-->
                 <!--<a class="aui-media-list-item-inner" href="singerPage.html">-->
-                    <!--<div class="aui-list-item-media singerImg">-->
-                        <!--<img src="../../img/tx.jpg" class="aui-list-img-sm">-->
-                    <!--</div>-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="aui-list-item-title singerName"> 周杰伦</div>-->
-                    <!--</div>-->
+                <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
+                <!--<div class="aui-list-item-title singerName"> 周杰伦</div>-->
+                <!--</div>-->
                 <!--</a>-->
-            <!--</li>-->
-            <!--<li class="aui-list-item aui-list-item-middle">-->
-                <!--<a class="aui-media-list-item-inner" href="singerPage.html">-->
-                    <!--<div class="aui-list-item-media singerImg">-->
-                        <!--<img src="../../img/tx.jpg" class="aui-list-img-sm">-->
-                    <!--</div>-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="aui-list-item-title singerName"> 周杰伦</div>-->
-                    <!--</div>-->
-                <!--</a>-->
-            <!--</li>-->
-            <!--<li class="aui-list-item aui-list-item-middle">-->
-                <!--<a class="aui-media-list-item-inner" href="singerPage.html">-->
-                    <!--<div class="aui-list-item-media singerImg">-->
-                        <!--<img src="../../img/tx.jpg" class="aui-list-img-sm">-->
-                    <!--</div>-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="aui-list-item-title singerName"> 周杰伦</div>-->
-                    <!--</div>-->
-                <!--</a>-->
-            <!--</li>-->
-            <!--<li class="aui-list-item aui-list-item-middle">-->
-                <!--<a class="aui-media-list-item-inner" href="singerPage.html">-->
-                    <!--<div class="aui-list-item-media singerImg">-->
-                        <!--<img src="../../img/tx.jpg" class="aui-list-img-sm">-->
-                    <!--</div>-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="aui-list-item-title singerName"> 周杰伦</div>-->
-                    <!--</div>-->
-                <!--</a>-->
-            <!--</li>-->
-            <!--<li class="aui-list-item aui-list-item-middle">-->
-                <!--<a class="aui-media-list-item-inner" href="singerPage.html">-->
-                    <!--<div class="aui-list-item-media singerImg">-->
-                        <!--<img src="../../img/tx.jpg" class="aui-list-img-sm">-->
-                    <!--</div>-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="aui-list-item-title singerName"> 周杰伦</div>-->
-                    <!--</div>-->
-                <!--</a>-->
-            <!--</li>-->
-            <!--<li class="aui-list-item aui-list-item-middle">-->
-                <!--<a class="aui-media-list-item-inner" href="singerPage.html">-->
-                    <!--<div class="aui-list-item-media singerImg">-->
-                        <!--<img src="../../img/tx.jpg" class="aui-list-img-sm">-->
-                    <!--</div>-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="aui-list-item-title singerName"> 周杰伦</div>-->
-                    <!--</div>-->
-                <!--</a>-->
-            <!--</li>-->
-            <!--<li class="aui-list-item aui-list-item-middle">-->
-                <!--<a class="aui-media-list-item-inner" href="singerPage.html">-->
-                    <!--<div class="aui-list-item-media singerImg">-->
-                        <!--<img src="../../img/tx.jpg" class="aui-list-img-sm">-->
-                    <!--</div>-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="aui-list-item-title singerName"> 周杰伦</div>-->
-                    <!--</div>-->
-                <!--</a>-->
-            <!--</li>-->
-            <!--<li class="aui-list-item aui-list-item-middle">-->
-                <!--<a class="aui-media-list-item-inner" href="singerPage.html">-->
-                    <!--<div class="aui-list-item-media singerImg">-->
-                        <!--<img src="../../img/tx.jpg" class="aui-list-img-sm">-->
-                    <!--</div>-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="aui-list-item-title singerName"> 周杰伦</div>-->
-                    <!--</div>-->
-                <!--</a>-->
-            <!--</li>-->
-        </ul>
-    </div>
+                <!--</li>-->
+            </ul>
+        </div>
 
+    </section>
 </section>
 
 <script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>

@@ -6,78 +6,108 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>门店详情</title>
     <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_52ct8dc96ehcwhfr.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
     <link rel="stylesheet" type="text/css" href="store.css" />
 </head>
-<body>
-<section class="content2">
-    <div class="store-img-div">
-        <img class="store-img" src="../img/miniKTV.jpg">
-    </div>
-    <div class="aui-content aui-margin-b-15 store_page_content">
-        <ul class="aui-list aui-list-in">
-            <li class="aui-list-item aui-list-item-middle">
-                <div class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">
-                        <i class="aui-iconfont aui-icon-gear aui-text-danger"></i>
-                        门店名称
-                        <span class="store_name aui-pull-right" tapmode onclick="openDialog('store_name')">坪洲财富港店</span>
-                    </div>
+<body class="white-body">
+    <section id="store_page_app">
+        <div class="backColor fixed-header-top">
+            <div class="header-radius">
+                <div class="prev-div" onclick="window.history.go(-1);">
+                    <i class="iconfont icon-zhixiangzuo"></i>
                 </div>
-            </li>
-            <li class="aui-list-item">
-                <div class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">
-                        <i class="aui-iconfont aui-icon-mobile aui-text-info"></i>
-                        联系电话
-                        <span class="store_call aui-pull-right" tapmode onclick="openDialog('store_call')">13265489741</span>
-                    </div>
+                <a class="home-back" href="../index.html"><i class="iconfont icon-shouye"></i></a>
+            </div>
+        </div>
+        <section class="content-section">
+            <div class="store-img-div">
+                <img class="store-img" v-bind:src="storeImg">
+                <div class="choose-imgs">点击设置门店图片</div>
+            </div>
+            <div class="grey-back">
+                <div class="aui-content aui-margin-b-15 store_page_content">
+                    <ul class="aui-list aui-media-list">
+                        <li class="aui-list-item aui-list-item-middle">
+                            <div class="aui-media-list-item-inner">
+                                <div class="aui-list-item-media icon-div">
+                                    <i class="iconfont icon-mendian1"></i>
+                                </div>
+                                <div class="aui-list-item-inner aui-list-item-arrow">
+                                    <div class="aui-list-item-text">
+                                        <div class="aui-list-item-title aui-font-size-16 store-list-text">门店名称</div>
+                                        <div class="aui-list-item-right store_name" tapmode onclick="openDialog('store_name')">{{storeName}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="aui-list-item aui-list-item-middle">
+                            <div class="aui-media-list-item-inner">
+                                <div class="aui-list-item-media icon-div">
+                                    <i class="iconfont icon-shouji2"></i>
+                                </div>
+                                <div class="aui-list-item-inner aui-list-item-arrow">
+                                    <div class="aui-list-item-text">
+                                        <div class="aui-list-item-title aui-font-size-16 store-list-text">联系电话</div>
+                                        <div class="aui-list-item-right store_call" tapmode onclick="openDialog('store_call')">{{storeCall}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="aui-list-item aui-list-item-middle">
+                            <div class="aui-media-list-item-inner">
+                                <div class="aui-list-item-media icon-div">
+                                    <i class="iconfont icon-dingwei"></i>
+                                </div>
+                                <div class="aui-list-item-inner aui-list-item-arrow">
+                                    <div class="aui-list-item-text">
+                                        <div class="aui-list-item-title aui-font-size-16 store-list-text">门店地址</div>
+                                        <div class="aui-list-item-right store_add" tapmode onclick="openDialog('store_add')">{{storeAdd}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-            </li>
-            <li class="aui-list-item">
-                <div class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">
-                        <i class="aui-iconfont aui-icon-location aui-text-primary"></i>
-                        门店地址
-                        <span class="store_add aui-pull-right" tapmode onclick="openDialog('store_add')">宝安互联网产业基地</span>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <div class="aui-content aui-margin-b-10 store_page_content">
-        <ul class="aui-list aui-list-in">
-            <li class="aui-list-item aui-list-item-middle">
-                <a class="store-page-a" href="../box/box.html">
-                    <div class="aui-list-item-inner aui-list-item-arrow">
-                        <div class="aui-list-item-title">
-                            <i class="aui-iconfont aui-icon-home aui-text-warning"></i>
-                            包厢状态
-                            <span class="store_state aui-pull-right">1</span>
+                <div class="aui-content aui-margin-b-15 store_page_content">
+                    <div class="aui-list aui-media-list">
+                        <div class="aui-list-item aui-list-item-middle">
+                            <a class="aui-media-list-item-inner" v-on:click="openBoxInfo(event,id)">
+                                <div class="aui-list-item-media icon-div">
+                                    <i class="iconfont icon-miniKTV"></i>
+                                </div>
+                                <div class="aui-list-item-inner aui-list-item-arrow">
+                                    <div class="aui-list-item-text">
+                                        <div class="aui-list-item-title aui-font-size-16 store-list-text">包厢状态</div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div class="aui-content store_page_content">
-        <ul class="aui-list aui-list-in">
-            <li class="aui-list-item aui-list-item-middle">
-                <div class="aui-list-item-inner">
-                    <div class="aui-list-item-title">
-                        <i class="aui-iconfont aui-icon-date aui-text-success"></i>
-                        营业时间
-                        <span class="store_time aui-pull-right">当天 08:00 - 次日 00:30</span>
+                </div>
+                <div class="aui-content store_page_content">
+                    <div class="aui-list aui-media-list">
+                        <div class="aui-list-item aui-list-item-middle">
+                            <div class="aui-media-list-item-inner">
+                                <div class="aui-list-item-media icon-div">
+                                    <i class="iconfont icon-shijian"></i>
+                                </div>
+                                <div class="aui-list-item-inner aui-list-item-arrow">
+                                    <div class="aui-list-item-text">
+                                        <div class="aui-list-item-title aui-font-size-16 store-list-text">营业时间</div>
+                                        <div class="aui-list-item-right store_time">08：00~23：00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </li>
-        </ul>
-    </div>
-</section>
-
+            </div>
+        </section>
+    </section>
 <script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
 <script type="text/javascript" src="../js/api.js" ></script>
-<script type="text/javascript" src="../js/mustache.js" ></script>
+<script type="text/javascript" src="../js/vue.min.js" ></script>
 <script type="text/javascript" src="../js/aui-dialog.js" ></script>
 <script type="text/javascript" src="storePage.js" ></script>
 

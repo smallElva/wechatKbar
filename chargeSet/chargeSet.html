@@ -4,136 +4,89 @@
     <meta charset="utf-8">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
-    <title>时段计价</title>
+    <title>套餐收费</title>
     <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_aelpphhcwr1qncdi.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
     <link rel="stylesheet" type="text/css" href="charge.css" />
 </head>
-<body>
-<section class="fixed-header-top">
-    <div class="select-block order-select">
-        <div id="showStore"><span class="charge-store-name">全部门店</span><i class="aui-iconfont aui-icon-down"></i></div>
-        <a class="chargeSet-a aui-btn" href="chargeSet_2.html">
-            <span class="charge-title-link">按首计价</span>
-        </a>
+<body class="white-body">
+<section id="charge-app">
+    <div class="backColor fixed-header-top">
+        <div class="header-radius">
+            <div class="prev-div" onclick="window.history.go(-1);">
+                <i class="iconfont icon-zhixiangzuo"></i>
+            </div>
+            <div id="showStore" class="order-select"><span class="charge-store-name">全部门店</span><i class="iconfont icon-xiangxia"></i></div>
+            <a class="home-back" href="../index.html"><i class="iconfont icon-shouye"></i></a>
+        </div>
     </div>
-</section>
-<!--门店筛选-->
-<div class="aui-popup aui-popup-top order-popup-top store-right" id="store-top">
-    <div class="aui-popup-arrow"></div>
-    <div class="aui-popup-content">
-        <ul class="aui-list">
-            <li class="aui-list-item">
-                <div class="aui-list-item-inner bill-store-name" data-store="0">
-                    坪洲四季城
-                </div>
-            </li>
-            <li class="aui-list-item">
-                <div class="aui-list-item-inner bill-store-name" data-store="1">
-                    宝安中心天虹
-                </div>
-            </li>
-            <li class="aui-list-item">
-                <div class="aui-list-item-inner bill-store-name" data-store="2">
-                    宝安大润发
-                </div>
-            </li>
-        </ul>
+
+    <!--门店筛选-->
+    <div class="aui-popup aui-popup-top order-popup-top store-right" id="store-top">
+        <div class="aui-popup-arrow"></div>
+        <div class="aui-popup-content">
+            <ul class="aui-list">
+                <li class="aui-list-item" v-for="item in stores" v-on:click="showStore">
+                    <div class="aui-list-item-inner bill-store-name" v-bind:aui="item.id">
+                        {{item.storeName}}
+                    </div>
+                </li>
+                <!--<li class="aui-list-item">-->
+                <!--<div class="aui-list-item-inner bill-store-name" data-store="1">-->
+                <!--宝安中心天虹-->
+                <!--</div>-->
+                <!--</li>-->
+                <!--<li class="aui-list-item">-->
+                <!--<div class="aui-list-item-inner bill-store-name" data-store="2">-->
+                <!--宝安大润发-->
+                <!--</div>-->
+                <!--</li>-->
+            </ul>
+        </div>
     </div>
-</div>
-<section class="content">
-    <ul class="aui-list aui-media-list chargeSet-list" id="chargeContent">
-        <!--{{#list}}-->
-        <!--<li>-->
-            <!--<div class="aui-list-header charge-list-header">-->
-                <!--<span class="aui-pull-left charge-type">畅享{{chargeType}}套餐</span>-->
-                <!--<span class="aui-pull-right order-equip">{{chargeEquip}}</span>-->
-            <!--</div>-->
-            <!--<div class="aui-list-item aui-list-item-middle aui-clearfix">-->
-                <!--<div class="aui-list-item-inner charge-list-item">-->
-                    <!--<div class="charge-list-item-text">时长： <span class="charge-type-time">{{chargeTypeTime}}</span></div>-->
-                    <!--<div class="charge-list-item-text charge-list-item-orig-money">原价: <span class="charge-orig-money">{{chargeOrigMoney}}</span></div>-->
-                    <!--<div class="charge-list-item-text charge-list-item-money">优惠价: <span class="charge-take-money">{{chargeTakeMoney}}</span></div>-->
-                    <!--<div class="charge-list-item-text">用于：<span class="charge-type-series">{{chargeTypeSeries}}</span></div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</li>-->
-        <!--{{/list}}-->
-    </ul>
-
-
-
-        <!--<div class="aui-content aui-margin-b-15">-->
-            <!--<div class="aui-list aui-media-list">-->
-                <!--<div class="aui-list-header charge-list-header">-->
-                    <!--<span class="aui-pull-left charge-type">畅享10分钟套餐</span>-->
-                    <!--<span class="aui-pull-right order-equip">人人唱1-2</span>-->
-                <!--</div>-->
-                <!--<div class="aui-list-item aui-list-item-middle aui-clearfix">-->
-                    <!--<div class="aui-list-item-inner charge-list-item">-->
-                        <!--<div class="charge-list-item-text">时长： <span class="charge-type-time">10</span></div>-->
-                        <!--<div class="charge-list-item-text charge-list-item-orig-money">原价: <span class="charge-orig-money">12.00</span></div>-->
-                        <!--<div class="charge-list-item-text charge-list-item-money">优惠价: <span class="charge-take-money">10.00</span></div>-->
-                        <!--<div class="charge-list-item-text">用于：<span class="charge-type-series">普通套餐</span></div>-->
+    <section class="content-section">
+        <div class="aui-content-padded">
+            <div class="aui-grid">
+                <ul class="aui-row-padded chargeSet-list" id="chargeContent">
+                    <li class="aui-col-xs-6" v-for="chargeItem in charges">
+                        <div class="chargeSet-block">
+                            <div class="equip-num">设备号：<span>{{chargeItem.chargeEquipNum}}</span></div>
+                            <div class="equip-num">套餐类型：<span>{{chargeItem.chargeType}}</span></div>
+                            <div class="equip-num">价格（元）：<span>{{chargeItem.chargeMoney}}</span></div>
+                        </div>
+                    </li>
+                    <!--<li class="aui-col-xs-6">-->
+                    <!--<div class="chargeSet-block">-->
+                    <!--<div class="equip-num">设备号：<span>123456789</span></div>-->
+                    <!--<div class="equip-num">套餐类型：<span>单首</span></div>-->
+                    <!--<div class="equip-num">价格（元）：<span>50</span></div>-->
                     <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="aui-content aui-margin-b-15">-->
-            <!--<div class="aui-list aui-media-list">-->
-                <!--<div class="aui-list-header charge-list-header">-->
-                    <!--<span class="aui-pull-left charge-type">畅享20分钟套餐</span>-->
-                    <!--<span class="aui-pull-right order-equip">人人唱1-6</span>-->
-                <!--</div>-->
-                <!--<div class="aui-list-item aui-list-item-middle aui-clearfix">-->
-                    <!--<div class="aui-list-item-inner charge-list-item">-->
-                        <!--<div class="charge-list-item-text">时长： <span class="charge-type-time">20</span></div>-->
-                        <!--<div class="charge-list-item-text charge-list-item-orig-money">原价: <span class="charge-orig-money">40.00</span></div>-->
-                        <!--<div class="charge-list-item-text charge-list-item-money">优惠价: <span class="charge-take-money">38.00</span></div>-->
-                        <!--<div class="charge-list-item-text">用于：<span class="charge-type-series">普通套餐</span></div>-->
+                    <!--</li>-->
+                    <!--<li class="aui-col-xs-6">-->
+                    <!--<div class="chargeSet-block">-->
+                    <!--<div class="equip-num">设备号：<span>123456789</span></div>-->
+                    <!--<div class="equip-num">套餐类型：<span>单首</span></div>-->
+                    <!--<div class="equip-num">价格（元）：<span>50</span></div>-->
                     <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="aui-content aui-margin-b-15">-->
-            <!--<div class="aui-list aui-media-list">-->
-                <!--<div class="aui-list-header charge-list-header">-->
-                    <!--<span class="aui-pull-left charge-type">畅享40分钟套餐</span>-->
-                    <!--<span class="aui-pull-right order-equip">人人唱1-1</span>-->
-                <!--</div>-->
-                <!--<div class="aui-list-item aui-list-item-middle aui-clearfix">-->
-                    <!--<div class="aui-list-item-inner charge-list-item">-->
-                        <!--<div class="charge-list-item-text">时长： <span class="charge-type-time">40</span></div>-->
-                        <!--<div class="charge-list-item-text charge-list-item-orig-money">原价: <span class="charge-orig-money">50.00</span></div>-->
-                        <!--<div class="charge-list-item-text charge-list-item-money">优惠价: <span class="charge-take-money">48.00</span></div>-->
-                        <!--<div class="charge-list-item-text">用于：<span class="charge-type-series">普通套餐</span></div>-->
+                    <!--</li>-->
+                    <!--<li class="aui-col-xs-6">-->
+                    <!--<div class="chargeSet-block">-->
+                    <!--<div class="equip-num">设备号：<span>123456789</span></div>-->
+                    <!--<div class="equip-num">套餐类型：<span>单首</span></div>-->
+                    <!--<div class="equip-num">价格（元）：<span>50</span></div>-->
                     <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="aui-content aui-margin-b-15">-->
-            <!--<div class="aui-list aui-media-list">-->
-                <!--<div class="aui-list-header charge-list-header">-->
-                    <!--<span class="aui-pull-left charge-type">畅享60分钟套餐</span>-->
-                    <!--<span class="aui-pull-right order-equip">人人唱1-8</span>-->
-                <!--</div>-->
-                <!--<div class="aui-list-item aui-list-item-middle aui-clearfix">-->
-                    <!--<div class="aui-list-item-inner charge-list-item">-->
-                        <!--<div class="charge-list-item-text">时长： <span class="charge-type-time">60</span></div>-->
-                        <!--<div class="charge-list-item-text charge-list-item-orig-money">原价: <span class="charge-orig-money">60.00</span></div>-->
-                        <!--<div class="charge-list-item-text charge-list-item-money">优惠价: <span class="charge-take-money">58.00</span></div>-->
-                        <!--<div class="charge-list-item-text">用于：<span class="charge-type-series">普通套餐</span></div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-
+                    <!--</li>-->
+                </ul>
+            </div>
+        </div>
+    </section>
 </section>
 
 <script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
 <script type="text/javascript" src="../js/api.js" ></script>
-<script type="text/javascript" src="../js/mustache.js" ></script>
-<script type="text/javascript" src="chargeSet.js" ></script>
+<script type="text/javascript" src="../js/vue.min.js" ></script>
+<script type="text/javascript" src="charge-vue.js" ></script>
 
 </body>
 </html>

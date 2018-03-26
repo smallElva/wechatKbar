@@ -14,7 +14,7 @@ $(function(){
         }
     });
     /*点击搜索符号触发搜索事件*/
-    $(".aui-searchbar .aui-icon-search").click(function(){
+    $(".aui-searchbar .icon-sousuo").click(function(){
         searchSongs();
     });
     /*搜索歌曲方法*/
@@ -89,9 +89,6 @@ $(function(){
             var pd=curPageData[i];
             result +='<div class="aui-list-item aui-list-item-middle">'+
                 '<a class="aui-media-list-item-inner" href= '+ pd.singerHref +'>'+
-                '<div class="aui-list-item-media singerImg">'+
-                '<img class="aui-list-img-sm" src='+ pd.singerImg +' >'+
-                '</div>'+
                 '<div class="aui-list-item-inner aui-list-item-arrow">'+
                 '<div class="aui-list-item-title singerName">'+ pd.singerName +'</div>'+
                 '</div>'+
@@ -142,31 +139,3 @@ $(function(){
     }
 
 });
-
-/** 渲染模板 */
-function renderTpl(curPageData) {
-    // 模板
-    var tpl = '{{#curPageData}}<li class="aui-list-item aui-list-item-middle">\n' +
-        '<div class="aui-media-list-item-inner">\n'+
-        '<div class="aui-list-item-label-icon">\n'+
-        '<span class="song-list-num">{{data.index}}</span>\n'+
-        '</div>\n'+
-        '<div class="aui-list-item-inner">\n'+
-        '<div class="aui-list-item-text">\n'+
-        '<div class="aui-list-item-title list-song-info">\n'+
-        '<div class="songName aui-ellipsis-1">{{songName}}</div>\n'+
-        '<div class="perSingerName"> {{singerName}}</div>\n'+
-        '</div>\n'+
-        '<div class="aui-list-item-right">\n'+
-        '<i class="iconfont icon-remen musicScore-icon"></i>\n'+
-        '<button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>\n'+
-        '</div>\n'+
-        '</div>\n'+
-        '</div>\n'+
-        '</div>\n' +
-        '</li>{{/curPageData}}';
-    // 调用mustache生成dom
-    var dom = Mustache.render(tpl, curPageData);
-    // 插入dom
-    $('#singer-song-result').html(dom);
-}

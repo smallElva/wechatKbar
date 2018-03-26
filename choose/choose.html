@@ -4,131 +4,108 @@
     <meta charset="utf-8">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
-    <title>人人唱</title>
+    <title>K伴</title>
     <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
-    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css"/>
-    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_6kqo22utmarftj4i.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_yx7xe6udij7zaor.css"/>
     <link rel="stylesheet" type="text/css" href="../css/common.css"/>
     <link rel="stylesheet" type="text/css" href="choose.css"/>
 </head>
-<body>
-<section class="content2">
-    <div class="aui-title singerPage-search-title">
+<body class="white-body">
+<section class="content-choose">
+    <div class="aui-title index-search-title">
         <div class="aui-searchbar" id="search">
-            <i class="iconfont icon-saoma"></i>
             <div class="aui-searchbar-input aui-border-radius search-div">
-                <i class="aui-iconfont aui-icon-search"></i>
-                <input type="search" placeholder="搜索歌曲" id="search-input">
+                <i class="iconfont icon-sousuo"></i>
+                <input type="search" placeholder="搜索歌曲/歌星" id="search-input">
                 <div class="aui-searchbar-clear-btn">
                     <i class="aui-iconfont aui-icon-close"></i>
                 </div>
             </div>
-            <div class="aui-searchbar-btn" tapmode>取消</div>
+            <i class="iconfont icon-saomiao"></i>
         </div>
     </div>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="../img/kp650-slider1-xs.jpg">
-            </div>
-            <div class="swiper-slide">
-                <img src="../img/kp650-slider2-xs.jpg">
-            </div>
-            <div class="swiper-slide">
-                <img src="../img/kp650-slider3-xs.jpg">
-            </div>
+    <div class="slide-content">
+        <div class="slide">
+            <img src="../img/choose-index/index-slider1.png">
+        </div>
+        <div class="slide">
+            <img src="../img/choose-index/index-slider1.png">
+        </div>
+        <div class="slide">
+            <img src="../img/choose-index/index-slider1.png">
         </div>
     </div>
     <div class="packageBuy">
-        <i class="iconfont icon-huangguan"></i>
-        <span class="packageBuy-text">欢迎来到人人唱</span>
-        <a class="packageBuy-a" href="../packages/packages.html">套餐购买</a>
+        <img class="index-map" src="../img/choose-index/index-map.png">
+        <span class="packageBuy-text">欢迎来到K伴</span>
+        <a class="packageBuy-a" href="packages/packages.html">购买套餐</a>
     </div>
     <div class="aui-content choose-content">
-        <div class="aui-row-padded choose-way">
+        <div class="aui-row">
             <div class="aui-col-xs-3">
-                <div class="choose-block">
-                    <a class="choose-block-a" href="singer/singer.html">
-                        <p class="choose-block-icon"><i class="iconfont icon-geshou aui-text-success"></i></p>
-                        <p class="choose-block-text">歌手</p>
-                    </a>
-                </div>
+                <a class="choose-block-a" href="singer/singer.html">
+                    <img class="choose-block-img" src="../img/choose-index/index-singer.png">
+                    <p class="choose-block-text">歌手点歌</p>
+                </a>
             </div>
             <div class="aui-col-xs-3">
-                <div class="choose-block">
-                    <a class="choose-block-a" href="songName/songName.html">
-                        <p class="choose-block-icon"><i class="iconfont icon-tubiaozhizuomoban aui-text-info"></i></p>
-                        <p class="choose-block-text">歌名</p>
-                    </a>
-                </div>
+                <a class="choose-block-a" href="songName/songName.html">
+                    <img class="choose-block-img" src="../img/choose-index/index-song.png">
+                    <p class="choose-block-text">歌名点歌</p>
+                </a>
             </div>
             <div class="aui-col-xs-3">
-                <div class="choose-block">
-                    <a class="choose-block-a" href="musicScore/musicScore.html">
-                        <p class="choose-block-icon"><i class="iconfont icon-icon-test aui-text-warning"></i></p>
-                        <p class="choose-block-text">乐谱</p>
-                    </a>
-                </div>
+                <a class="choose-block-a" href="musicScore/musicScore.html">
+                    <img class="choose-block-img" src="../img/choose-index/index-musicscore.png">
+                    <p class="choose-block-text">乐谱点歌</p>
+                </a>
             </div>
             <div class="aui-col-xs-3">
-                <div class="choose-block">
-                    <a class="choose-block-a" href="hotSong/hotSong.html">
-                        <p class="choose-block-icon"><i class="iconfont icon-remen aui-text-danger"></i></p>
-                        <p class="choose-block-text">热门</p>
-                    </a>
-                </div>
+                <a class="choose-block-a" href="hotSong/hotSong.html">
+                    <img class="choose-block-img" src="../img/choose-index/index-hotsong.png">
+                    <p class="choose-block-text">热门歌曲</p>
+                </a>
             </div>
             <div class="aui-col-xs-3">
-                <div class="choose-block">
-                    <a class="choose-block-a" href="language/language.html">
-                        <p class="choose-block-icon"><i class="iconfont icon-duoyuyan aui-text-warning"></i></p>
-                        <p class="choose-block-text">语种</p>
-                    </a>
-                </div>
+                <a class="choose-block-a" href="language/language.html">
+                    <img class="choose-block-img" src="../img/choose-index/index-language.png">
+                    <p class="choose-block-text">语种点歌</p>
+                </a>
             </div>
             <div class="aui-col-xs-3">
-                <div class="choose-block">
-                    <a class="choose-block-a" href="newSong/newSong.html">
-                        <p class="choose-block-icon"><i class="iconfont icon-xinpin aui-text-success"></i></p>
-                        <p class="choose-block-text">新歌</p>
-                    </a>
-                </div>
+                <a class="choose-block-a" href="newSong/newSong.html">
+                    <img class="choose-block-img" src="../img/choose-index/index-newsong.png">
+                    <p class="choose-block-text">新歌推荐</p>
+                </a>
             </div>
             <div class="aui-col-xs-3">
-                <div class="choose-block">
-                    <a class="choose-block-a" href="haveSongs/haveSongs.html">
-                        <p class="choose-block-icon"><i class="iconfont icon-icon-- aui-text-danger"></i></p>
-                        <p class="choose-block-text">已点</p>
-                    </a>
-                </div>
+                <a class="choose-block-a" href="haveSongs/haveSongs-vue.html">
+                    <img class="choose-block-img" src="../img/choose-index/index-already.png">
+                    <p class="choose-block-text">已点歌曲</p>
+                </a>
             </div>
             <div class="aui-col-xs-3">
-                <div class="choose-block">
-                    <a class="choose-block-a" href="haveSang/haveSang.html">
-                        <p class="choose-block-icon"><i class="iconfont icon-17 aui-text-info"></i></p>
-                        <p class="choose-block-text">录音</p>
-                    </a>
-                </div>
+                <a class="choose-block-a" href="haveSang/haveSang-vue.html">
+                    <img class="choose-block-img" src="../img/choose-index/index-havesang.png">
+                    <p class="choose-block-text">已唱歌曲</p>
+                </a>
             </div>
         </div>
-        <div class="aui-clearfix"></div>
     </div>
-    <footer class="aui-bar aui-bar-tab choose-footer" id="footer">
-        <a class="aui-bar-tab-item aui-active" href="choose.html">
-            <i class="iconfont icon-xingxing_selected"></i>
-            <div class="aui-bar-tab-label">主页</div>
-        </a>
-        <a class="aui-bar-tab-item" href="control/control.html">
-            <i class="iconfont icon-yinlemoshi"></i>
-            <div class="aui-bar-tab-label">播控</div>
-        </a>
-    </footer>
 </section>
-
+<footer class="aui-bar aui-bar-tab choose-footer" id="footer">
+    <a class="aui-bar-tab-item" href="choose.html">
+        <img class="logo-img" src="../img/choose-index/logo.png">
+    </a>
+    <a class="aui-bar-tab-item" href="control/control.html">
+        <i class="iconfont icon-yaokong"></i>
+        <div class="aui-bar-tab-label">遥控</div>
+    </a>
+</footer>
 <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="../js/swiper.min.js"></script>
+<script type="text/javascript" src="../js/slick.min.js"></script>
 <script type="text/javascript" src="../js/api.js"></script>
-<script type="text/javascript" src="../js/mustache.js"></script>
 <script type="text/javascript" src="choose.js"></script>
 
 </body>

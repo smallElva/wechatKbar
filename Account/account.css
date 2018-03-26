@@ -1,32 +1,30 @@
 @charset "UTF-8";
-
-.account_title{
-    height: 10rem;
-    background: #f3d57d;
-    display:flex;
-    display:-webkit-flex;
-    align-items: center;
-    padding-left: 2rem;
+.no-radius{
+    border-radius: 0;
+}
+.account-bg{
+    width: 100%;
+}
+.account-header{
+    position: relative;
 }
 .account_img{
     display: inline-block;
     width: 4rem;
-    border: .1rem solid #ffe392;
     border-radius: 100%;
+    box-shadow: 0px .25rem .5rem 0px rgba(0,0,0,0.3)
 }
-.account-list{
-    background: transparent;
+.account-info{
+    position: absolute;
+    top: 1.3rem;
+    left: 0;
+    width: 100%;
+    text-align: center;
 }
-.account-list .aui-list-item{
-    background: #fff;
-}
-.account_info{
-    padding-left: .75rem;
-    color: #fff;
-}
-.account_user{
-    font-size: .9rem;
-    margin-bottom: .25rem;
+.user-name{
+    font-size: 1rem;
+    margin-top: .5rem;
+    color: #faf9fc;
 }
 .account_add{
     font-size: .75rem;
@@ -35,7 +33,8 @@
     color: #212121;
 }
 .account-icon{
-    font-size: 1rem!important;
+    font-size: 1rem;
+    color: #6170e4;
 }
 /*意见反馈*/
 .advice-form{
@@ -73,13 +72,17 @@
     margin-top: .75rem;
 }
 .advice-btn-block .send-btn{
-    background: #ff2600;
+    background: #ff6642;
     color: #fff;
     border-radius: 1.25rem;
 }
 .advice-btn-block .send-btn:hover,.advice-btn-block .send-btn:focus{
     background: #fb5a3e;
     color: #fff;
+}
+.aui-radio:checked, .aui-radio.aui-checked, .aui-checkbox:checked, .aui-checkbox.aui-checked {
+    background-color: #6170e4;
+    border: 1px solid #6170e4;
 }
 /*缺歌反馈*/
 .lackSong_list .aui-list-item {
@@ -108,130 +111,93 @@
     padding: 0 .75rem;
 }
 /*我的订单*/
-.myOrder_mescroll{
-    top: 0;
-}
-.myOrder_list{
+.order-list{
     background: transparent;
+    border-top: none;
 }
-.myOrder-title{
-    display:flex;
-    display:-webkit-flex;
-    height: 2rem;
-    background: #fff;
-    justify-content: space-between;
-    align-items: center;
-    padding-right: .5rem;
-    padding-left: .5rem;
-    border-bottom: 1px solid #ccc;
-}
-.myOrder_list .aui-list-item{
+.order-list-item{
+    padding-left: .75rem;
+    padding-right: .75rem;
     background: #fff;
 }
-.myOrder-title-num{
-    font-size: .7rem;
-}
-.myOrder-time{
+.order-list .order-list-text{
+    color: #818181;
     font-size: .6rem;
-    color: #666;
 }
-.aui-list .myOrder-list-item-media{
-    width: 5rem;
-    padding-left: .5rem;
+.aui-list .order-buy-time{
+    font-size: .7rem;
+    color: #757575;
 }
-.myOrder-list-img{
-    border-radius: .25rem;
+.aui-list .order-list-header{
+    background-color: #fff;
+    color: #212121;
+    font-size: 0.7rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #f2f2f2;
 }
-.myOrder_list .aui-list-item {
-    padding-left: 0;
+.order-list .order-list-item-media{
+    width: 4rem;
 }
-.myOrder_list .aui-list-item-inner {
-    padding-right: 0.5rem;
+.aui-list .item-inner-noPadding{
+    padding-right: 0;
 }
-.myOrder-type{
-    margin-bottom: .3rem;
-}
-.myOrder-add{
-    color: #999;
-    font-size: .72rem;
-    margin-bottom: .2rem;
-}
-.myOrder_list .myOrder-money{
-    color: #ff2600;
+.order-list .order-list-money{
     font-size: .8rem;
-}
-.myOrder_list .myOrder-state{
-    font-size: .8rem;
-    color: #999;
-}
-.noOrder{
-    font-size: .8rem;
-    text-align: center;
-    margin-top: 5rem;
-    display: none;
+    color: #ff6642;
 }
 /*我的录音*/
-.myRecord-title{
-    height: 10rem;
-    background: #212121;
-    display:flex;
-    display:-webkit-flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-}
-.myRecord-img{
-    width: 5rem;
-    border: .15rem solid #ff2600;
-    border-radius: 50%;
-}
-.myRecord-name{
-    color: #fff;
-    margin: .5rem 0;
-}
-.myRecord-title-icons{
-    display: inline-block;
-    padding: 0 .5rem;
-}
-.myRecord-title-icons i{
-    padding-right: .3rem;
-    color: #ff2600;
+.total-records{
+    position: absolute;
+    top:0.5rem;
+    right: 0;
+    color: #818181;
+    padding-right: .75rem;
+    font-size: .8rem;
 }
 .myRecord-list{
-    background: #f3f3f3;
+    border: none;
 }
 .myRecord-list li{
     background: #fff;
+}
+.myRecord-list .aui-media-list-item-inner{
+    padding: .5rem 0;
 }
 .myRecord-list-header{
     padding: 0 .75rem;
     height: 2.25rem;
     line-height: 2.25rem;
-    border-bottom: 1px solid #f3f3f3;
+    border-bottom: 1px solid #f2f2f2;
     color: #757575;
     font-size: .75rem;
     background: #fff;
 }
+.myRecord-list-img{
+    width: 4rem;
+    padding-right: .5rem;
+}
 .myRecord-text-icons{
     display: inline-block;
-    font-size: .75rem;
+    font-size: .6rem;
+}
+.myRecord-text-icons .iconfont{
+    font-size: .6rem!important;
+    color: #ff2600;
+    padding-right: .3rem;
+}
+.myRecord-listen-icons .per-num{
+    font-size: .6rem;
+    color: #818181;
 }
 .myRecord-listen-icons{
     padding-right: .5rem;
 }
-.myRecord-text-icons i{
-    padding-right: .3rem;
-    color: #ff2600;
-}
-.myRecord-list-text{
-    margin-bottom: .75rem;
-}
 .myRecord-list .per-myRecord-time{
-    font-size: .7rem;
+    font-size: .6rem;
 }
 .myRecord-share .iconfont{
     color: #ff2600;
+    font-size: 1rem;
 }
 .aui-dialog-body input {
     border: none;
@@ -239,6 +205,39 @@
     color: #212121;
     text-align: center;
 }
-.record_mescroll{
-    top: 12.25rem;
+.layout{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.3);
+    z-index:10;
+    display: none;
+}
+.lay-list{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    background: #fff;
+    z-index:10;
+}
+.lay-list li{
+    padding: .8rem 0;
+    border-bottom: 1px solid #f2f2f2;
+    font-size: .8rem;
+    color: #2e2e2e;
+    text-align: center;
+}
+.lay-list li:last-child{
+    border: none;
+}
+.aui-dialog-btn{
+    color: #2e2e2e;
+    font-size: .8rem;
+}
+.aui-dialog-body {
+    font-size: .8rem;
+    color: #2e2e2e;
 }

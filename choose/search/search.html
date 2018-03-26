@@ -7,26 +7,24 @@
     <title>搜索</title>
     <link rel="stylesheet" type="text/css" href="../../css/aui.css"/>
     <link rel="stylesheet" type="text/css" href="../../css/mescroll.min.css"/>
-    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_igll0zeyd8jpds4i.css"/>
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_7lqmbrmbbf14te29.css"/>
     <link rel="stylesheet" type="text/css" href="../../css/common.css"/>
-    <link rel="stylesheet" type="text/css" href="search.css"/>
+    <link rel="stylesheet" type="text/css" href="../choose.css"/>
 </head>
 <body class="white-body">
-<div class="aui-title singerPage-search-title">
-    <div class="aui-searchbar" id="search">
-        <form class="aui-searchbar-input aui-border-radius search-div" id="searchForm" action="" onsubmit="return false;">
-            <i class="aui-iconfont aui-icon-search"></i>
-            <input type="search" placeholder="歌名/歌星" id="search-input">
-            <div class="aui-searchbar-clear-btn">
-                <i class="aui-iconfont aui-icon-close"></i>
-            </div>
-        </form>
-        <div class="aui-searchbar-btn" tapmode>取消</div>
+<div class="aui-title page-search-title">
+    <div class="prev-div-page" onclick="window.history.go(-1);">
+        <i class="iconfont icon-zhixiangzuo"></i>
     </div>
-    <a class="songNum-div" href="../haveSongs/haveSongs.html">
-        <div class="songNum">10</div>
-        <div class="songNum-div-text">已点</div>
-    </a>
+    <div class="aui-searchbar" id="search">
+        <div class="aui-searchbar-input aui-border-radius search-div">
+            <i class="iconfont icon-sousuo"></i>
+            <input type="search" placeholder="搜索歌星/歌名" id="search-input">
+        </div>
+        <a class="songNum-div" href="../haveSongs/haveSongs.html">
+            <div class="songNum-div-text">100</div>
+        </a>
+    </div>
 </div>
 <section class="content2">
     <div class="mescroll" id="searchScroll">

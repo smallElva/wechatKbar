@@ -9,9 +9,8 @@
       "orderUserImg": "../img/tx.jpg",
       "orderUserName": "文化禅城",
       "orderMoney": "38.00",
-      "orderBuyTime": "40",
-      "orderState": "已付款",
-      "orderOrderedTime": "2018-01-02 10:28:23"
+      "orderType":"15分钟/20元",
+      "orderOrderedTime": "2018-01-02"
     },{
       "id": 42,
       "orderNumId": "A8488123456b",
@@ -19,9 +18,8 @@
       "orderUserImg": "../img/tx.jpg",
       "orderUserName": "背上梦想",
       "orderMoney": "28.00",
-      "orderBuyTime": "30",
-      "orderState": "已付款",
-      "orderOrderedTime": "2018-01-08 10:28:23"
+      "orderType":"15分钟/20元",
+      "orderOrderedTime": "2018-01-08"
     },{
       "id": 43,
       "orderNumId": "A8488123456c",
@@ -29,9 +27,8 @@
       "orderUserImg": "../img/tx.jpg",
       "orderUserName": "苦涩的歌",
       "orderMoney": "58.00",
-      "orderBuyTime": "60",
-      "orderState": "未付款",
-      "orderOrderedTime": "2018-01-14 08:20:23"
+      "orderType":"15分钟/20元",
+      "orderOrderedTime": "2018-01-14"
     },{
       "id": 44,
       "orderNumId": "A8488123456d",
@@ -39,9 +36,8 @@
       "orderUserImg": "../img/tx.jpg",
       "orderUserName": "酒杯",
       "orderMoney": "98.00",
-      "orderBuyTime": "100",
-      "orderState": "未付款",
-      "orderOrderedTime": "2018-01-16 08:20:23"
+      "orderType":"15分钟/20元",
+      "orderOrderedTime": "2018-01-16"
     },{
       "id": 45,
       "orderNumId": "A8488123456e",
@@ -49,9 +45,8 @@
       "orderUserImg": "../img/tx.jpg",
       "orderUserName": "月光",
       "orderMoney": "38.00",
-      "orderBuyTime": "40",
-      "orderState": "已付款",
-      "orderOrderedTime": "2018-01-18 08:20:23"
+      "orderType":"15分钟/20元",
+      "orderOrderedTime": "2018-01-18"
     }
   ]
 }

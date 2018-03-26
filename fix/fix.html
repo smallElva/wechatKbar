@@ -6,11 +6,19 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>我要报修</title>
     <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_nvbf5j4zsblkrzfr.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
     <link rel="stylesheet" type="text/css" href="fix.css" />
 </head>
-<body>
-<section class="content2">
+<body class="white-body">
+<div class="backColor fixed-header-top">
+    <div class="header-radius">
+        <div class="prev-div" onclick="window.history.go(-1);">
+            <i class="iconfont icon-zhixiangzuo"></i>
+        </div>
+    </div>
+</div>
+<section class="content-section">
     <div class="aui-content">
         <form class="fix-content" action="" method="post" id="fixForm">
             <ul class="aui-list aui-form-list">
@@ -39,13 +47,14 @@
                         <div class="aui-list-item-label">
                             报修设备
                         </div>
-                        <div class="aui-list-item-input">
+                        <div class="aui-list-item-input select-div">
                             <select class="fix-equip-select" id="fix-equip-name">
                                 <!--<option>请选择要报修的设备</option>-->
                                 <!--<option>设备1</option>-->
                                 <!--<option>设备2</option>-->
                                 <!--<option>设备3</option>-->
                             </select>
+                            <span id="triangle-down"></span>
                         </div>
                     </div>
                 </li>

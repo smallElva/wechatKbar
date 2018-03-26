@@ -10,7 +10,7 @@
     -webkit-user-select: none;
 }
 body{
-    background: #f3f3f3;
+    background: #f2f2f2;
     width: 100%;
 }
 .white-body{
@@ -24,30 +24,64 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 5;
+    z-index: 2;
 }
 .content{
     padding-top: 2.75rem;
 }
-/*.content2{*/
-    /*padding-top: 2.25rem;*/
-/*}*/
-
+.content-section{
+    padding-top: 2.4rem;
+}
+.grey-back{
+    background: #f2f2f2;
+}
+/*头部*/
+.backColor{
+    background: #373b3e;
+}
+.header-radius{
+    background: #fff;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    position: relative;
+}
+.prev-div{
+    height: 2.4rem;
+    line-height: 2.4rem;
+    border-bottom: 1px solid #f2f2f2;
+    padding: 0 .75rem;
+}
+.prev-div .iconfont{
+    font-size: 1.5rem;
+    color: #555555;
+}
+.home-back{
+    position: absolute;
+    top:0.3rem;
+    right: 0;
+    color: #555;
+    padding-right: .75rem;
+}
+.home-back i{
+    font-size: 1.25rem;
+}
 .nav-header{
     background: #000;
     text-align: center;
 }
-.select-block{
-    height: 2.2rem;
-    line-height: 2.2rem;
+.order-select{
+    position: absolute;
+    top: .6rem;
+    left: 50%;
+    margin-left: -5rem;
+    font-size: .8rem;
+    color: #2e2e2e;
+    width: 10rem;
     text-align: center;
-    background: #fff;
-    font-size: .78rem;
-    border-bottom: 1px solid #f3f3f3;
 }
-/*.aui-list .aui-list-item {*/
-    /*border-bottom: 1px solid #f3f3f3;*/
-/*}*/
+.order-store-name{
+    padding-right: .2rem;
+}
 
 /*toast*/
 .aui-toast {
@@ -74,7 +108,7 @@ body{
 .aui-list .aui-list-item i.iconfont {
     -webkit-align-self: center;
     align-self: center;
-    font-size: 0.8rem;
+    /*font-size: 0.8rem;*/
 }
 /*mescroll*/
 .mescroll-totop{
@@ -109,7 +143,7 @@ body{
 /*mescroll 滚动区域*/
 .mescroll{
     position: fixed;
-    top: 3rem;
+    top: 2.4rem;
     bottom: 0;
     height: auto;
 }

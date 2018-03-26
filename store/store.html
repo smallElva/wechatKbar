@@ -6,150 +6,59 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>门店管理</title>
     <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_aelpphhcwr1qncdi.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
     <link rel="stylesheet" type="text/css" href="store.css" />
 </head>
-<body>
-<section class="content2">
-    <div class="aui-content" id="storeContent">
-    <!--模板-->
-        <!--{{#list}}-->
-        <!--<div class="aui-list aui-media-list aui-margin-t-15">-->
-            <!--<div class="aui-list-item aui-list-item-middle">-->
-                <!--<a href="{{storePageHref}}">-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="store-list-item-media">-->
-                                <!--<img src="{{storeImg}}" class="aui-list-img-sm" alt="门店">-->
-                            <!--</div>-->
-                            <!--<div class="aui-list-item-right aui-text-right">-->
-                                <!--<p class="store_list_name">{{storeName}}</p>-->
-                                <!--<p class="store_list_add">{{storeAdd}}</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="aui-clearfix"></div>-->
-                <!--</a>-->
+<body class="white-body">
+<div class="backColor fixed-header-top">
+    <div class="header-radius">
+        <div class="prev-div" onclick="window.history.go(-1);">
+            <i class="iconfont icon-zhixiangzuo"></i>
+        </div>
+    </div>
+</div>
+<section class="content-section">
+    <div id="store-app">
+        <ul class="aui-content-padded aui-list aui-media-list store-list" id="storeContent">
+            <li class="aui-list-item aui-list-item-middle store-list-item" v-for="item in datas">
+                <a class="aui-media-list-item-inner" v-on:click="openStoreInfo(event,item.id)">
+                    <div class="aui-list-item-media store-list-img">
+                        <img v-bind:src="item.storeImg" class="aui-img-round aui-list-img-sm">
+                    </div>
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-text">
+                            <div class="aui-list-item-title store-list-name">{{item.storeName}}</div>
+                        </div>
+                        <div class="aui-list-item-text store-list-add">
+                            {{item.storeAdd}}
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <!--<li class="aui-list-item aui-list-item-middle store-list-item">-->
+            <!--<a class="aui-media-list-item-inner" href="#">-->
+            <!--<div class="aui-list-item-media store-list-img">-->
+            <!--<img src="../img/tx.jpg" class="aui-img-round aui-list-img-sm">-->
             <!--</div>-->
-        <!--</div>-->
-        <!--{{/list}}-->
-
-
-        <!--<div class="aui-list aui-media-list aui-margin-t-15">-->
-            <!--<div class="aui-list-item aui-list-item-middle">-->
-                <!--<a href="store_page.html">-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="store-list-item-media">-->
-                                <!--<img src="../img/tx.jpg" class="aui-list-img-sm">-->
-                            <!--</div>-->
-                            <!--<div class="aui-list-item-right aui-text-right">-->
-                                <!--<p class="store_list_name">坪洲四季城店</p>-->
-                                <!--<p class="store_list_add">地址：坪洲地铁站</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="aui-clearfix"></div>-->
-                <!--</a>-->
+            <!--<div class="aui-list-item-inner">-->
+            <!--<div class="aui-list-item-text">-->
+            <!--<div class="aui-list-item-title store-list-name">天虹店</div>-->
             <!--</div>-->
-        <!--</div>-->
-        <!--<div class="aui-list aui-media-list aui-margin-t-15">-->
-            <!--<div class="aui-list-item aui-list-item-middle">-->
-                <!--<a href="store_page.html">-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="store-list-item-media">-->
-                                <!--<img src="../img/tx.jpg" class="aui-list-img-sm">-->
-                            <!--</div>-->
-                            <!--<div class="aui-list-item-right aui-text-right">-->
-                                <!--<p class="store_list_name">坪洲四季城店</p>-->
-                                <!--<p class="store_list_add">地址：坪洲地铁站</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="aui-clearfix"></div>-->
-                <!--</a>-->
+            <!--<div class="aui-list-item-text store-list-add">-->
+            <!--广东省深圳市宝安区西乡街道天虹商城3楼-->
             <!--</div>-->
-        <!--</div>-->
-        <!--<div class="aui-list aui-media-list aui-margin-t-15">-->
-            <!--<div class="aui-list-item aui-list-item-middle">-->
-                <!--<a href="store_page.html">-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="store-list-item-media">-->
-                                <!--<img src="../img/tx.jpg" class="aui-list-img-sm">-->
-                            <!--</div>-->
-                            <!--<div class="aui-list-item-right aui-text-right">-->
-                                <!--<p class="store_list_name">坪洲四季城店</p>-->
-                                <!--<p class="store_list_add">地址：坪洲地铁站</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="aui-clearfix"></div>-->
-                <!--</a>-->
             <!--</div>-->
-        <!--</div>-->
-        <!--<div class="aui-list aui-media-list aui-margin-t-15">-->
-            <!--<div class="aui-list-item aui-list-item-middle">-->
-                <!--<a href="store_page.html">-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="store-list-item-media">-->
-                                <!--<img src="../img/tx.jpg" class="aui-list-img-sm">-->
-                            <!--</div>-->
-                            <!--<div class="aui-list-item-right aui-text-right">-->
-                                <!--<p class="store_list_name">坪洲四季城店</p>-->
-                                <!--<p class="store_list_add">地址：坪洲地铁站</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="aui-clearfix"></div>-->
-                <!--</a>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="aui-list aui-media-list aui-margin-t-15">-->
-            <!--<div class="aui-list-item aui-list-item-middle">-->
-                <!--<a href="store_page.html">-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="store-list-item-media">-->
-                                <!--<img src="../img/tx.jpg" class="aui-list-img-sm">-->
-                            <!--</div>-->
-                            <!--<div class="aui-list-item-right aui-text-right">-->
-                                <!--<p class="store_list_name">坪洲四季城店</p>-->
-                                <!--<p class="store_list_add">地址：坪洲地铁站</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="aui-clearfix"></div>-->
-                <!--</a>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="aui-list aui-media-list aui-margin-t-15">-->
-            <!--<div class="aui-list-item aui-list-item-middle">-->
-                <!--<a href="store_page.html">-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="store-list-item-media">-->
-                                <!--<img src="../img/tx.jpg" class="aui-list-img-sm">-->
-                            <!--</div>-->
-                            <!--<div class="aui-list-item-right aui-text-right">-->
-                                <!--<p class="store_list_name">坪洲四季城店</p>-->
-                                <!--<p class="store_list_add">地址：坪洲地铁站</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="aui-clearfix"></div>-->
-                <!--</a>-->
-            <!--</div>-->
-        <!--</div>-->
+            <!--</a>-->
+            <!--</li>-->
+        </ul>
     </div>
 </section>
 
 <script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
 <script type="text/javascript" src="../js/api.js" ></script>
-<script type="text/javascript" src="../js/mustache.js" ></script>
-<script type="text/javascript" src="store.js" ></script>
+<script type="text/javascript" src="../js/vue.min.js" ></script>
+<script type="text/javascript" src="store-vue.js" ></script>
 
 </body>
 </html>

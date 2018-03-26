@@ -19,6 +19,9 @@ $(function () {
                 html: "<i class='iconfont icon-zhiding'></i>", //标签内容,默认null; 如果同时设置了src,则优先取src
                 offset: 200
             }
+        },
+        down:{
+            isLock:true
         }
 
     });
@@ -41,42 +44,15 @@ $(function () {
         }
     }
 
-    /*初始化菜单*/
-    var curWord = null;
-    var pdType=0;//全部歌曲0; 搜索1;
-    /*移动端按下软键盘搜索按钮触发搜索事件*/
-    $("#search-input").on('keypress',function(e) {
-        var keycode = e.keyCode;
-        if(keycode=='13') {
-            e.preventDefault();
-            searchSongs();
-        }
-    });
-    /*点击搜索符号触发搜索事件*/
-    $(".aui-searchbar .aui-icon-search").click(function(){
-        searchSongs();
-    });
-    /*搜索歌曲方法*/
-    function searchSongs() {
-        var keyword= $("#search-input").val();
-        if(keyword) {
-            //更改列表条件
-            pdType = 1;
-            /*调整upscrollWarp的最小高度,使其刚好满屏,避免点击悬浮菜单时会滑下来;(这里每次点击都计算一次,毕竟轮播图高度改变或未能显示图都会影响计算的值)*/
-            var minHight = mescroll.getClientHeight() - navWarp.offsetHeight;
-            document.getElementById("upscrollWarp").style.minHeight = minHight + "px";
-            //重置列表数据
-            curWord=keyword; //更新关键词
-            mescroll.resetUpScroll();
-        }
-    }
+
+
     /*联网加载列表数据  page = {num:1, size:10}; num:当前页 从1开始, size:每页数据条数 */
     function getListData(page){
         //联网加载数据
-        getListDataFromNet(pdType, page.num, page.size, function(curPageData){
+        getListDataFromNet( page.num, page.size, function(curPageData){
             //联网成功的回调,隐藏下拉刷新和上拉加载的状态;
             //mescroll会根据传的参数,自动判断列表如果无任何数据,则提示空;列表无下一页数据,则提示无更多数据;
-            console.log("pdType="+pdType+", page.num="+page.num+", page.size="+page.size+", curPageData.length="+curPageData.length);
+            console.log("page.num="+page.num+", page.size="+page.size+", curPageData.length="+curPageData.length);
 
             //方法一(推荐): 后台接口有返回列表的总页数 totalPage
             //mescroll.endByPage(curPageData.length, totalPage); //必传参数(当前页的数据个数, 总页数)
@@ -101,30 +77,31 @@ $(function () {
     /*设置列表数据*/
     function setListData(curPageData){
         var listDom=document.getElementById("dataList");
+        var str = '';
         for (var i = 0; i < curPageData.length; i++) {
             var pd=curPageData[i];
-            var index=i;
-            var str='<div class="aui-media-list-item-inner">';
-            str+='<div class="aui-list-item-label-icon">';
-            str+='<span class="song-list-num">'+(index+1)+'</span>';
-            str+='</div>';
+            str+='<li class="aui-list-item aui-list-item-middle" onclick="chooseThis(this)">';
+            str+='<div class="aui-media-list-item-inner">';
             str+='<div class="aui-list-item-inner">';
             str+='<div class="aui-list-item-text">';
             str+='<div class="aui-list-item-title list-song-info">';
-            str+='<div class="songName aui-ellipsis-1">'+ pd.songName +'</div>';
+            str+='<div class="songName aui-ellipsis-1">' ;
+            str+='<span>'+ pd.songName +'</span> ';
+            str+='<i class="iconfont icon-ping type-song-icon"></i>';
+            str+='<i class="iconfont icon-le type-song-icon"></i>';
+            str+='<i class="iconfont icon-yunxiazai type-song-icon"></i>';
+            str+='</div>';
             str+='<div class="perSingerName">'+ pd.singerName +'</div>';
             str+='</div>';
             str+='<div class="aui-list-item-right">';
-            str+='<button class="choose-btn">'+'<i class="aui-iconfont aui-icon-plus">'+'</i> 点歌 </button>';
+            str+='<i class="iconfont icon-maikefeng select-song-icon"></i>';
             str+='</div>';
             str+='</div>';
             str+='</div>';
             str+='</div>';
-            var liDom=document.createElement("li");
-            liDom.setAttribute('class','aui-list-item aui-list-item-middle');
-            liDom.innerHTML=str;
-            listDom.appendChild(liDom);
+            str+='</li>';
         }
+        listDom.innerHTML+=str;
     }
 
     /*联网加载列表数据
@@ -132,7 +109,7 @@ $(function () {
      请忽略getListDataFromNet的逻辑,这里仅仅是在本地模拟分页数据,本地演示用
      实际项目以您服务器接口返回的数据为准,无需本地处理分页.
      * */
-    function getListDataFromNet(pdType,pageNum,pageSize,successCallback,errorCallback) {
+    function getListDataFromNet(pageNum,pageSize,successCallback,errorCallback) {
         //延时一秒,模拟联网
         setTimeout(function () {
             $.ajax({
@@ -143,22 +120,10 @@ $(function () {
                 success: function(data){
                     var listData=[];
 
-                    //pdType 全部歌曲0; 搜索1;
-                    if(pdType==0){
-                        //全部商品 (模拟分页数据)
-                        for (var i = (pageNum-1)*pageSize; i < pageNum*pageSize; i++) {
-                            if(i==data.length) break;
-                            listData.push(data[i]);
-                        }
-
-                    }else if(pdType==1){
-                        //奶粉
-                        for (var i = 0; i < data.length; i++) {
-                            if (data[i].songName.indexOf(curWord)!=-1) {
-                                listData.push(data[i]);
-                            }
-                        }
-
+                    //全部商品 (模拟分页数据)
+                    for (var i = (pageNum-1)*pageSize; i < pageNum*pageSize; i++) {
+                        if(i==data.length) break;
+                        listData.push(data[i]);
                     }
 
                     //回调
@@ -170,3 +135,10 @@ $(function () {
     }
 
 });
+
+/**
+ * 点歌操作
+ */
+function chooseThis(obj) {
+    $(obj).find('.select-song-icon').removeClass('icon-maikefeng').addClass('icon-maikefeng-dianji red-icon');
+}

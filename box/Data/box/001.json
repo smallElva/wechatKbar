@@ -1,10 +1,25 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
-    "sourceMap": true
-  },
-  "exclude": [
-    "node_modules"
+  "status": 200,
+  "msg": "success",
+  "list":[
+    {
+      "id": 1,
+      "roomUsersNum":"1012",
+      "roomBenefitNum":"123",
+      "boxBlockRoomNum":"1234567890",
+      "boxBlockRoomTime":"1"
+    },{
+      "id": 2,
+      "roomUsersNum":"1225",
+      "roomBenefitNum":"102",
+      "boxBlockRoomNum":"1563489203",
+      "boxBlockRoomTime":"0.5"
+    },{
+      "id": 3,
+      "roomUsersNum":"1258",
+      "roomBenefitNum":"112",
+      "boxBlockRoomNum":"1563489204",
+      "boxBlockRoomTime":"0.5"
+    }
   ]
 }

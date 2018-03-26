@@ -8,13 +8,8 @@ $(function(){
      */
     $("#showStore").click(function () {
         $('#store-top').toggleClass('toggleShow');
-        $(this).find('.aui-iconfont').toggleClass('aui-icon-down aui-icon-top');
+        $(this).find('.iconfont').toggleClass('icon-xiangxia icon-xiangshang');
         $('#state-top').removeClass('toggleShow');
-    });
-    $("#showOrder").click(function () {
-        $('#state-top').toggleClass('toggleShow');
-        $(this).find('.aui-iconfont').toggleClass('aui-icon-down aui-icon-top');
-        $('#store-top').removeClass('toggleShow');
     });
     /***
      * 点击订单状态筛选
@@ -24,27 +19,20 @@ $(function(){
         $('#showStore .order-store-name').html(storeName);
         // 获取门店名，调用发送接口
         var store = parseInt($(this).find('.bill-store-name').attr('data-store'));
+        $("#showStore").find('.iconfont').toggleClass('icon-xiangxia icon-xiangshang');
         getOrderByStore(store);
-    });
-    $('#state-top .aui-list-item').click(function () { //点击门店选择栏里的任何一个选项，切换选项值，并刷新页面
-        var stateName = $(this).find('.order-state-kind-name').text();
-        $('#showOrder .order-state-kinds').html(stateName);
-        // 获取订单状态，调用发送接口
-        var state = parseInt($(this).find('.order-state-kind-name').attr('data-state'));
-        getOrderByState(state);
     });
     //点击页面除了id="showStore"和id="showOrder"之外的任何区域都关闭该div
     $(document).on('click', function(e) {
         var e = e || window.event; //浏览器兼容性
         var elem = e.target || e.srcElement;
         while (elem) { //循环判断至跟节点，防止点击的是div子元素
-            if (elem.id && elem.id == 'showStore' || elem.id == 'showOrder') {
+            if (elem.id && elem.id == 'showStore') {
                 return;
             }
             elem = elem.parentNode;
         }
         $('#store-top').removeClass('toggleShow'); //关闭该div
-        $('#state-top').removeClass('toggleShow'); //关闭该div
     });
     // 发送请求,渲染页面
     $.ajax({
@@ -162,35 +150,6 @@ function getOrderByStore(store) {
         }
     })
 }
-/** 获取订单状态的接口;接口数据我是文件模拟的，/Data/store/目录下是模拟数据
- *  参数 state: 0 ==> state1
- *              1 ==> state2
- * */
-function getOrderByState(state) {
-    // 根据性别决定接口数据
-    var url='';
-    if(state == 0){
-        url = 'Data/state/noPay';
-    }else if(state == 1){
-        url = 'Data/state/pay';
-    }
-    else{
-        return
-    }
-    // 发送请求
-    $.ajax({
-        type:'GET',
-        url:url,
-        dataType: "json",
-        success: function (result) {
-            renderTpl(result);
-        },
-        error: function () {
-            alert('加载失败，请检查网络后重试');
-        }
-    })
-}
-
 /** 渲染模板 */
 function renderTpl(orderList) {
     // 模板

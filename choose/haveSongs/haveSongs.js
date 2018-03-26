@@ -4,8 +4,37 @@
 
 $(function(){
 
+    /*初始化菜单*/
+    var curWord = null;
+    var pdType=0;//全部歌曲0; 搜索1;
+
+    /*移动端按下软键盘搜索按钮触发搜索事件*/
+    $("#search-input").on('keypress',function(e) {
+        var keycode = e.keyCode;
+        if(keycode=='13') {
+            e.preventDefault();
+            searchSongs();
+        }
+    });
+    /*点击搜索符号触发搜索事件*/
+    $(".aui-searchbar .icon-sousuo").click(function(){
+        searchSongs();
+    });
+
+    /*搜索歌曲方法*/
+    function searchSongs() {
+        var keyword= $("#search-input").val();
+        if(keyword) {
+            //更改列表条件
+            pdType = 1;
+            //重置列表数据
+            curWord=keyword; //更新关键词
+            mescroll.resetUpScroll();
+        }
+    }
+
     //创建MeScroll对象,内部已默认开启下拉刷新,自动执行up.callback,刷新列表数据;
-    var mescroll = new MeScroll("body", { //id固定"body"
+    var mescroll = new MeScroll("mescroll", {
         //上拉加载的配置项
         up: {
             callback: getListData, //上拉回调,此处可简写; 相当于 callback: function (page) { getListData(page); }
@@ -25,7 +54,7 @@ $(function(){
     /*联网加载列表数据  page = {num:1, size:10}; num:当前页 从1开始, size:每页数据条数 */
     function getListData(page){
         //联网加载数据
-        getListDataFromNet(page.num, page.size, function(curPageData){
+        getListDataFromNet(pdType,page.num, page.size, function(curPageData){
             //联网成功的回调,隐藏下拉刷新和上拉加载的状态;
             //mescroll会根据传的参数,自动判断列表如果无任何数据,则提示空;列表无下一页数据,则提示无更多数据;
             console.log("page.num="+page.num+", page.size="+page.size+", curPageData.length="+curPageData.length);
@@ -53,37 +82,38 @@ $(function(){
     /*设置列表数据*/
     function setListData(curPageData){
 
-        // renderTpl(curPageData);
         var listDom=document.getElementById("songs-result");
+        var str = '';
         for (var i = 0; i < curPageData.length; i++) {
             var list=curPageData[i];
             var index = i;
-            var str='<div class="aui-media-list-item-inner">';
-            str+='<div class="aui-list-item-label-icon">';
-            str+='<span class="song-list-num">'+ (index+1) +'</span>';
-            str+='</div>';
-            str+='<div class="aui-list-item-inner">';
-            str+='<div class="aui-list-item-text">';
-            str+='<div class="aui-list-item-title list-song-info">';
-            str+='<div class="songName aui-ellipsis-1">'+ list.songName +'</div>';
-            str+='<div class="perSingerName">'+ list.singerName +'</div>';
-            str+='</div>';
-            str+='<div class="aui-list-item-right">';
-            str+='<a class="aui-pull-right song-btn" onclick="deleteThis(this);">';
-            str+='<span class="iconfont icon-shanchu"></span>';
-            str+='</a>';
-            str+='<a class="aui-pull-right song-btn" href="#">';
-            str+='<span class="iconfont icon-zhiding1 icon-toTop"></span>';
-            str+='</a>';
-            str+='</div>';
-            str+='</div>';
-            str+='</div>';
-            str+='</div>';
-            var liDom=document.createElement("li");
-            liDom.setAttribute('class','aui-list-item aui-list-item-middle');
-            liDom.innerHTML=str;
-            listDom.appendChild(liDom);
+            str +='<li class="aui-list-item aui-list-item-middle">'+
+            '<div class="aui-media-list-item-inner">'+
+            '<div class="aui-list-item-label-icon">'+
+            '<span class="song-list-num">'+ (index+1) +'</span>'+
+            '</div>'+
+            '<div class="aui-list-item-inner">'+
+            '<div class="aui-list-item-text">'+
+            '<div class="aui-list-item-title list-song-info">'+
+            '<div class="songName aui-ellipsis-1">'+ list.songName +'</div>'+
+            '<div class="perSingerName">'+ list.singerName +'</div>'+
+            '</div>'+
+            '<div class="aui-list-item-right">'+
+            '<a class="aui-pull-right song-btn" onclick="deleteThis(this);">'+
+            '<span class="iconfont icon-shanchu"></span>'+
+            '</a>'+
+            '<a class="aui-pull-right song-btn" href="#">'+
+            '<span class="iconfont icon-zhiding1 icon-toTop"></span>'+
+            '</a>'+
+            '</div>'+
+            '</div>'+
+            '</div>'+
+            '</div>'+
+            '</li>';
+
+
         }
+        listDom.innerHTML+=str;
     }
 
     /*联网加载列表数据
@@ -91,7 +121,7 @@ $(function(){
      请忽略getListDataFromNet的逻辑,这里仅仅是在本地模拟分页数据,本地演示用
      实际项目以您服务器接口返回的数据为准,无需本地处理分页.
      * */
-    function getListDataFromNet(pageNum,pageSize,successCallback,errorCallback) {
+    function getListDataFromNet(pdType,pageNum,pageSize,successCallback,errorCallback) {
         //延时一秒,模拟联网
         setTimeout(function () {
             $.ajax({
@@ -100,10 +130,22 @@ $(function(){
                 dataType: 'json',
                 success: function(data){
                     var listData=[];
-                    //全部商品 (模拟分页数据)
-                    for (var i = (pageNum-1)*pageSize; i < pageNum*pageSize; i++) {
-                        if(i==data.length) break;
-                        listData.push(data[i]);
+                    //pdType 全部歌曲0; 搜索1;
+                    if(pdType==0){
+                        //全部商品 (模拟分页数据)
+                        for (var i = (pageNum-1)*pageSize; i < pageNum*pageSize; i++) {
+                            if(i==data.length) break;
+                            listData.push(data[i]);
+                        }
+
+                    }else if(pdType==1){
+                        //奶粉
+                        for (var i = 0; i < data.length; i++) {
+                            if (data[i].songName.indexOf(curWord)!=-1) {
+                                listData.push(data[i]);
+                            }
+                        }
+
                     }
                     //回调
                     successCallback(listData);
@@ -117,35 +159,4 @@ $(function(){
 // 点击删除按钮，删除该歌曲方法
 function deleteThis(rel) {
   $(rel).parent().parent().parent().parent().parent().remove();
-}
-/** 渲染模板 */
-function renderTpl(songList) {
-    // 模板
-    var tpl = '{{#list}}<li class="aui-list-item aui-list-item-middle">\n' +
-        '<div class="aui-media-list-item-inner">\n' +
-        '<div class="aui-list-item-label-icon">\n'+
-        '<span class="song-list-num">{{id}}</span>\n'+
-        '</div>\n'+
-        '<div class="aui-list-item-inner">\n'+
-        '<div class="aui-list-item-text">\n'+
-        '<div class="aui-list-item-title list-song-info">\n' +
-        '<div class="songName aui-ellipsis-1">{{songName}}</div>\n' +
-        '<div class="perSingerName"> {{singerName}}</div>\n'+
-        '</div>\n'+
-        '<div class="aui-list-item-right">\n'+
-        '<a class="aui-pull-right song-btn" href="#">\n' +
-        '<span class="iconfont icon-shanchu"></span>\n' +
-        '</a>\n' +
-        '<a class="aui-pull-right song-btn" href="{{myRecordHref}}">\n'+
-        '<span class="iconfont icon-jianting2 icon-toTop"></span>\n'+
-        '</a>\n'+
-        '</div>\n'+
-        '</div>\n'+
-        '</div>\n'+
-        '</div>\n'+
-        '</li>{{/list}}';
-    // 调用mustache生成dom
-    var dom = Mustache.render(tpl, songList);
-    // 插入dom
-    $('#songs-result').html(dom);
 }

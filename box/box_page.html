@@ -1,10 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>包厢详情</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_vkt8whippxlgnwmi.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="box.css" />
 </head>
-<body>
-$END$
+<body class="white-body">
+<div class="backColor fixed-header-top">
+    <div class="header-radius">
+        <div class="prev-div" onclick="window.history.go(-1);">
+            <i class="iconfont icon-zhixiangzuo"></i>
+        </div>
+        <a class="home-back" href="../index.html"><i class="iconfont icon-shouye"></i></a>
+    </div>
+</div>
+<section class="content-section">
+    <div id="box_page_app">
+        <ul class="aui-list aui-media-list box-page-list">
+            <li class="aui-list-item aui-list-item-middle" v-for="item in boxes">
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-inner">
+                        <div class="box-page-div"><i class="iconfont icon-miniKTV box-store-icon"></i><span class="box-list-equip">设备号：</span><span>{{item.boxBlockRoomNum}}</span></div>
+                        <div class="box-page-div box-status"><i class="iconfont icon-msnui-user"></i><span class="box-list-user">累计用户（人）：</span><span>{{item.roomUsersNum}}</span></div>
+                        <div class="box-page-div box-status"><i class="iconfont icon-qiandai"></i><span class="box-list-benefit">累计收益（元）：</span><span>{{item.roomBenefitNum}}</span></div>
+                    </div>
+                    <div class="aui-list-item-media">
+                        <div class="box-page-circle">
+                            <p class="box-page-text">空闲时长</p>
+                            <p class="box-page-value"><span>{{item.boxBlockRoomTime}}</span>小时</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <!--<li class="aui-list-item aui-list-item-middle">-->
+                <!--<div class="aui-media-list-item-inner">-->
+                    <!--<div class="aui-list-item-inner">-->
+                        <!--<div class="box-page-div"><i class="iconfont icon-miniKTV box-store-icon"></i><span class="box-list-equip">设备号：1234567890</span></div>-->
+                        <!--<div class="box-page-div box-status"><i class="iconfont icon-msnui-user"></i><span class="box-list-user">累计用户（人）：</span><span>5000</span></div>-->
+                        <!--<div class="box-page-div box-status"><i class="iconfont icon-qiandai"></i><span class="box-list-benefit">累计收益（元）：</span><span>5000.00</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="aui-list-item-media">-->
+                        <!--<div class="box-page-circle">-->
+                            <!--<p class="box-page-text">空闲时长</p>-->
+                            <!--<p class="box-page-value"><span>1</span>小时</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</li>-->
+        </ul>
+    </div>
+</section>
+
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
+<script type="text/javascript" src="../js/api.js" ></script>
+<script type="text/javascript" src="../js/vue.min.js" ></script>
+<script type="text/javascript" src="box-page.js" ></script>
 </body>
 </html>

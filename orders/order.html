@@ -6,200 +6,108 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>订单管理</title>
     <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_nvbf5j4zsblkrzfr.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
     <link rel="stylesheet" type="text/css" href="order.css" />
 </head>
-<body>
-<section class="fixed-header-top">
-    <div class="select-block order-select">
-        <div id="showStore"><span class="order-store-name">全部门店</span><i class="aui-iconfont aui-icon-down"></i></div>
+<body class="white-body">
+<section id="order-app">
+    <div class="backColor fixed-header-top">
+        <div class="header-radius">
+            <div class="prev-div" onclick="window.history.go(-1);">
+                <i class="iconfont icon-zhixiangzuo"></i>
+            </div>
+            <div id="showStore" class="order-select"><span class="order-store-name">全部门店</span><i class="iconfont icon-xiangxia"></i></div>
+            <a class="home-back" href="../index.html"><i class="iconfont icon-shouye"></i></a>
+        </div>
     </div>
-</section>
-<!--门店筛选-->
-<div class="aui-popup aui-popup-top order-popup-top" id="store-top">
-    <div class="aui-popup-arrow"></div>
-    <div class="aui-popup-content">
-        <ul class="aui-list">
-            <li class="aui-list-item">
-                <div class="aui-list-item-inner bill-store-name" data-store="0">
-                    坪洲四季城
-                </div>
-            </li>
-            <li class="aui-list-item">
-                <div class="aui-list-item-inner bill-store-name" data-store="1">
-                    宝安中心天虹
-                </div>
-            </li>
-            <li class="aui-list-item">
-                <div class="aui-list-item-inner bill-store-name" data-store="2">
-                    宝安中心cococity
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>
-<section class="content">
-    <div class="aui-content" id="orderContent">
-        <!--{{#list}}-->
-        <!--<div class="aui-list aui-media-list aui-margin-b-15">-->
-            <!--<div class="aui-list-header order-list-header">-->
-                <!--<span class="aui-pull-left order-num-id">{{orderNumId}}</span>-->
-                <!--<span class="aui-pull-right order-equip">{{orderEquip}}</span>-->
-            <!--</div>-->
-            <!--<div class="aui-list-item aui-list-item-middle aui-clearfix">-->
-                <!--<div class="aui-media-list-item-inner">-->
-                    <!--<div class="aui-list-item-media order-list-item-media">-->
-                        <!--<img src="{{orderUserImg}}" class="aui-img-round aui-list-img-sm">-->
-                    <!--</div>-->
-                    <!--<div class="aui-list-item-inner">-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="aui-list-item-title aui-font-size-14">{{orderUserName}}</div>-->
-                            <!--<div class="aui-list-item-right">-->
-                                <!--<p class="order_money">{{orderMoney}}</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="aui-list-item-title order-buy-time">购买时长{{orderBuyTime}}分钟</div>-->
-                            <!--<div class="aui-list-item-right">-->
-                                <!--<p class="order_state">{{orderState}}</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--{{orderOrderedTime}}-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--{{/list}}-->
-        <!--<div class="aui-list aui-media-list aui-margin-b-15">-->
-            <!--<div class="aui-list-header order-list-header">-->
-                <!--<span class="aui-pull-left order-num-id">A8080124563</span>-->
-                <!--<span class="aui-pull-right order-equip">K伴3-2</span>-->
-            <!--</div>-->
-            <!--<div class="aui-list-item aui-list-item-middle aui-clearfix">-->
-                <!--<div class="aui-media-list-item-inner">-->
-                    <!--<div class="aui-list-item-media order-list-item-media">-->
-                        <!--<img src="../img/tx.jpg" class="aui-img-round aui-list-img-sm">-->
-                    <!--</div>-->
-                    <!--<div class="aui-list-item-inner">-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="aui-list-item-title aui-font-size-14">AUI</div>-->
-                            <!--<div class="aui-list-item-right">-->
-                                <!--<p class="order_money">¥0.01</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="aui-list-item-title order-buy-time">购买时长360分</div>-->
-                            <!--<div class="aui-list-item-right">-->
-                                <!--<p class="order_state">已付款</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--2018-01-12 10:08:23-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="aui-list aui-media-list aui-margin-b-15">-->
-            <!--<div class="aui-list-header order-list-header">-->
-                <!--<span class="aui-pull-left order-num-id">A8080124563</span>-->
-                <!--<span class="aui-pull-right order-equip">K伴3-2</span>-->
-            <!--</div>-->
-            <!--<div class="aui-list-item aui-list-item-middle aui-clearfix">-->
-                <!--<div class="aui-media-list-item-inner">-->
-                    <!--<div class="aui-list-item-media order-list-item-media">-->
-                        <!--<img src="../img/tx.jpg" class="aui-img-round aui-list-img-sm">-->
-                    <!--</div>-->
-                    <!--<div class="aui-list-item-inner">-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="aui-list-item-title aui-font-size-14">AUI</div>-->
-                            <!--<div class="aui-list-item-right">-->
-                                <!--<p class="order_money">¥0.01</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="aui-list-item-title order-buy-time">购买时长360分</div>-->
-                            <!--<div class="aui-list-item-right">-->
-                                <!--<p class="order_state">已付款</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--2018-01-12 10:08:23-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="aui-list aui-media-list aui-margin-b-15">-->
-            <!--<div class="aui-list-header order-list-header">-->
-                <!--<span class="aui-pull-left order-num-id">A8080124563</span>-->
-                <!--<span class="aui-pull-right order-equip">K伴3-2</span>-->
-            <!--</div>-->
-            <!--<div class="aui-list-item aui-list-item-middle aui-clearfix">-->
-                <!--<div class="aui-media-list-item-inner">-->
-                    <!--<div class="aui-list-item-media order-list-item-media">-->
-                        <!--<img src="../img/tx.jpg" class="aui-img-round aui-list-img-sm">-->
-                    <!--</div>-->
-                    <!--<div class="aui-list-item-inner">-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="aui-list-item-title aui-font-size-14">AUI</div>-->
-                            <!--<div class="aui-list-item-right">-->
-                                <!--<p class="order_money">¥0.01</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="aui-list-item-title order-buy-time">购买时长360分</div>-->
-                            <!--<div class="aui-list-item-right">-->
-                                <!--<p class="order_state">已付款</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--2018-01-12 10:08:23-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="aui-list aui-media-list aui-margin-b-15">-->
-            <!--<div class="aui-list-header order-list-header">-->
-                <!--<span class="aui-pull-left order-num-id">A8080124563</span>-->
-                <!--<span class="aui-pull-right order-equip">K伴3-2</span>-->
-            <!--</div>-->
-            <!--<div class="aui-list-item aui-list-item-middle aui-clearfix">-->
-                <!--<div class="aui-media-list-item-inner">-->
-                    <!--<div class="aui-list-item-media order-list-item-media">-->
-                        <!--<img src="../img/tx.jpg" class="aui-img-round aui-list-img-sm">-->
-                    <!--</div>-->
-                    <!--<div class="aui-list-item-inner">-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="aui-list-item-title aui-font-size-14">AUI</div>-->
-                            <!--<div class="aui-list-item-right">-->
-                                <!--<p class="order_money">¥0.01</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="aui-list-item-title order-buy-time">购买时长360分</div>-->
-                            <!--<div class="aui-list-item-right">-->
-                                <!--<p class="order_state">已付款</p>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--2018-01-12 10:08:23-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-    </div>
-</section>
 
+    <!--门店筛选-->
+    <div class="aui-popup aui-popup-top order-popup-top" id="store-top">
+        <div class="aui-popup-arrow"></div>
+        <div class="aui-popup-content">
+            <ul class="aui-list">
+                <li class="aui-list-item" v-for="item in stores" v-on:click="showStore">
+                    <div class="aui-list-item-inner bill-store-name" v-bind:aui="item.id">
+                        {{item.storeName}}
+                    </div>
+                </li>
+                <!--<li class="aui-list-item">-->
+                    <!--<div class="aui-list-item-inner bill-store-name" data-store="1">-->
+                        <!--宝安中心天虹-->
+                    <!--</div>-->
+                <!--</li>-->
+                <!--<li class="aui-list-item">-->
+                    <!--<div class="aui-list-item-inner bill-store-name" data-store="2">-->
+                        <!--宝安中心cococity-->
+                    <!--</div>-->
+                <!--</li>-->
+            </ul>
+        </div>
+    </div>
+    <section class="content-section">
+        <div class="grey-back">
+            <div class="aui-content">
+                <ul class="aui-list aui-media-list order-list" id="orderContent">
+                    <li class="order-list-item aui-margin-b-15" v-for="item in orders">
+                        <div class="aui-list-header order-list-header">
+                            <span class="order-num-id">订单号：<span>{{item.orderNumId}}</span></span>
+                        </div>
+                        <div class="aui-list-item-middle">
+                            <div class="aui-media-list-item-inner">
+                                <div class="aui-list-item-media order-list-item-media">
+                                    <img v-bind:src="item.orderUserImg" class="aui-img-round aui-list-img-sm">
+                                </div>
+                                <div class="aui-list-item-inner item-inner-noPadding">
+                                    <div class="aui-list-item-text">
+                                        <div class="aui-list-item-title aui-font-size-16">{{item.orderUserName}}</div>
+                                    </div>
+                                    <div class="aui-list-item-text">
+                                        <div class="aui-list-item-title order-list-text">套&nbsp;&nbsp;&nbsp;&nbsp;餐：<span>{{item.orderType}}</span></div>
+                                        <div class="aui-list-item-right order-list-money">¥<span>10.00</span></div>
+                                    </div>
+                                    <div class="aui-list-item-text">
+                                        <div class="aui-list-item-title order-list-text">设备号：<span>{{item.orderEquip}}</span></div>
+                                        <div class="aui-list-item-right">{{item.orderOrderedTime}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!--<li class="order-list-item aui-margin-b-15">-->
+                    <!--<div class="aui-list-header order-list-header">-->
+                    <!--<span class="order-num-id">订单号：<span>123456789123456789</span></span>-->
+                    <!--</div>-->
+                    <!--<div class="aui-list-item-middle">-->
+                    <!--<div class="aui-media-list-item-inner">-->
+                    <!--<div class="aui-list-item-media order-list-item-media">-->
+                    <!--<img src="../img/tx.jpg" class="aui-img-round aui-list-img-sm">-->
+                    <!--</div>-->
+                    <!--<div class="aui-list-item-inner item-inner-noPadding">-->
+                    <!--<div class="aui-list-item-text">-->
+                    <!--<div class="aui-list-item-title aui-font-size-16">小生灵</div>-->
+                    <!--</div>-->
+                    <!--<div class="aui-list-item-text">-->
+                    <!--<div class="aui-list-item-title order-list-text">套&nbsp;&nbsp;&nbsp;&nbsp;餐：<span>15分钟/20元</span></div>-->
+                    <!--<div class="aui-list-item-right order-list-money">¥<span>10.00</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="aui-list-item-text">-->
+                    <!--<div class="aui-list-item-title order-list-text">设备号：<span>123456789</span></div>-->
+                    <!--<div class="aui-list-item-right">2018-01-02</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+        </div>
+    </section>
+</section>
 <script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
 <script type="text/javascript" src="../js/api.js" ></script>
-<script type="text/javascript" src="../js/mustache.js" ></script>
-<script type="text/javascript" src="../js/dropload.min.js" ></script>
-<script type="text/javascript" src="order.js" ></script>
+<script type="text/javascript" src="../js/vue.min.js" ></script>
+<script type="text/javascript" src="order-vue.js" ></script>
 
 </body>
 </html>

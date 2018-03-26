@@ -80,11 +80,11 @@
 			"id": "A487954221",              // 订单编号id
 			"shop_name": "坪洲四季城店",	// 店铺名称
 			"shop_id": "1001",				// 店铺id
-			"device_id": "1-1"				// 设备编号
+			"device_id": "1-1",			// 设备编号
 			"user_id": 1567,				// 用户id
 			"user_name": "小鸡鸡",			// 用户昵称
 			"user_avatar": "http://a.baidu.com/image/10012.jpg",	// 用户头像
-			"created_at": 1552998746	    // 订单创建时间, 时间戳
+			"created_at": 1552998746,	    // 订单创建时间, 时间戳
 			"duration": 30,					// 使用时长（单位：min）
 			"amount": 28.00,				// 消费金额
 			"pay_status": 1,				// 支付状态； 0：未支付，1：已支付

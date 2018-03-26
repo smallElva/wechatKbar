@@ -4,88 +4,278 @@
     <meta charset="utf-8">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
-    <title>播控</title>
+    <title>遥控</title>
     <link rel="stylesheet" type="text/css" href="../../css/aui.css"/>
-    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_nbrzz56aqpu2qpvi.css"/>
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_qqpb5tw9m0cz0k9.css"/>
     <link rel="stylesheet" type="text/css" href="../../css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../choose.css"/>
 </head>
-<body style="background: #fff;">
-<section class="content2">
-    <div class="control-content">
-        <div class="control-block">
-            <div class="aui-content">
-                <div class="aui-row-padded">
-                    <div class="aui-col-xs-3">
-                        <div class="aui-icon-block">
-                            <div class="aui-icon-img">
-                                <img src="../../img/control_theoriginallyrics_normal.png">
-                            </div>
-                            <p class="control-p">原 / 伴</p>
-                        </div>
-                    </div>
-                    <div class="aui-col-xs-3">
-                        <div class="aui-icon-block">
-                            <div class="aui-icon-img">
-                                <img src="../../img/control_cutthesong_normal.png">
-                            </div>
-                            <p class="control-p">切歌</p>
-                        </div>
-                    </div>
-                    <div class="aui-col-xs-3">
-                        <div class="aui-icon-block">
-                            <div class="aui-icon-img">
-                                <img src="../../img/control_pauseplayback_normal.png">
-                            </div>
-                            <p class="control-p">播 / 停</p>
-                        </div>
-                    </div>
-                    <div class="aui-col-xs-3">
-                        <div class="aui-icon-block">
-                            <div class="aui-icon-img">
-                                <img src="../../img/control_duet_normal.png">
-                            </div>
-                            <p class="control-p">重唱</p>
-                        </div>
-                    </div>
-                </div>
+<body class="white-body">
+<section class="control-content">
+    <div class="aui-grid control-grid">
+        <div class="aui-row">
+            <div class="aui-col-xs-3"></div>
+            <div class="aui-col-xs-3">
+                <img class="icon-img control-img" src="../../img/control/icon1.png">
+                <div class="aui-grid-label control-text">评分</div>
+            </div>
+            <div class="aui-col-xs-3">
+                <img class="icon-img control-img" src="../../img/control/icon2.png">
+                <div class="aui-grid-label control-text">乐谱</div>
+            </div>
+            <div class="aui-col-xs-3">
+                <img class="icon-img control-img" src="../../img/control/icon3.png">
+                <div class="aui-grid-label control-text">跳过前奏</div>
+            </div>
+            <div class="aui-col-xs-3">
+                <img class="icon-img control-img" src="../../img/control/icon4.png">
+                <div class="aui-grid-label control-text">重唱</div>
+            </div>
+            <div class="aui-col-xs-3">
+                <img class="icon-img control-img" src="../../img/control/icon5.png">
+                <div class="aui-grid-label control-text">原唱/伴唱</div>
+            </div>
+            <div class="aui-col-xs-3">
+                <img class="icon-img control-img" src="../../img/control/icon6.png">
+                <div class="aui-grid-label control-text">播放/暂停</div>
+            </div>
+            <div class="aui-col-xs-3">
+                <img class="icon-img control-img" src="../../img/control/icon7.png">
+                <div class="aui-grid-label control-text">切歌</div>
             </div>
         </div>
-        <div class="aui-content">
-            <div class="aui-row-padded">
-                <div class="aui-col-xs-6">
-                    <div class="control-btn">
-                        <div class="aui-bar aui-bar-btn aui-bar-btn-sm">
-                            <div class="aui-bar-btn-item">
-                                <i class="iconfont icon-subtract"></i>
-                            </div>
-                            <div class="aui-bar-btn-item">
-                                <i class="iconfont icon-add"></i>
-                            </div>
-                        </div>
-                        <p class="control-p">麦克风</p>
-                    </div>
+    </div>
+    <div class="aui-grid control-grid">
+        <div class="aui-row">
+            <div class="aui-col-xs-6">
+                <div class="circle-block-div">
+                    <img class="icon-block" src="../../img/control/icon-block.png">
+                    <img class="minus-icons control-img" src="../../img/control/icon-minus.png">
+                    <img class="plus-icons control-img" src="../../img/control/icon-plus.png">
+                    <div class="control-text">音量</div>
                 </div>
-                <div class="aui-col-xs-6">
-                    <div class="control-btn">
-                        <div class="aui-bar aui-bar-btn aui-bar-btn-sm">
-                            <div class="aui-bar-btn-item">
-                                <i class="iconfont icon-subtract"></i>
-                            </div>
-                            <div class="aui-bar-btn-item">
-                                <i class="iconfont icon-add"></i>
-                            </div>
-                        </div>
-                        <p class="control-p">音乐</p>
-                    </div>
+            </div>
+            <div class="aui-col-xs-6">
+                <div class="circle-block-div">
+                    <img class="icon-block" src="../../img/control/icon-block.png">
+                    <img class="minus-icons control-img" src="../../img/control/icon-minus.png">
+                    <img class="plus-icons control-img" src="../../img/control/icon-plus.png">
+                    <div class="control-text">麦克风</div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="aui-grid control-voice">
+        <div class="aui-row">
+            <div class="aui-col-xs-10 circle-block-mood">
+                <img class="mood-block" src="../../img/control/mood-block.png">
+                <div class="mood-div">
+                    <img class="mood-img mood-img1 control-img" src="../../img/control/mood1.png">
+                    <img class="mood-img mood-img2 control-img" src="../../img/control/mood2.png">
+                    <img class="mood-img mood-img3 control-img" src="../../img/control/mood3.png">
+                    <img class="mood-img mood-img4 control-img" src="../../img/control/mood4.png">
+                </div>
+            </div>
+            <div class="aui-col-xs-2 control-voice-p">气氛</div>
+        </div>
+    </div>
+    <div class="aui-grid control-grid">
+        <div class="aui-row">
+            <div class="aui-col-xs-3"></div>
+            <div class="aui-col-xs-3" onclick="showInstrument()">
+                <img class="icon-img control-img" src="../../img/control/music1.png">
+                <div class="control-text">乐器</div>
+            </div>
+            <div class="aui-col-xs-3" onclick="showSounds()">
+                <img class="icon-img control-img" src="../../img/control/music2.png">
+                <div class="control-text">音效</div>
+            </div>
+            <div class="aui-col-xs-3"></div>
+        </div>
+    </div>
 </section>
+<footer class="aui-bar aui-bar-tab choose-footer" id="footer">
+    <a class="aui-bar-tab-item" href="../choose.html">
+        <i class="iconfont icon-home"></i>
+        <div class="aui-bar-tab-label">主页</div>
+    </a>
+    <a class="aui-bar-tab-item" href="control.html">
+        <i class="iconfont icon-yaokong-anxia red-icon"></i>
+        <div class="aui-bar-tab-label red-icon">遥控</div>
+    </a>
+</footer>
+<div class="mask" id="mask">
+    <div class="mask-content aui-content-padded">
+        <div id="instrument-mask">
+            <div class="aui-grid">
+                <div class="aui-row-padded">
+                    <div class="aui-col-xs-3">
+                        <div class="instrument-div">
+                            <i class="iconfont icon-gangqin"></i>
+                            <p class="mask-text">默认</p>
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-3">
+                        <div class="instrument-div">
+                            <i class="iconfont icon-shoufengqin"></i>
+                            <p class="mask-text">手风琴</p>
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-3">
+                        <div class="instrument-div">
+                            <i class="iconfont icon-kouqin"></i>
+                            <p class="mask-text">口琴</p>
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-3">
+                        <div class="instrument-div">
+                            <i class="iconfont icon-nilongjita"></i>
+                            <p class="mask-text">尼龙吉他</p>
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-3">
+                        <div class="instrument-div">
+                            <i class="iconfont icon-xiaohao"></i>
+                            <p class="mask-text">小号</p>
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-3">
+                        <div class="instrument-div">
+                            <i class="iconfont icon-sakesi"></i>
+                            <p class="mask-text">萨克斯</p>
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-3">
+                        <div class="instrument-div">
+                            <i class="iconfont icon-shuanghuangguan"></i>
+                            <p class="mask-text">双簧管</p>
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-3">
+                        <div class="instrument-div">
+                            <i class="iconfont icon-danhuangguan"></i>
+                            <p class="mask-text">单簧管</p>
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-3"></div>
+                    <div class="aui-col-xs-3">
+                        <div class="instrument-div">
+                            <i class="iconfont icon-changdi"></i>
+                            <p class="mask-text">长笛</p>
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-3">
+                        <div class="instrument-div">
+                            <i class="iconfont icon-taodi"></i>
+                            <p class="mask-text">陶笛</p>
+                        </div>
+                    </div>
+                    <div class="aui-col-xs-3"></div>
+                </div>
+            </div>
+        </div>
+        <div id="soundEffect-mask">
+            <div class="sound-content">
+                <ul class="aui-grid">
+                    <li class="aui-row">
+                        <div class="aui-col-xs-3">
+                            <div class="sound-div sound-text">
+                                音调
+                            </div>
+                        </div>
+                        <div class="aui-col-xs-3">
+                            <div class="sound-div">
+                                <i class="iconfont icon-b-1"></i>
+                            </div>
+                        </div>
+                        <div class="aui-col-xs-3">
+                            <div class="sound-div">
+                                <i class="iconfont icon-icon-test4"></i>
+                            </div>
+                        </div>
+                        <div class="aui-col-xs-3">
+                            <div class="sound-div red-icon">
+                                恢复默认
+                            </div>
+                        </div>
+                    </li>
+                    <li class="aui-row">
+                        <div class="aui-col-xs-3">
+                            <div class="sound-div sound-text">
+                                速度
+                            </div>
+                        </div>
+                        <div class="aui-col-xs-3">
+                            <div class="sound-div">
+                                <i class="iconfont icon-b-1"></i>
+                            </div>
+                        </div>
+                        <div class="aui-col-xs-3">
+                            <div class="sound-div">
+                                <i class="iconfont icon-icon-test4"></i>
+                            </div>
+                        </div>
+                        <div class="aui-col-xs-3">
+                            <div class="sound-div red-icon">
+                                恢复默认
+                            </div>
+                        </div>
+                    </li>
+                    <li class="aui-row">
+                        <div class="aui-col-xs-3">
+                            <div class="sound-div sound-text">
+                                混响
+                            </div>
+                        </div>
+                        <div class="aui-col-xs-3">
+                            <div class="sound-div">
+                                <i class="iconfont icon-b-1"></i>
+                            </div>
+                        </div>
+                        <div class="aui-col-xs-3">
+                            <div class="sound-div">
+                                <i class="iconfont icon-icon-test4"></i>
+                            </div>
+                        </div>
+                        <div class="aui-col-xs-3">
+                            <div class="sound-div red-icon">
+                                恢复默认
+                            </div>
+                        </div>
+                    </li>
+                    <li class="aui-row">
+                        <div class="aui-col-xs-3">
+                            <div class="sound-div sound-text">
+                                主旋律
+                            </div>
+                        </div>
+                        <div class="aui-col-xs-3">
+                            <div class="sound-div">
+                                <i class="iconfont icon-b-1"></i>
+                            </div>
+                        </div>
+                        <div class="aui-col-xs-3">
+                            <div class="sound-div">
+                                <i class="iconfont icon-icon-test4"></i>
+                            </div>
+                        </div>
+                        <div class="aui-col-xs-3">
+                            <div class="sound-div red-icon">
+                                恢复默认
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="closeMask" id="closeMask">
+        <i class="iconfont icon-guanbi1"></i>
+    </div>
+</div>
 <script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="../../js/api.js"></script>
-<script type="text/javascript" src="../../js/mustache.js"></script>
+<script type="text/javascript" src="control.js"></script>
 
 </body>
 </html>

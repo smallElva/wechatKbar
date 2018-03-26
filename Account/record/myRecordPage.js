@@ -15,7 +15,7 @@ function rotate (){
         is_rotate=false;
     }
     else{
-        time=window.setInterval(begin,15);
+        time=window.setInterval(begin,30);
         is_rotate=true;
     }
 }

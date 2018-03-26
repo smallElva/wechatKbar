@@ -1,35 +1,66 @@
 @charset "UTF-8";
-
+.store-list{
+    border-top: none;
+    background: none;
+}
+.store-list .store-list-item{
+    padding: 0 .75rem;
+    box-shadow: 0px 0px 30px rgba(0,0,0,0.1);
+    border-radius: .5rem;
+    margin-bottom: .8rem;
+    border-bottom: none;
+    background: none;
+}
+.store-list-item .store-list-img{
+    width: 3.5rem;
+}
+.aui-list .store-list-name{
+    font-size: .9rem;
+}
+.aui-list .store-list-add{
+    font-size: .65rem;
+    color: #818181;
+}
 .store-img-div{
-    width: 70%;
-    max-width: 15rem;
-    margin: .8rem auto;
+    position: relative;
 }
 .store-img{
     width: 100%;
 }
+.choose-imgs{
+    font-size: .7rem;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    position: absolute;
+    bottom: .5rem;
+    left: 0;
+}
 .store_page_content .aui-list.aui-list-in .aui-list-item {
-    border-bottom: 1px solid #f3f3f3;
+    border-bottom: 1px solid #f2f2f2;
     background-image: none;
 }
-
-/*@media all{*/
-    /*.store_page_content .aui-list.aui-list-in .aui-list-item:last-child {*/
-        /*background-image: none;*/
-    /*}*/
-/*}*/
 
 .store_page_content .aui-list{
      border-top: none;
 }
-.store_page_content .aui-list.aui-list-in .aui-list-item .aui-iconfont{
-    padding-right: .3rem;
+.aui-list .icon-div{
+    width: 1.5rem;
+    text-align: center;
+    padding-right: 0;
 }
-.store_name,.store_time,.store_state,.store_add,.store_call{
+.store_page_content .aui-list .iconfont{
+    color: #6170e4;
+    font-size: 1rem;
+}
+.aui-list .store_name,.aui-list .store_time,.aui-list .store_state,.aui-list .store_add,.aui-list .store_call{
     font-size: .75rem;
     color: #777;
     position: relative;
     top: .1rem;
+}
+.aui-list .store-list-text {
+    max-width: 50%;
 }
 .store_page_content .aui-list .aui-list-item-title {
     width: 100%;
@@ -38,25 +69,17 @@
     width: 100%;
 }
 
-/*@media all{*/
-    /*.aui-dialog-body input {*/
-        /*border: 1px solid #ddd;*/
-        /*background-image: none;*/
-
-    /*}*/
-    /*.aui-dialog-btn {*/
-        /*border: 1px solid #ddd;*/
-        /*background-image: none;*/
-        /*border-bottom: none;*/
-        /*border-left:none;*/
-    /*}*/
-    /*.aui-dialog-btn:last-child {*/
-        /*border: 1px solid #ddd;*/
-        /*border-right:none;*/
-        /*border-bottom: none;*/
-    /*}*/
-/*}*/
-
+.aui-dialog-body input {
+    text-align: center;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.1) inset;
+    border-radius: .3rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
+    min-height: 2.4rem;
+}
+.aui-dialog-btn{
+    color: #6170e4;
+}
 .store-list-item-media{
     width: 3.5rem;
 }

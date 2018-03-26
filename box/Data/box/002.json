@@ -1,10 +1,19 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
-    "sourceMap": true
-  },
-  "exclude": [
-    "node_modules"
+  "status": 200,
+  "msg": "success",
+  "list":[
+    {
+      "id": 4,
+      "roomUsersNum":"1546",
+      "roomBenefitNum":"123",
+      "boxBlockRoomNum":"9876543210",
+      "boxBlockRoomTime":"1"
+    },{
+      "id": 5,
+      "roomUsersNum":"1877",
+      "roomBenefitNum":"102",
+      "boxBlockRoomNum":"9876543212",
+      "boxBlockRoomTime":"0.5"
+    }
   ]
 }

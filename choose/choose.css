@@ -1,25 +1,91 @@
 @charset "UTF-8";
 
-/*点歌首页*/
-.choose-searchbar{
+/*头部搜索*/
+.aui-title{
+    display: flex;
+    justify-content: space-between;
+}
+.aui-title .aui-searchbar-input input {
+    height: 1.65rem;
+    line-height: 1.65rem;
+    font-size: 0.7rem;
+}
+.aui-title .aui-searchbar {
+    height: 2.4rem;
+}
+.index-search-title .aui-searchbar {
+    background-color: #373b3e;
+    color: #fff;
+}
+.page-search-title .aui-searchbar {
+    background-color: #fff;
+    color: #818181;
+}
+.aui-title .aui-searchbar-input {
+    margin: 0 0.75rem;
+    border-radius: 1rem;
+}
+.index-search-title .aui-searchbar-input{
+    background-color: #5f6265;
+}
+.page-search-title .aui-searchbar-input{
+    background-color: #f7f7f7;
+}
+.page-search-title .aui-searchbar-input{
+    margin: 0 0.5rem;
+}
+.page-search-title{
+    border-bottom: 1px solid #f2f2f2;
     background: #fff;
 }
-.icon-saoma{
-    padding-left: .5rem;
+/*头部已点歌曲*/
+.songNum-div{
+    display: inline-block;
+    line-height: 1.6rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    background: #fc3d3d;
+    text-align: center;
+    color: #fff;
+    margin-right: .75rem;
+    border-radius: 100%;
+}
+.songNum{
+    color: #fff;
+}
+.songNum-div-text{
+    font-size: .6rem;
+    color: #fff;
+}
+.prev-div-page{
+    padding-left: .75rem;
+}
+.prev-div-page .iconfont{
+    font-size: 1.5rem;
+    color: #555555;
+    position: relative;
+    top: .16rem;
+}
+
+/*点歌首页*/
+
+.icon-saomiao{
+    padding-right: .75rem;
     font-size: 1rem;
-    color: #ff2600;
+    color: #fff;
+    position: relative;
+    top: .1rem;
 }
 .packageBuy{
-    height: 2.8rem;
-    background: #fff;
+    height: 2.4rem;
     padding-left: .75rem;
-    line-height: 2.8rem;
-    margin-top: .5rem;
+    padding-right: .75rem;
+    line-height: 2.4rem;
     position: relative;
 }
-.packageBuy .iconfont{
-    font-size: 1.3rem;
-    color: #ffc107;
+.packageBuy .index-map{
+    width: 1.33rem;
+    display: inline-block;
     vertical-align: middle;
 }
 .packageBuy-text{
@@ -29,39 +95,38 @@
     vertical-align: middle;
 }
 .packageBuy-a{
-    height: 2.8rem;
-    line-height: 2.8rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
     padding-left: .75rem;
     padding-right: .75rem;
-    background: #ff2600;
+    background: #fc3d3d;
+    font-size: .8rem;
     color: #fff;
-    display: block;
     position: absolute;
-    right: 0;
     top: 0;
+    right: .75rem;
+    display: block;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    box-shadow: 0px 0px .6rem 0px rgba(252,61,61,0.8);
 }
 .choose-way{
-    margin-top: .5rem;
+    margin-top: .375rem;
 }
 .choose-content{
+    padding-left: .75rem;
+    padding-right: .75rem;
     margin-bottom: 2.25rem;
+    margin-top: 1rem;
 }
-.choose-block{
-    display:flex;
-    display:-webkit-flex;
-    height: 4.8rem;
-    background: #fff;
-    justify-content: center;
-    align-items: center;
-}
-.choose-block-icon{
+.choose-block-a{
+    display: block;
     text-align: center;
+    margin-bottom: .5rem;
 }
-.choose-block-icon i{
-    font-size: 1.3rem;
-}
-.choose-block-text{
-    font-size: .8rem;
+.choose-block-img{
+    width: 3.2rem;
+    display: inline-block;
 }
 .new-song-a{
     margin-top: .5rem;
@@ -81,69 +146,20 @@
     font-size: 1rem;
 }
 .choose-footer{
-    background: #212121;
+    background: #fff;
+    box-shadow: 0px -.2rem .3rem 0px rgba(0,0,0,0.04)
 }
 .choose-footer .aui-bar-tab-item{
-    color: #fff;
-    font-size: .8rem;
+    color: #2e2e2e;
+    font-size: .6rem;
 }
 .choose-footer .aui-bar-tab-item .iconfont{
     font-size: 1rem;
 }
-.choose-footer .aui-bar-tab-item.aui-active{
-    color: #ffc107;
-}
-
-/*播控*/
-.control-content{
-    color: #2b2b2b;
-}
-.control-content p{
-    color: #2b2b2b;
-    font-size: .9rem;
-    margin-top: .5rem;
-}
-.control-block{
-    padding: 8rem 0 2rem 0;
-}
-.aui-icon-block{
-    text-align: center;
-}
-.aui-icon-img{
-    width: 3.6rem;
-    height: 3.6rem;
-    border-radius: 100%;
-    text-align: center;
-    margin: 0 auto;
-}
-.aui-icon-img img{
-    width: 100%;
+.logo-img{
+    width: 3rem;
     display: inline-block;
-}
-.control-btn{
-    font-size: 1.5rem;
-    text-align: center;
-    width: 80%;
-    margin: .5rem auto;
-}
-.control-btn i{
-    font-size: 1.5rem;
-}
-.aui-bar-btn-sm .aui-bar-btn-item {
-    line-height: 2.4rem;
-    font-size: 1.5rem;
-}
-.aui-bar-btn-item:first-child {
-    border-top-left-radius: 1.5rem;
-    border-bottom-left-radius: 1.5rem;
-}
-.aui-bar-btn-item {
-    border-width: 1px;
-    border-color: #ccc;
-}
-.aui-bar-btn-item:last-child {
-    border-top-right-radius: 1.5rem;
-    border-bottom-right-radius: 1.5rem;
+    padding-top: .3rem;
 }
 
 
@@ -184,8 +200,8 @@
 }
 .search-div{
     margin: 0.125rem 0.5rem;
-    height: 2rem;
-    line-height: 2rem;
+    height: 1.65rem;
+    line-height: 1.65rem;
     font-size: 0.75rem;
 }
 .singer-searchbar .aui-searchbar-input input {
@@ -233,7 +249,7 @@
 }
 .singerPage_header .aui-btn .aui-iconfont{
     font-weight: 700;
-    color: #ff2600;
+    color: #fc3d3d;
 }
 .singerImg{
     width: 100%;
@@ -241,39 +257,14 @@
 .singer-header{
     background: transparent;
 }
-.singerPage_header_text{
+.singerPage_name{
+    font-size: 1.2rem;
     position: absolute;
-    bottom: 0;
+    bottom: .8rem;
     left: 0;
     width: 100%;
     text-align: center;
     color: #fff;
-    padding: 1rem 0;
-}
-.singerPage_name{
-    font-size: .9rem;
-}
-.singerPage-search-title{
-    display: flex;
-    justify-content: space-between;
-    background-color: #fff;
-    border-bottom: 1px solid #f3f3f3;
-}
-.singerPage-search-title .aui-searchbar-input input {
-    height: 2rem;
-    font-size: 0.85rem;
-}
-.singerPage-search-title .aui-searchbar {
-    background-color: #fff;
-    color: #9e9e9e;
-    padding: .5rem 0;
-    height: 3rem;
-
-}
-.aui-searchbar-input {
-    margin: 0 0.5rem;
-    background-color: #ebeced;
-    border-radius: 1rem;
 }
 .choose-btn{
     border: 1px solid #ccc;
@@ -285,13 +276,13 @@
     font-weight: bold;
 }
 .songName{
-    font-size: .85rem;
-    color: #000;
-    margin-bottom: .3rem;
+    font-size: .8rem;
+    color: #2e2e2e;
+    margin-bottom: .1rem;
 }
 .perSingerName{
-    font-size: .7rem;
-    color: #9e9e9e;
+    font-size: .6rem;
+    color: #818181;
 }
 .song-list-num{
     color: #848484;
@@ -304,17 +295,22 @@
     padding-bottom: 0.75rem;
 }
 .song-list .song-list-num{
-    color: #ff2600;
+    color: #fc3d3d;
 }
-.singerPage-search-title .aui-searchbar .aui-iconfont {
-    line-height: 2.1rem;
-    color: #ff2600 !important;
-    font-size: .85rem;
-    font-weight: bold;
+
+.singerPage-search-title{
+    height: 2.4rem;
+    line-height: 2.4rem;
+    background: #fff;
+    border-bottom: 1px solid #f2f2f2;
+}
+.singerPage-search-title .songNum-div{
+    margin-top: .4rem;
 }
 .singerPage_mescroll{
     top: 0;
 }
+
 /*语言点歌*/
 .language-img{
     position: relative;
@@ -329,39 +325,217 @@
 }
 .song-btn .iconfont{
     font-size: 1.1rem;
-    color: #ff2600;
+    color: #fc3d3d;
 }
 .song-btn .icon-toTop{
+    color: #fc3d3d;
     padding-right: .75rem;
-    color: #efa925;
 }
 
 /*乐谱点歌*/
 .aui-list .aui-list-item i.musicScore-icon{
     font-size: 1.2rem;
     padding-right: .75rem;
-    color: #ff2600;
+    color: #fc3d3d;
     vertical-align: middle;
 }
-.songNum-div{
-    display: inline-block;
-    line-height: 1;
-    padding-right: .75rem;
-    padding-top: .5rem;
+/*搜索页面*/
+.aui-list .list-song-info{
+    max-width: 70%;
 }
-.songNum{
-    width: 1.4rem;
-    height: 1.4rem;
-    line-height: 1.4rem;
-    margin: .08rem 0;
-    text-align: center;
-    border-radius: 0.7rem;
-    background: #fff;
-    border: 1px solid #ff2600;
-    color: #ff2600;
+.search-right{
+    height: 2.4rem;
+    line-height: 2.4rem;
 }
-.songNum-div-text{
-    font-size: .6rem;
-    color: #ff2600;
+.search-right .icon-sousuo-{
+    color: #555555;
+    font-size: 1.1rem;
+    padding-right: .5rem;
+    position: relative;
+    top: .1rem;
+}
+.search-right .songNum-div{
+    position: relative;
+    top: -.1rem;
+}
+.sang-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+.content-sang{
+    padding-top: 2.4rem;
+}
+.select-song-icon{
+    font-size: 1.1rem;
+}
+.red-icon{
+    color: #e8413d;
+}
+.type-song-icon{
+    font-size: .65rem;
+    color: #ff6262;
 }
 
+
+/*播控*/
+.control-content{
+    padding: .5rem .75rem;
+}
+.control-block{
+    text-align: center;
+}
+.control-voice{
+    padding-top: .5rem;
+}
+.control-grid [class*=aui-col-] {
+    padding: .5rem 0 0 0;
+}
+.control-voice .aui-col-xs-10,.control-voice .aui-col-xs-3{
+    padding: 0;
+}
+.control-text{
+    font-size: .7rem;
+    color: #818181;
+    text-align: center;
+}
+.control-grid [class*=aui-col-xs-]:active,.control-voice [class*=aui-col-xs-]:active{
+    background-color: transparent;
+}
+.circle-block-div{
+    position: relative;
+}
+.minus-icons{
+    display: inline-block;
+    width: 1.4rem;
+    position: absolute;
+    left: 1.2rem;
+    top: 1.5rem;
+}
+.plus-icons{
+    display: inline-block;
+    width: 1.4rem;
+    position: absolute;
+    right: 1.2rem;
+    top: .9rem;
+}
+.circle-block-mood{
+    position: relative;
+    text-align: center;
+}
+.mood-div{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    text-align: center;
+}
+.mood-div .iconfont{
+    font-size: 1rem;
+}
+.control-voice-p{
+    font-size: .7rem;
+    color: #818181;
+    text-align: center;
+}
+.mood-div-p{
+    color: #373b3e;
+    font-size: .6rem;
+}
+.icon-img{
+    width: 3.2rem;
+    display: inline-block;
+}
+.icon-block{
+    width: 7.4rem;
+    display: inline-block;
+}
+.control-voice .aui-col-xs-6{
+    padding: .5rem 0;
+}
+.mood-block{
+    width: 13rem;
+    display: inline-block;
+}
+.mood-img1{
+    width: 1.2rem;
+    display: inline-block;
+}
+.mood-img2{
+    width: 1.5rem;
+    display: inline-block;
+}
+.mood-img3{
+    width: 1.65rem;
+    display: inline-block;
+}
+.mood-img4{
+    width: 2.3rem;
+    display: inline-block;
+}
+.mood-img{
+    margin: 0 .5rem;
+}
+.control-img:active{
+    opacity: 0.8;
+}
+/*遮罩层*/
+.mask{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: none;
+}
+.mask-content{
+    padding: 1rem 0;
+}
+.mask-content .aui-grid{
+    background: transparent;
+    color: #fefefe;
+}
+.instrument-div{
+    text-align: center;
+}
+.instrument-div .iconfont{
+    font-size: 2rem;
+}
+.mask-text{
+    font-size: .7rem;
+    color: #fefefe;
+}
+.closeMask{
+    text-align: center;
+}
+.closeMask .iconfont{
+    font-size: 3rem;
+    color: #fff;
+}
+.mask-content .aui-grid [class*=aui-col-xs-]:active {
+    background-color: transparent;
+}
+.mask-content .aui-grid [class*=aui-col-xs-]:active .iconfont{
+    color: #e8413d;
+}
+.sound-div{
+    font-size: .8rem;
+}
+.sound-div .iconfont{
+    font-size: 1rem;
+}
+.sound-content{
+    padding-top: 3rem;
+}
+.sound-text{
+    padding-left: .4rem;
+    text-align: left;
+}
+#instrument-mask,#soundEffect-mask{
+    display: none;
+}

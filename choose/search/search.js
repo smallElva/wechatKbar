@@ -42,7 +42,7 @@ $(function(){
         }
     });
     /*点击搜索符号触发搜索事件*/
-    $(".aui-searchbar .aui-icon-search").click(function(){
+    $(".aui-searchbar .icon-sousuo").click(function(){
         searchSongs();
     });
     /*搜索歌曲方法*/
@@ -91,9 +91,6 @@ $(function(){
             var pd=curPageData[i];
             result +='<li class="aui-list-item aui-list-item-middle">'+
             '<a class="aui-media-list-item-inner" href="'+pd.pdHref+'">'+
-            '<div class="aui-list-item-media songImg">'+
-            '<img src="'+pd.pdImg+'" class="aui-list-img-sm">'+
-            '</div>'+
             '<div class="aui-list-item-inner aui-list-item-arrow">'+
             '<div class="aui-list-item-title singerName">'+pd.pdName+'</div>'+
             '</div>'+
@@ -101,16 +98,16 @@ $(function(){
             '</li>';
             for(var j = 0;j < pd.song.length; j++){
                 var songs = pd.song[j];
-                result +='<li class="aui-list-item aui-list-item-middle">'+
+                result +='<li class="aui-list-item aui-list-item-middle" onclick="chooseThis(this)">'+
                 '<div class="aui-media-list-item-inner">'+
                 '<div class="aui-list-item-inner">'+
                 '<div class="aui-list-item-text">'+
                 '<div class="aui-list-item-title list-song-info">'+
-                '<div class="songName aui-ellipsis-1">'+ songs.songName + '[' + songs.songConcert + ']' +'</div>'+
+                '<div class="songName aui-ellipsis-1">'+ songs.songName +'</div>'+
                 '<div class="perSingerName"> '+songs.singerName +'</div>'+
                 '</div>'+
                 '<div class="aui-list-item-right">'+
-                '<button class="choose-btn">'+'<i class="aui-iconfont aui-icon-plus">'+'</i>'+' 点歌'+'</button>'+
+                    '<i class="iconfont icon-maikefeng select-song-icon"></i>'+
                 '</div>'+
                 '</div>'+
                 '</div>'+
@@ -196,3 +193,10 @@ function setHeightKeyWord(id, keyword, color, bold) {
 apiready = function(){
     api.parseTapmode();
 };
+
+/**
+ * 点歌操作
+ */
+function chooseThis(obj) {
+    $(obj).find('.select-song-icon').removeClass('icon-maikefeng').addClass('icon-maikefeng-dianji red-icon');
+}

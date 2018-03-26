@@ -6,301 +6,64 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>包厢状态</title>
     <link rel="stylesheet" type="text/css" href="../css/aui.css" />
-    <link rel="stylesheet" type="text/css" href="../css/mescroll.min.css" />
-    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_igll0zeyd8jpds4i.css" />
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_i46qtuvyzsuac3di.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
     <link rel="stylesheet" type="text/css" href="box.css" />
 </head>
-<body>
-<section class="content-box">
-    <div id="mescroll" class="mescroll box_mescroll">
-        <ul class="aui-content" id="box-content">
-            <!--{{#list}}-->
-            <!--<li class="box-list-item-inner">-->
-            <!--<div class="box-list-item-header">-->
-            <!--<div class="box-list-header">-->
-            <!--<div class="box-list-store aui-pull-left">-->
-            <!--<i class="aui-iconfont aui-icon-location"></i>-->
-            <!--<span class="order-store-name">{{orderStoreName}}</span>-->
-            <!--</div>-->
-            <!--<div class="box-list-benefit aui-pull-right">-->
-            <!--<div class="box-list-benefit-p">-->
-            <!--<i class="iconfont icon-geren1"></i>-->
-            <!--<span>累计用户：</span>-->
-            <!--<span class="box-list-benefit-users">{{boxListUsers}}</span>-->
-            <!--</div>-->
-            <!--<div class="box-list-benefit-p">-->
-            <!--<i class="iconfont icon-zanwushouyi"></i>-->
-            <!--<span>累计收益：</span>-->
-            <!--<span class="box-list-benefit-benefits">{{boxListBenefits}}</span>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="box-list-state aui-clearfix">-->
-            <!--<span class="box-state-no-use">空闲中：<span class="box-state-no-use-num">{{boxStateNoUseNum}}</span></span>-->
-            <!--<span class="box-state-use">消费中：<span class="box-state-use-num">{{boxStateUseNum}}</span></span>-->
-            <!--<span class="box-state-fix">维修中：<span class="box-state-fix-num">{{boxStateFixNum}}</span></span>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="box-house-block">-->
-            <!--<div class="aui-content-padded">-->
-            <!--<div class="aui-row-padded">-->
-            <!--<div class="aui-col-xs-4">-->
-            <!--<div class="box-block">-->
-            <!--<div class="box-block-text">-->
-            <!--<i class="iconfont icon-geren1"></i>-->
-            <!--<span class="room-users-num">{{roomUsersNum}}</span>-->
-            <!--</div>-->
-            <!--<div class="box-block-text">-->
-            <!--<i class="iconfont icon-zanwushouyi"></i>-->
-            <!--<span class="room-benefit-num">{{roomBenefitNum}}</span>-->
-            <!--</div>-->
-            <!--<div class="box-block-room-num">{{boxBlockRoomNum}}</div>-->
-            <!--<div class="box-block-text">空闲{{boxBlockRoomTime}}小时</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="aui-clearfix"></div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</li>-->
-            <!--{{/list}}-->
-            <!--<li class="box-list-item-inner">-->
-            <!--<div class="box-list-item-header">-->
-            <!--<div class="box-list-header">-->
-            <!--<div class="box-list-store aui-pull-left">-->
-            <!--<i class="aui-iconfont aui-icon-location"></i>-->
-            <!--<span class="order-store-name">坪洲四季城店</span>-->
-            <!--</div>-->
-            <!--<div class="box-list-benefit aui-pull-right">-->
-            <!--<p class="box-list-benefit-p">-->
-            <!--<i class="iconfont icon-geren1"></i>-->
-            <!--<span>累计用户：</span>-->
-            <!--<span class="box-list-benefit-users">1305</span>-->
-            <!--</p>-->
-            <!--<p class="box-list-benefit-p">-->
-            <!--<i class="iconfont icon-zanwushouyi"></i>-->
-            <!--<span>累计收益：</span>-->
-            <!--<span class="box-list-benefit-benefits">888.00</span>-->
-            <!--</p>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="box-list-state aui-clearfix">-->
-            <!--<span class="box-state-no-use">空闲中：<span class="box-state-no-use-num">0</span></span>-->
-            <!--<span class="box-state-use">消费中：<span class="box-state-use-num">3</span></span>-->
-            <!--<span class="box-state-fix">维修中：<span class="box-state-fix-num">0</span></span>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="box-house-block">-->
-            <!--<div class="aui-content-padded">-->
-            <!--<div class="aui-row-padded">-->
-            <!--<div class="aui-col-xs-4">-->
-            <!--<div class="box-block">-->
-            <!--<div class="box-block-text">-->
-            <!--<i class="iconfont icon-geren1"></i>-->
-            <!--<span class="room-users-num">645</span>-->
-            <!--</div>-->
-            <!--<div class="box-block-text">-->
-            <!--<i class="iconfont icon-zanwushouyi"></i>-->
-            <!--<span class="room-benefit-num">1387.00</span>-->
-            <!--</div>-->
-            <!--<div class="box-block-room-num">01</div>-->
-            <!--<div class="box-block-text">空闲3小时</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="aui-col-xs-4">-->
-            <!--<div class="box-block">-->
-            <!--<div class="box-block-text">-->
-            <!--<i class="iconfont icon-geren1"></i>-->
-            <!--<span class="room-users-num">645</span>-->
-            <!--</div>-->
-            <!--<div class="box-block-text">-->
-            <!--<i class="iconfont icon-zanwushouyi"></i>-->
-            <!--<span class="room-benefit-num">1387.00</span>-->
-            <!--</div>-->
-            <!--<div class="box-block-room-num">02</div>-->
-            <!--<div class="box-block-text">空闲3小时</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="aui-col-xs-4">-->
-            <!--<div class="box-block">-->
-            <!--<div class="box-block-text">-->
-            <!--<i class="iconfont icon-geren1"></i>-->
-            <!--<span class="room-users-num">645</span>-->
-            <!--</div>-->
-            <!--<div class="box-block-text">-->
-            <!--<i class="iconfont icon-zanwushouyi"></i>-->
-            <!--<span class="room-benefit-num">1387.00</span>-->
-            <!--</div>-->
-            <!--<div class="box-block-room-num">03</div>-->
-            <!--<div class="box-block-text">空闲3小时</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="aui-clearfix"></div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</li>-->
-            <!--<li class="box-list-item-inner">-->
-            <!--<div class="box-list-item-header">-->
-            <!--<div class="box-list-header">-->
-            <!--<div class="box-list-store aui-pull-left">-->
-            <!--<i class="aui-iconfont aui-icon-location"></i>-->
-            <!--<span class="order-store-name">坪洲四季城店</span>-->
-            <!--</div>-->
-            <!--<div class="box-list-benefit aui-pull-right">-->
-            <!--<p class="box-list-benefit-p">-->
-            <!--<i class="iconfont icon-geren1"></i>-->
-            <!--<span>累计用户：</span>-->
-            <!--<span class="box-list-benefit-users">1305</span>-->
-            <!--</p>-->
-            <!--<p class="box-list-benefit-p">-->
-            <!--<i class="iconfont icon-zanwushouyi"></i>-->
-            <!--<span>累计收益：</span>-->
-            <!--<span class="box-list-benefit-benefits">888.00</span>-->
-            <!--</p>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="box-list-state aui-clearfix">-->
-            <!--<span class="box-state-no-use">空闲中：<span class="box-state-no-use-num">0</span></span>-->
-            <!--<span class="box-state-use">消费中：<span class="box-state-use-num">3</span></span>-->
-            <!--<span class="box-state-fix">维修中：<span class="box-state-fix-num">0</span></span>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="box-house-block">-->
-            <!--<div class="aui-content-padded">-->
-            <!--<div class="aui-row-padded">-->
-            <!--<div class="aui-col-xs-4">-->
-            <!--<div class="box-block">-->
-            <!--<div class="box-block-text">-->
-            <!--<i class="iconfont icon-geren1"></i>-->
-            <!--<span class="room-users-num">645</span>-->
-            <!--</div>-->
-            <!--<div class="box-block-text">-->
-            <!--<i class="iconfont icon-zanwushouyi"></i>-->
-            <!--<span class="room-benefit-num">1387.00</span>-->
-            <!--</div>-->
-            <!--<div class="box-block-room-num">01</div>-->
-            <!--<div class="box-block-text">空闲3小时</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="aui-col-xs-4">-->
-            <!--<div class="box-block">-->
-            <!--<div class="box-block-text">-->
-            <!--<i class="iconfont icon-geren1"></i>-->
-            <!--<span class="room-users-num">645</span>-->
-            <!--</div>-->
-            <!--<div class="box-block-text">-->
-            <!--<i class="iconfont icon-zanwushouyi"></i>-->
-            <!--<span class="room-benefit-num">1387.00</span>-->
-            <!--</div>-->
-            <!--<div class="box-block-room-num">02</div>-->
-            <!--<div class="box-block-text">空闲3小时</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="aui-col-xs-4">-->
-            <!--<div class="box-block">-->
-            <!--<div class="box-block-text">-->
-            <!--<i class="iconfont icon-geren1"></i>-->
-            <!--<span class="room-users-num">645</span>-->
-            <!--</div>-->
-            <!--<div class="box-block-text">-->
-            <!--<i class="iconfont icon-zanwushouyi"></i>-->
-            <!--<span class="room-benefit-num">1387.00</span>-->
-            <!--</div>-->
-            <!--<div class="box-block-room-num">03</div>-->
-            <!--<div class="box-block-text">空闲3小时</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="aui-clearfix"></div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</li>-->
-            <!--<li class="box-list-item-inner">-->
-            <!--<div class="box-list-item-header">-->
-            <!--<div class="box-list-header">-->
-            <!--<div class="box-list-store aui-pull-left">-->
-            <!--<i class="aui-iconfont aui-icon-location"></i>-->
-            <!--<span class="order-store-name">坪洲四季城店</span>-->
-            <!--</div>-->
-            <!--<div class="box-list-benefit aui-pull-right">-->
-            <!--<p class="box-list-benefit-p">-->
-            <!--<i class="iconfont icon-geren1"></i>-->
-            <!--<span>累计用户：</span>-->
-            <!--<span class="box-list-benefit-users">1305</span>-->
-            <!--</p>-->
-            <!--<p class="box-list-benefit-p">-->
-            <!--<i class="iconfont icon-zanwushouyi"></i>-->
-            <!--<span>累计收益：</span>-->
-            <!--<span class="box-list-benefit-benefits">888.00</span>-->
-            <!--</p>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="box-list-state aui-clearfix">-->
-            <!--<span class="box-state-no-use">空闲中：<span class="box-state-no-use-num">0</span></span>-->
-            <!--<span class="box-state-use">消费中：<span class="box-state-use-num">3</span></span>-->
-            <!--<span class="box-state-fix">维修中：<span class="box-state-fix-num">0</span></span>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="box-house-block">-->
-            <!--<div class="aui-content-padded">-->
-            <!--<div class="aui-row-padded">-->
-            <!--<div class="aui-col-xs-4">-->
-            <!--<div class="box-block">-->
-            <!--<div class="box-block-text">-->
-            <!--<i class="iconfont icon-geren1"></i>-->
-            <!--<span class="room-users-num">645</span>-->
-            <!--</div>-->
-            <!--<div class="box-block-text">-->
-            <!--<i class="iconfont icon-zanwushouyi"></i>-->
-            <!--<span class="room-benefit-num">1387.00</span>-->
-            <!--</div>-->
-            <!--<div class="box-block-room-num">01</div>-->
-            <!--<div class="box-block-text">空闲3小时</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="aui-col-xs-4">-->
-            <!--<div class="box-block">-->
-            <!--<div class="box-block-text">-->
-            <!--<i class="iconfont icon-geren1"></i>-->
-            <!--<span class="room-users-num">645</span>-->
-            <!--</div>-->
-            <!--<div class="box-block-text">-->
-            <!--<i class="iconfont icon-zanwushouyi"></i>-->
-            <!--<span class="room-benefit-num">1387.00</span>-->
-            <!--</div>-->
-            <!--<div class="box-block-room-num">02</div>-->
-            <!--<div class="box-block-text">空闲3小时</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="aui-col-xs-4">-->
-            <!--<div class="box-block">-->
-            <!--<div class="box-block-text">-->
-            <!--<i class="iconfont icon-geren1"></i>-->
-            <!--<span class="room-users-num">645</span>-->
-            <!--</div>-->
-            <!--<div class="box-block-text">-->
-            <!--<i class="iconfont icon-zanwushouyi"></i>-->
-            <!--<span class="room-benefit-num">1387.00</span>-->
-            <!--</div>-->
-            <!--<div class="box-block-room-num">03</div>-->
-            <!--<div class="box-block-text">空闲3小时</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="aui-clearfix"></div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</li>-->
-        </ul>
+<body class="white-body">
+    <div class="backColor fixed-header-top">
+        <div class="header-radius">
+            <div class="prev-div" onclick="window.history.go(-1);">
+                <i class="iconfont icon-zhixiangzuo"></i>
+            </div>
+        </div>
     </div>
-</section>
+    <section class="content-section">
+        <div id="box-app">
+            <ul class="aui-content-padded aui-list aui-media-list box-list" id="box-content">
+                <li class="aui-list-item box-item" v-for="item in datas">
+                    <a class="aui-media-list-item-inner box-flex" v-on:click="openBoxInfo(event,item.id)">
+                        <div class="aui-list-item-inner box-div">
+                            <div class="aui-list-item-text">
+                                <div class="aui-list-item-title"><i class="iconfont icon-ditu box-store-icon"></i><span class="box-list-store">{{item.orderStoreName}}</span></div>
+                                <div class="aui-list-item-right box-state">消费中：<span>{{item.boxStateUseNum}}</span></div>
+                            </div>
+                            <div class="aui-list-item-text">
+                                <div class="aui-list-item-title box-status"><i class="iconfont icon-msnui-user"></i><span class="box-list-user">累计用户（人）：</span><span>{{item.boxListUsers}}</span></div>
+                                <div class="aui-list-item-right box-state">空闲中：<span>{{item.boxStateNoUseNum}}</span></div>
+                            </div>
+                            <div class="aui-list-item-text">
+                                <div class="aui-list-item-title box-status"><i class="iconfont icon-qiandai"></i><span class="box-list-benefit">累计收益（元）：</span><span>{{item.boxListBenefits}}</span></div>
+                                <div class="aui-list-item-right box-state">维修中：<span>{{item.boxStateFixNum}}</span></div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <!--<li class="aui-list-item box-item">-->
+                <!--<a class="aui-media-list-item-inner box-flex" href="#">-->
+                <!--<div class="aui-list-item-inner box-div">-->
+                <!--<div class="aui-list-item-text">-->
+                <!--<div class="aui-list-item-title"><i class="iconfont icon-ditu box-store-icon"></i><span class="box-list-store">坪洲四季城</span></div>-->
+                <!--<div class="aui-list-item-right box-state">消费中：<span>3</span></div>-->
+                <!--</div>-->
+                <!--<div class="aui-list-item-text">-->
+                <!--<div class="aui-list-item-title box-status"><i class="iconfont icon-msnui-user"></i><span class="box-list-user">累计用户（人）：</span><span>5000</span></div>-->
+                <!--<div class="aui-list-item-right box-state">空闲中：<span>0</span></div>-->
+                <!--</div>-->
+                <!--<div class="aui-list-item-text">-->
+                <!--<div class="aui-list-item-title box-status"><i class="iconfont icon-qiandai"></i><span class="box-list-benefit">累计收益（元）：</span><span>5000.00</span></div>-->
+                <!--<div class="aui-list-item-right box-state">维修中：<span>1</span></div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</a>-->
+                <!--</li>-->
+            </ul>
+        </div>
+    </section>
 
 <script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
 <script type="text/javascript" src="../js/api.js" ></script>
-<script type="text/javascript" src="../js/mescroll.min.js" ></script>
-<script type="text/javascript" src="../js/mustache.js" ></script>
-<script type="text/javascript" src="box.js" ></script>
+<script type="text/javascript" src="../js/vue.min.js" ></script>
+<script type="text/javascript" src="box-vue.js" ></script>
 </body>
 </html>

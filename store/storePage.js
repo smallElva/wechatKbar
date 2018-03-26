@@ -1,6 +1,43 @@
 /**
  * Created by enter on 2018/1/22.
+ *
+ *
  */
+var store =
+    {
+        id: "0",
+        storeImg: "../img/store/store.png",
+        storeName: "...",
+        storeCall: "...",
+        storeAdd: "...",
+        storePage_a: ""
+    };
+new Vue({
+    el: '#store_page_app',
+    data: store,
+    mounted: function () {
+        this.showData();
+        //需要执行的方法可以在mounted中进行触发，其获取的数据可以赋到data中后，可以放在前面进行渲染
+    },
+    methods: {
+        showData: function () {
+            var href = location.href;
+            var id = href.split('id=')[1];
+            $.ajax({
+                url: 'Data/'+ id,
+                type: "GET",
+                success: function (json) {
+                    json = JSON.parse(json);
+                    $.extend(true, store, json);
+                }
+            });
+        },
+        openBoxInfo:function (e, id) {
+            window.location.href = "../box/box_page.html?id=" + id;
+        }
+    }
+});
+
 
 /** 初始化API
  *

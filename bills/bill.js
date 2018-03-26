@@ -216,7 +216,7 @@ function getBillByStore(store) {
 /** 渲染模板 */
 function renderTpl(billList) {
     // 模板
-    var tpl = '{{#bill}}<div class="aui-content bill-nav-content aui-margin-b-15">\n' +
+    var tpl = '{{#bill}}<div class="aui-content bill-nav-content aui-margin-b-15" id="bill-bar">\n' +
                     '<div class="aui-row">\n'+
                         '<div class="aui-col-xs-4">\n'+
                             '<div class="bill-benefit-block bill-benefit-total">\n'+
@@ -241,7 +241,7 @@ function renderTpl(billList) {
               '<div class="aui-content">\n'+
                  '<ul class="aui-list aui-list-in bill-list">\n'+
                     '{{#series}}<li class="aui-list-item">\n'+
-                         '<div class="aui-list-item-inner aui-list-item-arrow">\n'+
+                         '<a class="aui-list-item-inner aui-list-item-arrow" href="{{billHref}}">\n'+
                              '<div class="bill-list-item-title">\n'+
                                  '<div class="bill-list-item-text aui-clearfix">\n'+
                                      '<span class="bill-equip-name">{{billEquipName}}</span>\n'+
@@ -252,7 +252,7 @@ function renderTpl(billList) {
                                      '<span class="bill-series-money aui-pull-right">¥{{billSeriesMoney}}</span>\n'+
                                  '</div>\n'+
                              '</div>\n'+
-                         '</div>\n'+
+                         '</a>\n'+
                      '</li>{{/series}}'+
                  '</ul>\n'+
             '</div>{{/bill}}';

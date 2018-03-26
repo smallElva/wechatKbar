@@ -6,209 +6,142 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>账单管理</title>
     <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_408chfbqkw3ik9.css" />
     <link rel="stylesheet" type="text/css" href="mobiscroll.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
     <link rel="stylesheet" type="text/css" href="bill.css" />
 </head>
-<body>
-<section class="fixed-header-top">
-    <div class="select-block" id="showStore">
-        <span class="select-block-store">全部门店</span> <i class="aui-iconfont aui-icon-down"></i>
+<body class="white-body">
+<section id="bill-app">
+    <div class="backColor fixed-header-top">
+        <div class="header-radius">
+            <div class="prev-div" onclick="window.history.go(-1);">
+                <i class="iconfont icon-zhixiangzuo"></i>
+            </div>
+            <div id="showStore" class="order-select"><span class="bill-store-name">全部门店</span><i class="iconfont icon-xiangxia"></i></div>
+        </div>
     </div>
+    <!--门店筛选-->
+    <div class="aui-popup aui-popup-top order-popup-top" id="store-top">
+        <div class="aui-popup-arrow"></div>
+        <div class="aui-popup-content">
+            <ul class="aui-list">
+                <li class="aui-list-item" v-for="item in stores" v-on:click="showStore">
+                    <div class="aui-list-item-inner bill-store-name" v-bind:aui="item.id">
+                        {{item.storeName}}
+                    </div>
+                </li>
+                <!--<li class="aui-list-item">-->
+                <!--<div class="aui-list-item-inner bill-store-name" data-store="1">-->
+                <!--宝安中心天虹-->
+                <!--</div>-->
+                <!--</li>-->
+                <!--<li class="aui-list-item">-->
+                <!--<div class="aui-list-item-inner bill-store-name" data-store="2">-->
+                <!--宝安中心cococity-->
+                <!--</div>-->
+                <!--</li>-->
+            </ul>
+        </div>
+    </div>
+    <section class="content-section">
+        <div class="grey-back">
+            <div class="aui-content aui-text-center bill-time-content">
+                <input type="text" value="2018-01-14" readonly class="timeInput aui-pull-left" name="startTime" id="startTime">
+                <span class="bill-time-span">至</span>
+                <input type="text" value="2018-01-15" readonly class="timeInput aui-pull-right" name="finishTime" id="finishTime">
+            </div>
+            <div id="bill-content">
+                <div class="aui-content-padded bill-nav-content">
+                    <div class="aui-row-padded">
+                        <div class="aui-col-xs-4">
+                            <div class="bill-benefit-block bill-benefit-total">
+                                <p class="bill-total-money">¥<span>{{billTotalMoney}}</span></p>
+                                <p class="bill-total-text">累计收益</p>
+                            </div>
+                        </div>
+                        <div class="aui-col-xs-4">
+                            <div class="bill-benefit-block bill-benefit-already"  >
+                                <p class="bill-total-money">¥<span>{{billCalcMoney}}</span></p>
+                                <p class="bill-total-text">已结算</p>
+                            </div>
+                        </div>
+                        <div class="aui-col-xs-4">
+                            <div class="bill-benefit-block">
+                                <p class="bill-total-money">¥<span>{{billNoCalcMoney}}</span></p>
+                                <p class="bill-total-text">待结算</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aui-clearfix"></div>
+                </div>
+                <div class="aui-content">
+                    <ul class="aui-list aui-media-list order-list" id="orderContent">
+                        <li class="order-list-item aui-margin-b-15" v-for="item in orders">
+                            <div class="aui-list-header order-list-header">
+                                <span class="order-num-id">订单号：<span>{{item.orderNumId}}</span></span>
+                            </div>
+                            <div class="aui-list-item-middle">
+                                <div class="aui-media-list-item-inner">
+                                    <div class="aui-list-item-media order-list-item-media">
+                                        <img v-bind:src="item.orderUserImg" class="aui-img-round aui-list-img-sm">
+                                    </div>
+                                    <div class="aui-list-item-inner item-inner-noPadding">
+                                        <div class="aui-list-item-text">
+                                            <div class="aui-list-item-title aui-font-size-16">{{item.orderUserName}}</div>
+                                        </div>
+                                        <div class="aui-list-item-text">
+                                            <div class="aui-list-item-title order-list-text">套&nbsp;&nbsp;&nbsp;&nbsp;餐：<span>{{item.orderType}}</span></div>
+                                            <div class="aui-list-item-right order-list-money">¥<span>10.00</span></div>
+                                        </div>
+                                        <div class="aui-list-item-text">
+                                            <div class="aui-list-item-title order-list-text">设备号：<span>{{item.orderEquip}}</span></div>
+                                            <div class="aui-list-item-right">{{item.orderOrderedTime}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!--<li class="order-list-item aui-margin-b-15">-->
+                        <!--<div class="aui-list-header order-list-header">-->
+                        <!--<span class="order-num-id">订单号：<span>123456789123456789</span></span>-->
+                        <!--</div>-->
+                        <!--<div class="aui-list-item-middle">-->
+                        <!--<div class="aui-media-list-item-inner">-->
+                        <!--<div class="aui-list-item-media order-list-item-media">-->
+                        <!--<img src="../img/tx.jpg" class="aui-img-round aui-list-img-sm">-->
+                        <!--</div>-->
+                        <!--<div class="aui-list-item-inner item-inner-noPadding">-->
+                        <!--<div class="aui-list-item-text">-->
+                        <!--<div class="aui-list-item-title aui-font-size-16">小生灵</div>-->
+                        <!--</div>-->
+                        <!--<div class="aui-list-item-text">-->
+                        <!--<div class="aui-list-item-title order-list-text">套&nbsp;&nbsp;&nbsp;&nbsp;餐：<span>15分钟/20元</span></div>-->
+                        <!--<div class="aui-list-item-right order-list-money">¥<span>10.00</span></div>-->
+                        <!--</div>-->
+                        <!--<div class="aui-list-item-text">-->
+                        <!--<div class="aui-list-item-title order-list-text">设备号：<span>123456789</span></div>-->
+                        <!--<div class="aui-list-item-right">2018-01-02</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 </section>
-<!--全部门店筛选-->
-<div class="aui-popup aui-popup-top bill-popup-top" id="top">
-    <div class="aui-popup-arrow"></div>
-    <div class="aui-popup-content">
-        <ul class="aui-list">
-            <li class="aui-list-item">
-                <div class="aui-list-item-inner bill-store-name" data-store="0">
-                    坪洲四季城
-                </div>
-            </li>
-            <li class="aui-list-item">
-                <div class="aui-list-item-inner bill-store-name" data-store="1">
-                    宝安中心天虹
-                </div>
-            </li>
-            <li class="aui-list-item">
-                <div class="aui-list-item-inner bill-store-name" data-store="2">
-                    宝安中心cococity
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>
-<section class="content">
-    <div class="aui-content aui-margin-b-15 aui-text-center bill-time-content">
-        <input type="text" value="2018-01-14" readonly class="timeInput aui-pull-left" name="startTime" id="startTime">
-        <span class="bill-time-span">至</span>
-        <input type="text" value="2018-01-15" readonly class="timeInput aui-pull-right" name="finishTime" id="finishTime">
-    </div>
-    <div id="bill-content">
-        <!--{{#bill}}-->
-        <!--<div class="aui-content bill-nav-content aui-margin-b-15">-->
-            <!--<div class="aui-row">-->
-                <!--<div class="aui-col-xs-4">-->
-                    <!--<div class="bill-benefit-block bill-benefit-total">-->
-                        <!--<p class="bill-total-money">¥{{billTotalMoney}}</p>-->
-                        <!--<p class="bill-total-text">累计收益<i class="aui-iconfont aui-icon-question"></i></p>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="aui-col-xs-4">-->
-                    <!--<div class="bill-benefit-block bill-benefit-already">-->
-                        <!--<p class="bill-total-money">¥{{billCalcMoney}}</p>-->
-                        <!--<p class="bill-total-text">已结算<i class="aui-iconfont aui-icon-question"></i></p>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="aui-col-xs-4">-->
-                    <!--<div class="bill-benefit-block">-->
-                        <!--<p class="bill-total-money">¥{{billNoCalcMoney}}</p>-->
-                        <!--<p class="bill-total-text">待结算<i class="aui-iconfont aui-icon-question"></i></p>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="aui-content">-->
-            <!--<ul class="aui-list aui-list-in bill-list">-->
-                <!--<li class="aui-list-item">-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="bill-list-item-title">-->
-                            <!--<div class="bill-list-item-text aui-clearfix">-->
-                                <!--<span class="bill-equip-name">{{billEquipName}}</span>-->
-                                <!--<span class="bill-equip-time aui-pull-right">{{billEquipTime}}</span>-->
-                            <!--</div>-->
-                            <!--<div class="bill-list-item-series aui-clearfix">-->
-                                <!--<span class="bill-series-name">畅享{{billSeriesName}}分钟套餐</span>-->
-                                <!--<span class="bill-series-money aui-pull-right">¥{{billSeriesMoney}}</span>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</li>-->
-            <!--</ul>-->
-        <!--</div>-->
-        <!--{{/bill}}-->
-        <!--<div class="aui-content bill-nav-content aui-margin-b-15">-->
-            <!--<div class="aui-row">-->
-                <!--<div class="aui-col-xs-4">-->
-                    <!--<div class="bill-benefit-block bill-benefit-total">-->
-                        <!--<p class="bill-total-money">¥288.00</p>-->
-                        <!--<p class="bill-total-text">累计收益<i class="aui-iconfont aui-icon-question"></i></p>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="aui-col-xs-4">-->
-                    <!--<div class="bill-benefit-block bill-benefit-already">-->
-                        <!--<p class="bill-total-money">¥88.00</p>-->
-                        <!--<p class="bill-total-text">已结算<i class="aui-iconfont aui-icon-question"></i></p>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="aui-col-xs-4">-->
-                    <!--<div class="bill-benefit-block">-->
-                        <!--<p class="bill-total-money">¥200.00</p>-->
-                        <!--<p class="bill-total-text">待结算<i class="aui-iconfont aui-icon-question"></i></p>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="aui-content">-->
-            <!--<ul class="aui-list aui-list-in bill-list">-->
-                <!--<li class="aui-list-item">-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="bill-list-item-title">-->
-                            <!--<div class="bill-list-item-text aui-clearfix">-->
-                                <!--<span class="bill-equip-name">人人唱 1-2</span>-->
-                                <!--<span class="bill-equip-time aui-pull-right">2018-01-12 10:29:23</span>-->
-                            <!--</div>-->
-                            <!--<div class="bill-list-item-series aui-clearfix">-->
-                                <!--<span class="bill-series-name">畅享360分钟套餐</span>-->
-                                <!--<span class="bill-series-money aui-pull-right">¥288.00</span>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</li>-->
-                <!--<li class="aui-list-item">-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="bill-list-item-title">-->
-                            <!--<div class="bill-list-item-text aui-clearfix">-->
-                                <!--<span class="bill-equip-name">人人唱 1-2</span>-->
-                                <!--<span class="bill-equip-time aui-pull-right">2018-01-12 10:29:23</span>-->
-                            <!--</div>-->
-                            <!--<div class="bill-list-item-series aui-clearfix">-->
-                                <!--<span class="bill-series-name">畅享360分钟套餐</span>-->
-                                <!--<span class="bill-series-money aui-pull-right">¥288.00</span>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</li>-->
-                <!--<li class="aui-list-item">-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="bill-list-item-title">-->
-                            <!--<div class="bill-list-item-text aui-clearfix">-->
-                                <!--<span class="bill-equip-name">人人唱 1-2</span>-->
-                                <!--<span class="bill-equip-time aui-pull-right">2018-01-12 10:29:23</span>-->
-                            <!--</div>-->
-                            <!--<div class="bill-list-item-series aui-clearfix">-->
-                                <!--<span class="bill-series-name">畅享360分钟套餐</span>-->
-                                <!--<span class="bill-series-money aui-pull-right">¥288.00</span>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</li>-->
-                <!--<li class="aui-list-item">-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="bill-list-item-title">-->
-                            <!--<div class="bill-list-item-text aui-clearfix">-->
-                                <!--<span class="bill-equip-name">人人唱 1-2</span>-->
-                                <!--<span class="bill-equip-time aui-pull-right">2018-01-12 10:29:23</span>-->
-                            <!--</div>-->
-                            <!--<div class="bill-list-item-series aui-clearfix">-->
-                                <!--<span class="bill-series-name">畅享360分钟套餐</span>-->
-                                <!--<span class="bill-series-money aui-pull-right">¥288.00</span>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</li>-->
-                <!--<li class="aui-list-item">-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="bill-list-item-title">-->
-                            <!--<div class="bill-list-item-text aui-clearfix">-->
-                                <!--<span class="bill-equip-name">人人唱 1-2</span>-->
-                                <!--<span class="bill-equip-time aui-pull-right">2018-01-12 10:29:23</span>-->
-                            <!--</div>-->
-                            <!--<div class="bill-list-item-series aui-clearfix">-->
-                                <!--<span class="bill-series-name">畅享360分钟套餐</span>-->
-                                <!--<span class="bill-series-money aui-pull-right">¥288.00</span>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</li>-->
-                <!--<li class="aui-list-item">-->
-                    <!--<div class="aui-list-item-inner aui-list-item-arrow">-->
-                        <!--<div class="bill-list-item-title">-->
-                            <!--<div class="bill-list-item-text aui-clearfix">-->
-                                <!--<span class="bill-equip-name">人人唱 1-2</span>-->
-                                <!--<span class="bill-equip-time aui-pull-right">2018-01-12 10:29:23</span>-->
-                            <!--</div>-->
-                            <!--<div class="bill-list-item-series aui-clearfix">-->
-                                <!--<span class="bill-series-name">畅享360分钟套餐</span>-->
-                                <!--<span class="bill-series-money aui-pull-right">¥288.00</span>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</li>-->
-            <!--</ul>-->
-        <!--</div>-->
-    </div>
-</section>
+
 
 <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="../js/api.js"></script>
 <script type="text/javascript" src="../js/aui-toast.js"></script>
 <script type="text/javascript" src="mobiscroll_date.js"></script>
 <script type="text/javascript" src="mobiscroll.js"></script>
-<script type="text/javascript" src="../js/mustache.js"></script>
-<script type="text/javascript" src="../js/dropload.min.js"></script>
-<script type="text/javascript" src="bill.js" ></script>
+<script type="text/javascript" src="../js/vue.min.js"></script>
+<script type="text/javascript" src="bill-vue.js" ></script>
 
 </body>
 </html>

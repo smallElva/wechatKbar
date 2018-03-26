@@ -1,53 +1,92 @@
 @charset "utf-8";
+.black-body{
+    background: #373b3e;
+}
 .singing-content{
-    background: #212121;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    background: #373b3e;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
     height: 100vh;
+}
+.prev-page{
+    position: absolute;
+    top: 0;
+    left: .75rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
+    text-align: left;
+}
+.prev-page .iconfont{
+    font-size: 1rem;
+    color: #fff;
 }
 .singing-text{
     text-align: center;
     color: #999;
+    position: relative;
+    width: 11rem;
+    margin: 3.85rem auto 1.25rem;
+}
+.play-img{
+    width: 1.3rem;
+    position: absolute;
+    top: 0;
+    left: 0.5rem;
+    z-index: 2;
+}
+.singing-img{
+    width: 11rem;
+    margin: 0 auto 0;
+    padding-top: .8rem;
+    text-align: center;
+    position: relative;
+}
+.play-img-bg{
+    display: inline-block;
+    border-radius: 100%;
+    width: 100%;
+}
+.cdImg{
+    position: absolute;
+    top: 1.3rem;
+    left: .5rem;
+    display: inline-block;
+    border-radius: 100%;
+    width: 10rem;
+}
+.myRecord-page{
+    text-align: center;
 }
 .songName{
-    font-size: 1rem;
-    color: #ccc;
-    padding-top: .5rem;
+    font-size: 0.85rem;
+    color: #faf9fc;
 }
 .singingName{
-    padding: .5rem 0;
+    padding: .5rem 0 1.8rem 0;
 }
 .wechatName{
     font-size: .8rem;
-    padding: 0 .5rem;
+    color: #818181;
 }
 .myRecord-title-icons{
     display: inline-block;
-    padding: 0 .5rem;
+    padding: 0 .75rem;
+    color: #818181;
+    font-size: .8rem;
 }
 .myRecord-title-score{
-    color: #ff2600;
+    color: #e8413d;
 }
 .recordScore{
     padding-left: .2rem;
 }
 .myRecord-title-icons i{
     padding-right: .3rem;
-    color: #ff2600;
+    color: #e8413d;
 }
-.singing-img{
-    width: 10rem;
-    margin: 0 auto;
-    text-align: center;
-    padding-top: 5rem;
-}
-.cdImg{
-    display: inline-block!important;
-    border-radius: 100%;
-    width: 100%;
-}
+
 /*PLAYER*/
 .audioplayer {
     height: 2.5em; /* 40 */

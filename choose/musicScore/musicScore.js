@@ -15,7 +15,7 @@ $(function(){
         }
     });
     /*点击搜索符号触发搜索事件*/
-    $(".aui-searchbar .aui-icon-search").click(function(){
+    $(".aui-searchbar .icon-sousuo").click(function(){
         searchSongs();
     });
     /*搜索歌曲方法*/
@@ -88,12 +88,9 @@ $(function(){
         var result = '';
         for (var i = 0; i < curPageData.length; i++) {
             var pd=curPageData[i];
-            var index=i;
-            result +='<div class="aui-list-item aui-list-item-middle">'+
+
+            result +='<li class="aui-list-item aui-list-item-middle" onclick="chooseThis(this)">'+
                 '<div class="aui-media-list-item-inner">'+
-                '<div class="aui-list-item-label-icon">'+
-                '<span class="song-list-num">'+ (index+1) + '</span>'+
-                '</div>'+
                 '<div class="aui-list-item-inner">'+
                 '<div class="aui-list-item-text">'+
                 '<div class="aui-list-item-title list-song-info">'+
@@ -101,17 +98,14 @@ $(function(){
                 '<div class="perSingerName">'+ pd.singerName +'</div>'+
                 '</div>'+
                 '<div class="aui-list-item-right">'+
-                '<i class="iconfont icon-icon-test musicScore-icon"></i>'+
-                '<button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>'+
+                '<i class="iconfont icon-maikefeng select-song-icon"></i>'+
                 '</div>'+
                 '</div>'+
                 '</div>'+
                 '</div>'+
-                '</div>';
+                '</li>';
         }
-        var liDom=document.createElement("li");
-        liDom.innerHTML=result;
-        listDom.appendChild(liDom);
+        listDom.innerHTML+=result;
     }
 
     /*联网加载列表数据
@@ -155,30 +149,9 @@ $(function(){
 
 });
 
-/** 渲染模板 */
-function renderTpl(curPageData) {
-    // 模板
-    var tpl = '{{#curPageData}}<li class="aui-list-item aui-list-item-middle">\n' +
-        '<div class="aui-media-list-item-inner">\n'+
-        '<div class="aui-list-item-label-icon">\n'+
-        '<span class="song-list-num">{{data.index}}</span>\n'+
-        '</div>\n'+
-        '<div class="aui-list-item-inner">\n'+
-        '<div class="aui-list-item-text">\n'+
-        '<div class="aui-list-item-title list-song-info">\n'+
-        '<div class="songName aui-ellipsis-1">{{songName}}</div>\n'+
-        '<div class="perSingerName"> {{singerName}}</div>\n'+
-        '</div>\n'+
-        '<div class="aui-list-item-right">\n'+
-        '<i class="iconfont icon-remen musicScore-icon"></i>\n'+
-        '<button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>\n'+
-        '</div>\n'+
-        '</div>\n'+
-        '</div>\n'+
-        '</div>\n' +
-        '</li>{{/curPageData}}';
-    // 调用mustache生成dom
-    var dom = Mustache.render(tpl, curPageData);
-    // 插入dom
-    $('#singer-song-result').html(dom);
+/**
+ * 点歌操作
+ */
+function chooseThis(obj) {
+    $(obj).find('.select-song-icon').removeClass('icon-maikefeng').addClass('icon-maikefeng-dianji red-icon');
 }

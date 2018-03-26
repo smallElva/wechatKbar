@@ -55,20 +55,6 @@ $(function () {
         $('#time-div').removeClass('toggleShow'); //关闭该div
     });
     /**
-     * tab切换部分.
-     */
-    $('#report-tab .tab-item').click(function () {
-        var chartNum = $(this).attr('data-chart');
-        $(this).addClass('active').siblings().removeClass('active');
-        if(chartNum == 1){
-            $('#main-line').show();
-            $('#chart-pie').hide();
-        }else{
-            $('#main-line').hide();
-            $('#chart-pie').show();
-        }
-    });
-    /**
      * 折线图部分.
      */
     var myChartLine = echarts.init(document.getElementById('main-line'),'light');
@@ -211,74 +197,6 @@ $(function () {
                 //请求失败时执行该函数
                 alert("图表请求数据失败!");
                 myChartLine.hideLoading();
-            }
-        })
-    }
-
-    /**
-     * 扇形图部分.
-     */
-    var myChartPie = echarts.init(document.getElementById('main-pie'),'light');
-    var optionPie = {
-        tooltip : {
-            trigger: 'item',
-            formatter: "{a} <br/>{b} : {c} ({d}%)"
-        },
-        legend: {
-            orient : 'vertical',
-            x : 'left',
-//            data:['15分钟/¥20','30分钟/¥40','45分钟/¥50','60分钟/¥58','单首/¥8']
-        },
-        calculable : true,
-        series : [
-            {
-                name:'访问来源',
-                type:'pie',
-                radius : '50%',
-                center: ['48%', '50%'],
-//                data:[
-//                    {value:335, name:'15分钟/¥20'},
-//                    {value:310, name:'30分钟/¥40'},
-//                    {value:234, name:'45分钟/¥50'},
-//                    {value:135, name:'60分钟/¥58'},
-//                    {value:1548, name:'单首/¥8'}
-//                ]
-            }
-        ]
-    };
-    myChartPie.showLoading();    //显示加载动画
-    setAjaxChart2();
-    function setAjaxChart2() {
-        myChartPie.showLoading();    //数据加载完之前先显示一段简单的loading动画
-        var packages=[];
-        $.ajax({
-            type : "post",
-            async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
-            url : "Data/equip.json",    //请求数据接口
-            data : {},
-            dataType : "json",        //返回数据形式为json
-            success : function(dataList) {
-
-                //请求成功时执行该函数内容，result即为服务器返回的json对象
-                if (dataList) {
-                    var k = dataList.list[0].packagesList.length;
-                    var dataArr = [];
-                    for(var j=0;j<k;j++){
-                        var dataObj = {};
-                        dataObj["value"]= dataList.list[0].packagesList[j].packages_value;
-                        dataObj["name"]= dataList.list[0].packagesList[j].packages_name;
-                        dataArr.push(dataObj);
-                        packages.push(dataList.list[0].packagesList[j].packages_name);    //挨个取出类别并填入类别数组
-                    }
-                    optionPie.series[0]["data"] = dataArr;
-                    optionPie.legend.data = packages;
-                    myChartPie.hideLoading();    //隐藏加载动画
-                    myChartPie.setOption(optionPie);                }
-            },
-            error : function(errorMsg) {
-                //请求失败时执行该函数
-                alert("图表请求数据失败!");
-                myChartPie.hideLoading();
             }
         })
     }

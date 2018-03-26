@@ -1,54 +1,21 @@
 [
   {
     "id": 10,
-    "nearbyStoreName": "宝安区时代城5楼",
+    "nearbyStoreName": "宝安区",
     "nearbyMapHref": "nearbyMap.html",
     "nearbyStoreDistance": "336m",
-    "nearbyStoreAdd": "宝安区西乡海城路时代城5楼",
-    "room":[
-      {
-        "id": 1,
-        "nearbyEquipName": "01"
-      },{
-        "id": 2,
-        "nearbyEquipName": "02"
-      },{
-        "id": 3,
-        "nearbyEquipName": "03"
-      }
-    ]
+    "nearbyStoreAdd": "宝安区西乡海城路时代城5楼"
   },{
     "id": 11,
-    "nearbyStoreName": "宝安区西乡汇成天虹B1",
+    "nearbyStoreName": "宝安区西乡",
     "nearbyMapHref": "nearbyMap.html",
     "nearbyStoreDistance": "893m",
-    "nearbyStoreAdd": "西乡大道与新湖路交汇处天虹商场B1层",
-    "room":[
-      {
-        "id": 4,
-        "nearbyEquipName": "01"
-      },{
-        "id": 5,
-        "nearbyEquipName": "02"
-      },{
-        "id": 6,
-        "nearbyEquipName": "03"
-      }
-    ]
+    "nearbyStoreAdd": "西乡大道与新湖路交汇处天虹商场B1层"
   },{
     "id": 12,
-    "nearbyStoreName": "龙华区民治天虹B1",
+    "nearbyStoreName": "民治天虹B1",
     "nearbyMapHref": "nearbyMap.html",
     "nearbyStoreDistance": "893m",
-    "nearbyStoreAdd": "西乡大道与新湖路交汇处天虹商场B1层",
-    "room":[
-      {
-        "id": 7,
-        "nearbyEquipName": "01"
-      },{
-        "id": 8,
-        "nearbyEquipName": "02"
-      }
-    ]
+    "nearbyStoreAdd": "西乡大道与新湖路交汇处天虹商场B1层"
   }
 ]

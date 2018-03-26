@@ -7,66 +7,53 @@
     <title>我的订单</title>
     <link rel="stylesheet" type="text/css" href="../css/aui.css" />
     <link rel="stylesheet" type="text/css" href="../css/mescroll.min.css" />
-    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_ta5dwtjnwdygb9.css" />
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_yx7xe6udij7zaor.css"/>
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
     <link rel="stylesheet" type="text/css" href="account.css" />
 </head>
 <body>
-<section class="content2">
-    <div class="aui-content">
-        <div id="mescroll" class="mescroll myOrder_mescroll">
-            <ul class="aui-list aui-media-list myOrder_list" id="myOrder_list">
-                <!--<li class="aui-list-item aui-list-item-middle aui-margin-b-15">-->
-                <!--<div class="myOrder-title">-->
-                <!--<span class="myOrder-title-num">订单号：<span class="myOrder-num">B13610449756663</span></span>-->
-                <!--<span class="myOrder-time">2017-12-13 18:30:45</span>-->
-                <!--</div>-->
-                <!--<div class="aui-media-list-item-inner">-->
-                <!--<div class="aui-list-item-media myOrder-list-item-media">-->
-                <!--<img src="../img/tx.jpg" class="aui-list-img-sm myOrder-list-img">-->
-                <!--</div>-->
-                <!--<div class="aui-list-item-inner">-->
-                <!--<div class="myOrder-info">-->
-                <!--<div class="aui-list-item-title myOrder-type">畅享60分钟套餐</div>-->
-                <!--<div class="myOrder-add">宝安区时代城5楼 02</div>-->
-                <!--</div>-->
-                <!--<div class="aui-list-item-text">-->
-                <!--<div class="aui-list-item-title myOrder-money">¥ 58.00</div>-->
-                <!--<div class="aui-list-item-right myOrder-state">已付款</div>-->
-                <!--</div>-->
-                <!--</div>-->
-                <!--</div>-->
-                <!--</li>-->
-                <!--<li class="aui-list-item aui-list-item-middle aui-margin-b-15">-->
-                <!--<div class="myOrder-title">-->
-                <!--<span class="myOrder-title-num">订单号：<span class="myOrder-num">B13610449756663</span></span>-->
-                <!--<span class="myOrder-time">2017-12-13 18:30:45</span>-->
-                <!--</div>-->
-                <!--<div class="aui-media-list-item-inner">-->
-                <!--<div class="aui-list-item-media myOrder-list-item-media">-->
-                <!--<img src="../img/tx.jpg" class="aui-list-img-sm myOrder-list-img">-->
-                <!--</div>-->
-                <!--<div class="aui-list-item-inner">-->
-                <!--<div class="myOrder-info">-->
-                <!--<div class="aui-list-item-title myOrder-type">畅享60分钟套餐</div>-->
-                <!--<div class="myOrder-add">宝安区时代城5楼 02</div>-->
-                <!--</div>-->
-                <!--<div class="aui-list-item-text">-->
-                <!--<div class="aui-list-item-title myOrder-money">¥ 58.00</div>-->
-                <!--<div class="aui-list-item-right myOrder-state">已付款</div>-->
-                <!--</div>-->
-                <!--</div>-->
-                <!--</div>-->
-                <!--</li>-->
-            </ul>
+    <div class="fixed-header-top">
+        <div class="header-radius no-radius">
+            <div class="prev-div" onclick="window.history.go(-1);">
+                <i class="iconfont icon-zhixiangzuo"></i>
+            </div>
         </div>
+    </div>
+<section class="content-section" id="myOrder-app">
+    <div class="aui-content">
+        <ul class="aui-list aui-media-list order-list" id="orderContent">
+            <li class="order-list-item aui-margin-b-15" v-for="item in orders">
+                <div class="aui-list-header order-list-header">
+                    <span class="order-num-id">订单号：<span>{{item.myOrderNum}}</span></span>
+                </div>
+                <div class="aui-list-item-middle">
+                    <div class="aui-media-list-item-inner">
+                        <div class="aui-list-item-media order-list-item-media">
+                            <img v-bind:src="item.myOrderImg" class="aui-img-round aui-list-img-sm">
+                        </div>
+                        <div class="aui-list-item-inner item-inner-noPadding">
+                            <div class="aui-list-item-text">
+                                <div class="aui-list-item-title aui-font-size-16">{{item.myOrderType}}</div>
+                            </div>
+                            <div class="aui-list-item-text">
+                                <div class="aui-list-item-title order-list-text">{{item.myOrderAdd}}</div>
+                                <div class="aui-list-item-right order-list-money">¥<span>{{item.myOrderMoney}}</span></div>
+                            </div>
+                            <div class="aui-list-item-text">
+                                <div class="aui-list-item-title order-list-text">{{item.myOrderTime}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </div>
 </section>
 
 <script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
 <script type="text/javascript" src="../js/api.js" ></script>
 <script type="text/javascript" src="../js/mescroll.min.js" ></script>
-<script type="text/javascript" src="../js/mustache.js" ></script>
-<script type="text/javascript" src="myOrder.js" ></script>
+<script type="text/javascript" src="../js/vue.min.js" ></script>
+<script type="text/javascript" src="myOrder-vue.js" ></script>
 </body>
 </html>

@@ -1,73 +1,81 @@
 @charset "UTF-8";
-.box_mescroll{
-    top: 0;
+
+.box-list,.box-page-list{
+    border-top: none;
+    background: none;
+}
+.aui-list .box-item{
+    padding: 0 .75rem;
+    box-shadow: 0px 0px 30px rgba(0,0,0,0.1);
+    border-radius: .5rem;
+    margin-bottom: .8rem;
+    border-bottom: none;
+    background: none;
+}
+.aui-list .box-div{
+    padding-right: 0;
+}
+.box-flex{
+    display: block;
+    color: #212121;
+}
+.box-state{
+    color: #818181;
+    font-size: .6rem;
 }
 .box-list-item-header{
     padding: .5rem 0.75rem;
     background: #fff;
+}
+.aui-list .box-status{
+    font-size: .7rem;
+    color: #ff6642;
+}
+.box-div .iconfont{
+    font-size: .9rem;
+    padding-right: .5rem;
 }
 .box-list-item{
     padding-left: 0.75rem;
     padding-top: .5rem;
     padding-bottom: .5rem;
 }
-.box-list-header{
-    width: 100%;
-}
 .box-list-store{
     font-size: .9rem;
-    padding-top: .4rem;
 }
-.box-list-store .aui-icon-location{
-    font-size: .9rem;
+.aui-list .aui-list-item i.box-store-icon{
+    font-size: 1rem;
+    color: #6170e4;
+    padding-right: .3rem;
 }
-.box-list-benefit .box-list-benefit-p{
+/*包厢详情*/
+.box-page-circle{
+    width: 3.8rem;
+    height: 3.8rem;
+    border-radius: 100%;
+    border: 0.1rem solid #6170e4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.box-page-text{
+    color: #6170e4;
+    font-size: .65rem;
+}
+.box-page-value{
+    color: #ff6642;
     font-size: .75rem;
-    color: #212121;
 }
-.box-block-text{
-    font-size: 0.7rem;
-    color: #999;
+.box-page-div .iconfont{
+    font-size: .9rem;
+    padding-right: .5rem;
 }
-.box-list-benefit .iconfont{
-    color: #bbb;
-    font-size: .7rem;
+.aui-list .box-page-div i.box-store-icon{
+    font-size: .85rem;
+    color: #6170e4;
+    padding-right: .2rem;
 }
-.box-list-benefit-benefits{
-    color: #ff2600;
-}
-.box-state-no-use{
-    color: #03a9f4;
-}
-.box-state-use{
-    color: #ff2600;
-    padding: 0 .5rem;
-}
-.box-state-fix{
-    color: #f3d57d;
-}
-.box-house-block{
-    background: #f3f3f3;
-}
-.box-block{
-    background: #f3d57d;
-    width: 100%;
-    border-radius: 5px;
-    padding: .2rem .25rem;
-}
-.box-block .iconfont{
-    font-size: .7rem;
-    color: #bbb;
-}
-.box-block-room-num{
-    font-size: .8rem;
-    text-align: center;
-    color: #212121;
-}
-.room-benefit-num{
-    color: #ff2600;
-}
-.box-list-state{
-    text-align: center;
+.box-list-equip{
     font-size: .7rem;
 }

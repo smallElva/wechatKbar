@@ -1,6 +1,27 @@
 @charset "UTF-8";
 
-
+#bill-time{
+    padding-top: 2.75rem;
+}
+/*列表*/
+.bill-mescroll{
+    top: 5.75rem;
+}
+/*ios使用sticky样式实现*/
+.nav-sticky-bill{
+    z-index: 9999;/*需设置zIndex,避免在悬停时,可能会被列表数据遮住*/
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;/*相对mescroll的div悬停的位置*/
+}
+/*android和pc端悬停*/
+.nav-fixed-bill{
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
 .bill-popup-top{
     top: 1.8rem;
     opacity: 1;
@@ -16,9 +37,7 @@
     font-size: .75rem;
 }
 .bill-time-content{
-    padding-left: .75rem;
-    padding-right: .75rem;
-    margin-top: 5px;
+    padding: .875rem .75rem 0 .75rem;
 }
 .timeInput{
     display: inline-block!important;
@@ -26,7 +45,7 @@
     padding: 1.2rem 0!important;
     background: #fff!important;
     border: none;
-    border-radius: 5px!important;
+    border-radius: .3rem!important;
     text-align: center;
 }
 .bill-time-span{
@@ -34,10 +53,12 @@
     padding: 0.65rem 0!important;
 }
 .bill-nav-content{
-    padding-top: .75rem;
-    padding-bottom: .75rem;
-    background: #fff;
     text-align: center;
+}
+.bill-benefit-block{
+    background: #fff;
+    padding: .5rem;
+    border-radius: .3rem;
 }
 .bill-total-money,.bill-total-text{
     font-size: .75rem;
@@ -47,9 +68,8 @@
     color: #ff2600;
     padding-left: .25rem;
 }
-.bill-benefit-already{
-    border-right: 1px solid #ccc;
-    border-left: 1px solid #ccc;
+.bill-series-name{
+    color: #333;
 }
 .bill-total-money{
     color: #333;
@@ -58,37 +78,73 @@
 .bill-benefit-total .bill-total-money,.bill-series-money{
     color: #ff2600;
 }
-.bill-list{
+.order-list{
     background: transparent;
-}
-.bill-list .aui-list-item{
-    background: #fff;
-}
-.aui-list .bill-list-item-title{
-    width: 100%;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-}
-.bill-list-item-text{
-    font-size: .7rem;
-    color: #999;
-    margin-bottom: .25rem;
-}
-/*@media all{*/
-    /*.aui-list.aui-list-in .aui-list-item {*/
-        /*border: none;*/
-        /*background-size: 100% 1px;*/
-        /*background-repeat: no-repeat;*/
-        /*background-position: 0.75rem bottom;*/
-        /*background-image: linear-gradient(0,#dddddd,#dddddd 50%,transparent 50%);*/
-        /*background-image: -webkit-linear-gradient(90deg,#dddddd,#dddddd 50%,transparent 50%);*/
-    /*}*/
-/*}*/
-.bill-list{
     border-top: none;
 }
-/*@media all{*/
-    /*.aui-list.aui-list-in .aui-list-item:last-child {*/
-        /*background-image: none;*/
-    /*}*/
-/*}*/
+.order-list-item{
+    padding-left: .75rem;
+    padding-right: .75rem;
+    background: #fff;
+}
+.order-list .order-list-text{
+    color: #818181;
+    font-size: .6rem;
+}
+.order-popup-top{
+    top: 2.25rem;
+    opacity: 1;
+    display: none;
+}
+.order-popup-top .aui-popup-content{
+    box-shadow: 0 0 2rem #ccc;
+    min-height: 4rem;
+}
+.toggleShow{
+    display: block;
+}
+.order-popup-top .aui-list .aui-list-item-inner{
+    font-size: .78rem;
+}
+.aui-list .order-buy-time{
+    font-size: .7rem;
+    color: #757575;
+}
+.aui-list .order-list-header{
+    background-color: #fff;
+    color: #212121;
+    font-size: 0.7rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #f2f2f2;
+}
+.order-list .order-list-item-media{
+    width: 4rem;
+}
+.aui-list .item-inner-noPadding{
+    padding-right: 0;
+}
+.order-list .order-list-money{
+    font-size: .8rem;
+    color: #ff6642;
+}
+
+
+
+/*账单详情页*/
+.aui-list .order-buy-time{
+    font-size: .7rem;
+    color: #757575;
+}
+.order_money,.order_state{
+    color: #ff2600;
+}
+.aui-list .order-list-header{
+    background-color: #fff;
+    color: #212121;
+    font-size: 0.7rem;
+    padding: 0.4rem 0.75rem;
+    border-bottom: 1px solid #f2f2f2;
+}
+.order-list-item-media{
+    width: 4rem;
+}

@@ -1,13 +1,17 @@
 @charset "UTF-8";
 
-.order-select .aui-grid .aui-col-xs-6{
-    padding: 0;
+.order-list{
+    background: transparent;
+    border-top: none;
 }
-.order-select .aui-grid .aui-iconfont{
-     font-size: .7rem;
+.order-list-item{
+    padding-left: .75rem;
+    padding-right: .75rem;
+    background: #fff;
 }
-.order-select .aui-grid [class*=aui-col-xs-]:active {
-    background-color: transparent;
+.order-list .order-list-text{
+    color: #818181;
+    font-size: .6rem;
 }
 .order-popup-top{
     top: 2.25rem;
@@ -24,34 +28,24 @@
 .order-popup-top .aui-list .aui-list-item-inner{
     font-size: .78rem;
 }
-.store-right{
-    left: auto;
-    right: 25%;
-    margin-right: -3.5rem;
-}
-.state-left{
-    right: auto;
-    left: 25%;
-    margin-left: -3.5rem;
-}
 .aui-list .order-buy-time{
     font-size: .7rem;
     color: #757575;
-}
-.order_money,.order_state{
-    color: #ff2600;
 }
 .aui-list .order-list-header{
     background-color: #fff;
     color: #212121;
     font-size: 0.7rem;
-    padding: 0.4rem 0.75rem;
-    border-bottom: 1px solid #f3f3f3;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #f2f2f2;
 }
-.order-list-item-media{
+.order-list .order-list-item-media{
     width: 4rem;
 }
-#state-top .aui-list .aui-list-item-inner {
-    -webkit-justify-content: center;
-    justify-content: center;
+.aui-list .item-inner-noPadding{
+    padding-right: 0;
+}
+.order-list .order-list-money{
+    font-size: .8rem;
+    color: #ff6642;
 }

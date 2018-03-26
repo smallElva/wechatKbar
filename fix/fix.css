@@ -1,14 +1,20 @@
 @charset "UTF-8";
-.fix-content{
-    height: 100vh;
-    background: #fff;
+.fix-content .aui-list{
+    border-top: none;
+    background: none;
+}
+.fix-content .aui-list .aui-list-item-inner{
+    min-height: 2.4rem;
+}
+.fix-content .aui-list .aui-list-item-label{
+    line-height: 2.4rem;
 }
 .send-btn-block{
     padding: 0 .75rem;
     width: 100%;
 }
 .send-btn{
-    background: #ff2600;
+    background: #ff6642;
     color: #fff;
     border-radius: 1.25rem;
 }
@@ -20,16 +26,29 @@
     padding: 0 .75rem;
 }
 .fix-equip-select{
-    font-size: .75rem!important;
+    height: 2.4rem!important;
 }
 .fix-textarea-title{
     padding-top: .5rem;
 }
 .fix-textarea{
     height: 8rem;
-    border: 1px solid #f3f3f3;
+    border: 1px solid #f2f2f2;
     padding: .5rem;
     border-radius: 5px;
     margin: .5rem 0 1rem;
     font-size: .75rem;
+}
+.select-div{
+    position: relative;
+}
+#triangle-down {
+    position: absolute;
+    top: 1.1rem;
+    right: 50%;
+    width: 0;
+    height: 0;
+    border-left: .2rem solid transparent;
+    border-right: .2rem solid transparent;
+    border-top: .3rem solid #ff6642;
 }

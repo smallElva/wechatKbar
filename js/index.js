@@ -6,7 +6,7 @@ $(function(){
     //创建MeScroll对象,内部已默认开启下拉刷新,自动执行up.callback,重置列表数据;
     var mescroll = new MeScroll("mescroll", {
         up: {
-            page:{size:8},//每次加载1条数据,模拟loadFull
+            page:{size:6},//每次加载1条数据,模拟loadFull
             loadFull: {
                 use: true, //列表数据过少,是否自动加载下一页,直到满屏或者无更多数据为止;默认false
                 delay: 500 //延时执行的毫秒数; 延时是为了保证列表数据或占位的图片都已初始化完成,且下拉刷新上拉加载中区域动画已执行完毕;
@@ -14,6 +14,7 @@ $(function(){
             callback: getListData, //上拉回调,此处可简写; 相当于 callback: function (page) { getListData(page); }
             isBounce: false, //此处禁止ios回弹,解析(务必认真阅读,特别是最后一点): http://www.mescroll.com/qa.html#q10
             clearEmptyId: "newsContent", //1.下拉刷新时会自动先清空此列表,再加入数据; 2.无任何数据时会在此列表自动提示空
+
             empty: {
                 //列表第一页无任何数据时,显示的空提示布局; 需配置warpId或clearEmptyId才生效;
                 //warpId:null, //父布局的id; 如果此项有值,将不使用clearEmptyId的值;
@@ -24,8 +25,40 @@ $(function(){
                 html : "<i class='iconfont icon-zhiding'></i>", //标签内容,默认null; 如果同时设置了src,则优先取src
                 offset : 200
             }
+        },
+        down:{
+            isLock:true
         }
     });
+
+    var navWarp=document.getElementById("navWarp");
+    var fixedTop=document.getElementById("fixed-top");
+    if(mescroll.os.ios){
+        //ios的悬停效果,通过给navWarp添加nav-sticky样式来实现
+        mescroll.optUp.onScroll=function(mescroll, y, isUp){
+            if(y>=navWarp.offsetTop){
+                fixedTop.classList.add("index-info-content-fixed");
+                navWarp.classList.add("nav-sticky");
+            }else{
+                fixedTop.classList.remove("index-info-content-fixed");
+                navWarp.classList.remove("nav-sticky");
+            }
+        }
+    }else{
+        //android和pc端悬停效果,通过监听mescroll的scroll事件,控制navContent是否为fixed定位来实现
+        navWarp.style.height=navWarp.offsetHeight+"px";//固定高度占位,避免悬浮时列表抖动
+        var navContent=document.getElementById("navContent");
+
+        mescroll.optUp.onScroll=function(mescroll, y, isUp){
+            if(y>=navWarp.offsetTop){
+                navContent.classList.add("nav-fixed");
+                fixedTop.classList.add("index-info-content-fixed");
+            }else{
+                navContent.classList.remove("nav-fixed");
+                fixedTop.classList.remove("index-info-content-fixed");
+            }
+        }
+    }
 
     /*联网加载列表数据  page = {num:1, size:10}; num:当前页 从1开始, size:每页数据条数 */
     function getListData(page){
@@ -62,24 +95,24 @@ $(function(){
         var result = '';
         for (var i = 0; i < curPageData.length; i++) {
             var pd=curPageData[i];
-            result +='<div class="aui-list-item aui-list-item-arrow">'+
+            result +='<li class="aui-list-item aui-list-item-middle">'+
                 '<div class="aui-media-list-item-inner">'+
-                '<i class="iconfont icon-iconfontzhizuobiaozhun023147 aui-text-warning"></i>'+
-                '<div class="aui-list-item-inner">'+
-                    '<a href="'+ pd.newsHrefPage+'">'+
-                        '<div class="aui-list-item-text">'+
-                            '<div class="aui-list-item-title index-info-title">'+pd.newsTitle +'</div>'+
-                            '<div class="aui-list-item-right">'+pd.newsTime+'</div>'+
-                        '</div>'+
-                    '</a>'+
-                '<div class="aui-list-item-text aui-ellipsis-2 index-info-text">'+pd.newsText+'</div>'+
+                    '<div class="aui-list-item-label-icon aui-list-item-label-circle">'+
+                        '<div class="circle new-circle">新</div>'+
+                    '</div>'+
+                    '<div class="aui-list-item-inner">'+
+                        '<a href="'+ pd.newsHrefPage+'">'+
+                            '<div class="aui-list-item-text">'+
+                                '<div class="aui-list-item-title index-info-title">'+pd.newsTitle +'</div>'+
+                                '<div class="aui-list-item-right index-info-text">'+pd.newsTime+'</div>'+
+                            '</div>'+
+                        '</a>'+
+                        '<div class="aui-ellipsis-1 index-info-text">'+pd.newsText+'</div>'+
+                    '</div>'+
                 '</div>'+
-                '</div>'+
-                '</div>';
+                '</li>';
         }
-        var liDom=document.createElement("li");
-        liDom.innerHTML=result;
-        listDom.appendChild(liDom);
+        listDom.innerHTML+=result;
     }
 
     /*联网加载列表数据
@@ -113,25 +146,25 @@ $(function(){
 
 
 /** 渲染模板 */
-function renderTpl(newsList) {
-    // 模板
-    var tpl = '{{#list}}<li class="aui-list-item aui-list-item-arrow">\n'+
-        '<div class="aui-media-list-item-inner">\n'+
-        '<i class="iconfont icon-iconfontzhizuobiaozhun023147 aui-text-warning"></i>\n'+
-        '<div class="aui-list-item-inner">\n'+
-        '<a href="{{newsHrefPage}}">\n'+
-        '<div class="aui-list-item-text">\n'+
-        '<div class="aui-list-item-title index-info-title">{{newsTitle}}</div>\n'+
-        '<div class="aui-list-item-right">{{newsTime}}</div>\n'+
-        '</div>\n'+
-        '</a>\n'+
-        '<div class="aui-list-item-text aui-ellipsis-2 index-info-text">{{newsText}} </div>\n'+
-        '</div>\n'+
-
-        '</div>\n'+
-        '</li>{{/list}}';
-    // 调用mustache生成dom
-    var dom = Mustache.render(tpl, newsList);
-    // 插入dom
-    $('#newsContent').html(dom);
-}
+// function renderTpl(newsList) {
+//     // 模板
+//     var tpl = '{{#list}}<li class="aui-list-item aui-list-item-arrow">\n'+
+//         '<div class="aui-media-list-item-inner">\n'+
+//         '<i class="iconfont icon-iconfontzhizuobiaozhun023147 aui-text-warning"></i>\n'+
+//         '<div class="aui-list-item-inner">\n'+
+//         '<a href="{{newsHrefPage}}">\n'+
+//         '<div class="aui-list-item-text">\n'+
+//         '<div class="aui-list-item-title index-info-title">{{newsTitle}}</div>\n'+
+//         '<div class="aui-list-item-right">{{newsTime}}</div>\n'+
+//         '</div>\n'+
+//         '</a>\n'+
+//         '<div class="aui-list-item-text aui-ellipsis-2 index-info-text">{{newsText}} </div>\n'+
+//         '</div>\n'+
+//
+//         '</div>\n'+
+//         '</li>{{/list}}';
+//     // 调用mustache生成dom
+//     var dom = Mustache.render(tpl, newsList);
+//     // 插入dom
+//     $('#newsContent').html(dom);
+// }

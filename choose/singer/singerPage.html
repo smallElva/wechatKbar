@@ -7,20 +7,28 @@
     <title>歌手点歌内页</title>
     <link rel="stylesheet" type="text/css" href="../../css/aui.css"/>
     <link rel="stylesheet" type="text/css" href="../../css/mescroll.min.css"/>
-    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_igll0zeyd8jpds4i.css"/>
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_7lqmbrmbbf14te29.css"/>
     <link rel="stylesheet" type="text/css" href="../../css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../choose.css"/>
 </head>
 <body class="white-body">
 <!--滑动区域-->
 <div id="mescroll" class="mescroll singerPage_mescroll">
+    <div id="navWarp">
+        <div class="aui-title singerPage-search-title" id="navContent">
+            <div class="prev-div-page" onclick="window.history.go(-1);">
+                <i class="iconfont icon-zhixiangzuo"></i>
+            </div>
+            <a class="songNum-div" href="../haveSongs/haveSongs.html">
+                <div class="songNum-div-text">100</div>
+            </a>
+        </div>
+    </div>
     <!--歌手封面图-->
     <section class="singerPage_header">
-        <img class="singerImg" src="../../img/singerImg.jpg">
-        <div class="singerPage_header_text">
-            <div class="singerPage_name">
-                周杰伦
-            </div>
+        <img class="singerImg" src="../../img/singerImg.png">
+        <div class="singerPage_name">
+            李荣浩
         </div>
     </section>
     <!--
@@ -28,185 +36,26 @@
         1.ios的悬停效果,通过给navWarp添加sticky样式来实现
         2.android和pc端悬停效果,通过监听mescroll的scroll事件,控制navContent是否为fixed定位来实现
     -->
-    <div id="navWarp">
-        <div class="aui-title singerPage-search-title" id="navContent">
-            <div class="aui-searchbar" id="search">
-                <form class="aui-searchbar-input aui-border-radius search-div" id="searchForm" action="" onsubmit="return false;">
-                    <i class="aui-iconfont aui-icon-search"></i>
-                    <input type="search" placeholder="搜索此歌手歌曲" id="search-input">
-                    <div class="aui-searchbar-clear-btn">
-                        <i class="aui-iconfont aui-icon-close"></i>
-                    </div>
-                </form>
-                <div class="aui-searchbar-btn" tapmode>取消</div>
-            </div>
-            <a class="songNum-div" href="../haveSongs/haveSongs.html">
-                <div class="songNum">10</div>
-                <p class="songNum-div-text">已点</p>
-            </a>
-        </div>
-    </div>
+
     <!--upscrollWarp用于装载上拉进度和数据列表,避免清空列表不满屏,导致点击悬浮菜单时会滑下来-->
     <div id="upscrollWarp">
         <!--展示上拉加载的数据列表-->
         <ul class="aui-list aui-media-list song-list" id="dataList">
             <!--<li class="aui-list-item aui-list-item-middle">-->
                 <!--<div class="aui-media-list-item-inner">-->
-                    <!--<div class="aui-list-item-label-icon">-->
-                        <!--<span class="song-list-num">1</span>-->
-                    <!--</div>-->
                     <!--<div class="aui-list-item-inner">-->
                         <!--<div class="aui-list-item-text">-->
                             <!--<div class="aui-list-item-title list-song-info">-->
-                                <!--<div class="songName aui-ellipsis-1">稻香</div>-->
+                                <!--<div class="songName aui-ellipsis-1">-->
+                                    <!--<span>稻香</span>-->
+                                    <!--<i class="iconfont icon-ping type-song-icon"></i>-->
+                                    <!--<i class="iconfont icon-le type-song-icon"></i>-->
+                                    <!--<i class="iconfont icon-yunxiazai type-song-icon"></i>-->
+                                <!--</div>-->
                                 <!--<div class="perSingerName"> 周杰伦</div>-->
                             <!--</div>-->
                             <!--<div class="aui-list-item-right">-->
-                                <!--<button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</li>-->
-            <!--<li class="aui-list-item aui-list-item-middle">-->
-                <!--<div class="aui-media-list-item-inner">-->
-                    <!--<div class="aui-list-item-label-icon">-->
-                        <!--<span class="song-list-num">2</span>-->
-                    <!--</div>-->
-                    <!--<div class="aui-list-item-inner">-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="aui-list-item-title list-song-info">-->
-                                <!--<div class="songName aui-ellipsis-1">告白气球</div>-->
-                                <!--<div class="perSingerName"> 周杰伦</div>-->
-                            <!--</div>-->
-                            <!--<div class="aui-list-item-right">-->
-                                <!--<button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</li>-->
-            <!--<li class="aui-list-item aui-list-item-middle">-->
-                <!--<div class="aui-media-list-item-inner">-->
-                    <!--<div class="aui-list-item-label-icon">-->
-                        <!--<span class="song-list-num">3</span>-->
-                    <!--</div>-->
-                    <!--<div class="aui-list-item-inner">-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="aui-list-item-title list-song-info">-->
-                                <!--<div class="songName aui-ellipsis-1">算什么男人</div>-->
-                                <!--<div class="perSingerName"> 周杰伦</div>-->
-                            <!--</div>-->
-                            <!--<div class="aui-list-item-right">-->
-                                <!--<button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</li>-->
-            <!--<li class="aui-list-item aui-list-item-middle">-->
-                <!--<div class="aui-media-list-item-inner">-->
-                    <!--<div class="aui-list-item-label-icon">-->
-                        <!--<span class="song-list-num">4</span>-->
-                    <!--</div>-->
-                    <!--<div class="aui-list-item-inner">-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="aui-list-item-title list-song-info">-->
-                                <!--<div class="songName aui-ellipsis-1">算什么男人</div>-->
-                                <!--<div class="perSingerName"> 周杰伦</div>-->
-                            <!--</div>-->
-                            <!--<div class="aui-list-item-right">-->
-                                <!--<button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</li>-->
-            <!--<li class="aui-list-item aui-list-item-middle">-->
-                <!--<div class="aui-media-list-item-inner">-->
-                    <!--<div class="aui-list-item-label-icon">-->
-                        <!--<span class="song-list-num">5</span>-->
-                    <!--</div>-->
-                    <!--<div class="aui-list-item-inner">-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="aui-list-item-title list-song-info">-->
-                                <!--<div class="songName aui-ellipsis-1">算什么男人</div>-->
-                                <!--<div class="perSingerName"> 周杰伦</div>-->
-                            <!--</div>-->
-                            <!--<div class="aui-list-item-right">-->
-                                <!--<button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</li>-->
-            <!--<li class="aui-list-item aui-list-item-middle">-->
-                <!--<div class="aui-media-list-item-inner">-->
-                    <!--<div class="aui-list-item-label-icon">-->
-                        <!--<span class="song-list-num">6</span>-->
-                    <!--</div>-->
-                    <!--<div class="aui-list-item-inner">-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="aui-list-item-title list-song-info">-->
-                                <!--<div class="songName aui-ellipsis-1">算什么男人</div>-->
-                                <!--<div class="perSingerName"> 周杰伦</div>-->
-                            <!--</div>-->
-                            <!--<div class="aui-list-item-right">-->
-                                <!--<button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</li>-->
-            <!--<li class="aui-list-item aui-list-item-middle">-->
-                <!--<div class="aui-media-list-item-inner">-->
-                    <!--<div class="aui-list-item-label-icon">-->
-                        <!--<span class="song-list-num">7</span>-->
-                    <!--</div>-->
-                    <!--<div class="aui-list-item-inner">-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="aui-list-item-title list-song-info">-->
-                                <!--<div class="songName aui-ellipsis-1">算什么男人</div>-->
-                                <!--<div class="perSingerName"> 周杰伦</div>-->
-                            <!--</div>-->
-                            <!--<div class="aui-list-item-right">-->
-                                <!--<button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</li>-->
-            <!--<li class="aui-list-item aui-list-item-middle">-->
-                <!--<div class="aui-media-list-item-inner">-->
-                    <!--<div class="aui-list-item-label-icon">-->
-                        <!--<span class="song-list-num">8</span>-->
-                    <!--</div>-->
-                    <!--<div class="aui-list-item-inner">-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="aui-list-item-title list-song-info">-->
-                                <!--<div class="songName aui-ellipsis-1">算什么男人</div>-->
-                                <!--<div class="perSingerName"> 周杰伦</div>-->
-                            <!--</div>-->
-                            <!--<div class="aui-list-item-right">-->
-                                <!--<button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</li>-->
-            <!--<li class="aui-list-item aui-list-item-middle">-->
-                <!--<div class="aui-media-list-item-inner">-->
-                    <!--<div class="aui-list-item-label-icon">-->
-                        <!--<span class="song-list-num">9</span>-->
-                    <!--</div>-->
-                    <!--<div class="aui-list-item-inner">-->
-                        <!--<div class="aui-list-item-text">-->
-                            <!--<div class="aui-list-item-title list-song-info">-->
-                                <!--<div class="songName aui-ellipsis-1">算什么男人</div>-->
-                                <!--<div class="perSingerName"> 周杰伦</div>-->
-                            <!--</div>-->
-                            <!--<div class="aui-list-item-right">-->
-                                <!--<button class="choose-btn"><i class="aui-iconfont aui-icon-plus"></i> 点歌</button>-->
+                                <!--<i class="iconfont icon-maikefeng select-song-icon"></i>-->
                             <!--</div>-->
                         <!--</div>-->
                     <!--</div>-->
@@ -220,7 +69,6 @@
 <script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="../../js/mescroll.min.js"></script>
 <script type="text/javascript" src="../../js/api.js"></script>
-<script type="text/javascript" src="../../js/mustache.js"></script>
 <script type="text/javascript" src="singerPage.js"></script>
 
 </body>

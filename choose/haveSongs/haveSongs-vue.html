@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>已点歌曲</title>
+    <link rel="stylesheet" type="text/css" href="../../css/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_7lqmbrmbbf14te29.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/mescroll.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../choose.css"/>
+</head>
+<body class="white-body">
+<div class="aui-title page-search-title">
+    <div class="prev-div-page" onclick="window.history.go(-1);">
+        <i class="iconfont icon-zhixiangzuo"></i>
+    </div>
+    <div class="aui-pull-right search-right">
+        <a href="../search/search.html">
+            <i class="iconfont icon-sousuo-"></i>
+        </a>
+        <a class="songNum-div" href="../haveSongs/haveSongs.html">
+            <div class="songNum-div-text">100</div>
+        </a>
+    </div>
+</div>
+<section class="content2">
+    <div id="mescroll" class="mescroll">
+        <ul class="aui-list aui-media-list song-list" id="songs-result" v-cloak>
+            <li class="aui-list-item aui-list-item-middle" v-for="(pd,index) in pdlist">
+                <div class="aui-media-list-item-inner">
+                    <div class="aui-list-item-label-icon">
+                        <span class="song-list-num">{{index+1}}</span>
+                    </div>
+                    <div class="aui-list-item-inner">
+                        <div class="aui-list-item-text">
+                            <div class="aui-list-item-title list-song-info">
+                                <div class="songName aui-ellipsis-1">{{pd.songName}}</div>
+                                <div class="perSingerName"> {{pd.singerName}}</div>
+                            </div>
+                            <div class="aui-list-item-right">
+                                <a class="aui-pull-right song-btn" v-on:click="deleteThis">
+                                    <span class="iconfont icon-shanchu"></span>
+                                </a>
+                                <a class="aui-pull-right song-btn" v-on:click="toTopOne">
+                                    <span class="iconfont icon-zhiding1 icon-toTop"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../../js/mescroll.min.js"></script>
+<script type="text/javascript" src="../../js/api.js"></script>
+<script type="text/javascript" src="../../js/vue.min.js"></script>
+<script type="text/javascript" src="list.js"></script>
+<script type="text/javascript" src="haveSongs-vue.js"></script>
+
+</body>
+</html>

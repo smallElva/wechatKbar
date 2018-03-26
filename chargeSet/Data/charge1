@@ -1,31 +1,48 @@
 {
-  "status":"200",
-  "msg":"success",
-  "list":[
-    {
-      "id": 106,
-      "chargeType": "10分钟",
-      "chargeEquip": "设备1",
-      "chargeTypeTime": "10",
-      "chargeOrigMoney": "12.00",
-      "chargeTakeMoney": "10.00",
-      "chargeTypeSeries": "普通套餐"
-    },{
-      "id": 107,
-      "chargeType": "20分钟",
-      "chargeEquip": "设备2",
-      "chargeTypeTime": "20",
-      "chargeOrigMoney": "28.00",
-      "chargeTakeMoney": "24.00",
-      "chargeTypeSeries": "尊享套餐"
-    },{
-      "id": 108,
-      "chargeType": "30分钟",
-      "chargeEquip": "设备3",
-      "chargeTypeTime": "30",
-      "chargeOrigMoney": "36.00",
-      "chargeTakeMoney": "33.00",
-      "chargeTypeSeries": "尊享套餐"
-    }
-  ]
+  "status": 200,
+  "msg": "success",
+  "list": [
+        {
+          "id": "011",
+          "chargeEquipNum": "123456789",
+          "chargeType": "单首",
+          "chargeMoney": "8.00"
+        },
+        {
+          "id": "012",
+          "chargeEquipNum": "987654321",
+          "chargeType": "15分钟",
+          "chargeMoney": "20.00"
+        },
+        {
+          "id": "013",
+          "chargeEquipNum": "987654322",
+          "chargeType": "20分钟",
+          "chargeMoney": "30.00"
+        },
+        {
+          "id": "014",
+          "chargeEquipNum": "987654325",
+          "chargeType": "30分钟",
+          "chargeMoney": "40.00"
+        },
+        {
+          "id": "015",
+          "chargeEquipNum": "987654325",
+          "chargeType": "40分钟",
+          "chargeMoney": "50.00"
+        },
+        {
+          "id": "016",
+          "chargeEquipNum": "987654325",
+          "chargeType": "40分钟",
+          "chargeMoney": "50.00"
+        },
+        {
+          "id": "017",
+          "chargeEquipNum": "987654325",
+          "chargeType": "40分钟",
+          "chargeMoney": "50.00"
+        }
+      ]
 }

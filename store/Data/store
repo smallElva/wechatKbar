@@ -3,23 +3,29 @@
   "msg":"success",
   "list":[
     {
-      "id": 106,
+      "id": "001",
       "storePageHref": "store_page.html",
       "storeImg": "../img/tx.jpg",
       "storeName": "坪洲四季城店",
-      "storeAdd": "坪洲地铁站"
+      "storeAdd": "坪洲地铁站",
+      "storeCall": "13265489741",
+      "storePage_a": "../box/box.html"
     },{
-      "id": 107,
+      "id": "002",
       "storePageHref": "store_page.html",
       "storeImg": "../img/tx.jpg",
       "storeName": "宝安中心天虹店",
-      "storeAdd": "宝安中心地铁站"
+      "storeAdd": "宝安中心地铁站",
+      "storeCall": "13265489741",
+      "storePage_a": "../box/box.html"
     },{
-      "id": 108,
+      "id": "003",
       "storePageHref": "store_page.html",
       "storeImg": "../img/tx.jpg",
       "storeName": "宝安中心大润发店",
-      "storeAdd": "宝安中心大润发"
+      "storeAdd": "宝安中心大润发",
+      "storeCall": "13265489741",
+      "storePage_a": "../box/box.html"
     }
   ]
 }

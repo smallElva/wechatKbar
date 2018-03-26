@@ -108,7 +108,7 @@ button,input,select,textarea {
 .aui-hr {
 	width: 100%;
 	position: relative;
-	border-top: 1px solid #dddddd;
+	border-top: 1px solid #f2f2f2;
 	height: 1px;
 }
 @media screen and (-webkit-min-device-pixel-ratio:1.5) {
@@ -117,8 +117,8 @@ button,input,select,textarea {
         background-size: 100% 1px;
 		background-repeat: no-repeat;
 		background-position: top;
-        background-image: linear-gradient(0,#dddddd,#dddddd 50%,transparent 50%);
-        background-image: -webkit-linear-gradient(90deg,#dddddd,#dddddd 50%,transparent 50%);
+        background-image: linear-gradient(0,#f2f2f2,#f2f2f2 50%,transparent 50%);
+        background-image: -webkit-linear-gradient(90deg,#f2f2f2,#f2f2f2 50%,transparent 50%);
 	}
 }
 /*内外边距类*/
@@ -514,7 +514,7 @@ img.aui-img-round {
 	font-size: 0.6rem;
 	line-height: 1;
 	color: #616161;
-    background-color: #dddddd;
+    background-color: #f2f2f2;
 	text-align: center;
 	white-space: nowrap;
 	vertical-align: middle;
@@ -629,7 +629,7 @@ button, .aui-btn {
 	text-decoration: none;
 	text-align: center;
 	margin: 0;
-	background: #dddddd;
+	background: #f2f2f2;
 	padding: 0 0.6rem;
 	height: 1.5rem;
 	line-height: 1.5rem;
@@ -793,7 +793,7 @@ input[type="search"]::-webkit-search-cancel-button {
     position: relative;
     font-size: 0.8rem;
     background-color: #ffffff;
-    border-top: 1px solid #dddddd;
+    border-top: 1px solid #f2f2f2;
 }
 .aui-list .aui-content {
 	overflow: hidden;
@@ -803,7 +803,7 @@ input[type="search"]::-webkit-search-cancel-button {
     border-top: none;
 }
 .aui-list .aui-list-header {
-    background-color: #dddddd;
+    background-color: #f2f2f2;
     color: #212121;
     position: relative;
     font-size: 0.6rem;
@@ -826,7 +826,7 @@ input[type="search"]::-webkit-search-cancel-button {
     padding: 0;
     padding-left: 0.75rem;
     color: #212121;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #f2f2f2;
     position: relative;
     min-height: 2.2rem;
     -webkit-box-sizing: border-box;
@@ -983,7 +983,7 @@ input[type="search"]::-webkit-search-cancel-button {
     right: 0.75rem;
     margin-top: -0.2rem;
     background: transparent;
-    border: 1px solid #dddddd;
+    border: 1px solid #f2f2f2;
     border-top: none;
     border-right: none;
     z-index: 2;
@@ -1079,15 +1079,15 @@ input[type="search"]::-webkit-search-cancel-button {
         background-size: 100% 1px;
 		background-repeat: no-repeat;
 		background-position: top;
-        background-image: linear-gradient(0,#dddddd,#dddddd 50%,transparent 50%);
+        background-image: linear-gradient(0,#f2f2f2,#f2f2f2 50%,transparent 50%);
 	}
 	.aui-list .aui-list-item {
 		border: none;
         background-size: 100% 1px;
 		background-repeat: no-repeat;
 		background-position: bottom;
-        background-image: linear-gradient(0,#dddddd,#dddddd 50%,transparent 50%);
-        background-image: -webkit-linear-gradient(90deg,#dddddd,#dddddd 50%,transparent 50%);
+        background-image: linear-gradient(0,#f2f2f2,#f2f2f2 50%,transparent 50%);
+        background-image: -webkit-linear-gradient(90deg,#f2f2f2,#f2f2f2 50%,transparent 50%);
 	}
 
 	.aui-list.aui-list-in .aui-list-item {
@@ -1095,8 +1095,8 @@ input[type="search"]::-webkit-search-cancel-button {
         background-size: 100% 1px;
 		background-repeat: no-repeat;
 		background-position: 0.75rem bottom;
-        background-image: linear-gradient(0,#dddddd,#dddddd 50%,transparent 50%);
-        background-image: -webkit-linear-gradient(90deg,#dddddd,#dddddd 50%,transparent 50%);
+        background-image: linear-gradient(0,#f2f2f2,#f2f2f2 50%,transparent 50%);
+        background-image: -webkit-linear-gradient(90deg,#f2f2f2,#f2f2f2 50%,transparent 50%);
 	}
 	.aui-list.aui-list-in .aui-list-item:last-child {
 		background-position: bottom;
@@ -1288,7 +1288,7 @@ input[type="search"]::-webkit-search-cancel-button {
     width: 1.2rem;
     height: 1.2rem;
     background-color: #ffffff;
-    border: solid 1px #dddddd;
+    border: solid 1px #f2f2f2;
     -webkit-border-radius: 0.6rem;
     border-radius: 0.6rem;
     font-size: 0.8rem;
@@ -1346,8 +1346,8 @@ input[type="search"]::-webkit-search-cancel-button {
 .aui-radio.aui-disabled,
 .aui-checkbox:disabled,
 .aui-checkbox.aui-disabled {
-    background-color: #dddddd;
-    border: solid 1px #dddddd;
+    background-color: #f2f2f2;
+    border: solid 1px #f2f2f2;
 }
 .aui-radio:disabled:before,
 .aui-radio.aui-disabled:before,
@@ -1380,8 +1380,8 @@ input[type="search"]::-webkit-search-cancel-button {
     height: 1.2rem;
     position: relative;
     vertical-align: top;
-    border: 1px solid #dddddd;
-    background-color: #dddddd;
+    border: 1px solid #f2f2f2;
+    background-color: #f2f2f2;
     border-radius: 0.6rem;
     background-clip: content-box;
     display: inline-block;
@@ -1523,7 +1523,7 @@ input[type="search"]::-webkit-search-cancel-button {
 .aui-bar-light {
 	color: #03a9f4;
 	background-color: #ffffff;
-	border-bottom: 1px solid #dddddd;
+	border-bottom: 1px solid #f2f2f2;
 }
 .aui-bar-nav.aui-bar-light .aui-iconfont {
 	color: #03a9f4;
@@ -1537,8 +1537,8 @@ input[type="search"]::-webkit-search-cancel-button {
         background-size: 100% 1px;
 		background-repeat: no-repeat;
 		background-position: bottom;
-        background-image: linear-gradient(0,#dddddd,#dddddd 50%,transparent 50%);
-        background-image: -webkit-linear-gradient(90deg,#dddddd,#dddddd 50%,transparent 50%);
+        background-image: linear-gradient(0,#f2f2f2,#f2f2f2 50%,transparent 50%);
+        background-image: -webkit-linear-gradient(90deg,#f2f2f2,#f2f2f2 50%,transparent 50%);
 	}
 }
 /*底部切换栏*/
@@ -1799,7 +1799,7 @@ input[type="search"]::-webkit-search-cancel-button {
     line-height: 1.5rem;
     text-align: center;
     color: #666666;
-    border: 1px solid #dddddd;
+    border: 1px solid #f2f2f2;
     border-radius: 0.3rem;
     background-color: #ffffff;
 }
@@ -1986,7 +1986,7 @@ input[type="search"]::-webkit-search-cancel-button {
     color: #757575;
 }
 .aui-dialog-body input {
-	border: 1px solid #dddddd;
+	border: 1px solid #f2f2f2;
 	height: 1.8rem;
 	line-height: 1.8rem;
 	min-height: 1.8rem;
@@ -1996,7 +1996,7 @@ input[type="search"]::-webkit-search-cancel-button {
 .aui-dialog-footer {
     position: relative;
     font-size: 1em;
-    border-top: 1px solid #dddddd;
+    border-top: 1px solid #f2f2f2;
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;
@@ -2014,7 +2014,7 @@ input[type="search"]::-webkit-search-cancel-button {
 	line-height: 2.2rem;
 	text-align: center;
 	color: #0894ec;
-	border-right: 1px solid #dddddd;
+	border-right: 1px solid #f2f2f2;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
@@ -2046,13 +2046,13 @@ input[type="search"]::-webkit-search-cancel-button {
         background-size: 100% 1px;
 		background-repeat: no-repeat;
 		background-position: top;
-        background-image: linear-gradient(0,#dddddd,#dddddd 50%,transparent 50%);
-        background-image: -webkit-linear-gradient(90deg,#dddddd,#dddddd 50%,transparent 50%);
+        background-image: linear-gradient(0,#f2f2f2,#f2f2f2 50%,transparent 50%);
+        background-image: -webkit-linear-gradient(90deg,#f2f2f2,#f2f2f2 50%,transparent 50%);
 	}
 	.aui-dialog-btn {
 		border: none;
-        background-image: -webkit-linear-gradient(0deg, #dddddd, #dddddd 50%, transparent 50%);
-        background-image: linear-gradient(270deg, #dddddd, #dddddd 50%, transparent 50%);
+        background-image: -webkit-linear-gradient(0deg, #f2f2f2, #f2f2f2 50%, transparent 50%);
+        background-image: linear-gradient(270deg, #f2f2f2, #f2f2f2 50%, transparent 50%);
         background-size: 1px 100%;
         background-repeat: no-repeat;
         background-position: right;
@@ -2063,8 +2063,8 @@ input[type="search"]::-webkit-search-cancel-button {
 	}
 	.aui-dialog-body input {
         border: none;
-        background-image: -webkit-linear-gradient(270deg, #dddddd, #dddddd 50%, transparent 50%), -webkit-linear-gradient(180deg, #dddddd, #dddddd 50%, transparent 50%), -webkit-linear-gradient(90deg, #dddddd, #dddddd 50%, transparent 50%), -webkit-linear-gradient(0, #dddddd, #dddddd 50%, transparent 50%);
-        background-image: linear-gradient(180deg, #dddddd, #dddddd 50%, transparent 50%), linear-gradient(270deg, #dddddd, #dddddd 50%, transparent 50%), linear-gradient(0deg, #dddddd, #dddddd 50%, transparent 50%), linear-gradient(90deg, #dddddd, #dddddd 50%, transparent 50%);
+        background-image: -webkit-linear-gradient(270deg, #f2f2f2, #f2f2f2 50%, transparent 50%), -webkit-linear-gradient(180deg, #f2f2f2, #f2f2f2 50%, transparent 50%), -webkit-linear-gradient(90deg, #f2f2f2, #f2f2f2 50%, transparent 50%), -webkit-linear-gradient(0, #f2f2f2, #f2f2f2 50%, transparent 50%);
+        background-image: linear-gradient(180deg, #f2f2f2, #f2f2f2 50%, transparent 50%), linear-gradient(270deg, #f2f2f2, #f2f2f2 50%, transparent 50%), linear-gradient(0deg, #f2f2f2, #f2f2f2 50%, transparent 50%), linear-gradient(90deg, #f2f2f2, #f2f2f2 50%, transparent 50%);
         background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
         background-repeat: no-repeat;
         background-position: top, right top, bottom, left top;
@@ -2281,8 +2281,8 @@ input[type="search"]::-webkit-search-cancel-button {
         background-size: 100% 1px;
         background-repeat: no-repeat;
         background-position: 0 bottom;
-        background-image: linear-gradient(0,#dddddd,#dddddd 50%,transparent 50%);
-        background-image: -webkit-linear-gradient(90deg,#dddddd,#dddddd 50%,transparent 50%);
+        background-image: linear-gradient(0,#f2f2f2,#f2f2f2 50%,transparent 50%);
+        background-image: -webkit-linear-gradient(90deg,#f2f2f2,#f2f2f2 50%,transparent 50%);
     }
     .aui-list.aui-collapse.aui-list-noborder,
     .aui-list.aui-collapse.aui-list-noborder .aui-collapse-item:last-child .aui-list-item:last-child {
@@ -2437,33 +2437,33 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 /*边框样式*/
 .aui-border-l {
-    border-left: 1px solid #dddddd;
+    border-left: 1px solid #f2f2f2;
 }
 .aui-border-r {
-    border-right: 1px solid #dddddd;
+    border-right: 1px solid #f2f2f2;
 }
 .aui-border-t {
-    border-top: 1px solid #dddddd;
+    border-top: 1px solid #f2f2f2;
 }
 .aui-border-b {
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #f2f2f2;
 }
 .aui-border {
-    border: 1px solid #dddddd;
+    border: 1px solid #f2f2f2;
 }
 @media screen and (-webkit-min-device-pixel-ratio:1.5) {
 	.aui-border-l {
 		border: none;
-        background-image: -webkit-linear-gradient(0deg, #dddddd, #dddddd 50%, transparent 50%);
-        background-image: linear-gradient(270deg, #dddddd, #dddddd 50%, transparent 50%);
+        background-image: -webkit-linear-gradient(0deg, #f2f2f2, #f2f2f2 50%, transparent 50%);
+        background-image: linear-gradient(270deg, #f2f2f2, #f2f2f2 50%, transparent 50%);
         background-size: 1px 100%;
         background-repeat: no-repeat;
         background-position: left;
 	}
 	.aui-border-r {
 		border: none;
-        background-image: -webkit-linear-gradient(0deg, #dddddd, #dddddd 50%, transparent 50%);
-        background-image: linear-gradient(270deg, #dddddd, #dddddd 50%, transparent 50%);
+        background-image: -webkit-linear-gradient(0deg, #f2f2f2, #f2f2f2 50%, transparent 50%);
+        background-image: linear-gradient(270deg, #f2f2f2, #f2f2f2 50%, transparent 50%);
         background-size: 1px 100%;
         background-repeat: no-repeat;
         background-position: right;
@@ -2473,21 +2473,21 @@ input[type="search"]::-webkit-search-cancel-button {
         background-size: 100% 1px;
 		background-repeat: no-repeat;
 		background-position: top;
-        background-image: linear-gradient(0,#dddddd,#dddddd 50%,transparent 50%);
-        background-image: -webkit-linear-gradient(90deg,#dddddd,#dddddd 50%,transparent 50%);
+        background-image: linear-gradient(0,#f2f2f2,#f2f2f2 50%,transparent 50%);
+        background-image: -webkit-linear-gradient(90deg,#f2f2f2,#f2f2f2 50%,transparent 50%);
 	}
 	.aui-border-b {
 		border: none;
         background-size: 100% 1px;
 		background-repeat: no-repeat;
 		background-position: bottom;
-        background-image: linear-gradient(0,#dddddd,#dddddd 50%,transparent 50%);
-        background-image: -webkit-linear-gradient(90deg,#dddddd,#dddddd 50%,transparent 50%);
+        background-image: linear-gradient(0,#f2f2f2,#f2f2f2 50%,transparent 50%);
+        background-image: -webkit-linear-gradient(90deg,#f2f2f2,#f2f2f2 50%,transparent 50%);
 	}
 	.aui-border{
         border: none;
-        background-image: -webkit-linear-gradient(270deg, #dddddd, #dddddd 50%, transparent 50%), -webkit-linear-gradient(180deg, #dddddd, #dddddd 50%, transparent 50%), -webkit-linear-gradient(90deg, #dddddd, #dddddd 50%, transparent 50%), -webkit-linear-gradient(0, #dddddd, #dddddd 50%, transparent 50%);
-        background-image: linear-gradient(180deg, #dddddd, #dddddd 50%, transparent 50%), linear-gradient(270deg, #dddddd, #dddddd 50%, transparent 50%), linear-gradient(0deg, #dddddd, #dddddd 50%, transparent 50%), linear-gradient(90deg, #dddddd, #dddddd 50%, transparent 50%);
+        background-image: -webkit-linear-gradient(270deg, #f2f2f2, #f2f2f2 50%, transparent 50%), -webkit-linear-gradient(180deg, #f2f2f2, #f2f2f2 50%, transparent 50%), -webkit-linear-gradient(90deg, #f2f2f2, #f2f2f2 50%, transparent 50%), -webkit-linear-gradient(0, #f2f2f2, #f2f2f2 50%, transparent 50%);
+        background-image: linear-gradient(180deg, #f2f2f2, #f2f2f2 50%, transparent 50%), linear-gradient(270deg, #f2f2f2, #f2f2f2 50%, transparent 50%), linear-gradient(0deg, #f2f2f2, #f2f2f2 50%, transparent 50%), linear-gradient(90deg, #f2f2f2, #f2f2f2 50%, transparent 50%);
         background-size: 100% 1px, 1px 100%, 100% 1px, 1px 100%;
         background-repeat: no-repeat;
         background-position: top, right top, bottom, left top;

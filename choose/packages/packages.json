@@ -1,10 +1,34 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
-    "sourceMap": true
-  },
-  "exclude": [
-    "node_modules"
+  "list": [
+    {
+      "packagesTime": "15",
+      "packagesMoney": "¥20元",
+      "packagesOrigMoney": "¥25元"
+    },
+    {
+      "packagesTime": "30",
+      "packagesMoney": "¥38元",
+      "packagesOrigMoney": "¥42元"
+    },
+    {
+      "packagesTime": "60",
+      "packagesMoney": "¥58元",
+      "packagesOrigMoney": "¥68元"
+    },
+    {
+      "packagesTime": "45",
+      "packagesMoney": "¥50元",
+      "packagesOrigMoney": "¥55元"
+    },
+    {
+      "packagesTime": "90",
+      "packagesMoney": "¥100元",
+      "packagesOrigMoney": "¥108元"
+    },
+    {
+      "packagesTime": "100",
+      "packagesMoney": "¥98元",
+      "packagesOrigMoney": "¥102元"
+    }
   ]
 }

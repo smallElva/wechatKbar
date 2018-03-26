@@ -1,10 +1,115 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
-    "sourceMap": true
-  },
-  "exclude": [
-    "node_modules"
+  "status": 200,
+  "msg": "success",
+  "charge_list": [
+    {
+      "id": "1",
+      "storeName": "坪洲四季城",
+      "list": [
+        {
+          "id": "011",
+          "chargeEquipNum": "123456789",
+          "chargeType": "单首",
+          "chargeMoney": "8.00"
+        },
+        {
+          "id": "012",
+          "chargeEquipNum": "987654321",
+          "chargeType": "15分钟",
+          "chargeMoney": "20.00"
+        },
+        {
+          "id": "013",
+          "chargeEquipNum": "987654322",
+          "chargeType": "20分钟",
+          "chargeMoney": "30.00"
+        },
+        {
+          "id": "014",
+          "chargeEquipNum": "987654325",
+          "chargeType": "30分钟",
+          "chargeMoney": "40.00"
+        },
+        {
+          "id": "015",
+          "chargeEquipNum": "987654325",
+          "chargeType": "40分钟",
+          "chargeMoney": "50.00"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "storeName": "宝安中心天虹",
+      "list":  [
+        {
+          "id": "021",
+          "chargeEquipNum": "123456789",
+          "chargeType": "单首",
+          "chargeMoney": "10.00"
+        },
+        {
+          "id": "022",
+          "chargeEquipNum": "987654991",
+          "chargeType": "15分钟",
+          "chargeMoney": "18.00"
+        },
+        {
+          "id": "023",
+          "chargeEquipNum": "987654388",
+          "chargeType": "20分钟",
+          "chargeMoney": "25.00"
+        },
+        {
+          "id": "024",
+          "chargeEquipNum": "987654377",
+          "chargeType": "30分钟",
+          "chargeMoney": "38.00"
+        },
+        {
+          "id": "025",
+          "chargeEquipNum": "987654366",
+          "chargeType": "40分钟",
+          "chargeMoney": "45.00"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "storeName": "民治天虹",
+      "list": [
+        {
+          "id": "031",
+          "chargeEquipNum": "993456789",
+          "chargeType": "单首",
+          "chargeMoney": "12.00"
+        },
+        {
+          "id": "032",
+          "chargeEquipNum": "987654900",
+          "chargeType": "15分钟",
+          "chargeMoney": "25.00"
+        },
+        {
+          "id": "033",
+          "chargeEquipNum": "887654388",
+          "chargeType": "20分钟",
+          "chargeMoney": "35.00"
+        },
+        {
+          "id": "034",
+          "chargeEquipNum": "777654377",
+          "chargeType": "30分钟",
+          "chargeMoney": "45.00"
+        },
+        {
+          "id": "035",
+          "chargeEquipNum": "667654366",
+          "chargeType": "40分钟",
+          "chargeMoney": "55.00"
+        }
+      ]
+    }
   ]
 }
+

@@ -56,31 +56,24 @@ $(function () {
         var result = '';
         for (var i = 0; i < curPageData.length; i++) {
             var list=curPageData[i];
-            result += '<li class="nearby-list-item aui-margin-b-15">'+
-                '<div class="nearby-list-item-info">'+
-                '<div class="nearby-list-store">'+
-                '<div class="nearby-list-store-name">'+
-                '<i class="iconfont icon-jianzhu"></i>'+
-                '<span class="nearby-store-name">'+ list.nearbyStoreName +'</span>'+
+            result += '<li class="aui-list-item aui-list-item-middle nearby-list-item">'+
+                '<a class="aui-media-list-item-inner" onclick="getStoreInfo()">'+
+                '<div class="aui-list-item-media nearby-list-img">'+
+                '<img src="../img/store/store-img.png" class="aui-img-round aui-list-img-sm">'+
                 '</div>'+
-                '<a class="nearby-list-a" href="'+list.nearbyMapHref+'">'+
-                '<i class="iconfont icon-dizhi"></i>'+
-                '<span class="nearby-list-distance">'+ list.nearbyStoreDistance+'</span>'+
+                '<div class="aui-list-item-inner">'+
+                '<div class="aui-list-item-text">'+
+                '<div class="aui-list-item-title nearby-list-name aui-ellipsis-1">'+list.nearbyStoreName+'</div>'+
+                '<div class="aui-list-item-right add-distance">'+
+                '<i class="iconfont icon-dingwei"></i>'+
+                '<span>'+list.nearbyStoreDistance+'</span>'+
+                '</div>'+
+                '</div>'+
+                '<div class="aui-list-item-text nearby-list-add">'+list.nearbyStoreAdd+ '</div>'+
+                '</div>'+
                 '</a>'+
-                '</div>'+
-                '<div class="nearby-list-add">地址：<span class="nearby-store-add">'+list.nearbyStoreAdd+'</span></div>'+
-                '</div>'+
-                '<div class="nearby-room-block">';
-
-            var roomLen = list.room.length;
-            for(var j=0; j<roomLen; j++){
-                result += '<div class="nearby-room">'+
-                    '<div class="nearby-room-img"><img src="../img/ktv.jpg" class="aui-img-round"></div>'+
-                    '<div class="nearby-equip-name">'+ list.room[j].nearbyEquipName+'</div>'+
-                    '</div>';
-            }
-            result +='</div>'+
                 '</li>';
+
         }
         listDom.innerHTML +=result;
     }
@@ -115,33 +108,7 @@ $(function () {
     }
 });
 
-/** 渲染模板 */
-function renderTpl(nearbyList) {
-    // 模板
-    var tpl = '{{#list}}<li class="nearby-list-item aui-margin-b-15">\n'+
-        '<div class="nearby-list-item-info">\n'+
-            '<div class="nearby-list-store">\n'+
-                '<div class="nearby-list-store-name">\n'+
-                    '<i class="iconfont icon-jianzhu"></i>\n'+
-                    '<span class="nearby-store-name">{{nearbyStoreName}}</span>\n'+
-                '</div>\n'+
-                '<a class="nearby-list-a" href="{{nearbyMapHref}}">\n'+
-                    '<i class="iconfont icon-dizhi"></i>\n'+
-                    '<span class="nearby-list-distance">{{nearbyStoreDistance}}</span>\n'+
-                '</a>\n'+
-            '</div>\n'+
-            '<div class="nearby-list-add">地址：<span class="nearby-store-add">{{nearbyStoreAdd}}</span></div>\n'+
-        '</div>\n'+
-        '<div class="nearby-room-block">\n'+
-            '{{#room}}<div class="nearby-room">\n' +
-                '<div class="nearby-room-img"><img src="../img/ktv.jpg" class="aui-img-round"></div>\n'+
-                '<div class="nearby-equip-name">{{nearbyEquipName}}</div>\n'+
-            '</div>{{/room}}\n'+
-        '</div>\n'+
-    '</li>{{/list}}';
-    // 调用mustache生成dom
-    var dom = Mustache.render(tpl, nearbyList);
-    // 插入dom
-    $('#tab-content').html(dom);
+function getStoreInfo(id) {
+    window.location.href = "./nearbyMap.html?id=" + id;
 }
 

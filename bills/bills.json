@@ -1,10 +1,203 @@
-{
-  "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
-    "sourceMap": true
-  },
-  "exclude": [
-    "node_modules"
-  ]
-}
+[
+  {
+    "id":1,
+    "storeName":"坪洲四季城",
+    "list":[
+      {
+        "billTotalMoney": "8488",
+        "billCalcMoney": "3488",
+        "billNoCalcMoney": "5000.00",
+        "series":[
+          {
+            "id": 101,
+            "billEquipHref": "billPage.html",
+            "billEquipName": "设备13",
+            "billEquipTime": "2017-06-08 11:00:00",
+            "billSeriesName": "60",
+            "billSeriesMoney": "58"
+          },{
+            "id": 102,
+            "billEquipHref": "billPage.html",
+            "billEquipName": "王静安市场59",
+            "billEquipTime": "2018-01-09 11:00:00",
+            "billSeriesName": "60",
+            "billSeriesMoney": "58"
+          },{
+            "id": 103,
+            "billEquipHref": "billPage.html",
+            "billEquipName": "参考书的5",
+            "billEquipTime": "2018-01-05 09:00:00",
+            "billSeriesName": "40",
+            "billSeriesMoney": "38"
+          },{
+            "id": 104,
+            "billEquipHref": "billPage.html",
+            "billEquipName": "充电宝是2",
+            "billEquipTime": "2018-01-07 10:30:00",
+            "billSeriesName": "360",
+            "billSeriesMoney": "300"
+          },{
+            "id": 105,
+            "billEquipHref": "billPage.html",
+            "billEquipName": "设备5",
+            "billEquipTime": "2018-01-03 10:30:18",
+            "billSeriesName": "360",
+            "billSeriesMoney": "300"
+          },{
+            "id": 106,
+            "billEquipHref": "billPage.html",
+            "billEquipName": "设备6",
+            "billEquipTime": "2018-01-06 11:30:18",
+            "billSeriesName": "240",
+            "billSeriesMoney": "200"
+          },{
+            "id": 107,
+            "billEquipHref": "billPage.html",
+            "billEquipName": "设备10",
+            "billEquipTime": "2017-01-06 11:30:18",
+            "billSeriesName": "200",
+            "billSeriesMoney": "190"
+          },{
+            "id": 108,
+            "billEquipHref": "billPage.html",
+            "billEquipName": "设备1",
+            "billEquipTime": "2018-01-08 12:00:00",
+            "billSeriesName": "30",
+            "billSeriesMoney": "28"
+          },{
+            "id": 109,
+            "billEquipHref": "billPage.html",
+            "billEquipName": "设备2",
+            "billEquipTime": "2018-01-09 11:00:00",
+            "billSeriesName": "60",
+            "billSeriesMoney": "58"
+          }
+        ]
+      }
+    ]
+  },{
+    "id":2,
+    "storeName": "宝安中心天虹",
+    "list":[
+      {
+        "billTotalMoney": "1088",
+        "billCalcMoney": "488",
+        "billNoCalcMoney": "600.00",
+        "series":[
+          {
+            "id": 201,
+            "billEquipHref": "billPage.html",
+            "billEquipName":"设备7",
+            "billEquipTime":"2017-01-08 11:00:00",
+            "billSeriesName":"30",
+            "billSeriesMoney":"28"
+          },{
+            "id": 202,
+            "billEquipHref": "billPage.html",
+            "billEquipName":"设备2",
+            "billEquipTime":"2018-01-09 11:00:00",
+            "billSeriesName":"60",
+            "billSeriesMoney":"58"
+          },{
+            "id": 203,
+            "billEquipHref": "billPage.html",
+            "billEquipName":"设备3",
+            "billEquipTime":"2018-01-05 09:00:00",
+            "billSeriesName":"40",
+            "billSeriesMoney":"38"
+          },{
+            "id": 204,
+            "billEquipHref": "billPage.html",
+            "billEquipName":"设备4",
+            "billEquipTime":"2018-01-07 10:30:00",
+            "billSeriesName":"360",
+            "billSeriesMoney":"300"
+          },{
+            "id": 205,
+            "billEquipHref": "billPage.html",
+            "billEquipName":"设备5",
+            "billEquipTime":"2018-01-03 10:30:18",
+            "billSeriesName":"360",
+            "billSeriesMoney":"300"
+          },{
+            "id": 206,
+            "billEquipHref": "billPage.html",
+            "billEquipName":"设备6",
+            "billEquipTime":"2018-01-06 11:30:18",
+            "billSeriesName":"240",
+            "billSeriesMoney":"200"
+          },{
+            "id": 207,
+            "billEquipHref": "billPage.html",
+            "billEquipName":"设备10",
+            "billEquipTime":"2017-01-06 11:30:18",
+            "billSeriesName":"200",
+            "billSeriesMoney":"190"
+          }
+        ]
+      }
+    ]
+  },{
+    "id":3,
+    "storeName": "民治天虹",
+    "list":[
+      {
+        "billTotalMoney": "1488",
+        "billCalcMoney": "388",
+        "billNoCalcMoney": "1100.00",
+        "series":[
+          {
+            "id": 301,
+            "billEquipHref": "billPage.html",
+            "billEquipName":"设备13",
+            "billEquipTime":"2017-06-08 11:00:00",
+            "billSeriesName":"60",
+            "billSeriesMoney":"58"
+          },{
+            "id": 302,
+            "billEquipHref": "billPage.html",
+            "billEquipName":"王静安市场59",
+            "billEquipTime":"2018-01-09 11:00:00",
+            "billSeriesName":"60",
+            "billSeriesMoney":"58"
+          },{
+            "id": 303,
+            "billEquipHref": "billPage.html",
+            "billEquipName":"参考书的5",
+            "billEquipTime":"2018-01-05 09:00:00",
+            "billSeriesName":"40",
+            "billSeriesMoney":"38"
+          },{
+            "id": 304,
+            "billEquipHref": "billPage.html",
+            "billEquipName":"充电宝是2",
+            "billEquipTime":"2018-01-07 10:30:00",
+            "billSeriesName":"360",
+            "billSeriesMoney":"300"
+          },{
+            "id": 305,
+            "billEquipHref": "billPage.html",
+            "billEquipName":"设备5",
+            "billEquipTime":"2018-01-03 10:30:18",
+            "billSeriesName":"360",
+            "billSeriesMoney":"300"
+          },{
+            "id": 306,
+            "billEquipHref": "billPage.html",
+            "billEquipName":"设备6",
+            "billEquipTime":"2018-01-06 11:30:18",
+            "billSeriesName":"240",
+            "billSeriesMoney":"200"
+          },{
+            "id": 307,
+            "billEquipHref": "billPage.html",
+            "billEquipName":"设备10",
+            "billEquipTime":"2017-01-06 11:30:18",
+            "billSeriesName":"200",
+            "billSeriesMoney":"190"
+          }
+        ]
+      }
+    ]
+  }
+]

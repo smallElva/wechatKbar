@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
-    <title>报表统计</title>
+    <title>报表统计-业绩趋势图</title>
     <link rel="stylesheet" type="text/css" href="../css/aui.css" />
     <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_408chfbqkw3ik9.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
@@ -43,10 +43,10 @@
     </div>
 </div>
 <section class="content-section">
-    <ul class="report-tab" id="report-tab">
-        <li class="tab-item active" data-chart="1">业绩趋势图</li>
-        <li class="tab-item" data-chart="2">套餐扇形图</li>
-    </ul>
+    <div class="report-tab" id="report-tab">
+        <a class="tab-item active" href="report-line.html">业绩趋势图</a>
+        <a class="tab-item" href="report-pie.html">套餐扇形图</a>
+    </div>
     <div class="report-choose" id="report-choose">
         <span class="choose-time">7天</span><i class="iconfont icon-shaixuan"></i>
     </div>
@@ -56,13 +56,9 @@
     </ul>
     <!-- 折线图的Dom -->
     <div id="main-line"></div>
-    <!-- 扇形图的Dom -->
-    <div id="chart-pie">
-        <div id="main-pie"></div>
-    </div>
 </section>
 
 <script type="text/javascript" src="echarts.min.js"></script>
 <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="report.js"></script>
+<script type="text/javascript" src="report-line.js"></script>
 </body>
