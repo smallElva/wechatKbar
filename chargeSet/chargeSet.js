@@ -1,6 +1,72 @@
+
 /**
  * Created by enter on 2018/1/18.
  */
+
+var storem=new Vue({
+    el: '#charge-app',
+    data: {
+        stores: [],
+        charges: []
+    },
+    mounted: function () {
+        this.showData();
+        this.showChargeData();
+        //需要执行的方法可以在mounted中进行触发，其获取的数据可以赋到data中后，可以放在前面进行渲染
+    },
+    methods: {
+        showData: function () {
+            $.ajax({
+                url: 'chargeSet.json',
+                type: "GET",
+                success: function (json) {
+                    var lists = json.charge_list;
+                    for (var i = 0; i < lists.length; i++) {
+                        storem.stores.push(lists[i]);
+                    }
+                }
+            });
+        },
+        showStore: function (e) {
+            var storeName = e.target.innerHTML;
+            $('#showStore .charge-store-name').html(storeName);
+            // 获取门店名，调用发送接口
+            var store = parseInt(e.target.getAttribute('aui'));
+            $("#showStore").find('.iconfont').toggleClass('icon-xiangxia icon-xiangshang');
+            $.ajax({
+                url: 'Data/charge'+ store,
+                type: "GET",
+                // data:{shop:store},
+                success: function (json) {
+                    storem.charges=[];
+                    json = JSON.parse(json);
+                    var lists = json.list;
+                    for (var i = 0; i < lists.length; i++) {
+                        storem.charges.push(lists[i]);
+                    }
+                    console.dir(storem.charges);
+                }
+            });
+        },
+        showChargeData: function () {
+            $.ajax({
+                url: 'chargeSet.json',
+                type: "GET",
+                success: function (json) {
+                    var lists = json.charge_list;
+                    for (var i = 0; i < lists.length; i++) {
+                        var chargesList = lists[i].list;
+                        for(var j=0; j<chargesList.length; j++){
+                            storem.charges.push(chargesList[j]);
+                        }
+
+                    }
+                }
+            });
+        }
+    }
+});
+
 
 $(function(){
     /***
@@ -8,15 +74,7 @@ $(function(){
      */
     $("#showStore").click(function () {
         $('#store-top').toggleClass('toggleShow');
-        $(this).find('.aui-iconfont').toggleClass('aui-icon-down aui-icon-top');
-    });
-    //点击门店选择栏里的任何一个选项，切换选项值，并刷新页面
-    $('#store-top .aui-list-item').click(function () {
-        var storeName = $(this).find('.bill-store-name').text();
-        $('#showStore .charge-store-name').html(storeName);
-        // 获取门店名，调用发送接口
-        var store = parseInt($(this).find('.bill-store-name').attr('data-store'));
-        getChargeByStore(store);
+        $(this).find('.iconfont').toggleClass('icon-xiangxia icon-xiangshang');
     });
     //点击页面除了id="showStore"之外的任何区域都关闭该div
     $(document).on('click', function(e) {
@@ -31,76 +89,5 @@ $(function(){
         $('#store-top').removeClass('toggleShow'); //关闭该div
     });
 
-    // 发送请求
-    $.ajax({
-        type:'GET',
-        url:'Data/chargeTotal',
-        dataType: "json",
-        success: function (result) {
-            renderTpl(result);
-        },
-        error: function () {
-            alert('加载失败，请检查网络后重试');
-        }
-    })
-
 });
 
-
-/** 获取门店分类的接口;接口数据我是文件模拟的，/Data/charge/目录下是模拟数据
- *  参数 store: 0 ==> store1
- *              1 ==> store2
- *              2 ==> store3
- * */
-function getChargeByStore(store) {
-    // 根据性别决定接口数据
-    var url='';
-    if(store == 0){
-        url = 'Data/charge1';
-    }else if(store == 1){
-        url = 'Data/charge2';
-    }else if(store == 2){
-        url = 'Data/charge3';
-    }else{
-        return
-    }
-    // 发送请求
-    $.ajax({
-        type:'GET',
-        url:url,
-        dataType: "json",
-        success: function (result) {
-            renderTpl(result);
-        },
-        error: function () {
-            alert('加载失败，请检查网络后重试');
-        }
-    })
-}
-
-/** 渲染模板 */
-function renderTpl(chargeList) {
-    // 模板
-    var tpl = '{{#list}}'+ '<li>\n'+
-                '<div class="aui-list-header charge-list-header">\n'+
-                    '<span class="aui-pull-left charge-type">畅享{{chargeType}}套餐</span>'+
-                    '<span class="aui-pull-right order-equip">{{chargeEquip}}</span>'+
-                '</div>\n'+
-                '<div class="aui-list-item aui-list-item-middle aui-clearfix">\n'+
-                    '<div class="aui-list-item-inner charge-list-item">\n'+
-                        '<div class="charge-list-item-text">时长：<span class="charge-type-time">{{chargeTypeTime}}</span>'+
-                        '</div>\n'+
-                        '<div class="charge-list-item-text charge-list-item-orig-money">原价: <span class="charge-orig-money">{{chargeOrigMoney}}</span>'+
-                        '</div>\n'+
-                        '<div class="charge-list-item-text charge-list-item-money">优惠价: <span class="charge-take-money">{{chargeTakeMoney}}</span>'+
-                        '</div>\n'+
-                        '<div class="charge-list-item-text">用于：<span class="charge-type-series">{{chargeTypeSeries}}</span>'+
-                        '</div>\n'+
-                    '</div>\n'+
-                '</div>\n' +
-            '</li>{{/list}}';
-    // 调用mustache生成dom
-    var dom = Mustache.render(tpl, chargeList);
-    // 插入dom
-    $('#chargeContent').html(dom);
-}
