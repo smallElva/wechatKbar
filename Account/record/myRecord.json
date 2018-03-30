@@ -1,83 +1,103 @@
 [
   {
-    "id": 15,
+    "id": 1,
+    "recordUserName":"elva",
     "myRecordListImg": "../../img/tx.jpg",
-    "myRecordListHref": "myRecord_page.html",
     "myRecordSongName": "匆匆那年",
     "perListenNum": "60",
     "perLikeNum": "58",
+    "recordScore": "98",
+    "audios":"../../Audio/Maid%20with%20the%20Flaxen%20Hair.mp3",
     "perMyRecordTime": "2018-01-09"
   },{
-    "id": 16,
+    "id": 2,
+    "recordUserName":"小二上菜咯",
     "myRecordListImg": "../../img/tx.jpg",
-    "myRecordListHref": "myRecord_page.html",
     "myRecordSongName": "小幸运",
     "perListenNum": "30",
     "perLikeNum": "58",
+    "recordScore": "90",
+    "audios":"../../Audio/Maid%20with%20the%20Flaxen%20Hair.mp3",
     "perMyRecordTime": "2018-01-07"
   },{
-    "id": 17,
+    "id": 3,
+    "recordUserName":"lucy",
     "myRecordListImg": "../../img/tx.jpg",
-    "myRecordListHref": "myRecord_page.html",
     "myRecordSongName": "明天会更好",
     "perListenNum": "230",
     "perLikeNum": "258",
+    "recordScore": "78",
+    "audios":"../../Audio/Maid%20with%20the%20Flaxen%20Hair.mp3",
     "perMyRecordTime": "2018-01-07"
   },{
-    "id": 18,
+    "id": 4,
+    "recordUserName":"lucifer",
     "myRecordListImg": "../../img/tx.jpg",
-    "myRecordListHref": "myRecord_page.html",
     "myRecordSongName": "人间",
     "perListenNum": "30",
     "perLikeNum": "58",
+    "recordScore": "88",
+    "audios":"../../Audio/Maid%20with%20the%20Flaxen%20Hair.mp3",
     "perMyRecordTime": "2018-01-07"
   },{
-    "id": 19,
+    "id": 5,
+    "recordUserName":"sunday",
     "myRecordListImg": "../../img/tx.jpg",
-    "myRecordListHref": "myRecord_page.html",
     "myRecordSongName": "以后的以后",
     "perListenNum": "330",
     "perLikeNum": "358",
+    "recordScore": "78",
+    "audios":"../../Audio/Maid%20with%20the%20Flaxen%20Hair.mp3",
     "perMyRecordTime": "2018-01-09"
   },{
-    "id": 20,
+    "id": 6,
+    "recordUserName":"well",
     "myRecordListImg": "../../img/tx.jpg",
-    "myRecordListHref": "myRecord_page.html",
     "myRecordSongName": "今天",
     "perListenNum": "60",
     "perLikeNum": "58",
+    "recordScore": "88",
+    "audios":"../../Audio/Maid%20with%20the%20Flaxen%20Hair.mp3",
     "perMyRecordTime": "2018-01-09"
   },{
-    "id": 21,
+    "id": 7,
+    "recordUserName":"幸运之神",
     "myRecordListImg": "../../img/tx.jpg",
-    "myRecordListHref": "myRecord_page.html",
     "myRecordSongName": "不是你",
     "perListenNum": "30",
     "perLikeNum": "58",
+    "recordScore": "68",
+    "audios":"../../Audio/Maid%20with%20the%20Flaxen%20Hair.mp3",
     "perMyRecordTime": "2018-01-07"
   },{
     "id": 22,
+    "recordUserName":"winter",
     "myRecordListImg": "../../img/tx.jpg",
-    "myRecordListHref": "myRecord_page.html",
     "myRecordSongName": "好好的",
     "perListenNum": "230",
     "perLikeNum": "258",
+    "recordScore": "98",
+    "audios":"../../Audio/Maid%20with%20the%20Flaxen%20Hair.mp3",
     "perMyRecordTime": "2018-01-07"
   },{
     "id": 23,
+    "recordUserName":"foker",
     "myRecordListImg": "../../img/tx.jpg",
-    "myRecordListHref": "myRecord_page.html",
     "myRecordSongName": "同桌的你",
     "perListenNum": "30",
     "perLikeNum": "58",
+    "recordScore": "95",
+    "audios":"../../Audio/Maid%20with%20the%20Flaxen%20Hair.mp3",
     "perMyRecordTime": "2018-01-07"
   },{
     "id": 24,
+    "recordUserName":"jack",
     "myRecordListImg": "../../img/tx.jpg",
-    "myRecordListHref": "myRecord_page.html",
     "myRecordSongName": "明天",
     "perListenNum": "330",
     "perLikeNum": "358",
+    "recordScore": "93",
+    "audios":"../../Audio/Maid%20with%20the%20Flaxen%20Hair.mp3",
     "perMyRecordTime": "2018-01-09"
   }
 ]

@@ -1,9 +1,6 @@
 @charset "UTF-8";
 .login-logo{
-    width: 4rem;
-    height: 4rem;
-    background: #ff2600;
-    border-radius: .25rem;
+    width: 5rem;
     margin: 5rem auto 3rem;
 }
 .login-aui-list{
@@ -11,9 +8,24 @@
 }
 .aui-list .login-input-btn{
     margin-bottom: 10px;
-    background: #fff;
+    background: #f2f2f2;
     border-radius: .25rem;
     min-height: 2.5rem;
+}
+.aui-list.aui-form-list .login-input-btn:active {
+    background-color: #f2f2f2;
+}
+.login-btn{
+    background: #ff6642;
+    color: #fff;
+}
+.login-btn:focus,.login-btn:hover{
+    background: #fb5a3e;
+    color: #fff;
+}
+.aui-checkbox:checked, .aui-checkbox.aui-checked {
+    background-color: #6170e4;
+    border: solid 1px #6170e4;
 }
 .login-find-pwd{
     color: #212121;

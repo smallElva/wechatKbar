@@ -1,10 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>报表统计-业绩趋势图</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_408chfbqkw3ik9.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="report.css" />
 </head>
-<body>
-$END$
+<body class="white-body">
+<div class="backColor fixed-header-top">
+    <div class="header-radius">
+        <div class="prev-div" onclick="window.history.go(-1);">
+            <i class="iconfont icon-zhixiangzuo"></i>
+        </div>
+        <div id="showStore" class="order-select"><span class="order-store-name">坪洲四季城</span><i class="iconfont icon-xiangxia"></i></div>
+    </div>
+</div>
+<!--门店筛选-->
+<div class="aui-popup aui-popup-top order-popup-top" id="store-top">
+    <div class="aui-popup-arrow"></div>
+    <div class="aui-popup-content">
+        <ul class="aui-list">
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner bill-store-name" data-store="1">
+                    坪洲四季城
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner bill-store-name" data-store="2">
+                    宝安中心天虹
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner bill-store-name" data-store="3">
+                    宝安中心cococity
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<section class="content-section">
+    <div class="report-tab" id="report-tab">
+        <a class="tab-item active" href="report-line.html">业绩趋势图</a>
+        <a class="tab-item" href="report-pie.html">套餐扇形图</a>
+    </div>
+    <div class="report-choose" id="report-choose">
+        <span class="choose-time">30天</span><i class="iconfont icon-shaixuan"></i>
+    </div>
+    <ul class="time-block" id="time-div">
+        <li class="time-item" aui="1">7天</li>
+        <li class="time-item" aui="2">30天</li>
+    </ul>
+    <!-- 折线图的Dom -->
+    <div id="main-line"></div>
+</section>
+
+<script type="text/javascript" src="echarts.min.js"></script>
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="line.js"></script>
 </body>
-</html>

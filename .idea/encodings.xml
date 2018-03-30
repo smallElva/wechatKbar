@@ -5,38 +5,32 @@
     <file url="file://$PROJECT_DIR$/Account/Data/myRecord" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Account/account.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Account/feedback/feedback.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Account/myOrder-vue.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Account/myOrder.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Account/myOrder.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Account/myOrder.json" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Account/record/myRecord-vue.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Account/record/audio.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Account/record/myRecord-page.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Account/record/myRecord.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Account/record/myRecord.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Account/record/myRecord.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Account/record/myRecordPage.css" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Account/record/myRecordPage.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Account/record/myRecordPage2.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bills/Data/bill1" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bills/Data/bill2" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bills/Data/bill3" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bills/Data/billTotal" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bills/Data/orderTotal" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/bills/Data/store/store1" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/bills/Data/store/store2" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/bills/Data/store/store3" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/bills/Data/store/storeTotal" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/bills/bill-vue.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bills/bill-x.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bills/bill.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bills/bill.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/bills/bill.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bills/bill2.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/bills/billPage.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bills/bills.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bills/mobiscroll.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bills/mobiscroll_date.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/bills/order.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bills/storeName.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/box/Data/box.json" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/box/Data/box/001.json" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/box/Data/box/002.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/box/Data/boxes/001.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/box/Data/boxes/002.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/box/box-page.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/box/box-vue.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/box/box.css" charset="UTF-8" />
@@ -49,19 +43,19 @@
     <file url="file://$PROJECT_DIR$/chargeSet/Data2/charge2" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/chargeSet/Data2/charge3" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/chargeSet/Data2/chargeTotal" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/chargeSet/charge-vue.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/chargeSet/charge.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chargeSet/chargeSet.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/chargeSet/chargeSet.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/chargeSet/chargeSet.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/Data/singer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/choose.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/choose.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/control/control.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/choose/haveSang/haveSang-vue.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/choose/haveSang/haveSang.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/haveSang/haveSang.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/haveSang/haveSang.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/haveSang/share.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/choose/haveSongs/haveSongs-vue.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/choose/haveSongs/haveSongs.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/haveSongs/haveSongs.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/haveSongs/list.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/hotSong/hotSong.js" charset="UTF-8" />
@@ -94,6 +88,7 @@
     <file url="file://$PROJECT_DIR$/nearby/nearby.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/news/news.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/news/news.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/news/news_page.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/orders/Data/store/store1" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/orders/Data/store/store2" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/orders/Data/store/store3" charset="UTF-8" />
@@ -103,7 +98,11 @@
     <file url="file://$PROJECT_DIR$/orders/order.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/orders/order2.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/orders/storeName.json" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/report/Data/equip.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/report/Data/day1.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/report/Data/equip1.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/report/Data/equip2.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/report/Data/equip3.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/report/line.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/report/report-line.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/report/report-pie.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/report/report.css" charset="UTF-8" />
@@ -112,8 +111,8 @@
     <file url="file://$PROJECT_DIR$/store/Data/003" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/store/Data/store" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/store/Data/storePage" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/store/store-vue.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/store/store.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/store/store.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/store/store.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/store/storePage.js" charset="UTF-8" />
   </component>

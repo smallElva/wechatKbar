@@ -6,7 +6,7 @@ $(function(){
     //创建MeScroll对象,内部已默认开启下拉刷新,自动执行up.callback,重置列表数据;
     var mescroll = new MeScroll("mescroll", {
         up: {
-            page:{size:6},//每次加载1条数据,模拟loadFull
+            page:{size:7},//每次加载1条数据,模拟loadFull
             loadFull: {
                 use: true, //列表数据过少,是否自动加载下一页,直到满屏或者无更多数据为止;默认false
                 delay: 500 //延时执行的毫秒数; 延时是为了保证列表数据或占位的图片都已初始化完成,且下拉刷新上拉加载中区域动画已执行完毕;
@@ -95,18 +95,16 @@ $(function(){
         var result = '';
         for (var i = 0; i < curPageData.length; i++) {
             var pd=curPageData[i];
-            result +='<li class="aui-list-item aui-list-item-middle">'+
+            result +='<li class="aui-list-item aui-list-item-middle" onclick="openNewsInfo('+pd.id+')">'+
                 '<div class="aui-media-list-item-inner">'+
                     '<div class="aui-list-item-label-icon aui-list-item-label-circle">'+
                         '<div class="circle new-circle">新</div>'+
                     '</div>'+
                     '<div class="aui-list-item-inner">'+
-                        '<a href="'+ pd.newsHrefPage+'">'+
-                            '<div class="aui-list-item-text">'+
-                                '<div class="aui-list-item-title index-info-title">'+pd.newsTitle +'</div>'+
-                                '<div class="aui-list-item-right index-info-text">'+pd.newsTime+'</div>'+
-                            '</div>'+
-                        '</a>'+
+                        '<div class="aui-list-item-text">'+
+                            '<div class="aui-list-item-title index-info-title">'+pd.newsTitle +'</div>'+
+                            '<div class="aui-list-item-right index-info-text">'+pd.newsTime+'</div>'+
+                        '</div>'+
                         '<div class="aui-ellipsis-1 index-info-text">'+pd.newsText+'</div>'+
                     '</div>'+
                 '</div>'+
@@ -144,27 +142,6 @@ $(function(){
 
 });
 
-
-/** 渲染模板 */
-// function renderTpl(newsList) {
-//     // 模板
-//     var tpl = '{{#list}}<li class="aui-list-item aui-list-item-arrow">\n'+
-//         '<div class="aui-media-list-item-inner">\n'+
-//         '<i class="iconfont icon-iconfontzhizuobiaozhun023147 aui-text-warning"></i>\n'+
-//         '<div class="aui-list-item-inner">\n'+
-//         '<a href="{{newsHrefPage}}">\n'+
-//         '<div class="aui-list-item-text">\n'+
-//         '<div class="aui-list-item-title index-info-title">{{newsTitle}}</div>\n'+
-//         '<div class="aui-list-item-right">{{newsTime}}</div>\n'+
-//         '</div>\n'+
-//         '</a>\n'+
-//         '<div class="aui-list-item-text aui-ellipsis-2 index-info-text">{{newsText}} </div>\n'+
-//         '</div>\n'+
-//
-//         '</div>\n'+
-//         '</li>{{/list}}';
-//     // 调用mustache生成dom
-//     var dom = Mustache.render(tpl, newsList);
-//     // 插入dom
-//     $('#newsContent').html(dom);
-// }
+function openNewsInfo(id) {
+    window.location.href = "news/newsPage.html?id=" + id;
+}

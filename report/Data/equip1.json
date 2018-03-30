@@ -5,35 +5,35 @@
     {
       "id": "1",
       "shop_name": "坪洲四季城店",
-      "shop_id": "1001",
+      "shop_id": "101",
       "equipList":[
         {
-          "equip_id":"1001",
+          "equip_id":"1041",
           "equip_name":"设备1",
           "equip_value":[120, 132, 101, 134, 90, 230, 210]
         },{
-          "equip_id":"1002",
+          "equip_id":"1042",
           "equip_name":"设备2",
           "equip_value":[220, 182, 191, 234, 290, 330, 310]
         },{
-          "equip_id":"1003",
+          "equip_id":"1043",
           "equip_name":"设备3",
           "equip_value":[150, 232, 201, 154, 190, 330, 410]
         },{
-          "equip_id":"1004",
+          "equip_id":"1044",
           "equip_name":"设备4",
           "equip_value":[320, 332, 301, 334, 390, 330, 320]
         },{
-          "equip_id":"1005",
+          "equip_id":"1045",
           "equip_name":"设备5",
-          "equip_value":[820, 932, 901, 934, 1290, 1330, 1320]
+          "equip_value":[420, 932, 901, 934, 1290, 1330, 1320]
         }
       ],
       "packagesList":[
         {
           "packages_id":"1001",
           "packages_name":"15分钟/¥20",
-          "packages_value":335
+          "packages_value":500
         },{
           "packages_id":"1002",
           "packages_name":"30分钟/¥40",
@@ -53,7 +53,7 @@
         },{
           "packages_id":"1006",
           "packages_name":"单首/¥8",
-          "packages_value":1548
+          "packages_value":148
         }
       ]
     }

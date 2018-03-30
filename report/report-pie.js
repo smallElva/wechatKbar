@@ -1,13 +1,16 @@
-/**
- * Created by enter on 2018/3/20.
- */
+
 /**
  * Created by enter on 2018/3/20.
  */
 $(function () {
+    window.addEventListener("resize", function () {
+        myChartPie.resize();
+    });
     /***
      * 点击全部门店筛选
      */
+    var store = parseInt($('#showStore .order-store-name').attr('uid'));
+    var timeId = parseInt($('#report-choose .choose-time').attr('uid'));
     $("#showStore").click(function () {
         $('#store-top').toggleClass('toggleShow');
         $("#showStore").find('.iconfont').toggleClass('icon-xiangxia icon-xiangshang');
@@ -16,9 +19,9 @@ $(function () {
     $('#store-top .aui-list-item').click(function () {
         var storeName = $(this).find('.bill-store-name').text();
         $('#showStore .order-store-name').html(storeName);
-        var store = parseInt($(this).find('.bill-store-name').attr('data-store'));
+        store = parseInt($(this).find('.bill-store-name').attr('data-store'));
         $("#showStore").find('.iconfont').toggleClass('icon-xiangxia icon-xiangshang');
-        // getBillByStore(store);
+        setAjaxChartPie(store,timeId);//获取门店属性值，刷新数据
     });
     //点击页面除了id="showStore"之外的任何区域都关闭该div
     $(document).on('click', function(e) {
@@ -43,9 +46,10 @@ $(function () {
         var time = $(this).text();
         $('#report-choose .choose-time').html(time);
         $('#time-div.time-block').toggleClass('toggleShow');
-        var dataTime = parseInt($(this).attr('aui'));
+        timeId = parseInt($(this).attr('aui'));
+        setAjaxChartPie(store,timeId);//获取时间属性值，刷新数据
     });
-    // 点击页面除了id="report-choose"之外的任何区域都关闭该div
+    // 点击页面除了id="showStore"之外的任何区域都关闭该div
     $(document).on('click', function(e) {
         var e = e || window.event; //浏览器兼容性
         var elem = e.target || e.srcElement;
@@ -57,7 +61,6 @@ $(function () {
         }
         $('#time-div').removeClass('toggleShow'); //关闭该div
     });
-
     /**
      * 扇形图部分.
      */
@@ -93,15 +96,15 @@ $(function () {
         ]
     };
     myChartPie.showLoading();    //显示加载动画
-    setAjaxChartPie();
-    function setAjaxChartPie() {
+    setAjaxChartPie(1);
+
+    function setAjaxChartPie(store,timeId) {
         myChartPie.showLoading();    //数据加载完之前先显示一段简单的loading动画
         var packages=[];
         $.ajax({
-            type : "post",
-            async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
-            url : "Data/equip.json",    //请求数据接口
-            data : {},
+            type : "GET",
+            url : 'Data/equip'+store+'.json',    //请求数据接口
+            // data : {},
             dataType : "json",        //返回数据形式为json
             success : function(dataList) {
 
@@ -123,7 +126,7 @@ $(function () {
                     optionPie.series[0]["data"] = dataArr;
                     optionPie.legend["data"] = legendArr;
                     myChartPie.hideLoading();    //隐藏加载动画
-                    myChartPie.setOption(optionPie);                }
+                    myChartPie.setOption(optionPie,true);                }
             },
             error : function(errorMsg) {
                 //请求失败时执行该函数

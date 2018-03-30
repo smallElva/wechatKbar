@@ -25,13 +25,13 @@
         </div>
         <section class="content-section">
             <ul class="aui-list aui-media-list myRecord-list" id="myRecord-list">
-                <li class="aui-list-item aui-list-item-middle" v-for="item in records">
+                <li class="aui-list-item aui-list-item-middle" v-bind:uid="item.id" v-for="(item,$index) in records" v-on:click="showLayout(item.id,$index)">
                     <div class="aui-media-list-item-inner">
                         <img src="../../img/account/record-img.png" class="myRecord-list-img">
                         <div class="aui-list-item-inner">
                             <div class="aui-list-item-text myRecord-list-text">
                                 <div class="aui-list-item-title myRecord-song-name">{{item.myRecordSongName}}</div>
-                                <div class="aui-list-item-right myRecord-share" v-on:click="showLayout"><i class="iconfont icon-more"></i></div>
+                                <div class="aui-list-item-right myRecord-share" ><i class="iconfont icon-more"></i></div>
                             </div>
                             <div class="aui-list-item-text">
                                 <div class="aui-list-item-title myRecord-icons">
@@ -77,8 +77,8 @@
         <!--遮罩层-->
         <div class="layout" id="layout">
             <ul class="lay-list" id="lay-list">
-                <li v-on:click="openRecordInfo">播放录音</li>
-                <li tapmode v-on:click="deleteRecord">删除录音</li>
+                <li v-on:click="openRecordInfo($event)" id="playRecord">播放录音</li>
+                <li tapmode v-on:click="deleteRecord($event)" id="deleteRecord">删除录音</li>
                 <li v-on:click="closeLayout">取消</li>
             </ul>
         </div>
@@ -88,6 +88,6 @@
 <script type="text/javascript" src="../../js/mescroll.min.js" ></script>
 <script type="text/javascript" src="../../js/vue.min.js" ></script>
 <script type="text/javascript" src="../../js/aui-dialog.js" ></script>
-<script type="text/javascript" src="myRecord-vue.js" ></script>
+<script type="text/javascript" src="myRecord.js" ></script>
 </body>
 </html>

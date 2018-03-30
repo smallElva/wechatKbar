@@ -24,7 +24,7 @@ var songsm=new Vue({
             });
         },
         getGoodsHref:function(val){
-            return '../../Account/record/myRecord_page.html?songsId='+val
+            return '../../Account/record/myRecord_page.html?id='+val
         }
     }
 

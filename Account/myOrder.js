@@ -1,9 +1,7 @@
 /**
  * Created by enter on 2018/3/23.
  */
-/**
- * Created by enter on 2018/3/16.
- */
+
 var vmm=new Vue({
     el: "#myOrder-app",
     data: {

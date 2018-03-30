@@ -2,9 +2,14 @@
  * Created by enter on 2018/3/20.
  */
 $(function () {
+    window.addEventListener("resize", function () {
+        myChartLine.resize();
+    });
     /***
      * 点击全部门店筛选
      */
+    var store = parseInt($('#showStore .order-store-name').attr('uid'));
+    var timeId = parseInt($('#report-choose .choose-time').attr('uid'));
     $("#showStore").click(function () {
         $('#store-top').toggleClass('toggleShow');
         $("#showStore").find('.iconfont').toggleClass('icon-xiangxia icon-xiangshang');
@@ -13,9 +18,11 @@ $(function () {
     $('#store-top .aui-list-item').click(function () {
         var storeName = $(this).find('.bill-store-name').text();
         $('#showStore .order-store-name').html(storeName);
-        var store = parseInt($(this).find('.bill-store-name').attr('data-store'));
+        store = parseInt($(this).find('.bill-store-name').attr('data-store'));
         $("#showStore").find('.iconfont').toggleClass('icon-xiangxia icon-xiangshang');
-        // getBillByStore(store);
+        setAjaxChart(store,timeId);
+        console.dir(store);
+        console.dir(timeId);
     });
     //点击页面除了id="showStore"之外的任何区域都关闭该div
     $(document).on('click', function(e) {
@@ -40,7 +47,10 @@ $(function () {
         var time = $(this).text();
         $('#report-choose .choose-time').html(time);
         $('#time-div.time-block').toggleClass('toggleShow');
-        var dataTime = parseInt($(this).attr('aui'));
+        timeId = parseInt($(this).attr('aui'));
+        setAjaxChart(store,timeId);
+        console.dir(store);
+        console.dir(timeId);
     });
     // 点击页面除了id="showStore"之外的任何区域都关闭该div
     $(document).on('click', function(e) {
@@ -157,16 +167,18 @@ $(function () {
     };
 
     myChartLine.showLoading();    //显示加载动画
-    setAjaxChart();
-    function setAjaxChart() {
+    setAjaxChart(1);
+    console.dir(store);
+    console.dir(timeId);
+    function setAjaxChart(store,timeId) {
         myChartLine.showLoading();    //数据加载完之前先显示一段简单的loading动画
         var equipNames=[];    //设备名数组
         var legends = {};
         var legend = {};
         $.ajax({
-            type : "post",
-            url : "Data/equip.json",    //请求数据接口
-            data : {},
+            type : "GET",
+            url : 'Data/equip'+store+'.json',    //请求数据接口
+            // data : {},
             dataType : "json",        //返回数据形式为json
             success : function(result) {
                 //请求成功时执行该函数内容，result即为服务器返回的json对象
@@ -190,7 +202,7 @@ $(function () {
                     legends["itemGap"]=30;
                     option["legend"]=legends;
                     myChartLine.hideLoading();    //隐藏加载动画
-                    myChartLine.setOption(option);
+                    myChartLine.setOption(option,true);
                 }
             },
             error : function(errorMsg) {

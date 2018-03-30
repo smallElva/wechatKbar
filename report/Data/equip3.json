@@ -1,10 +1,53 @@
 {
-  "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
-    "sourceMap": true
-  },
-  "exclude": [
-    "node_modules"
+  "status": 200,
+  "msg":"success",
+  "list":[
+    {
+      "id": "3",
+      "shop_name": "宝安中心cococity",
+      "shop_id": "1003",
+      "equipList":[
+        {
+          "equip_id":"1031",
+          "equip_name":"设备1",
+          "equip_value":[320, 132, 101, 134, 90, 230, 210]
+        },{
+          "equip_id":"1032",
+          "equip_name":"设备2",
+          "equip_value":[220, 182, 191, 234, 290, 330, 110]
+        },{
+          "equip_id":"1033",
+          "equip_name":"设备3",
+          "equip_value":[150, 232, 501, 154, 190, 330, 410]
+        }
+      ],
+      "packagesList":[
+        {
+          "packages_id":"1301",
+          "packages_name":"15分钟/¥20",
+          "packages_value":335
+        },{
+          "packages_id":"1302",
+          "packages_name":"30分钟/¥40",
+          "packages_value":310
+        },{
+          "packages_id":"1303",
+          "packages_name":"45分钟/¥50",
+          "packages_value":234
+        },{
+          "packages_id":"1304",
+          "packages_name":"60分钟/¥58",
+          "packages_value":135
+        },{
+          "packages_id":"1305",
+          "packages_name":"90分钟/¥98",
+          "packages_value":98
+        },{
+          "packages_id":"1306",
+          "packages_name":"单首/¥8",
+          "packages_value":1548
+        }
+      ]
+    }
   ]
 }

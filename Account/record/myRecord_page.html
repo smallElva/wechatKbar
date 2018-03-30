@@ -12,7 +12,7 @@
 
 </head>
 <body class="black-body">
-<section>
+<section id="myRecord-page-app">
     <div class="singing-content">
         <div class="prev-page" onclick="window.history.go(-1);">
             <i class="iconfont icon-zhixiangzuo"></i>
@@ -27,23 +27,23 @@
             </div>
         </div>
         <div class="myRecord-page">
-            <p class="songName">凉凉</p>
-            <div class="singingName"><span class="wechatName">Elva</span></div>
+            <p class="songName">{{myRecordSongName}}</p>
+            <div class="singingName"><span class="wechatName">{{recordUserName}}</span></div>
             <div class="myRecord-title-text">
                 <div class="myRecord-title-icons">
-                    <i class="iconfont icon-erji"></i><span class="listen-num">31</span>
+                    <i class="iconfont icon-erji"></i><span class="listen-num">{{perListenNum}}</span>
                 </div>
                 <div class="myRecord-title-icons">
-                    <span class="myRecord-title-score">评分<span class="recordScore">32.25</span>分</span>
+                    <span class="myRecord-title-score">评分<span class="recordScore">{{recordScore}}</span>分</span>
                 </div>
-                <div class="myRecord-title-icons">
-                    <i class="iconfont icon-zan"></i><span class="like-num">41</span>
+                <div class="myRecord-title-icons" id="thumbsUp">
+                    <i class="iconfont icon-zan"></i><span class="like-num">{{perLikeNum}}</span>
                 </div>
             </div>
         </div>
         <div class="audio-wrapper">
             <audio>
-                <source src="../../Audio/Maid%20with%20the%20Flaxen%20Hair.mp3" type="audio/mp3">
+                <source v-bind:src="audios" type="audio/mp3">
             </audio>
             <div class="audio-bars">
                 <div class="progress-bar-bg" id="progressBarBg"><span id="progressDot"></span>
@@ -56,10 +56,12 @@
     </div>
 
 </section>
-<script type="text/javascript" src="../../js/jquery-3.2.1.min.js" ></script>
-<script type="text/javascript" src="../../js/api.js" ></script>
+<script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../../js/api.js"></script>
+<script type="text/javascript" src="../../js/vue.min.js"></script>
 <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-<script type="text/javascript" src="audio.js" ></script>
+<script type="text/javascript" src="audio.js"></script>
+<script type="text/javascript" src="myRecord-page.js"></script>
 <!--<script>-->
 <!--var songName = $('.songName').text();-->
 <!--wx.config({-->

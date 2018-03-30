@@ -15,7 +15,7 @@ var boxm=new Vue({
             var href = location.href;
             var id = href.split('id=')[1];
             $.ajax({
-                url: 'Data/box/'+ id +'.json',
+                url: 'Data/boxes/'+ id +'.json',
                 type: "GET",
                 success: function (json) {
                     var lists = json.list;

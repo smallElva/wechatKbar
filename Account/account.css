@@ -85,6 +85,9 @@
     border: 1px solid #6170e4;
 }
 /*缺歌反馈*/
+.lackSong_list{
+    margin-bottom: 5rem;
+}
 .lackSong_list .aui-list-item {
     padding: 0;
     font-size: .7rem;
