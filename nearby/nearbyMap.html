@@ -41,7 +41,11 @@
 <body>
 <div id="container"></div>
 <div id="panel"></div>
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
 <script type="text/javascript">
+    var href = location.href;
+    var id = href.split('id=')[1];//获取href的参数id
+
     var map = new AMap.Map("container", {
         resizeEnable: true,
         center: [116.397428, 39.90923],

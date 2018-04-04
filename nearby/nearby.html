@@ -97,7 +97,7 @@
                     success:function(shopInfo){
                         //index是下表，el是值
                         $(shopInfo).each(function(index,el){
-                            $("#list").append('<div class="item-store"> <a class="s-top ui-width-100 ui-flex" href="__CONTROLLER__/shopDetail/shop_id/'+el.shop_id+'"> <img src="'+el.shop_logo.substring(1)+'" class="s-img"/> <div class="s-message"> <h4>'+el.shop_name+'</h4> <div class="s-address">'+el.shop_position+'</div> </div> </a> <div class="s-bottom-block ui-width-100"> <ul>  <li> <a href="__CONTROLLER__/daohang/shop_id/'+el.shop_id+'" class="db-block"> <i class="icon iconfont">&#xe66c;</i> 一键导航 <span class="kilemiter"> '+el.distance/1000+'km </span> </a> </li> </ul> </div> </div>');
+                            $("#tab-content").append('<div class="item-store"> <a class="s-top ui-width-100 ui-flex" href="__CONTROLLER__/shopDetail/shop_id/'+el.shop_id+'"> <img src="'+el.shop_logo.substring(1)+'" class="s-img"/> <div class="s-message"> <h4>'+el.shop_name+'</h4> <div class="s-address">'+el.shop_position+'</div> </div> </a> <div class="s-bottom-block ui-width-100"> <ul>  <li> <a href="__CONTROLLER__/daohang/shop_id/'+el.shop_id+'" class="db-block"> <i class="icon iconfont">&#xe66c;</i> 一键导航 <span class="kilemiter"> '+el.distance/1000+'km </span> </a> </li> </ul> </div> </div>');
                         })
                     }
                 });

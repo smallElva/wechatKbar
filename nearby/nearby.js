@@ -57,7 +57,7 @@ $(function () {
         for (var i = 0; i < curPageData.length; i++) {
             var list=curPageData[i];
             result += '<li class="aui-list-item aui-list-item-middle nearby-list-item">'+
-                '<a class="aui-media-list-item-inner" onclick="getStoreInfo()">'+
+                '<a class="aui-media-list-item-inner" onclick="getStoreInfo('+list.id+')">'+
                 '<div class="aui-list-item-media nearby-list-img">'+
                 '<img src="../img/store/store-img.png" class="aui-img-round aui-list-img-sm">'+
                 '</div>'+

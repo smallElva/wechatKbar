@@ -50,6 +50,9 @@ var orderm=new Vue({
                     for (var i = 0; i < lists.length; i++) {
                         orderm.orders.push(lists[i]);
                     }
+                },
+                fail:function (msg) {
+                    alert(msg);
                 }
             });
         },
@@ -66,6 +69,9 @@ var orderm=new Vue({
                     for (var i = 0; i < lists.length; i++) {
                         orderm.orders.push(lists[i]);
                     }
+                },
+                fail:function (msg) {
+                    alert(msg);
                 }
             });
         }

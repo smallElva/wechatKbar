@@ -2,20 +2,23 @@
   {
     "id": 10,
     "nearbyStoreName": "宝安区",
-    "nearbyMapHref": "nearbyMap.html",
     "nearbyStoreDistance": "336m",
+    "lot":113.906122,
+    "lat":22.559663,
     "nearbyStoreAdd": "宝安区西乡海城路时代城5楼"
   },{
     "id": 11,
     "nearbyStoreName": "宝安区西乡",
-    "nearbyMapHref": "nearbyMap.html",
     "nearbyStoreDistance": "893m",
+    "lot":113.800162,
+    "lat":22.729662,
     "nearbyStoreAdd": "西乡大道与新湖路交汇处天虹商场B1层"
   },{
     "id": 12,
     "nearbyStoreName": "民治天虹B1",
-    "nearbyMapHref": "nearbyMap.html",
     "nearbyStoreDistance": "893m",
+    "lot":113.994863,
+    "lat":22.67461,
     "nearbyStoreAdd": "西乡大道与新湖路交汇处天虹商场B1层"
   }
 ]

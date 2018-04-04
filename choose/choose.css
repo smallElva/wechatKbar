@@ -7,7 +7,7 @@
 }
 .aui-title .aui-searchbar-input input {
     height: 1.65rem;
-    line-height: 1.65rem;
+    /*line-height: 1.65rem;*/
     font-size: 0.7rem;
 }
 .aui-title .aui-searchbar {
@@ -537,5 +537,10 @@
     text-align: left;
 }
 #instrument-mask,#soundEffect-mask{
+    display: none;
+}
+
+/*vue*/
+[v-cloak] {
     display: none;
 }

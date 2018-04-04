@@ -87,16 +87,14 @@ $(function(){
         var result = '';
         for (var i = 0; i < curPageData.length; i++) {
             var pd=curPageData[i];
-            result +='<div class="aui-list-item aui-list-item-middle">'+
+            result +='<li class="aui-list-item aui-list-item-middle">'+
                 '<a class="aui-media-list-item-inner" href= '+ pd.singerHref +'>'+
                 '<div class="aui-list-item-inner aui-list-item-arrow">'+
                 '<div class="aui-list-item-title singerName">'+ pd.singerName +'</div>'+
                 '</div>'+
-                '</div>';
+                '</li>';
         }
-        var liDom=document.createElement("li");
-        liDom.innerHTML=result;
-        listDom.appendChild(liDom);
+        listDom.innerHTML+=result;
     }
 
     /*联网加载列表数据
