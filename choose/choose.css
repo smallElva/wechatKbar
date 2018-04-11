@@ -1,5 +1,14 @@
 @charset "UTF-8";
-
+/*修改的弹窗样式choose.html*/
+.aui-dialog-header {
+    padding: 1rem .75rem;
+}
+.aui-dialog-body {
+    display: none;
+}
+.aui-dialog-btn {
+    color: #6170e4;
+}
 /*头部搜索*/
 .aui-title{
     display: flex;
@@ -7,7 +16,6 @@
 }
 .aui-title .aui-searchbar-input input {
     height: 1.65rem;
-    /*line-height: 1.65rem;*/
     font-size: 0.7rem;
 }
 .aui-title .aui-searchbar {
@@ -147,7 +155,8 @@
 }
 .choose-footer{
     background: #fff;
-    box-shadow: 0px -.2rem .3rem 0px rgba(0,0,0,0.04)
+    box-shadow: 0px -.2rem .3rem 0px rgba(0,0,0,0.04);
+    z-index: 8;
 }
 .choose-footer .aui-bar-tab-item{
     color: #2e2e2e;

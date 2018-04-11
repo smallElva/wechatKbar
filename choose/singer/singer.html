@@ -27,77 +27,78 @@
     </div>
     <div class="aui-content">
         <ul class="aui-list aui-list-in singer-list">
-            <li class="aui-list-item" onclick="getSingerHref(this)" uid="1">
-                <a class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">华语男星</div>
-                </a>
+            <li class="aui-list-item" v-for="item in datas" v-bind:uid="item.singerTypeId" v-on:click="openSingerTypeInfo(item.singerTypeId)">
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">{{item.singerTypeName}}</div>
+                </div>
             </li>
-            <li class="aui-list-item" onclick="getSingerHref(this)" uid="2">
-                <a class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">华语女星</div>
-                </a>
-            </li>
-            <li class="aui-list-item" onclick="getSingerHref(this)" uid="3">
-                <a class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">华语组合</div>
-                </a>
-            </li>
-            <li class="aui-list-item" onclick="getSingerHref(this)" uid="4">
-                <a class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">韩国男星</div>
-                </a>
-            </li>
-            <li class="aui-list-item" onclick="getSingerHref(this)" uid="5">
-                <a class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">韩国女星</div>
-                </a>
-            </li>
-            <li class="aui-list-item" onclick="getSingerHref(this)" uid="6">
-                <a class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">韩国组合</div>
-                </a>
-            </li>
-            <li class="aui-list-item" onclick="getSingerHref(this)" uid="7">
-                <a class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">日本男星</div>
-                </a>
-            </li>
-            <li class="aui-list-item" onclick="getSingerHref(this)" uid="8">
-                <a class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">日本女星</div>
-                </a>
-            </li>
-            <li class="aui-list-item" onclick="getSingerHref(this)" uid="9">
-                <a class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">日本组合</div>
-                </a>
-            </li>
-            <li class="aui-list-item" onclick="getSingerHref(this)" uid="10">
-                <a class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">欧美男星</div>
-                </a>
-            </li>
-            <li class="aui-list-item" onclick="getSingerHref(this)" uid="11">
-                <a class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">欧美女星</div>
-                </a>
-            </li>
-            <li class="aui-list-item" onclick="getSingerHref(this)" uid="12">
-                <a class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">欧美组合</div>
-                </a>
-            </li>
-            <li class="aui-list-item" onclick="getSingerHref(this)" uid="13">
-                <a class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">其他</div>
-                </a>
-            </li>
+            <!--<li class="aui-list-item" onclick="getSingerHref(this)" uid="2">-->
+                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
+                    <!--<div class="aui-list-item-title">华语女星</div>-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li class="aui-list-item" onclick="getSingerHref(this)" uid="3">-->
+                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
+                    <!--<div class="aui-list-item-title">华语组合</div>-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li class="aui-list-item" onclick="getSingerHref(this)" uid="4">-->
+                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
+                    <!--<div class="aui-list-item-title">韩国男星</div>-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li class="aui-list-item" onclick="getSingerHref(this)" uid="5">-->
+                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
+                    <!--<div class="aui-list-item-title">韩国女星</div>-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li class="aui-list-item" onclick="getSingerHref(this)" uid="6">-->
+                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
+                    <!--<div class="aui-list-item-title">韩国组合</div>-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li class="aui-list-item" onclick="getSingerHref(this)" uid="7">-->
+                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
+                    <!--<div class="aui-list-item-title">日本男星</div>-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li class="aui-list-item" onclick="getSingerHref(this)" uid="8">-->
+                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
+                    <!--<div class="aui-list-item-title">日本女星</div>-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li class="aui-list-item" onclick="getSingerHref(this)" uid="9">-->
+                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
+                    <!--<div class="aui-list-item-title">日本组合</div>-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li class="aui-list-item" onclick="getSingerHref(this)" uid="10">-->
+                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
+                    <!--<div class="aui-list-item-title">欧美男星</div>-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li class="aui-list-item" onclick="getSingerHref(this)" uid="11">-->
+                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
+                    <!--<div class="aui-list-item-title">欧美女星</div>-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li class="aui-list-item" onclick="getSingerHref(this)" uid="12">-->
+                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
+                    <!--<div class="aui-list-item-title">欧美组合</div>-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li class="aui-list-item" onclick="getSingerHref(this)" uid="13">-->
+                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
+                    <!--<div class="aui-list-item-title">其他</div>-->
+                <!--</a>-->
+            <!--</li>-->
         </ul>
     </div>
 </section>
 
 <script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="../../js/api.js"></script>
+<script type="text/javascript" src="../../js/vue.min.js"></script>
 <script type="text/javascript" src="singer.js"></script>
 
 

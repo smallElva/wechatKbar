@@ -68,11 +68,11 @@
 .buy-a{
     display: inline-block;
     padding: .5rem 1.2rem;
-    font-size: .7rem;
+    font-size: .8rem;
     background: #fc3d3d;
     border-radius: .3rem;
     color: #fff;
-    margin-top: 1rem;
+    margin-top: .8rem;
 }
 .buy-a:disabled{
     background: #f95e5e;

@@ -1,34 +1,28 @@
 {
-  "list": [
+  "packagesList": [
     {
-      "packagesTime": "15",
-      "packagesMoney": "¥20元",
-      "packagesOrigMoney": "¥25元"
+      "packagesTime": "15分钟",
+      "packagesMoney": "20"
     },
     {
-      "packagesTime": "30",
-      "packagesMoney": "¥38元",
-      "packagesOrigMoney": "¥42元"
+      "packagesTime": "30分钟",
+      "packagesMoney": "38"
     },
     {
-      "packagesTime": "60",
-      "packagesMoney": "¥58元",
-      "packagesOrigMoney": "¥68元"
+      "packagesTime": "60分钟",
+      "packagesMoney": "58"
     },
     {
-      "packagesTime": "45",
-      "packagesMoney": "¥50元",
-      "packagesOrigMoney": "¥55元"
+      "packagesTime": "45分钟",
+      "packagesMoney": "50"
     },
     {
-      "packagesTime": "90",
-      "packagesMoney": "¥100元",
-      "packagesOrigMoney": "¥108元"
+      "packagesTime": "90分钟",
+      "packagesMoney": "100"
     },
     {
-      "packagesTime": "100",
-      "packagesMoney": "¥98元",
-      "packagesOrigMoney": "¥102元"
+      "packagesTime": "100分钟",
+      "packagesMoney": "98"
     }
   ]
 }

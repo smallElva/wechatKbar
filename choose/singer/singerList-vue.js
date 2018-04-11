@@ -17,7 +17,7 @@ var vm = new Vue({
                 callback: self.upCallback, //上拉回调
                 //以下参数可删除,不配置
                 isBounce: false, //此处禁止ios回弹,解析(务必认真阅读,特别是最后一点): http://www.mescroll.com/qa.html#q10
-                page:{size:12}, //可配置每页8条数据,默认10
+                page:{size:20}, //可配置每页8条数据,默认10
                 toTop:{ //配置回到顶部按钮
                     html : "<i class='iconfont icon-zhiding'></i>", //标签内容,默认null; 如果同时设置了src,则优先取src
                     offset : 100
@@ -26,16 +26,9 @@ var vm = new Vue({
                     warpId:"singer-result",
                     icon : "../../img/nodata.png" ,
                     tip : "亲,暂无相关数据哦~"
-//						  	btntext : "去逛逛 >" ,
-//						  	btnClick : function() {
-//						  		alert("点击了去逛逛按钮");
-//						  	}
-                },
-                //vue的案例请勿配置clearId和clearEmptyId,否则列表的数据模板会被清空
-                //vue的案例请勿配置clearId和clearEmptyId,否则列表的数据模板会被清空
-//						clearId: "dataList",
-//						clearEmptyId: "dataList"
-            },
+                }
+
+            }
 
         });
     },
@@ -44,7 +37,7 @@ var vm = new Vue({
         upCallback: function(page) {
             //联网加载数据
             var self = this;
-            getListDataFromNet(pdType,page.num, page.size, function(curPageData) {
+            getListDataFromNet(pdType,page.num, page.size,function(curPageData) {
                 //curPageData=[]; //打开本行注释,可演示列表无任何数据empty的配置
 
                 //如果是第一页需手动制空列表 (代替clearId和clearEmptyId的配置)
@@ -58,7 +51,7 @@ var vm = new Vue({
                 console.log("pdType="+pdType+",page.num="+page.num+",page.size="+page.size+", curPageData.length="+curPageData.length+", self.singerList.length==" + self.singerList.length);
 
                 //方法一(推荐): 后台接口有返回列表的总页数 totalPage
-                //self.mescroll.endByPage(curPageData.length, totalPage); //必传参数(当前页的数据个数, 总页数)
+                // self.mescroll.endByPage(curPageData.length, totalPage); //必传参数(当前页的数据个数, 总页数)
 
                 //方法二(推荐): 后台接口有返回列表的总数据量 totalSize
                 //self.mescroll.endBySize(curPageData.length, totalSize); //必传参数(当前页的数据个数, 总数据量)
@@ -77,7 +70,7 @@ var vm = new Vue({
         getSingerSongInfo: function(id) {
             window.location.href = "./singerPage.html?id=" + id;
         }
-    },
+    }
 });
 
 
@@ -110,39 +103,42 @@ function searchSongs() {
  请忽略getListDataFromNet的逻辑,这里仅仅是在本地模拟分页数据,本地演示用
  实际项目以您服务器接口返回的数据为准,无需本地处理分页.
  * */
+var href = location.href;
+var singerTypeId = href.split('singerTypeId=')[1];
+
 function getListDataFromNet(pdType,pageNum,pageSize,successCallback,errorCallback) {
-    //延时一秒,模拟联网
-    setTimeout(function () {
-//          	axios.get("xxxxxx", {
-//					params: {
-//						num: pageNum, //页码
-//						size: pageSize //每页长度
-//					}
-//				})
-//				.then(function(response) {
-        var data=pdlist1; // 模拟数据: ../res/singerList1.js
-        var listData=[];
-        //pdType 全部歌曲0; 搜索1;
-        if(pdType==0){
-            //全部商品 (模拟分页数据)
-            for (var i = (pageNum-1)*pageSize; i < pageNum*pageSize; i++) {
-                if(i==data.length) break;
-                listData.push(data[i]);
-            }
-
-        }else if(pdType==1){
-            //奶粉
-            for (var i = 0; i < data.length; i++) {
-                if (data[i].singerName.indexOf(curWord)!=-1) {
-                    listData.push(data[i]);
+    $.ajax({
+        type: "GET",
+        url: "http://192.168.1.115:8090/singer/list/"+singerTypeId,
+        data: {pageNum: pageNum,pageSize: pageSize},
+        dataType: "json",
+        xhrFields: {
+            withCredentials: true
+        },
+        success: function(response){
+            var lists = response.data.content;
+            var listData=[];
+            //pdType 全部歌曲0; 搜索1;
+            if(pdType==0){
+                //全部歌曲 (模拟分页数据)
+                for (var i = 0; i < lists.length; i++) {
+                    if(i==lists.length) break;
+                    listData.push(lists[i]);
                 }
-            }
 
+            }else if(pdType==1){
+                //搜索歌曲
+                for (var i = 0; i < lists.length; i++) {
+                    if (lists[i].singerName.indexOf(curWord)!=-1) {
+                        listData.push(lists[i]);
+                    }
+                }
+
+            }
+            successCallback&&successCallback(listData);//成功回调
+        },
+        error:function (error) {
+            errorCallback&&errorCallback()//失败回调
         }
-        successCallback&&successCallback(listData);//成功回调
-//				})
-//				.catch(function(error) {
-//					errorCallback&&errorCallback()//失败回调
-//				});
-    },500)
+    });
 }

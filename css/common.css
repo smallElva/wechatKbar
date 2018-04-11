@@ -12,6 +12,9 @@
 input::-webkit-input-placeholder{
     line-height: normal;
 }
+input[type="button"], input[type="submit"], input[type="reset"] {
+    -webkit-appearance: none;
+}
 body{
     font-family: sans-serif,miui;
     background: #f2f2f2;
