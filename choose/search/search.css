@@ -30,9 +30,13 @@
 }
 .singerPage-search-title .aui-searchbar .aui-iconfont {
     line-height: 2rem;
-    color: #ff2600 !important;
+    color: #fc3d3d !important;
     font-size: .85rem;
     font-weight: bold;
+}
+.aui-tab-item.aui-active {
+    color: #fc3d3d;
+    border-bottom: 2px solid #fc3d3d;
 }
 .songNum-div{
     display: inline-block;

@@ -11,63 +11,65 @@
     <link rel="stylesheet" type="text/css" href="../choose.css"/>
 </head>
 <body class="white-body">
-<div class="aui-title page-search-title">
-    <div class="prev-div-page" onclick="window.history.go(-1);">
-        <i class="iconfont icon-zhixiangzuo"></i>
+<div id="language-app">
+    <div class="aui-title page-search-title">
+        <div class="prev-div-page" onclick="window.history.go(-1);">
+            <i class="iconfont icon-zhixiangzuo"></i>
+        </div>
+        <div class="aui-pull-right search-right">
+            <a href="../search/search.html">
+                <i class="iconfont icon-sousuo-"></i>
+            </a>
+            <a class="songNum-div" href="../haveSongs/haveSongs.html">
+                <div class="songNum-div-text">100</div>
+            </a>
+        </div>
     </div>
-    <div class="aui-pull-right search-right">
-        <a href="../search/search.html">
-            <i class="iconfont icon-sousuo-"></i>
-        </a>
-        <a class="songNum-div" href="../haveSongs/haveSongs.html">
-            <div class="songNum-div-text">100</div>
-        </a>
-    </div>
+    <section class="content2">
+        <div class="aui-content">
+            <ul class="aui-list aui-list-in singer-list">
+                <li class="aui-list-item" v-for="item in datas" v-bind:uid="item.langId" v-on:click="getLanguageHref(item.langId)">
+                    <a class="aui-list-item-inner aui-list-item-arrow">
+                        <div class="aui-list-item-title">{{item.langName}}</div>
+                    </a>
+                </li>
+                <!--<li class="aui-list-item" onclick="getLanguageHref(this)" uid="2">-->
+                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
+                <!--<div class="aui-list-item-title">粤语点歌</div>-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li class="aui-list-item" onclick="getLanguageHref(this)" uid="3">-->
+                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
+                <!--<div class="aui-list-item-title">闽南语点歌</div>-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li class="aui-list-item" onclick="getLanguageHref(this)" uid="4">-->
+                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
+                <!--<div class="aui-list-item-title">英语点歌</div>-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li class="aui-list-item" onclick="getLanguageHref(this)" uid="5">-->
+                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
+                <!--<div class="aui-list-item-title">韩语点歌</div>-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li class="aui-list-item" onclick="getLanguageHref(this)" uid="6">-->
+                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
+                <!--<div class="aui-list-item-title">日语点歌</div>-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li class="aui-list-item" onclick="getLanguageHref(this)" uid="7">-->
+                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
+                <!--<div class="aui-list-item-title">其他</div>-->
+                <!--</a>-->
+                <!--</li>-->
+            </ul>
+        </div>
+    </section>
 </div>
-<section class="content2">
-    <div class="aui-content">
-        <ul class="aui-list aui-list-in singer-list">
-            <li class="aui-list-item" onclick="getLanguageHref(this)" uid="1">
-                <a class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">华语点歌</div>
-                </a>
-            </li>
-            <li class="aui-list-item" onclick="getLanguageHref(this)" uid="2">
-                <a class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">粤语点歌</div>
-                </a>
-            </li>
-            <li class="aui-list-item" onclick="getLanguageHref(this)" uid="3">
-                <a class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">闽南语点歌</div>
-                </a>
-            </li>
-            <li class="aui-list-item" onclick="getLanguageHref(this)" uid="4">
-                <a class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">英语点歌</div>
-                </a>
-            </li>
-            <li class="aui-list-item" onclick="getLanguageHref(this)" uid="5">
-                <a class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">韩语点歌</div>
-                </a>
-            </li>
-            <li class="aui-list-item" onclick="getLanguageHref(this)" uid="6">
-                <a class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">日语点歌</div>
-                </a>
-            </li>
-            <li class="aui-list-item" onclick="getLanguageHref(this)" uid="7">
-                <a class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">其他</div>
-                </a>
-            </li>
-        </ul>
-    </div>
-</section>
-
 <script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="../../js/api.js"></script>
+<script type="text/javascript" src="../../js/vue.min.js"></script>
 <script type="text/javascript" src="language.js"></script>
 
 </body>

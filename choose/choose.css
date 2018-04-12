@@ -7,7 +7,10 @@
     display: none;
 }
 .aui-dialog-btn {
-    color: #6170e4;
+    color: #2e2e2e;
+}
+.aui-dialog-btn:active{
+    color: #fc3d3d;
 }
 /*头部搜索*/
 .aui-title{
@@ -61,6 +64,7 @@
 .songNum{
     color: #fff;
 }
+
 .songNum-div-text{
     font-size: .6rem;
     color: #fff;
@@ -284,10 +288,23 @@
 .choose-btn .aui-icon-plus{
     font-weight: bold;
 }
+
 .songName{
     font-size: .8rem;
     color: #2e2e2e;
     margin-bottom: .1rem;
+}
+.songName-span{
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 12rem;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.songName i{
+    display: inline-block;
+    vertical-align: middle;
 }
 .perSingerName{
     font-size: .6rem;
@@ -349,9 +366,22 @@
     vertical-align: middle;
 }
 /*搜索页面*/
-.aui-list .list-song-info{
-    max-width: 70%;
+#tab.aui-tab{
+    border-bottom: 1px solid #f2f2f2;
 }
+.aui-tab-item.aui-active {
+    color: #fc3d3d;
+    border-bottom: 2px solid #fc3d3d;
+}
+.searchMescroll{
+    top: 4.65rem;
+}
+.searchMescroll .aui-list{
+    background-image: none;
+}
+/*.aui-list .list-song-info{*/
+    /*max-width: 70%;*/
+/*}*/
 .search-right{
     height: 2.4rem;
     line-height: 2.4rem;
