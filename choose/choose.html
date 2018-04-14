@@ -22,7 +22,7 @@
                     <i class="aui-iconfont aui-icon-close"></i>
                 </div>
             </div>
-            <i class="iconfont icon-saomiao" id="scanQRCode" onclick="scanCodes();"></i>
+            <i class="iconfont icon-saomiao" id="scanQRCode"></i>
         </div>
     </div>
     <div class="slide-content">
@@ -39,7 +39,7 @@
     <div class="packageBuy">
         <img class="index-map" src="../img/choose-index/index-map.png">
         <span class="packageBuy-text">欢迎来到K伴</span>
-        <a class="packageBuy-a" onclick="scanDialog();">购买套餐</a>
+        <a class="packageBuy-a" id="buy-package">购买套餐</a>
         <!--<a class="packageBuy-a" href="packages/packages.html">购买套餐</a>-->
     </div>
     <div class="aui-content choose-content">
@@ -99,7 +99,7 @@
     <a class="aui-bar-tab-item" href="choose.html">
         <img class="logo-img" src="../img/choose-index/logo.png">
     </a>
-    <a class="aui-bar-tab-item" href="control/control.html">
+    <a class="aui-bar-tab-item" href="control/control.html" id="control-btn">
         <i class="iconfont icon-yaokong"></i>
         <div class="aui-bar-tab-label">遥控</div>
     </a>
