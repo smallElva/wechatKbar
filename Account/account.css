@@ -224,7 +224,7 @@
     bottom:0;
     width:100%;
     background: #fff;
-    z-index:10;
+    z-index:11;
 }
 .lay-list li{
     padding: .8rem 0;
@@ -243,4 +243,7 @@
 .aui-dialog-body {
     font-size: .8rem;
     color: #2e2e2e;
+}
+.myRecord-list .aui-list-item:active {
+    background-color: #fff;
 }

@@ -41,7 +41,7 @@
             <!--upscrollWarp用于装载上拉进度和数据列表,避免清空列表不满屏,导致点击悬浮菜单时会滑下来-->
             <div id="upscrollWarp">
                 <!--展示上拉加载的数据列表-->
-                <ul class="aui-list aui-media-list song-list" id="dataList">
+                <ul class="aui-list aui-media-list song-list" id="dataList" v-cloak>
                     <li class="aui-list-item aui-list-item-middle" v-for="item in songlist" v-on:click="choose(item)">
                         <div class="aui-media-list-item-inner">
                             <div class="aui-list-item-inner">

@@ -82,12 +82,16 @@ var vm = new Vue({
                 self.mescroll.endErr();
             });
         },
-        deleteThis: function (e) {
-            var index = e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.getAttribute('uid');
-            vm.pdlist.splice(index,1);
+        deleteThis: function (index) {
+            if(index==vm.pdlist.length){
+                vm.pdlist.splice(-1,1);
+            }else{
+                vm.pdlist.splice(index,1);
+            }
         },
-        toTopOne: function () {
-            
+        toTopOne: function (index) {
+            vm.pdlist.unshift(vm.pdlist[index]);
+            vm.pdlist.splice(index+1,1);
         }
     }
 });

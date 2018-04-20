@@ -21,7 +21,7 @@
         </div>
         <section class="content-section">
             <div class="aui-content-padded">
-                <ul class="aui-row-padded packages-row" id="packages-list">
+                <ul class="aui-row-padded packages-row" id="packages-list" v-cloak>
                     <li class="aui-col-xs-6" v-for="item in datas" v-on:click="openMask(item.packagesTime,item.packagesMoney)">
                         <div class="packages-block">
                             <div class="package-name">{{item.packagesTime}}</div>

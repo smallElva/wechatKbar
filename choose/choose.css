@@ -579,7 +579,3 @@
     display: none;
 }
 
-/*vue*/
-[v-cloak] {
-    display: none;
-}

@@ -4,12 +4,11 @@
 var record =
     {
         id: "",
-        recordUserName: "...",
-        myRecordSongName: "...",
-        perListenNum: "...",
-        perLikeNum: "...",
-        recordScore: "...",
-        audios: ""
+        songName: "...",
+        playRecord: "...",
+        thumbs: "...",
+        score: "...",
+        path: ""
     };
 var recordm = new Vue({
     el: '#myRecord-page-app',
@@ -23,15 +22,18 @@ var recordm = new Vue({
             var href = location.href;
             var id = href.split('id=')[1];
             $.ajax({
-                url: 'myRecord.json',
+                url: 'http://yangleo.ittun.com/recSong/getMySound',
                 type: "GET",
+                data:{id:id},
                 success: function (json) {
-                    $.each(json,function(idx,val) {
-                        //根据id获取详情数据
-                        if (id == val.id) {
-                            $.extend(true, record, val);
-                        }
-                    })
+                    // alert(json.data.id);
+                    $.extend(true, record, json.data);
+                    // $.each(json,function(idx,val) {
+                    //     //根据id获取详情数据
+                    //     if (id == val.id) {
+                    //         $.extend(true, record, val);
+                    //     }
+                    // })
                 }
             });
         }

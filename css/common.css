@@ -158,3 +158,8 @@ body{
 .aui-list .aui-list-item{
     position: relative;
 }
+
+/*vue*/
+[v-cloak] {
+    display: none;
+}

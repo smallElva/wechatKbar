@@ -7,7 +7,7 @@ $(function () {
         //上拉加载的配置项
         up: {
             callback: getListData, //上拉回调,此处可简写; 相当于 callback: function (page) { getListData(page); }
-            noMoreSize: 2, //如果列表已无数据,可设置列表的总数量要大于半页才显示无更多数据;避免列表数据过少(比如只有一条数据),显示无更多数据会不好看; 默认5
+            noMoreSize: 8, //如果列表已无数据,可设置列表的总数量要大于半页才显示无更多数据;避免列表数据过少(比如只有一条数据),显示无更多数据会不好看; 默认5
             clearEmptyId: "tab-content",
             empty: {
                 //列表第一页无任何数据时,显示的空提示布局; 需配置warpId或clearEmptyId才生效;

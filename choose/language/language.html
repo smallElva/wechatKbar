@@ -27,7 +27,7 @@
     </div>
     <section class="content2">
         <div class="aui-content">
-            <ul class="aui-list aui-list-in singer-list">
+            <ul class="aui-list aui-list-in singer-list" v-cloak>
                 <li class="aui-list-item" v-for="item in datas" v-bind:uid="item.langId" v-on:click="getLanguageHref(item.langId)">
                     <a class="aui-list-item-inner aui-list-item-arrow">
                         <div class="aui-list-item-title">{{item.langName}}</div>

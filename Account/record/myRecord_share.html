@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>我的录音</title>
+    <link rel="stylesheet" type="text/css" href="../../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_m0tjqxytxg3qh0k9.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="myRecordPage.css" />
+
+</head>
+<body class="black-body">
+<section id="myRecord-page-app">
+    <div class="singing-content">
+        <div class="singing-text">
+            <img class="play-img" src="../../img/account/play-img.png">
+            <div class="singing-img">
+                <div class="play-img-bg">
+                    <img class="play-img-bg" src="../../img/account/play-img-bg.png">
+                </div>
+                <img class="cdImg" src="../../img/account/record-page.png" id="pic">
+            </div>
+        </div>
+        <div class="myRecord-page" v-cloak>
+            <p class="songName" v-text="songName"></p>
+            <!--<div class="singingName"><span class="wechatName" v-text="recordUserName"></span></div>-->
+            <div class="myRecord-title-text">
+                <div class="myRecord-title-icons">
+                    <i class="iconfont icon-erji"></i><span class="listen-num" v-text="playRecord"></span>
+                </div>
+                <div class="myRecord-title-icons">
+                    <span class="myRecord-title-score">评分<span class="recordScore" v-text="score"></span>分</span>
+                </div>
+                <div class="myRecord-title-icons" id="thumbsUp">
+                    <i class="iconfont icon-zan"></i><span class="like-num" v-text="thumbs"></span>
+                </div>
+            </div>
+        </div>
+        <div class="audio-wrapper">
+            <audio>
+                <source v-bind:src="path" type="audio/mp3" preload="auto">
+            </audio>
+            <div class="audio-bars">
+                <div class="progress-bar-bg" id="progressBarBg"><span id="progressDot"></span>
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <span class="audio-length-current" id="audioCurTime">00:00</span><span class="audio-length-total" id="audioTotalTime">01:06</span>
+            </div>
+            <div class="audio-control"><img id="audioPlayer" class="audio-control-img" src="../../img/account/play.png"></div>
+        </div>
+    </div>
+
+</section>
+<script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../../js/api.js"></script>
+<script type="text/javascript" src="../../js/vue.min.js"></script>
+<script type="text/javascript" src="audio.js"></script>
+<script type="text/javascript" src="myRecord-share.js"></script>
+
+</body>
+</html>

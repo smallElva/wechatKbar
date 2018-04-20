@@ -36,16 +36,23 @@ var vmm=new Vue({
         //弹窗出现将点击的歌曲的id传给播放录音；将序列号传给删除录音
         showLayout:function (id,index) {
             $('#layout').show();
+            $('#lay-list').slideDown(300);
             $('#playRecord').attr("uid",id);
             $('#deleteRecord').attr("uIndex",index);
         },
         closeLayout:function(){
-            $('#layout').hide();
+            setTimeout(function(){
+                $('#layout').hide();
+            },300);
+            $('#lay-list').slideUp(300);
         },
         //点击删除录音，删除该录音
         deleteRecord: function(e) {
             var index = e.currentTarget.getAttribute('uIndex');
-            $('#layout').hide();
+            setTimeout(function(){
+                $('#layout').hide();
+            },300);
+            $('#lay-list').slideUp(300);
             dialog.alert({
                 msg:'是否删除该录音？',
                 buttons:['取消','确定']
@@ -58,7 +65,26 @@ var vmm=new Vue({
     }
 });
 
-apiready = function () {
-    api.parseTapmode();
-};
 var dialog = new auiDialog();
+$(function () {
+    $('#lay-list').slideUp(300);
+    apiready = function () {
+        api.parseTapmode();
+    };
+
+    //点击页面除了id="layout"之外的任何区域都关闭该div
+    $(document).on('click', function(e) {
+        var e = e || window.event; //浏览器兼容性
+        var elem = e.target || e.srcElement;
+        while (elem) { //循环判断至跟节点，防止点击的是div子元素
+            if (elem.id && elem.id == 'lay-list') {
+                return;
+            }
+            elem = elem.parentNode;
+        }
+        setTimeout(function(){
+            $('#layout').hide();
+        },300);
+        $('#lay-list').slideUp(300);
+    });
+});

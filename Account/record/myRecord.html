@@ -19,13 +19,13 @@
                     <i class="iconfont icon-zhixiangzuo"></i>
                 </div>
                 <div class="total-records aui-pull-right">
-                    <span>{{records.length}}</span><span>首</span>
+                    <span v-text="records.length"></span><span>首</span>
                 </div>
             </div>
         </div>
         <section class="content-section">
-            <ul class="aui-list aui-media-list myRecord-list" id="myRecord-list">
-                <li class="aui-list-item aui-list-item-middle" v-bind:uid="item.id" v-for="(item,$index) in records" v-on:click="showLayout(item.id,$index)">
+            <ul class="aui-list aui-media-list myRecord-list" id="myRecord-list" v-cloak>
+                <li class="aui-list-item aui-list-item-middle" v-bind:uid="item.id" v-for="(item,$index) in records" v-on:click.stop="showLayout(item.id,$index)">
                     <div class="aui-media-list-item-inner">
                         <img src="../../img/account/record-img.png" class="myRecord-list-img">
                         <div class="aui-list-item-inner">
