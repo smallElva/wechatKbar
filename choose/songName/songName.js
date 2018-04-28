@@ -40,7 +40,7 @@ var vm = new Vue({
             var self = this;
             $.ajax({
                 type: "GET",
-                url: "http://192.168.1.115:8090/song/findAllByName",
+                url: "http://yangleo.ittun.com/song/findAllByName",
                 data: {pageNum: page.num,pageSize: page.size,songName:curWord},
                 dataType: "json",
                 xhrFields: {

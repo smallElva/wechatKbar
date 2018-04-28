@@ -39,9 +39,7 @@
             </div>
         </div>
         <div class="audio-wrapper">
-            <audio>
-                <source v-bind:src="path" type="audio/mp3" preload="auto">
-            </audio>
+            <audio v-bind:src="path" preload="auto"></audio>
             <div class="audio-bars">
                 <div class="progress-bar-bg" id="progressBarBg"><span id="progressDot"></span>
                     <div class="progress-bar" id="progressBar"></div>
@@ -51,7 +49,19 @@
             <div class="audio-control"><img id="audioPlayer" class="audio-control-img" src="../../img/account/play.png"></div>
         </div>
     </div>
-
+    <div class="mask" id="loading">
+        <div id="center">
+            <div class="loader">
+                <div class="dot">
+                    <div class="first"></div>
+                </div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            加载中...
+        </div>
+    </div>
 </section>
 <script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="../../js/api.js"></script>

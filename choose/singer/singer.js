@@ -16,7 +16,7 @@ var vmm=new Vue({
         showData: function () {
             $.ajax({
                 type: 'GET',
-                url: "http://192.168.1.115:8090/singerType/list",
+                url: "http://yangleo.ittun.com/singerType/list",
                 dataType: "json",
                 xhrFields: {
                     withCredentials: true

@@ -46,7 +46,7 @@ var vm = new Vue({
 
             $.ajax({
                 type: "GET",
-                url: "http://192.168.1.115:8090/song/getSingerId?singerId="+id,
+                url: "http://yangleo.ittun.com/song/getSingerId?singerId="+id,
                 data: {pageNum: page.num,pageSize: page.size},
                 dataType: "json",
                 xhrFields: {

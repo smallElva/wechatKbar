@@ -42,9 +42,7 @@
             </div>
         </div>
         <div class="audio-wrapper">
-            <audio>
-                <source v-bind:src="audios" type="audio/mp3">
-            </audio>
+            <audio v-bind:src="audios" preload="auto"></audio>
             <div class="audio-bars">
                 <div class="progress-bar-bg" id="progressBarBg"><span id="progressDot"></span>
                     <div class="progress-bar" id="progressBar"></div>
@@ -59,6 +57,7 @@
 <script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="../../js/api.js"></script>
 <script type="text/javascript" src="../../js/vue.min.js"></script>
+<script type="text/javascript" src="../../wx/wx_share.js"></script>
 <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script type="text/javascript" src="audio.js"></script>
 <script type="text/javascript" src="myRecord-page.js"></script>

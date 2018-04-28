@@ -47,7 +47,7 @@ var vm = new Vue({
 
             $.ajax({
                 type: "GET",
-                url: "http://192.168.1.115:8090/song/hotSearchPage",
+                url: "http://yangleo.ittun.com/song/hotSearchPage",
                 data: {langId:langId,pageNum: page.num,pageSize: page.size,songName:curWord},
                 dataType: "json",
                 xhrFields: {

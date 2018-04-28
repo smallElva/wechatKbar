@@ -22,10 +22,11 @@
         <section class="content-section">
             <div class="aui-content-padded">
                 <ul class="aui-row-padded packages-row" id="packages-list" v-cloak>
-                    <li class="aui-col-xs-6" v-for="item in datas" v-on:click="openMask(item.packagesTime,item.packagesMoney)">
+                    <li class="aui-col-xs-6" v-for="item in datas" v-on:click="openMask(item.duration,item.price)">
                         <div class="packages-block">
-                            <div class="package-name">{{item.packagesTime}}</div>
-                            <div class="package-charge"><span class="yuan">¥</span><span class="packages-money">{{item.packagesMoney}}</span></div>
+                            <div class="package-name" v-if="item.duration==0"><span>单首</span></div>
+                            <div class="package-name" v-else>{{item.duration}}<span>分钟</span></div>
+                            <div class="package-charge"><span class="yuan">¥</span><span class="packages-money">{{item.price}}</span></div>
                         </div>
                     </li>
                     <!--<li class="aui-col-xs-6">-->
@@ -66,11 +67,11 @@
                 <div class="close-div">
                     <i class="iconfont icon-guanbi close-icons" id="close" onclick="closeMask();"></i>
                 </div>
-                <div class="package-type">畅享<span id="timeVal">15分钟</span>套餐</div>
+                <div class="package-type">畅享<span id="timeVal">15</span><span id="type">分钟</span>套餐</div>
                 <div class="package-charge"><span class="yuan">¥</span><span class="packages-money" id="moneyVal">20</span></div>
                 <div class="orderTime">
                     <span>订单时间：</span>
-                    <span>2018-04-04 17:17:22</span>
+                    <span id="nowTime">2018-04-04 17:17:22</span>
                 </div>
                 <input onclick="startWxPay()" class="buy-a" value="立即购买" id="btnPay" type="button">
             </div>

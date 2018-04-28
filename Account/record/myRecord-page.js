@@ -25,11 +25,15 @@ var recordm = new Vue({
             $.ajax({
                 url: 'myRecord.json',
                 type: "GET",
+                xhrFields: {
+                    withCredentials: true
+                },
                 success: function (json) {
                     $.each(json,function(idx,val) {
                         //根据id获取详情数据
                         if (id == val.id) {
                             $.extend(true, record, val);
+                            document.title = record.myRecordSongName;//修改title值为歌曲名
                         }
                     })
                 }
@@ -46,6 +50,5 @@ $(function () {
         $('#thumbsUp').find('.iconfont').removeClass('icon-zan').addClass('icon-zan-anxia');
         $('.like-num').html(thumbsNum+1);
     });
-
 
 });

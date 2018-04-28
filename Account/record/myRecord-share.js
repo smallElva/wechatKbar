@@ -25,15 +25,17 @@ var recordm = new Vue({
                 url: 'http://yangleo.ittun.com/recSong/getMySound',
                 type: "GET",
                 data:{id:id},
+                timeout: 15000,
+                xhrFields: {
+                    withCredentials: true
+                },
+                beforeSend:function(){
+                    $("#loading").show();
+                },
                 success: function (json) {
-                    // alert(json.data.id);
+                    $("#loading").hide();
                     $.extend(true, record, json.data);
-                    // $.each(json,function(idx,val) {
-                    //     //根据id获取详情数据
-                    //     if (id == val.id) {
-                    //         $.extend(true, record, val);
-                    //     }
-                    // })
+                    document.title = record.songName;//修改title值为歌曲名
                 }
             });
         }
@@ -41,13 +43,39 @@ var recordm = new Vue({
 });
 
 $(function () {
+    var href = location.href;
+    var id = href.split('id=')[1];
+    //歌曲收听次数
+    $.ajax({
+        url: '',
+        data:{id:id},
+        type: 'GET',
+        dataType:'json',
+        xhrFields: {
+            withCredentials: true
+        },
+        success: function (data) {
+            $('.listen-num').html(data);
+        }
+    });
 
     //点赞方法
     $('#thumbsUp').one("click",function(){
-        var thumbsNum = parseInt($('.like-num').text());
-        $('#thumbsUp').find('.iconfont').removeClass('icon-zan').addClass('icon-zan-anxia');
-        $('.like-num').html(thumbsNum+1);
+        $.ajax({
+            url: '',
+            data:{id:id},
+            type: 'GET',
+            dataType:'json',
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (data) {
+                $('#thumbsUp').find('.iconfont').removeClass('icon-zan').addClass('icon-zan-anxia');
+                $('.like-num').html(data);
+            }
+        });
     });
 
 
 });
+

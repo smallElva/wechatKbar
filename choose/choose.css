@@ -562,6 +562,9 @@
 .mask-content .aui-grid [class*=aui-col-xs-]:active .iconfont{
     color: #e8413d;
 }
+.instrument-div:active .mask-text{
+    color: #e8413d;
+}
 .sound-div{
     font-size: .8rem;
 }

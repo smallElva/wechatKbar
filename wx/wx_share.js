@@ -17,8 +17,9 @@ $(function(){
             xhrFields: {
                 withCredentials: true
             },
-   	      	success: function(data){alert(2);
-   	        	/*var objData = JSON.parse(data);
+   	      	success: function(data){
+   				alert(2);
+   	        	var objData = JSON.parse(data);
    	        	shareTitle = objData.subscriptionTitle;
    	        	shareImgUrl = objData.subscriptionPicUrl;
    	        	shareUrl = objData.subscriptionUrl;
@@ -26,7 +27,7 @@ $(function(){
    	        	nonceStr = objData.nonceStr;
    	        	signature = objData.signature;
    	        	appId = objData.appId;
-   	         	wxShare();*/
+   	         	wxShare();
    	      	}
    		});
    	}
