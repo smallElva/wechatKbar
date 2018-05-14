@@ -13,11 +13,7 @@ $(function () {
 
 
 
-    var href = location.href.split('#')[0];
-    var timeStamp;		//必填，生成签名的时间戳
-    var nonceStr;		//必填，生成签名的随机串
-    var signature;		//必填，签名
-    var appId;			//必填
+
     var url = window.location.search;
     var state = url.split('serialNo=')[1];
 
@@ -30,49 +26,16 @@ $(function () {
     }
 
 
-    sign();
-    //获取签名
-    function sign(){
-        $.ajax({
-            type: 'GET',
-            url: 'http://yangleo.ittun.com/signature',
-            data:{url:href},
-            xhrFields: {
-                withCredentials: true
-            },
-            success: function(data){
-                var objData = JSON.parse(data);
-                console.log(objData);
-                timeStamp = objData.timeStamp;
-                nonceStr = objData.nonceStr;
-                signature = objData.signature;
-                appId = objData.appId;
-                wxScanCodes();
-            }
-        });
-    }
-    /***
-     * 扫码配置
-     */
-    function wxScanCodes(){
-        wx.config({
-            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-            appId: appId,
-            timestamp: timeStamp,
-            nonceStr: nonceStr,
-            signature: signature,
-            jsApiList: ['scanQRCode'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
-        });
-    }
 
-    wx.ready(function () {
+
+
         /***
          * 请求判断用户登录状态和支付状态
          */
         var websocket = null;
         //判断当前浏览器是否支持WebSocket
         if ('WebSocket' in window) {
-            websocket = new WebSocket("ws://192.168.1.115:8086/webSocketServer?serialNo="+state);
+            websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo="+state);
         }
         else {
             alert('当前浏览器 Not support websocket')
@@ -82,11 +45,15 @@ $(function () {
             websocket.close();
         };
         websocket.onopen = function () {
-            alert('打开啦');
+            alert('websocket已连接');
         };
-        //获得消息事件
+        //获得消息事件(能够获得消息说明已经登录，只需判断是否购买套餐，从k伴获取订单信息)
         websocket.onmessage = function(msg) {
             var deal = JSON.parse(msg.data).action;
+            alert(deal);
+            /***
+             * 点击遥控
+             */
             $('#control-btn').click(function () {
                 if(deal && deal!=''){
                     window.location.href = 'control/control.html';
@@ -96,7 +63,143 @@ $(function () {
                         buttons:['取消','确定']
                     },function(ret){
                         if(ret.buttonIndex==2){ //点击确认后跳转到购买套餐页面
-                            window.location.href='packages/packages.html';
+                            wx.scanQRCode();
+                        }
+                    });
+                }
+            });
+            /***
+             * 点击歌手点歌
+             */
+            $('#singer-btn').click(function () {
+                if(deal && deal!=''){
+                    window.location.href = 'singer/singer.html';
+                }else{
+                    dialog.alert({
+                        title:"是否购买套餐畅享K歌体验？",
+                        buttons:['取消','确定']
+                    },function(ret){
+                        if(ret.buttonIndex==2){ //点击确认后开启扫码功能
+                            wx.scanQRCode();//扫码结果微信自行处理结果
+                        }
+                    });
+                }
+            });
+            /***
+             * 点击歌名点歌
+             */
+            $('#songName-btn').click(function () {
+                if(deal && deal!=''){
+                    window.location.href = 'songName/songName.html';
+                }else{
+                    dialog.alert({
+                        title:"是否购买套餐畅享K歌体验？",
+                        buttons:['取消','确定']
+                    },function(ret){
+                        if(ret.buttonIndex==2){
+                            wx.scanQRCode();
+                        }
+                    });
+                }
+            });
+            /***
+             * 点击乐谱点歌
+             */
+            $('#musicScore-btn').click(function () {
+                if(deal && deal!=''){
+                    window.location.href = 'musicScore/musicScore.html';
+                }else{
+                    dialog.alert({
+                        title:"是否购买套餐畅享K歌体验？",
+                        buttons:['取消','确定']
+                    },function(ret){
+                        if(ret.buttonIndex==2){
+                            wx.scanQRCode();
+                        }
+                    });
+                }
+            });
+            /***
+             * 点击热门歌曲
+             */
+            $('#hotSong-btn').click(function () {
+                if(deal && deal!=''){
+                    window.location.href = 'hotSong/hotSong.html';
+                }else{
+                    dialog.alert({
+                        title:"是否购买套餐畅享K歌体验？",
+                        buttons:['取消','确定']
+                    },function(ret){
+                        if(ret.buttonIndex==2){
+                            wx.scanQRCode();
+                        }
+                    });
+                }
+            });
+            /***
+             * 点击语种点歌
+             */
+            $('#language-btn').click(function () {
+                if(deal && deal!=''){
+                    window.location.href = 'hotSong/hotSong.html';
+                }else{
+                    dialog.alert({
+                        title:"是否购买套餐畅享K歌体验？",
+                        buttons:['取消','确定']
+                    },function(ret){
+                        if(ret.buttonIndex==2){
+                            wx.scanQRCode();
+                        }
+                    });
+                }
+            });
+            /***
+             * 点击新歌推荐
+             */
+            $('#newSong-btn').click(function () {
+                if(deal && deal!=''){
+                    window.location.href = 'newSong/newSong.html';
+                }else{
+                    dialog.alert({
+                        title:"是否购买套餐畅享K歌体验？",
+                        buttons:['取消','确定']
+                    },function(ret){
+                        if(ret.buttonIndex==2){
+                            wx.scanQRCode();
+                        }
+                    });
+                }
+            });
+            /***
+             * 点击已点歌曲
+             */
+            $('#haveSong-btn').click(function () {
+                if(deal && deal!=''){
+                    window.location.href = 'haveSongs/haveSongs.html';
+                }else{
+                    dialog.alert({
+                        title:"是否购买套餐畅享K歌体验？",
+                        buttons:['取消','确定']
+                    },function(ret){
+                        if(ret.buttonIndex==2){
+                            wx.scanQRCode();
+                        }
+                    });
+                }
+            });
+            /***
+             * 点击已唱歌曲
+             */
+            $('#haveSang-btn').click(function () {
+                if(deal && deal!=''){
+                    window.location.href = 'haveSang/haveSang.html';
+                }else{
+                    dialog.alert({
+                        title:"是否购买套餐畅享K歌体验？",
+                        buttons:['取消','确定']
+                    },function(ret){
+                        if(ret.buttonIndex==2){
+                            wx.scanQRCode();
                         }
                     });
                 }
@@ -105,102 +208,123 @@ $(function () {
         };
 
         /***
-         * 点击
+         * 如果没有登录则弹窗提示登录，所有的按钮只有在已经登录的情况下才能点击进去
          */
-        $('#buy-package').click(function () {
-            if(url.indexOf("serialNo")!=-1){  // 如果没有登录则弹窗提示扫码登录
-                window.location.href='packages/packages.html';
-            }else{ // 如果是已经登录的状态的话直接跳转到购买套餐页面
+        if(url.indexOf("serialNo")==-1){
+            $('#singer-btn').click(function () {
                 dialog.alert({
                     title:"是否扫码畅享点歌体验？",
                     buttons:['取消','确定']
                 },function(ret){
                     if(ret.buttonIndex==2){
-                        wx.scanQRCode({
-                            // 默认为0，扫描结果由微信处理，1则直接返回扫描结果
-                            needResult : 1,
-                            desc : 'scanQRCode desc',
-                            success : function(res) { // 扫码登录成功后跳转到购买套餐页面
-                                window.location.href='packages/packages.html';
-                                //扫描成功的执行方法
-                            }
-                        });
+                        wx.scanQRCode();
                     }
                 });
-            }
-        });
+            });
+            $('#songName-btn').click(function () {
+                dialog.alert({
+                    title:"是否扫码畅享点歌体验？",
+                    buttons:['取消','确定']
+                },function(ret){
+                    if(ret.buttonIndex==2){
+                        wx.scanQRCode();
+                    }
+                });
+            });
+            $('#musicScore-btn').click(function () {
+                dialog.alert({
+                    title:"是否扫码畅享点歌体验？",
+                    buttons:['取消','确定']
+                },function(ret){
+                    if(ret.buttonIndex==2){
+                        wx.scanQRCode();
+                    }
+                });
+            });
+            $('#hotSong-btn').click(function () {
+                dialog.alert({
+                    title:"是否扫码畅享点歌体验？",
+                    buttons:['取消','确定']
+                },function(ret){
+                    if(ret.buttonIndex==2){
+                        wx.scanQRCode();
+                    }
+                });
+            });
+            $('#language-btn').click(function () {
+                dialog.alert({
+                    title:"是否扫码畅享点歌体验？",
+                    buttons:['取消','确定']
+                },function(ret){
+                    if(ret.buttonIndex==2){
+                        wx.scanQRCode();
+                    }
+                });
+            });
+            $('#newSong-btn').click(function () {
+                dialog.alert({
+                    title:"是否扫码畅享点歌体验？",
+                    buttons:['取消','确定']
+                },function(ret){
+                    if(ret.buttonIndex==2){
+                        wx.scanQRCode();
+                    }
+                });
+            });
+            $('#haveSong-btn').click(function () {
+                dialog.alert({
+                    title:"是否扫码畅享点歌体验？",
+                    buttons:['取消','确定']
+                },function(ret){
+                    if(ret.buttonIndex==2){
+                        wx.scanQRCode();
+                    }
+                });
+            });
+            $('#haveSang-btn').click(function () {
+                dialog.alert({
+                    title:"是否扫码畅享点歌体验？",
+                    buttons:['取消','确定']
+                },function(ret){
+                    if(ret.buttonIndex==2){
+                        wx.scanQRCode();
+                    }
+                });
+            });
+            $('#control-btn').click(function () {
+                dialog.alert({
+                    title:"是否扫码畅享点歌体验？",
+                    buttons:['取消','确定']
+                },function(ret){
+                    if(ret.buttonIndex==2){
+                        wx.scanQRCode();
+                    }
+                });
+            });
+            /***
+             * 没有登录点击购买套餐
+             */
+            $('#buy-package').click(function () {
+                dialog.alert({
+                    title:"是否扫码畅享点歌体验？",
+                    buttons:['取消','确定']
+                },function(ret){
+                    if(ret.buttonIndex==2){
+                        wx.scanQRCode();
+                    }
+                });
+            });
+        }else{
+            /***
+             * 已经登录了点击购买套餐
+             */
+            $('#buy-package').click(function () {
+                window.location.href='http://yangleo.ittun.com/packagesPage?serialNo='+state;
+            })
+        }
 
-        // $.ajax({
-        //     type: "GET",
-        //     url: "",
-        //     data: {},
-        //     dataType: "json",
-        //     xhrFields: {
-        //         withCredentials: true
-        //     },
-        //     success: function(response) {// 假设0表示没有登录；1表示已经登录，但没买套餐；2表示已经购买套餐
-        //         /***
-        //          * 点击购买套餐按钮
-        //          */
-        //         $('#buy-package').click(function () {
-        //             if(response==0){ // 如果没有登录则弹窗提示扫码登录
-        //                 dialog.alert({
-        //                     title:"是否扫码畅享点歌体验？",
-        //                     buttons:['取消','确定']
-        //                 },function(ret){
-        //                     if(ret.buttonIndex==2){
-        //                         wx.scanQRCode({
-        //                             // 默认为0，扫描结果由微信处理，1则直接返回扫描结果
-        //                             needResult : 1,
-        //                             desc : 'scanQRCode desc',
-        //                             success : function(res) { // 扫码登录成功后跳转到购买套餐页面
-        //                                 window.location.href='packages/packages.html';
-        //                                 //扫描成功的执行方法
-        //                             }
-        //                         });
-        //                     }
-        //                 });
-        //             }else{ // 如果是已经登录的状态的话直接跳转到购买套餐页面
-        //                 window.location.href='packages/packages.html';
-        //             }
-        //         });
-        //
-        //         /***
-        //          * 点击遥控按钮
-        //          */
-        //         $('#control-btn').click(function () {
-        //             if(response==0){ //如果没有登录则弹窗提示扫码登录
-        //                 dialog.alert({
-        //                     title:"是否扫码畅享点歌体验？",
-        //                     buttons:['取消','确定']
-        //                 },function(ret){
-        //                     if(ret.buttonIndex==2){
-        //                         wx.scanQRCode({
-        //                             // 默认为0，扫描结果由微信处理，1则直接返回扫描结果
-        //                             needResult : 1,
-        //                             desc : 'scanQRCode desc',
-        //                             success : function(res) { //扫码登录成功后跳转到购买套餐页面
-        //                                 window.location.href='choose.html';
-        //                                 //扫描成功的执行方法
-        //                             }
-        //                         });
-        //                     }
-        //                 });
-        //             }else if(response==1){ //如果是已经登录的状态的话弹窗提示购买套餐
-        //                 dialog.alert({
-        //                     title:"是否购买套餐畅享K歌体验？",
-        //                     buttons:['取消','确定']
-        //                 },function(ret){
-        //                     if(ret.buttonIndex==2){ //点击确认后跳转到购买套餐页面
-        //                         window.location.href='packages/packages.html';
-        //                     }
-        //                 });
-        //             }else if(response==2){ //如果已经购买套餐直接跳转到遥控页面
-        //                 window.location.href='control/control.html';
-        //             }
-        //         });
-        //     }
-        // });
+
+
 
         /***
          * 点击扫描二维码
@@ -209,20 +333,6 @@ $(function () {
             wx.scanQRCode();
         });
 
-    });
-    wx.checkJsApi({
-        jsApiList: ['checkJsApi',
-            'scanQRCode'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
-        fail: function (res) {
-            alert('微信版本太低，不支持扫码的功能！');
-        },
-        success: function(res) {
-
-        }
-    });
-    wx.error(function (res) {
-        alert(res.errMsg);
-    });
 });
 apiready = function(){
     api.parseTapmode();

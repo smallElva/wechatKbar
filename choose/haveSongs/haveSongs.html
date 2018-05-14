@@ -26,7 +26,7 @@
             </a>
         </div>
     </div>
-    <section class="content2">
+    <section class="content-section">
         <div id="mescroll" class="mescroll">
             <ul class="aui-list aui-media-list song-list" id="songs-result" v-cloak>
                 <li class="aui-list-item aui-list-item-middle" v-for="(pd,index) in pdlist" v-bind:uid="pd.id">
@@ -41,10 +41,10 @@
                                     <div class="perSingerName"> {{pd.singerName}}</div>
                                 </div>
                                 <div class="aui-list-item-right">
-                                    <a class="aui-pull-right song-btn" v-on:click="deleteThis(index)">
+                                    <a class="aui-pull-right song-btn" v-on:click="deleteThis(index,pd.id)">
                                         <span class="iconfont icon-shanchu"></span>
                                     </a>
-                                    <a class="aui-pull-right song-btn" v-on:click="toTopOne(index)">
+                                    <a class="aui-pull-right song-btn" v-on:click="toTopOne(index,pd.id)">
                                         <span class="iconfont icon-zhiding1 icon-toTop"></span>
                                     </a>
                                 </div>

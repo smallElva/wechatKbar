@@ -9,18 +9,16 @@ $(function () {
     //拿到存储在sessionStorage中的设备号
     if (typeof(Storage) !== "undefined") {
         var deviceId =sessionStorage.getItem("deviceId");
-        alert(deviceId +'mmm');
     }
     else{
-        deviceId=sessionStorage.getItem('123456');
+        deviceId=sessionStorage.getItem('deviceId');
     }
 
 
     var websocket = null;
     //判断当前浏览器是否支持WebSocket
     if ('WebSocket' in window) {
-        alert(deviceId+'kkk');
-        websocket = new WebSocket("ws://192.168.1.115:8086/webSocketServer?serialNo=" +deviceId);
+        websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
     }
     else {
         alert('当前浏览器 Not support websocket')
@@ -36,7 +34,6 @@ $(function () {
     var scoreJson = JSON.stringify(scoreObj); //定义评分JSON
     $('#score').click(function () {
         websocket.send(scoreJson);
-        alert(deviceId+'nnn');
     });
 
     var musical_note_obj = {"action":"musical_note", "value":0,"serialNo": deviceId}; //定义乐谱对象

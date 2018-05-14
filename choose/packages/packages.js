@@ -22,7 +22,8 @@ var vmm=new Vue({
             }
             $.ajax({
                 type: 'GET',
-                url: "http://yangleo.ittun.com//meal/get/serialNo/"+deviceId,
+                url: "http://yangleo.ittun.com//meal/get/serialNo/123456",
+                // url: "http://yangleo.ittun.com//meal/get/serialNo/"+deviceId,
                 dataType: "json",
                 xhrFields: {
                     withCredentials: true
@@ -39,7 +40,7 @@ var vmm=new Vue({
     }
 });
 
-function openMask(time,money) {
+function openMask(time,money,id) {
     //格式化当前下单时间
     var date = new Date();
     var seperator1 = "-";
@@ -52,14 +53,24 @@ function openMask(time,money) {
     if (strDate >= 0 && strDate <= 9) {
         strDate = "0" + strDate;
     }
+    var h= date.getHours();
+    var m= date.getMinutes();
+    var s= date.getSeconds();
+    var hstr = h;
+    var mstr = m;
+    var istr = s;
+    if (h < 10) { hstr = "0" + h };
+    if (m < 10) { mstr = "0" + m };
+    if (s < 10) { istr = "0" + s };
     var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
-        + " " + date.getHours() + seperator2 + date.getMinutes()
-        + seperator2 + date.getSeconds();
+        + " " + hstr + seperator2 + mstr
+        + seperator2 + istr;
 
 
     $('#mask').show();
     $('#moneyVal').text(money);
     $('#nowTime').html(currentdate);//更新当前时间
+    $('#getMealId').val(id);
     $('body').css('overflow','hidden');
     if(time==0){
         $('#timeVal').text('');
@@ -75,87 +86,131 @@ function closeMask() {
 }
 
 $(function () {
-
+    $('#btnPay').click(function () {
+        callpsay();
+    });
     /***
      * 微信支付方法
      * */
-    var code = GetQueryString("code");
-    var openid = window.localStorage.getItem("openid");
-    var href = location.href.split('#')[0];
-    $.ajax({
-        type: 'GET',
-        url: 'http://yangleo.ittun.com/signature',
-        data:{url:href},
-        xhrFields: {
-            withCredentials: true
-        },
-        beforeSend: function () {
-            $("#btnPay").attr({ "disabled": "disabled" });//获取到配置之前，禁止点击付款按钮
-        },
-        success: function (data) {
-            $("#btnPay").removeAttr("disabled");//获取到配置，打开付款按钮
-            var objData = JSON.parse(data);
-            wx.config({
-                debug: true, // 开启调试模式,成功失败都会有alert框
-                appId: objData.appId, // 必填，公众号的唯一标识
-                timestamp: objData.timeStamp, // 必填，生成签名的时间戳
-                nonceStr: objData.nonceStr, // 必填，生成签名的随机串
-                signature: objData.signature,// 必填，签名
-                jsApiList: ['chooseWXPay'] // 必填，需要使用的JS接口列表
-            });
-            wx.ready(function () {
-                // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
-                wx.checkJsApi({
-                    jsApiList: ['checkJsApi',
-                        'chooseWXPay'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
-                    fail: function (res) {
-                        alert('微信版本太低，不支持扫码的功能！');
-                    },
-                    success: function(res) {
+    // var href = location.href.split('#')[0];
+    // $.ajax({
+    //     type: 'GET',
+    //     url: 'http://yangleo.ittun.com/signature',
+    //     data:{url:href},
+    //     xhrFields: {
+    //         withCredentials: true
+    //     },
+    //     beforeSend: function () {
+    //         $("#btnPay").attr({ "disabled": "disabled" });//获取到配置之前，禁止点击付款按钮
+    //     },
+    //     success: function (data) {
+    //         $("#btnPay").removeAttr("disabled");//获取到配置，打开付款按钮
+    //         var objData = JSON.parse(data);
+    //         wx.config({
+    //             debug: false, // 开启调试模式,成功失败都会有alert框
+    //             appId: objData.appId, // 必填，公众号的唯一标识
+    //             timestamp: objData.timeStamp, // 必填，生成签名的时间戳
+    //             nonceStr: objData.nonceStr, // 必填，生成签名的随机串
+    //             signature: objData.signature,// 必填，签名
+    //             jsApiList: ['chooseWXPay','getNetworkType','translateVoice','checkJsApi','previewImage'] // 必填，需要使用的JS接口列表
+    //         });
+    //         wx.ready(function () {
+    //             // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+    //
+    //             $('#btnPay').click(function () {
+    //                 callpsay();
+    //             });
+    //             wx.checkJsApi({
+    //                 jsApiList: ['checkJsApi',
+    //                     'chooseWXPay','translateVoice','previewImage','getNetworkType'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+    //                 fail: function (res) {
+    //                     alert('微信版本太低，不支持扫码的功能！');
+    //                 },
+    //                 success: function(res) {
+    //
+    //                 }
+    //             });
+    //         });
+    //         wx.error(function (res) {
+    //             // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+    //         });
+    //     }
+    // });
 
-                    }
-                });
-            });
-            wx.error(function (res) {
-                // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
-            });
+
+
+
+});
+
+function callpsay(){
+    if(typeof WeixinJSBridge == "undefined"){
+        if(document.addEventListener){
+            document.addEventListener('WeixinJSBridgeReady',jsApiCall, false);
+        }else if(document.attachEvent){
+            document.attachEvent('WeixinJSBridgeReady',jsApiCall);
+            document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
         }
-    });
-
-    function startWxPay() {
-        $.ajax({
-            type: "POST",
-            url: "/WxPay/GetPaySign",
-            data: { code: code, openid: openid },
-            beforeSend: function () {
-                $("#btnPay").attr({ "disabled": "disabled" });
-            },
-            success: function (res) {
-                $("#btnPay").removeAttr("disabled");
-                if (res.openid != null && res.openid != undefined && res.openid != "") {
-                    window.localStorage.setItem("openid", res.openid);
-                }
-                wx.chooseWXPay({
-                    timestamp: res.data.timeStamp, // 支付签名时间戳
-                    nonceStr: res.data.nonceStr, // 支付签名随机串，不长于32 位
-                    package: res.data.package, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
-                    signType: "MD5", // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
-                    paySign: res.data.paysign, // 支付签名
-                    success: function (res) {
-                        //支付成功
-                    },
-                    cancel: function (res) {
-                        //支付取消
-                    }
-                });
+    }else{
+        WeixinJSBridge.invoke('getNetworkType',{},  function(e){
+            if(e.err_msg == 'network_type:fail'){
+                alert('亲，当前网络状态不好哦，请检查网络！');
+            }else{
+                jsApiCall();
             }
         });
     }
-
-    function GetQueryString(name) {
-        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-        var r = window.location.search.substr(1).match(reg);
-        if (r != null) return unescape(r[2]); return null;
+}
+/**
+ * 电子钱包微信充值-微信参数构建
+ */
+function jsApiCall(){
+    //拿到存储在sessionStorage中的设备号
+    if (typeof(Storage) !== "undefined") {
+        var deviceId =sessionStorage.getItem("deviceId");
     }
-});
+    else{
+        deviceId=sessionStorage.getItem('123456');
+    }
+    $.ajax({
+        async: true,
+        type: 'post',
+        dataType: 'json',
+        url: "http://yangleo.ittun.com/pay/wxPay",
+        data: {mealId: $('#getMealId').val(), serialNo: 123456, payType: "weixin",openid:"oVdmm1ZcHz07YX0it6gBhoKYsq30"},
+        error: function(XMLHttpRequest, textStatus, errorThrown){
+            alert('fail');
+        },
+        success: function(result){
+            if(result.status == 'ok'){
+              //  var param = $.parseJSON(result.data);
+                var resultObj = $.parseJSON(result.msg);
+                var param = {
+                    "appId":resultObj.appId,     //公众号名称，由商户传入
+                    "timeStamp":resultObj.timeStamp,         //时间戳，自1970年以来的秒数
+                    "nonceStr":resultObj.nonceStr, //随机串
+                    "package":resultObj.package,
+                    "signType":"MD5",         //微信签名方式：
+                    "paySign":resultObj.paySign //微信签名
+                };
 
+                WeixinJSBridge.invoke('getBrandWCPayRequest',param,function(res){
+                        // alert(res.err_msg);
+                        alert(JSON.stringify(res));
+                        if(res.err_msg == 'get_brand_wcpay_request:ok'){
+                        alert('支付成功！');
+                    }else if (res.err_msg == 'get_brand_wcpay_request:cancel') {
+                            alert('您已取消支付');
+                        //取消支付
+                        WeixinJSBridge.invoke('getNetworkType',{},  function(e){
+                            if(e.err_msg == 'network_type:fail'){
+                               alert('亲，当前网络状态不好哦，请检查网络！');
+                            }else{
+                                alert('delete');
+                            }
+                        });
+                    }
+                });
+            }
+        }
+    });
+}

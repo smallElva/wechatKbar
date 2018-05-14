@@ -22,7 +22,7 @@
         <section class="content-section">
             <div class="aui-content-padded">
                 <ul class="aui-row-padded packages-row" id="packages-list" v-cloak>
-                    <li class="aui-col-xs-6" v-for="item in datas" v-on:click="openMask(item.duration,item.price)">
+                    <li class="aui-col-xs-6" v-for="item in datas" v-on:click="openMask(item.duration,item.price,item.id)">
                         <div class="packages-block">
                             <div class="package-name" v-if="item.duration==0"><span>单首</span></div>
                             <div class="package-name" v-else>{{item.duration}}<span>分钟</span></div>
@@ -73,7 +73,8 @@
                     <span>订单时间：</span>
                     <span id="nowTime">2018-04-04 17:17:22</span>
                 </div>
-                <input onclick="startWxPay()" class="buy-a" value="立即购买" id="btnPay" type="button">
+                <input type="hidden" id="getMealId">
+                <input class="buy-a" value="立即购买" id="btnPay" type="button"/>
             </div>
         </div>
     </div>
@@ -81,6 +82,7 @@
 <script type="text/javascript" src="../../js/api.js"></script>
 <script type="text/javascript" src="../../js/vue.min.js"></script>
 <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="../../wx/wx_share.js"></script>
 <script type="text/javascript" src="packages.js"></script>
 </body>
 </html>

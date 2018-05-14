@@ -77,3 +77,6 @@
 .buy-a:disabled{
     background: #f95e5e;
 }
+.buy-a:active{
+    background: #f95e5e;
+}

@@ -2,30 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e66b2c4-25a8-49d4-a9e9-195d1cee32b6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wx/wx.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Account/record/myRecord-page.js" afterPath="$PROJECT_DIR$/Account/record/myRecord-page.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Account/record/myRecord-share.js" afterPath="$PROJECT_DIR$/Account/record/myRecord-share.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Account/record/myRecordPage.css" afterPath="$PROJECT_DIR$/Account/record/myRecordPage.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Account/record/myRecord_page.html" afterPath="$PROJECT_DIR$/Account/record/myRecord_page.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Account/record/myRecord_share.html" afterPath="$PROJECT_DIR$/Account/record/myRecord_share.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/choose.css" afterPath="$PROJECT_DIR$/choose/choose.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/choose.html" afterPath="$PROJECT_DIR$/choose/choose.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/choose.js" afterPath="$PROJECT_DIR$/choose/choose.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/control/control.html" afterPath="$PROJECT_DIR$/choose/control/control.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/control/control.js" afterPath="$PROJECT_DIR$/choose/control/control.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/hotSong/hotSong.js" afterPath="$PROJECT_DIR$/choose/hotSong/hotSong.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/language/language.js" afterPath="$PROJECT_DIR$/choose/language/language.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/language/language_page.js" afterPath="$PROJECT_DIR$/choose/language/language_page.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/musicScore/musicScore.js" afterPath="$PROJECT_DIR$/choose/musicScore/musicScore.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/newSong/newSong.js" afterPath="$PROJECT_DIR$/choose/newSong/newSong.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/haveSang/haveSang.html" afterPath="$PROJECT_DIR$/choose/haveSang/haveSang.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/haveSang/haveSang.js" afterPath="$PROJECT_DIR$/choose/haveSang/haveSang.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/haveSongs/haveSongs.html" afterPath="$PROJECT_DIR$/choose/haveSongs/haveSongs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/haveSongs/haveSongs.js" afterPath="$PROJECT_DIR$/choose/haveSongs/haveSongs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/packages/packages.css" afterPath="$PROJECT_DIR$/choose/packages/packages.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/packages/packages.html" afterPath="$PROJECT_DIR$/choose/packages/packages.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/packages/packages.js" afterPath="$PROJECT_DIR$/choose/packages/packages.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/search/search.js" afterPath="$PROJECT_DIR$/choose/search/search.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/singer/singer.js" afterPath="$PROJECT_DIR$/choose/singer/singer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/singer/singerList.js" afterPath="$PROJECT_DIR$/choose/singer/singerList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/singer/singerPage.js" afterPath="$PROJECT_DIR$/choose/singer/singerPage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/songName/songName.html" afterPath="$PROJECT_DIR$/choose/songName/songName.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/choose/songName/songName.js" afterPath="$PROJECT_DIR$/choose/songName/songName.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login/login.js" afterPath="$PROJECT_DIR$/login/login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wx/wx.js" afterPath="$PROJECT_DIR$/wx/wx.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wx/wx_share.js" afterPath="$PROJECT_DIR$/wx/wx_share.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -41,101 +32,101 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="choose.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/choose/choose.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2997">
-              <caret line="111" column="13" lean-forward="false" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="packages.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/choose/packages/packages.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="69" column="86" lean-forward="false" selection-start-line="69" selection-start-column="82" selection-end-line="69" selection-end-column="86" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="packages.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/choose/packages/packages.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="689">
-              <caret line="151" column="11" lean-forward="true" selection-start-line="151" selection-start-column="11" selection-end-line="151" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="choose.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/choose/choose.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="128" column="19" lean-forward="true" selection-start-line="128" selection-start-column="19" selection-end-line="128" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="control.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/choose/control/control.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="37" column="34" lean-forward="true" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+            <state relative-caret-position="621">
+              <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="control.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/choose/control/control.html">
+      <file leaf-file-name="songName.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choose/songName/songName.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4779">
-              <caret line="177" column="35" lean-forward="false" selection-start-line="177" selection-start-column="35" selection-end-line="177" selection-end-column="35" />
+            <state relative-caret-position="675">
+              <caret line="25" column="72" lean-forward="false" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="singer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/choose/singer/singer.js">
+      <file leaf-file-name="songName.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choose/songName/songName.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="22" column="18" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="22" selection-end-column="18" />
+            <state relative-caret-position="2160">
+              <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="singerList.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/choose/singer/singerList.js">
+      <file leaf-file-name="haveSang.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choose/haveSang/haveSang.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="581">
-              <caret line="49" column="18" lean-forward="false" selection-start-line="47" selection-start-column="16" selection-end-line="49" selection-end-column="18" />
+            <state relative-caret-position="567">
+              <caret line="34" column="77" lean-forward="true" selection-start-line="34" selection-start-column="77" selection-end-line="34" selection-end-column="77" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="singerPage.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/choose/singer/singerPage.js">
+      <file leaf-file-name="haveSongs.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choose/haveSongs/haveSongs.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="48" column="22" lean-forward="false" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="47" />
+            <state relative-caret-position="513">
+              <caret line="19" column="49" lean-forward="false" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myRecord-page.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Account/record/myRecord-page.js">
+      <file leaf-file-name="haveSang.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/choose/haveSang/haveSang.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="783">
-              <caret line="29" column="18" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+            <state relative-caret-position="567">
+              <caret line="107" column="41" lean-forward="false" selection-start-line="107" selection-start-column="41" selection-end-line="107" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="haveSongs.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choose/haveSongs/haveSongs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1391">
+              <caret line="170" column="3" lean-forward="false" selection-start-line="170" selection-start-column="3" selection-end-line="170" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hotSong.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choose/hotSong/hotSong.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1917">
+              <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="choose.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choose/choose.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2970">
+              <caret line="110" column="19" lean-forward="false" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="choose.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/choose/choose.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8748">
+              <caret line="324" column="0" lean-forward="false" selection-start-line="324" selection-start-column="0" selection-end-line="324" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -156,7 +147,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>circle-block-div</find>
       <find>mood-img</find>
       <find>mood-div</find>
       <find>circle-block-mood</find>
@@ -186,6 +176,7 @@
       <find>&quot;to&quot;</find>
       <find>deviceId</find>
       <find>sessionStorage.getItem(&quot;deviceId&quot;)</find>
+      <find>buy-a</find>
     </findStrings>
     <replaceStrings>
       <replace>zepto</replace>
@@ -207,10 +198,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/choose/singer/test.html" />
-        <option value="$PROJECT_DIR$/choose/singer/singerList.html" />
-        <option value="$PROJECT_DIR$/choose/packages/packages.css" />
-        <option value="$PROJECT_DIR$/choose/language/language_page.html" />
         <option value="$PROJECT_DIR$/choose/search/search.css" />
         <option value="$PROJECT_DIR$/choose/search/search-tab.html" />
         <option value="$PROJECT_DIR$/choose/search/search-vue.html" />
@@ -220,17 +207,13 @@
         <option value="$PROJECT_DIR$/choose/singer/singerList-vue.js" />
         <option value="$PROJECT_DIR$/Account/account.css" />
         <option value="$PROJECT_DIR$/Account/record/myRecord.js" />
-        <option value="$PROJECT_DIR$/choose/haveSongs/haveSongs.html" />
-        <option value="$PROJECT_DIR$/choose/haveSongs/haveSongs.js" />
         <option value="$PROJECT_DIR$/nearby/nearby.js" />
         <option value="$PROJECT_DIR$/choose/singer/singer.html" />
         <option value="$PROJECT_DIR$/choose/singer/singerPage.html" />
-        <option value="$PROJECT_DIR$/choose/songName/songName.html" />
         <option value="$PROJECT_DIR$/choose/newSong/newSong.html" />
         <option value="$PROJECT_DIR$/choose/musicScore/musicScore.html" />
         <option value="$PROJECT_DIR$/choose/language/language.html" />
         <option value="$PROJECT_DIR$/choose/hotSong/hotSong.html" />
-        <option value="$PROJECT_DIR$/choose/haveSang/haveSang.html" />
         <option value="$PROJECT_DIR$/css/common.css" />
         <option value="$PROJECT_DIR$/Account/record/myRecord.html" />
         <option value="$PROJECT_DIR$/choose/musicScore/musicScore.js" />
@@ -238,11 +221,8 @@
         <option value="$PROJECT_DIR$/choose/language/language.js" />
         <option value="$PROJECT_DIR$/choose/newSong/newSong.js" />
         <option value="$PROJECT_DIR$/choose/search/search.js" />
-        <option value="$PROJECT_DIR$/choose/songName/songName.js" />
         <option value="$PROJECT_DIR$/choose/language/language_page.js" />
-        <option value="$PROJECT_DIR$/wx/wx_share.js" />
         <option value="$PROJECT_DIR$/Account/record/myRecord_page.html" />
-        <option value="$PROJECT_DIR$/wx/wx.js" />
         <option value="$PROJECT_DIR$/choose/choose.css" />
         <option value="$PROJECT_DIR$/choose/control/control.html" />
         <option value="$PROJECT_DIR$/Account/record/myRecordPage.css" />
@@ -253,11 +233,22 @@
         <option value="$PROJECT_DIR$/choose/singer/singerPage.js" />
         <option value="$PROJECT_DIR$/choose/singer/singerList.js" />
         <option value="$PROJECT_DIR$/choose/singer/singer.js" />
-        <option value="$PROJECT_DIR$/choose/choose.html" />
-        <option value="$PROJECT_DIR$/choose/control/control.js" />
-        <option value="$PROJECT_DIR$/choose/packages/packages.html" />
+        <option value="$PROJECT_DIR$/choose/packages/packages.css" />
         <option value="$PROJECT_DIR$/choose/packages/packages.js" />
+        <option value="$PROJECT_DIR$/wx/wx.js" />
+        <option value="$PROJECT_DIR$/wx/wx_share.js" />
+        <option value="$PROJECT_DIR$/login/login.html" />
+        <option value="$PROJECT_DIR$/login/login.js" />
+        <option value="$PROJECT_DIR$/choose/control/control.js" />
+        <option value="$PROJECT_DIR$/choose/choose.html" />
+        <option value="$PROJECT_DIR$/choose/packages/packages.html" />
         <option value="$PROJECT_DIR$/choose/choose.js" />
+        <option value="$PROJECT_DIR$/choose/haveSongs/haveSongs.html" />
+        <option value="$PROJECT_DIR$/choose/songName/songName.html" />
+        <option value="$PROJECT_DIR$/choose/songName/songName.js" />
+        <option value="$PROJECT_DIR$/choose/haveSongs/haveSongs.js" />
+        <option value="$PROJECT_DIR$/choose/haveSang/haveSang.html" />
+        <option value="$PROJECT_DIR$/choose/haveSang/haveSang.js" />
       </list>
     </option>
   </component>
@@ -268,10 +259,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1920" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -291,6 +280,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -356,6 +347,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="nearby" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechatKbar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wechatKbar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="login" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -693,8 +698,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -905,26 +908,36 @@
       <workItem from="1524704289840" duration="10634000" />
       <workItem from="1524790537647" duration="16899000" />
       <workItem from="1524876691693" duration="4993000" />
-      <workItem from="1524882507298" duration="19261000" />
+      <workItem from="1524882507298" duration="19454000" />
+      <workItem from="1525222527890" duration="26227000" />
+      <workItem from="1525255740896" duration="2281000" />
+      <workItem from="1525308202160" duration="18163000" />
+      <workItem from="1525394931724" duration="7960000" />
+      <workItem from="1525425638720" duration="2605000" />
+      <workItem from="1525481629410" duration="9948000" />
+      <workItem from="1525654205293" duration="14368000" />
+      <workItem from="1525740323907" duration="21001000" />
+      <workItem from="1525827819241" duration="449000" />
+      <workItem from="1526259154843" duration="3843000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1541225000" />
+    <option name="totallyTimeSpent" value="1648263000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="0" y="0" width="1920" height="1040" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15221988" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15351813" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -948,38 +961,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Account/account.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="209" column="1" lean-forward="false" selection-start-line="209" selection-start-column="1" selection-end-line="209" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bills/bill.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="100" column="7" lean-forward="true" selection-start-line="89" selection-start-column="4" selection-end-line="100" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nearby/nearbyMap.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/store/uploadImage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choose/haveSang/haveSang.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="19" column="59" lean-forward="false" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -1018,13 +1003,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/choose/songName/songName.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="31" column="89" lean-forward="false" selection-start-line="31" selection-start-column="89" selection-end-line="31" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/choose/singer/singerPage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="859">
@@ -1053,20 +1031,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/choose/haveSang/haveSang.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choose/haveSongs/haveSongs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="30" column="83" lean-forward="true" selection-start-line="30" selection-start-column="76" selection-end-line="30" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/choose/language/language.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -1088,21 +1052,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/choose/hotSong/hotSong.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="31" column="89" lean-forward="false" selection-start-line="31" selection-start-column="89" selection-end-line="31" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choose/haveSongs/haveSongs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1269">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/choose/musicScore/musicScore.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -1114,13 +1063,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="42" column="22" lean-forward="true" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choose/hotSong/hotSong.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="52" column="59" lean-forward="true" selection-start-line="52" selection-start-column="59" selection-end-line="52" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -1142,15 +1084,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
           <caret line="58" column="30" lean-forward="true" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choose/songName/songName.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="48" column="48" lean-forward="true" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1182,25 +1115,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wx/wx.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wx/wx_share.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1161">
-          <caret line="43" column="20" lean-forward="false" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/choose/choose.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15228">
           <caret line="564" column="34" lean-forward="false" selection-start-line="564" selection-start-column="34" selection-end-line="564" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1236,15 +1154,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Account/record/myRecord-page.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="783">
-          <caret line="29" column="18" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1252,7 +1161,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="22" column="18" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="22" selection-end-column="18" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choose/singer/singerPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1296">
+          <caret line="48" column="22" lean-forward="false" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choose/singer/singerList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1323">
+          <caret line="49" column="18" lean-forward="false" selection-start-line="47" selection-start-column="16" selection-end-line="49" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1260,62 +1182,148 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4779">
           <caret line="177" column="35" lean-forward="false" selection-start-line="177" selection-start-column="35" selection-end-line="177" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/choose/choose.html">
+    <entry file="file://$PROJECT_DIR$/choose/packages/packages.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2997">
-          <caret line="111" column="13" lean-forward="false" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choose/singer/singerPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="48" column="22" lean-forward="false" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choose/singer/singerList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="49" column="18" lean-forward="false" selection-start-line="47" selection-start-column="16" selection-end-line="49" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choose/control/control.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="37" column="34" lean-forward="true" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/choose/packages/packages.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="69" column="86" lean-forward="false" selection-start-line="69" selection-start-column="82" selection-end-line="69" selection-end-column="86" />
-          <folding />
+        <state relative-caret-position="2160">
+          <caret line="80" column="24" lean-forward="false" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/choose/packages/packages.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="689">
-          <caret line="151" column="11" lean-forward="true" selection-start-line="151" selection-start-column="11" selection-end-line="151" selection-end-column="11" />
+        <state relative-caret-position="4914">
+          <caret line="182" column="34" lean-forward="false" selection-start-line="182" selection-start-column="34" selection-end-line="182" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wx/wx.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="54" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wx/wx_share.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4860">
+          <caret line="180" column="32" lean-forward="false" selection-start-line="180" selection-start-column="32" selection-end-line="180" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="17" column="28" lean-forward="false" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2052">
+          <caret line="78" column="5" lean-forward="false" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choose/hotSong/hotSong.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="31" column="89" lean-forward="false" selection-start-line="31" selection-start-column="89" selection-end-line="31" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choose/packages/packages.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="87" column="7" lean-forward="true" selection-start-line="87" selection-start-column="7" selection-end-line="87" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choose/choose.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2970">
+          <caret line="110" column="19" lean-forward="false" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/choose/choose.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8748">
+          <caret line="324" column="0" lean-forward="false" selection-start-line="324" selection-start-column="0" selection-end-line="324" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Account/record/myRecord-page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choose/hotSong/hotSong.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1917">
+          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choose/songName/songName.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="25" column="72" lean-forward="false" selection-start-line="25" selection-start-column="72" selection-end-line="25" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choose/songName/songName.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2160">
+          <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choose/control/control.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
-          <caret line="128" column="19" lean-forward="true" selection-start-line="128" selection-start-column="19" selection-end-line="128" selection-end-column="19" />
+          <caret line="23" column="44" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choose/haveSongs/haveSongs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="19" column="49" lean-forward="false" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choose/haveSongs/haveSongs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1391">
+          <caret line="170" column="3" lean-forward="false" selection-start-line="170" selection-start-column="3" selection-end-line="170" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choose/haveSang/haveSang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="34" column="77" lean-forward="true" selection-start-line="34" selection-start-column="77" selection-end-line="34" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/choose/haveSang/haveSang.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="107" column="41" lean-forward="false" selection-start-line="107" selection-start-column="41" selection-end-line="107" selection-end-column="41" />
           <folding />
         </state>
       </provider>

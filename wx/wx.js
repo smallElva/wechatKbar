@@ -50,11 +50,35 @@ $(function(){
                 'onMenuShareWeibo',
                 'openLocation',
                 'chooseImage',
-                'scanQRCode'
+                'scanQRCode',
+                'chooseWXPay'
             ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
         });
     }
-
+    wx.ready(function () {
+        //----判断当前客户端版本是否支持指定JS接口
+        wx.checkJsApi({
+            jsApiList: ['checkJsApi',
+                'onMenuShareAppMessage',
+                'onMenuShareTimeline',
+                'getNetworkType',
+                'previewImage',
+                'onMenuShareQQ',
+                'onMenuShareWeibo',
+                'chooseImage',
+                'openLocation',
+                'translateVoice',
+                'chooseWXPay'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+            fail: function (res) {
+                alert('微信版本太低，不支持分享给朋友的功能！');
+            },
+            success: function(res) {
+//       	    	alert(res+"-");
+                // 以键值对的形式返回，可用的api值true，不可用为false
+                // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
+            }
+        });
+    });
 
     wx.error(function(res){
         //  		alert(res+"=error");

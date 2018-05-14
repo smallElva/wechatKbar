@@ -1,4 +1,5 @@
 $(function(){
+    var href = location.href.split('#')[0];//获取当前页的url
 	var shareTitle;		//分享标题
    	var shareImgUrl;	//分享图片	
    	var timeStamp;		//必填，生成签名的时间戳
@@ -14,11 +15,11 @@ $(function(){
    		$.ajax({
    			type: 'GET',
    	      	url: 'http://yangleo.ittun.com/signature',
+            data:{url:href},
             xhrFields: {
                 withCredentials: true
             },
    	      	success: function(data){
-   				alert(2);
    	        	var objData = JSON.parse(data);
    	        	shareTitle = objData.subscriptionTitle;
    	        	shareImgUrl = objData.subscriptionPicUrl;
@@ -40,14 +41,42 @@ $(function(){
 		    nonceStr: nonceStr, // 必填，生成签名的随机串
 		    signature: signature,// 必填，签名，见附录1
 		    jsApiList: [
-				'getNetworkType',
-				'previewImage',
-		    	'onMenuShareAppMessage',
-				'onMenuShareTimeline',
-				'onMenuShareQQ',
-				'onMenuShareWeibo',
-				'openLocation',
-				'chooseImage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                'checkJsApi',
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'onMenuShareWeibo',
+                'onMenuShareQZone',
+                'hideMenuItems',
+                'showMenuItems',
+                'hideAllNonBaseMenuItem',
+                'showAllNonBaseMenuItem',
+                'translateVoice',
+                'startRecord',
+                'stopRecord',
+                'onRecordEnd',
+                'playVoice',
+                'pauseVoice',
+                'stopVoice',
+                'uploadVoice',
+                'downloadVoice',
+                'chooseImage',
+                'previewImage',
+                'uploadImage',
+                'downloadImage',
+                'getNetworkType',
+                'openLocation',
+                'getLocation',
+                'hideOptionMenu',
+                'showOptionMenu',
+                'closeWindow',
+                'scanQRCode',
+                'chooseWXPay',
+                'openProductSpecificView',
+                'addCard',
+                'chooseCard',
+                'openCard'
+			] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
    		});
 	}
    	
@@ -142,13 +171,43 @@ $(function(){
     	
        	//----判断当前客户端版本是否支持指定JS接口
        	wx.checkJsApi({
-       	    jsApiList: ['checkJsApi',
-       	        'onMenuShareAppMessage',
-     				'onMenuShareTimeline',
-       	        'getNetworkType',
-     				'previewImage',
-     				'onMenuShareQQ',
-     				'onMenuShareWeibo','chooseImage','openLocation','translateVoice'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+       	    jsApiList: [
+       	    	'checkJsApi',
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'onMenuShareWeibo',
+                'onMenuShareQZone',
+                'hideMenuItems',
+                'showMenuItems',
+                'hideAllNonBaseMenuItem',
+                'showAllNonBaseMenuItem',
+                'translateVoice',
+                'startRecord',
+                'stopRecord',
+                'onRecordEnd',
+                'playVoice',
+                'pauseVoice',
+                'stopVoice',
+                'uploadVoice',
+                'downloadVoice',
+                'chooseImage',
+                'previewImage',
+                'uploadImage',
+                'downloadImage',
+                'getNetworkType',
+                'openLocation',
+                'getLocation',
+                'hideOptionMenu',
+                'showOptionMenu',
+                'closeWindow',
+                'scanQRCode',
+                'chooseWXPay',
+                'openProductSpecificView',
+                'addCard',
+                'chooseCard',
+                'openCard'
+			], // 需要检测的JS接口列表，所有JS接口列表见附录2,
        	    fail: function (res) {
                    alert('微信版本太低，不支持分享给朋友的功能！');
              },

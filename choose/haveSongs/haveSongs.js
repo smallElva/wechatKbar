@@ -82,16 +82,32 @@ var vm = new Vue({
                 self.mescroll.endErr();
             });
         },
-        deleteThis: function (index) {
+        deleteThis: function (index,id) {
             if(index==vm.pdlist.length){
                 vm.pdlist.splice(-1,1);
             }else{
                 vm.pdlist.splice(index,1);
             }
+            //拿到存储在sessionStorage中的设备号
+            var deviceId =sessionStorage.getItem("deviceId");
+            var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
+            websocket.onopen = function () {
+                var songObj = {"action":"delete", "value":id, "serialNo": "123456"}; //定义选歌对象
+                var songJson = JSON.stringify(songObj); //定义选歌JSON
+                websocket.send(songJson);
+            };
         },
-        toTopOne: function (index) {
+        toTopOne: function (index,id) {
             vm.pdlist.unshift(vm.pdlist[index]);
             vm.pdlist.splice(index+1,1);
+            //拿到存储在sessionStorage中的设备号
+            var deviceId =sessionStorage.getItem("deviceId");
+            var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
+            websocket.onopen = function () {
+                var songObj = {"action":"top", "value":id, "serialNo": "123456"}; //定义选歌对象
+                var songJson = JSON.stringify(songObj); //定义选歌JSON
+                websocket.send(songJson);//发送所点歌曲
+            };
         }
     }
 });
@@ -126,3 +142,30 @@ function getListDataFromNet(pageNum,pageSize,successCallback,errorCallback) {
     },500)
 }
 
+$(function () {
+
+    //拿到存储在sessionStorage中的设备号
+    if (typeof(Storage) !== "undefined") {
+        var deviceId =sessionStorage.getItem("deviceId");
+    }
+    else{
+        deviceId=sessionStorage.getItem('deviceId');
+    }
+    var websocket = null;
+    //判断当前浏览器是否支持WebSocket
+    if ('WebSocket' in window) {
+        websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
+    }
+    else {
+        alert('当前浏览器 Not support websocket')
+    }
+    //监听窗口关闭事件，当窗口关闭时，主动去关闭websocket连接，防止连接还没断开就关闭窗口，server端会抛异常。
+    window.onbeforeunload = function() {
+        websocket.close();
+    };
+    websocket.onmessage = function(msg) {
+        alert(msg);
+        $('#haveSongNum').html(msg);
+    };
+
+});
