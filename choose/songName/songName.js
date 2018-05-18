@@ -64,12 +64,13 @@ var vm = new Vue({
                 }
             });
         },
-        choose: function (obj) {
+        choose: function (obj,id) {
             //拿到存储在sessionStorage中的设备号
             var deviceId =sessionStorage.getItem("deviceId");
-            var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
+            var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=123456");
+            // var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
             websocket.onopen = function () {
-                var songObj = {"action":"select", "value":obj, "serialNo": "123456"}; //定义选歌对象
+                var songObj = {"action":"select", "value":id, "serialNo": "123456"}; //定义选歌对象
                 var songJson = JSON.stringify(songObj); //定义选歌JSON
                 websocket.send(songJson);
             };
@@ -114,7 +115,8 @@ $(function () {
     var websocket = null;
 //判断当前浏览器是否支持WebSocket
     if ('WebSocket' in window) {
-        websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
+        websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=123456");
+        // websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
     }
     else {
         alert('当前浏览器 Not support websocket')
@@ -124,7 +126,7 @@ $(function () {
         websocket.close();
     };
     websocket.onmessage = function(msg) {
-        alert(msg);
-        $('#haveSongNum').html(msg);
+        // alert(msg);
+        $('#haveSongNum').text(msg.data.point_count);
     };
 });

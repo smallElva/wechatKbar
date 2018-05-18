@@ -15,7 +15,8 @@ $(function () {
     var websocket = null;
     //判断当前浏览器是否支持WebSocket
     if ('WebSocket' in window) {
-        websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
+        websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=123456");
+        // websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
     }
     else {
         alert('当前浏览器 Not support websocket')
@@ -47,7 +48,7 @@ var songsm=new Vue({
                 callback: self.upCallback, //上拉回调
                 //以下参数可删除,不配置
                 isBounce: false, //此处禁止ios回弹,解析(务必认真阅读,特别是最后一点): http://www.mescroll.com/qa.html#q10
-                page:{size:10}, //可配置每页8条数据,默认10
+                page:{size:20}, //可配置每页8条数据,默认10
                 noMoreSize: 10,
                 toTop:{ //配置回到顶部按钮
                     html : "<i class='iconfont icon-zhiding'></i>", //标签内容,默认null; 如果同时设置了src,则优先取src
@@ -78,16 +79,17 @@ var songsm=new Vue({
                     withCredentials: true
                 },
                 success: function(curPageData) {
-                    //如果是第一页需手动制空列表 (代替clearId和clearEmptyId的配置)
-                    if(page.num == 1) self.songlist = [];
-                    //获取数据的总页数
-                    var totalPage = curPageData.pages;
-                    //更新列表数据
-                    self.songs = self.songs.concat(curPageData.list);
 
+                    //如果是第一页需手动制空列表 (代替clearId和clearEmptyId的配置)
+                    if(page.num == 1) self.songs = [];
+                    //获取数据的总页数
+                    var totalPage = curPageData.data.pages;
+                    //更新列表数据
+                    self.songs = self.songs.concat(curPageData.data.list);
+                    console.dir(self.songs);
                     //方法一(推荐): 后台接口有返回列表的总页数 totalPage
                     //必传参数(当前页的数据个数, 总页数)
-                    self.mescroll.endByPage(curPageData.list.length, totalPage);
+                    self.mescroll.endByPage(curPageData.data.list.length, totalPage);
                 },
                 error: function(e) {
                     //联网失败的回调,隐藏下拉刷新和上拉加载的状态
@@ -103,7 +105,7 @@ var songsm=new Vue({
             var deviceId =sessionStorage.getItem("deviceId");
             var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
             websocket.onopen = function () {
-                var songObj = {"action":"select", "value":obj, "serialNo": "123456"}; //定义选歌对象
+                var songObj = {"action":"select", "value":obj, "serialNo": "67890"}; //定义选歌对象
                 var songJson = JSON.stringify(songObj); //定义选歌JSON
                 websocket.send(songJson);
             };

@@ -30,7 +30,7 @@
     <section class="content-section">
         <div class="mescroll" id="mescroll">
             <ul class="aui-list aui-media-list song-list" id="singer-song-result" v-cloak>
-                <li class="aui-list-item aui-list-item-middle" v-for="item in songlist" v-on:click="choose(item)">
+                <li class="aui-list-item aui-list-item-middle" v-for="item in songlist" v-on:click="choose(item,item.songId)">
                     <div class="aui-media-list-item-inner">
                         <div class="aui-list-item-inner">
                             <div class="aui-list-item-text">

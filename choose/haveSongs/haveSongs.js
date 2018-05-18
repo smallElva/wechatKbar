@@ -21,7 +21,8 @@ var vm = new Vue({
                 callback: self.upCallback, //上拉回调
                 //以下参数可删除,不配置
                 isBounce: false, //此处禁止ios回弹,解析(务必认真阅读,特别是最后一点): http://www.mescroll.com/qa.html#q10
-                //page:{size:8}, //可配置每页8条数据,默认10
+                page:{size:20}, //可配置每页8条数据,默认10
+                noMoreSize: 10, //首页数据10条以上才显示无更多数据
                 toTop:{ //配置回到顶部按钮
                     html : "<i class='iconfont icon-zhiding'></i>", //标签内容,默认null; 如果同时设置了src,则优先取src
                     offset : 200
@@ -38,10 +39,7 @@ var vm = new Vue({
 //						  		alert("点击了去逛逛按钮");
 //						  	}
                 },
-                //vue的案例请勿配置clearId和clearEmptyId,否则列表的数据模板会被清空
-                //vue的案例请勿配置clearId和clearEmptyId,否则列表的数据模板会被清空
-//						clearId: "dataList",
-//						clearEmptyId: "dataList"
+
             }
         });
 
@@ -52,34 +50,33 @@ var vm = new Vue({
         upCallback: function(page) {
             //联网加载数据
             var self = this;
-            getListDataFromNet(page.num, page.size, function(curPageData) {
-                // curPageData=[]; //打开本行注释,可演示列表无任何数据empty的配置
+            //拿到存储在sessionStorage中的设备号
+            var deviceId =sessionStorage.getItem("deviceId");
+            $.ajax({
+                type: "GET",
+                url: "http://yangleo.ittun.com/recSong/getAlreadyPoint?serialNo=123456",
+                // data:{"serialNo":deviceId},
+                dataType: "json",
+                xhrFields: {
+                    withCredentials: true
+                },
+                success: function(curPageData) {
 
-                //如果是第一页需手动制空列表 (代替clearId和clearEmptyId的配置)
-                if(page.num == 1) self.pdlist = [];
-
-                //更新列表数据
-                self.pdlist = self.pdlist.concat(curPageData);
-
-                //联网成功的回调,隐藏下拉刷新和上拉加载的状态;
-                //mescroll会根据传的参数,自动判断列表如果无任何数据,则提示空;列表无下一页数据,则提示无更多数据;
-                console.log("page.num="+page.num+", page.size="+page.size+", curPageData.length="+curPageData.length+", self.pdlist.length==" + self.pdlist.length);
-
-                //方法一(推荐): 后台接口有返回列表的总页数 totalPage
-                //self.mescroll.endByPage(curPageData.length, totalPage); //必传参数(当前页的数据个数, 总页数)
-
-                //方法二(推荐): 后台接口有返回列表的总数据量 totalSize
-                //self.mescroll.endBySize(curPageData.length, totalSize); //必传参数(当前页的数据个数, 总数据量)
-
-                //方法三(推荐): 您有其他方式知道是否有下一页 hasNext
-                //self.mescroll.endSuccess(curPageData.length, hasNext); //必传参数(当前页的数据个数, 是否有下一页true/false)
-
-                //方法四 (不推荐),会存在一个小问题:比如列表共有20条数据,每页加载10条,共2页.如果只根据当前页的数据个数判断,则需翻到第三页才会知道无更多数据,如果传了hasNext,则翻到第二页即可显示无更多数据.
-                self.mescroll.endSuccess(curPageData.length);
-
-            }, function() {
-                //联网失败的回调,隐藏下拉刷新和上拉加载的状态;
-                self.mescroll.endErr();
+                    //如果是第一页需手动制空列表 (代替clearId和clearEmptyId的配置)
+                    if(page.num == 1) self.pdlist = [];
+                    //获取数据的总页数
+                    var totalPage = curPageData.data.pages;
+                    //更新列表数据
+                    self.pdlist = self.pdlist.concat(curPageData.data.list);
+                    console.dir(self.pdlist);
+                    //方法一(推荐): 后台接口有返回列表的总页数 totalPage
+                    //必传参数(当前页的数据个数, 总页数)
+                    self.mescroll.endByPage(curPageData.data.list.length, totalPage);
+                },
+                error: function(e) {
+                    //联网失败的回调,隐藏下拉刷新和上拉加载的状态
+                    self.mescroll.endErr();
+                }
             });
         },
         deleteThis: function (index,id) {
@@ -88,9 +85,21 @@ var vm = new Vue({
             }else{
                 vm.pdlist.splice(index,1);
             }
+            // $.ajax({
+            //     type: "GET",
+            //     url: "http://yangleo.ittun.com/recSong/getAlreadyPoint?serialNo=123456",
+            //     data:{"songId":id,"type":"1"},
+            //     dataType: "json",
+            //     xhrFields: {
+            //         withCredentials: true
+            //     },
+            //     success: function(curPageData) {
+            //         alert('成功啦')
+            //     }
+            // });
             //拿到存储在sessionStorage中的设备号
             var deviceId =sessionStorage.getItem("deviceId");
-            var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
+            var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=123456");
             websocket.onopen = function () {
                 var songObj = {"action":"delete", "value":id, "serialNo": "123456"}; //定义选歌对象
                 var songJson = JSON.stringify(songObj); //定义选歌JSON
@@ -100,9 +109,21 @@ var vm = new Vue({
         toTopOne: function (index,id) {
             vm.pdlist.unshift(vm.pdlist[index]);
             vm.pdlist.splice(index+1,1);
+            // $.ajax({
+            //     type: "GET",
+            //     url: "http://yangleo.ittun.com/recSong/getAlreadyPoint?serialNo=123456",
+            //     data:{"songId":id,"type":"0"},
+            //     dataType: "json",
+            //     xhrFields: {
+            //         withCredentials: true
+            //     },
+            //     success: function(result) {
+            //         alert('成功啦')
+            //     }
+            // });
             //拿到存储在sessionStorage中的设备号
             var deviceId =sessionStorage.getItem("deviceId");
-            var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
+            var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=123456");
             websocket.onopen = function () {
                 var songObj = {"action":"top", "value":id, "serialNo": "123456"}; //定义选歌对象
                 var songJson = JSON.stringify(songObj); //定义选歌JSON
@@ -111,36 +132,6 @@ var vm = new Vue({
         }
     }
 });
-
-/*联网加载列表数据
- 请忽略getListDataFromNet的逻辑,这里仅仅是在本地模拟分页数据,本地演示用
- 实际项目以您服务器接口返回的数据为准,无需本地处理分页.
- * */
-function getListDataFromNet(pageNum,pageSize,successCallback,errorCallback) {
-    //延时一秒,模拟联网
-    setTimeout(function () {
-//          	axios.get("xxxxxx", {
-//					params: {
-//						num: pageNum, //页码
-//						size: pageSize //每页长度
-//					}
-//				})
-//				.then(function(response) {
-        var data=pdlist1; // 模拟数据: ../res/pdlist1.js
-        var listData=[];//模拟分页数据
-            //首页 (模拟分页数据)
-            for (var i = (pageNum-1)*pageSize; i < pageNum*pageSize; i++) {
-                if(i==data.length) break;
-                listData.push(data[i]);
-            }
-
-        successCallback&&successCallback(listData);//成功回调
-//				})
-//				.catch(function(error) {
-//					errorCallback&&errorCallback()//失败回调
-//				});
-    },500)
-}
 
 $(function () {
 
@@ -154,7 +145,8 @@ $(function () {
     var websocket = null;
     //判断当前浏览器是否支持WebSocket
     if ('WebSocket' in window) {
-        websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
+        websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=123456");
+        // websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
     }
     else {
         alert('当前浏览器 Not support websocket')
@@ -164,8 +156,8 @@ $(function () {
         websocket.close();
     };
     websocket.onmessage = function(msg) {
-        alert(msg);
-        $('#haveSongNum').html(msg);
+        $('#haveSongNum').text(msg.data.point_count);
+        // window.location.reload(true);
     };
 
 });

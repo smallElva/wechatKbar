@@ -23,19 +23,20 @@ var recordm = new Vue({
             var href = location.href;
             var id = href.split('id=')[1];
             $.ajax({
-                url: 'myRecord.json',
+                url: 'http://yangleo.ittun.com/recSong/getMySound',
                 type: "GET",
+                data:{id:id},
+                timeout: 15000,
                 xhrFields: {
                     withCredentials: true
                 },
+                beforeSend:function(){
+                    $("#loading").show();
+                },
                 success: function (json) {
-                    $.each(json,function(idx,val) {
-                        //根据id获取详情数据
-                        if (id == val.id) {
-                            $.extend(true, record, val);
-                            document.title = record.myRecordSongName;//修改title值为歌曲名
-                        }
-                    })
+                    $("#loading").hide();
+                    $.extend(true, record, json.data);
+                    document.title = record.songName;//修改title值为歌曲名
                 }
             });
         }

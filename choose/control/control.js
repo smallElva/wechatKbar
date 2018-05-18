@@ -54,6 +54,12 @@ $(function () {
         websocket.send(replayJson);
     });
 
+    var playObj = {"action":"play", "value":0,"serialNo": deviceId}; //定义播放暂停对象
+    var playJson = JSON.stringify(playObj);//定义播放暂停JSON
+    $('#play').click(function () {
+        websocket.send(playJson);
+    });
+
     var vocalObj = {"action":"vocal", "value":0,"serialNo": deviceId}; //定义原唱/伴唱对象
     var vocalJson = JSON.stringify(vocalObj);//定义原唱/伴唱JSON
     $('#vocal').click(function () {
