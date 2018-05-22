@@ -21,7 +21,7 @@
                         <i class="iconfont icon-zhixiangzuo"></i>
                     </div>
                     <a class="songNum-div" href="../haveSongs/haveSongs.html">
-                        <div class="songNum-div-text">100</div>
+                        <div class="songNum-div-text" id="haveSongNum"></div>
                     </a>
                 </div>
             </div>
@@ -42,7 +42,7 @@
             <div id="upscrollWarp">
                 <!--展示上拉加载的数据列表-->
                 <ul class="aui-list aui-media-list song-list" id="dataList" v-cloak>
-                    <li class="aui-list-item aui-list-item-middle" v-for="item in songlist" v-on:click="choose(item)">
+                    <li class="aui-list-item aui-list-item-middle" v-for="item in songlist" v-on:click="choose(item.mmvId,$event)">
                         <div class="aui-media-list-item-inner">
                             <div class="aui-list-item-inner">
                                 <div class="aui-list-item-text">
@@ -56,8 +56,9 @@
                                         <div class="perSingerName">{{item.singerName}}</div>
                                     </div>
                                     <div class="aui-list-item-right">
-                                        <i class="iconfont icon-maikefeng-dianji red-icon select-song-icon" v-if="item.hasChoose"></i>
-                                        <i class="iconfont icon-maikefeng select-song-icon" v-else></i>
+                                        <i class="iconfont icon-maikefeng select-song-icon"></i>
+                                        <!--<i class="iconfont icon-maikefeng-dianji red-icon select-song-icon" v-if="item.hasChoose"></i>-->
+                                        <!--<i class="iconfont icon-maikefeng select-song-icon" v-else></i>-->
                                     </div>
                                 </div>
                             </div>
@@ -71,6 +72,7 @@
 <script type="text/javascript" src="../../js/mescroll.min.js"></script>
 <script type="text/javascript" src="../../js/api.js"></script>
 <script type="text/javascript" src="../../js/vue.min.js"></script>
+<script type="text/javascript" src="../../js/common-song.js"></script>
 <script type="text/javascript" src="singerPage.js"></script>
 
 </body>

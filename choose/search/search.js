@@ -67,8 +67,19 @@ var vm = new Vue({
                 }
             });
         },
-        choose: function (obj) {
-            obj.hasChoose = true; //点击选歌将数据的选择状态改变
+        choose: function (id,e) {
+            var el = e.currentTarget;
+            //拿到存储在sessionStorage中的设备号
+            var deviceId =sessionStorage.getItem("deviceId");
+            var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=123456");
+            // var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
+            websocket.onopen = function () {
+                var songObj = {"action":"select", "value":id, "serialNo": "123456"}; //定义选歌对象
+                var songJson = JSON.stringify(songObj); //定义选歌JSON
+                websocket.send(songJson);
+            };
+
+            $(el).find('.select-song-icon').removeClass('icon-maikefeng').addClass('icon-maikefeng-dianji red-icon') //点击选歌将数据的选择状态改变
         },
         getSingerSongInfo: function(id) {
             window.location.href = "../singer/singerPage.html?id=" + id;

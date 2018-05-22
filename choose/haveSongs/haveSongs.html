@@ -22,7 +22,7 @@
                 <i class="iconfont icon-sousuo-"></i>
             </a>
             <a class="songNum-div" href="../haveSongs/haveSongs.html">
-                <div class="songNum-div-text" id="haveSongNum">{{pdlist.length}}</div>
+                <div class="songNum-div-text" id="haveSongNum"></div>
             </a>
         </div>
     </div>
@@ -41,10 +41,10 @@
                                     <div class="perSingerName"> {{pd.singerName}}</div>
                                 </div>
                                 <div class="aui-list-item-right">
-                                    <a class="aui-pull-right song-btn" v-on:click="deleteThis(index,pd.songId)">
+                                    <a class="aui-pull-right song-btn" v-on:click="deleteThis(index,pd.mmvId)">
                                         <span class="iconfont icon-shanchu"></span>
                                     </a>
-                                    <a class="aui-pull-right song-btn" v-on:click="toTopOne(index,pd.songId)">
+                                    <a class="aui-pull-right song-btn" v-on:click="toTopOne(index,pd.mmvId)">
                                         <span class="iconfont icon-zhiding1 icon-toTop"></span>
                                     </a>
                                 </div>
@@ -60,7 +60,7 @@
 <script type="text/javascript" src="../../js/mescroll.min.js"></script>
 <script type="text/javascript" src="../../js/api.js"></script>
 <script type="text/javascript" src="../../js/vue.min.js"></script>
-<script type="text/javascript" src="list.js"></script>
+<script type="text/javascript" src="../../js/common-song.js"></script>
 <script type="text/javascript" src="haveSongs.js"></script>
 
 </body>

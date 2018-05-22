@@ -2,37 +2,6 @@
  * Created by enter on 2018/3/21.
  */
 
-
-
-$(function () {
-    //拿到存储在sessionStorage中的设备号
-    if (typeof(Storage) !== "undefined") {
-        var deviceId =sessionStorage.getItem("deviceId");
-    }
-    else{
-        deviceId=sessionStorage.getItem('deviceId');
-    }
-    var websocket = null;
-    //判断当前浏览器是否支持WebSocket
-    if ('WebSocket' in window) {
-        websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=123456");
-        // websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
-    }
-    else {
-        alert('当前浏览器 Not support websocket')
-    }
-    //监听窗口关闭事件，当窗口关闭时，主动去关闭websocket连接，防止连接还没断开就关闭窗口，server端会抛异常。
-    window.onbeforeunload = function() {
-        websocket.close();
-    };
-    websocket.onmessage = function(msg) {
-        alert(msg);
-        $('#haveSongNum').html(msg);
-    };
-
-});
-
-
 var songsm=new Vue({
     el: '#haveSang-app',
     data: {
@@ -72,7 +41,7 @@ var songsm=new Vue({
             var deviceId =sessionStorage.getItem("deviceId");
             $.ajax({
                 type: "GET",
-                url: "http://yangleo.ittun.com/recSong/alreadySing?serialNo=67890",
+                url: "http://yangleo.ittun.com/recSong/alreadySing?serialNo=123456",
                 // data:{"serialNo":deviceId},
                 dataType: "json",
                 xhrFields: {
@@ -86,7 +55,7 @@ var songsm=new Vue({
                     var totalPage = curPageData.data.pages;
                     //更新列表数据
                     self.songs = self.songs.concat(curPageData.data.list);
-                    console.dir(self.songs);
+
                     //方法一(推荐): 后台接口有返回列表的总页数 totalPage
                     //必传参数(当前页的数据个数, 总页数)
                     self.mescroll.endByPage(curPageData.data.list.length, totalPage);
@@ -103,9 +72,10 @@ var songsm=new Vue({
         choose: function (obj) {
             //拿到存储在sessionStorage中的设备号
             var deviceId =sessionStorage.getItem("deviceId");
-            var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
+            var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=123456");
+            // var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
             websocket.onopen = function () {
-                var songObj = {"action":"select", "value":obj, "serialNo": "67890"}; //定义选歌对象
+                var songObj = {"action":"select", "value":obj, "serialNo": "123456"}; //定义选歌对象
                 var songJson = JSON.stringify(songObj); //定义选歌JSON
                 websocket.send(songJson);
             };
