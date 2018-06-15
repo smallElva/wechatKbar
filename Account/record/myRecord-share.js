@@ -22,7 +22,7 @@ var recordm = new Vue({
             var href = location.href;
             var id = href.split('id=')[1];
             $.ajax({
-                url: 'http://yangleo.ittun.com/recSong/getMySound',
+                url: 'http://wechat.uniquemusic.cn/recSong/getMySound',
                 type: "GET",
                 data:{id:id},
                 timeout: 15000,
@@ -43,6 +43,7 @@ var recordm = new Vue({
 });
 
 $(function () {
+
     var href = location.href;
     var id = href.split('id=')[1];
     //歌曲收听次数

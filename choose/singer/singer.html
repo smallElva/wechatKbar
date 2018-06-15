@@ -12,7 +12,7 @@
 </head>
 <body class="white-body">
 <section class="content-choose" id="singer-app">
-    <div class="aui-title page-search-title">
+    <div class="aui-title page-search-title fixed-header-top">
         <div class="prev-div-page" onclick="window.history.go(-1);">
             <i class="iconfont icon-zhixiangzuo"></i>
         </div>
@@ -25,17 +25,28 @@
             </a>
         </div>
     </div>
-    <div class="aui-content">
-        <ul class="aui-list aui-list-in singer-list" v-cloak>
-            <li class="aui-list-item" v-for="item in datas" v-bind:uid="item.singerTypeId" v-on:click="openSingerTypeInfo(item.singerTypeId)">
-                <div class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">{{item.singerTypeName}}</div>
-                </div>
-            </li>
-        </ul>
+    <div class="content-section">
+        <div class="aui-content">
+            <ul class="aui-list aui-list-in singer-list" v-cloak>
+                <li class="aui-list-item" v-for="item in datas" v-bind:uid="item.singerTypeId" v-on:click="openSingerTypeInfo(item.singerTypeId)">
+                    <div class="aui-list-item-inner aui-list-item-arrow">
+                        <div class="aui-list-item-title">{{item.singerTypeName}}</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
+    <footer class="aui-bar aui-bar-tab choose-footer" id="footer">
+        <a class="aui-bar-tab-item" href="../choose.html">
+            <i class="iconfont icon-home"></i>
+            <div class="aui-bar-tab-label">首页</div>
+        </a>
+        <a class="aui-bar-tab-item" href="../control/control.html">
+            <i class="iconfont icon-yaokong"></i>
+            <div class="aui-bar-tab-label">遥控</div>
+        </a>
+    </footer>
 </section>
-
 <script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="../../js/api.js"></script>
 <script type="text/javascript" src="../../js/vue.min.js"></script>

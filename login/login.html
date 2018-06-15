@@ -8,14 +8,15 @@
     <title>登录</title>
     <link rel="stylesheet" type="text/css" href="../css/aui.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
-    <link rel="stylesheet" type="text/css" href="login.css" />
+    <link rel="stylesheet" type="text/css" href="../login/login.css" />
+    <script src="../js/fastclick.js"></script>
 </head>
 <body class="white-body">
 <section class="aui-content-padded">
     <div class="login-logo">
         <img src="../img/choose-index/logo.png">
     </div>
-    <form class="login-form">
+    <form class="login-form" id="login-form">
         <ul class="aui-list aui-form-list login-aui-list">
             <li class="aui-list-item login-input-btn">
                 <div class="aui-list-item-inner">
@@ -35,22 +36,22 @@
                     <div class="aui-list-item-input">
                         <input type="password" placeholder="请输入密码" id="login_pwd">
                     </div>
-                    <div class="aui-list-item-label-icon" id="showPwd">
+                    <div class="aui-list-item-label-icon" id="showPwd" style="cursor: pointer;">
                         <i class="aui-iconfont aui-icon-hide"></i>
                     </div>
                 </div>
             </li>
+            <li class="aui-list-item pwd-input-btn">
+                <div class="aui-pull-left">
+                    <label><input type="checkbox" class="aui-checkbox" checked id="rememberLogin"> 记住密码</label>
+                </div>
+                <div class="aui-pull-right">
+                    <a class="login-find-pwd" href="../login/findPwd.html">找回密码</a>
+                </div>
+            </li>
         </ul>
-        <div class="login-pwd-div">
-            <div class="aui-pull-left aui-list-item-input">
-                <label><input type="checkbox" class="aui-checkbox" checked id="rememberLogin"> 记住密码</label>
-            </div>
-            <div class="aui-pull-right">
-                <a class="login-find-pwd" href="findPwd.html">找回密码</a>
-            </div>
-        </div>
-        <div class="login-btn-div aui-clearfix">
-            <div class="aui-btn aui-btn-block login-btn" id="loginIn">登录</div>
+        <div class="login-btn-div">
+            <a class="aui-btn aui-btn-block login-btn" id="loginIn">登录</a>
         </div>
     </form>
     <div class="login-contact">
@@ -61,6 +62,6 @@
 <script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
 <script type="text/javascript" src="../js/api.js" ></script>
 <script type="text/javascript" src="../js/aui-toast.js" ></script>
-<script type="text/javascript" src="login.js" ></script>
+<script type="text/javascript" src="../login/login.js" ></script>
 
 </html>

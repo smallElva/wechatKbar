@@ -1,10 +1,13 @@
 /**
+ * Created by enter on 2018/5/28.
+ */
+/**
  * Created by enter on 2018/4/2.
  */
 var curWord = null;//定义一个关键字
 //创建vue对象
 var vm = new Vue({
-    el: "#musicScore-app",
+    el: "#mtv-app",
     data: {
         mescroll: null,
         songlist: []

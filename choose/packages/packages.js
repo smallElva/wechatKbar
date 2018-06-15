@@ -22,7 +22,7 @@ var vmm=new Vue({
             }
             $.ajax({
                 type: 'GET',
-                url: "http://yangleo.ittun.com//meal/get/serialNo/123456",
+                url: "http://wechat.uniquemusic.cn//meal/get/serialNo/123456",
                 // url: "http://yangleo.ittun.com//meal/get/serialNo/"+deviceId,
                 dataType: "json",
                 xhrFields: {
@@ -86,6 +86,7 @@ function closeMask() {
 }
 
 $(function () {
+
     $('#btnPay').click(function () {
         callpsay();
     });
@@ -175,7 +176,7 @@ function jsApiCall(){
         async: true,
         type: 'post',
         dataType: 'json',
-        url: "http://yangleo.ittun.com/pay/wxPay",
+        url: "http://wechat.uniquemusic.cn/pay/wxPay",
         data: {mealId: $('#getMealId').val(), serialNo: 123456, payType: "weixin",openid:"oVdmm1ZcHz07YX0it6gBhoKYsq30"},
         error: function(XMLHttpRequest, textStatus, errorThrown){
             alert('fail');

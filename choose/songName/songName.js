@@ -1,6 +1,7 @@
 /**
  * Created by enter on 2018/4/2.
  */
+var curWord = null;//定义搜索关键词，初始化为空
 //创建vue对象
 var vm = new Vue({
     el: "#songName-app",
@@ -40,7 +41,7 @@ var vm = new Vue({
             var self = this;
             $.ajax({
                 type: "GET",
-                url: "http://yangleo.ittun.com/song/findAllByName",
+                url: "http://wechat.uniquemusic.cn/song/findAllByName",
                 data: {pageNum: page.num,pageSize: page.size,songName:curWord},
                 dataType: "json",
                 xhrFields: {
@@ -64,24 +65,24 @@ var vm = new Vue({
                 }
             });
         },
-        choose: function (obj,id,e) {
-            var el = e.currentTarget;
+        choose: function (obj,id) {
             //拿到存储在sessionStorage中的设备号
             var deviceId =sessionStorage.getItem("deviceId");
-            var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=123456");
-            // var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
+            var websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?serialNo=123456");
+            // var websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?serialNo=" +deviceId);
             websocket.onopen = function () {
                 var songObj = {"action":"select", "value":id, "serialNo": "123456"}; //定义选歌对象
                 var songJson = JSON.stringify(songObj); //定义选歌JSON
                 websocket.send(songJson);
             };
 
-            $(el).find('.select-song-icon').removeClass('icon-maikefeng').addClass('icon-maikefeng-dianji red-icon') //点击选歌将数据的选择状态改变
+            obj.sfdg=true; //点击选歌将数据的选择状态改变
         }
     }
 });
 
-var curWord = null;//定义搜索关键词，初始化为空
+
+
 // $(function () {
 //     /*移动端按下软键盘搜索按钮触发搜索事件*/
 //     $("#search-input").on('keypress',function(e) {

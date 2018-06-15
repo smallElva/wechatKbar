@@ -21,7 +21,7 @@
                 <i class="iconfont icon-sousuo-"></i>
             </a>
             <a class="songNum-div" href="../haveSongs/haveSongs.html">
-                <div class="songNum-div-text">100</div>
+                <div class="songNum-div-text" id="haveSongNum"></div>
             </a>
         </div>
     </div>
@@ -33,43 +33,24 @@
                         <div class="aui-list-item-title">{{item.langName}}</div>
                     </a>
                 </li>
-                <!--<li class="aui-list-item" onclick="getLanguageHref(this)" uid="2">-->
-                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
-                <!--<div class="aui-list-item-title">粤语点歌</div>-->
-                <!--</a>-->
-                <!--</li>-->
-                <!--<li class="aui-list-item" onclick="getLanguageHref(this)" uid="3">-->
-                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
-                <!--<div class="aui-list-item-title">闽南语点歌</div>-->
-                <!--</a>-->
-                <!--</li>-->
-                <!--<li class="aui-list-item" onclick="getLanguageHref(this)" uid="4">-->
-                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
-                <!--<div class="aui-list-item-title">英语点歌</div>-->
-                <!--</a>-->
-                <!--</li>-->
-                <!--<li class="aui-list-item" onclick="getLanguageHref(this)" uid="5">-->
-                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
-                <!--<div class="aui-list-item-title">韩语点歌</div>-->
-                <!--</a>-->
-                <!--</li>-->
-                <!--<li class="aui-list-item" onclick="getLanguageHref(this)" uid="6">-->
-                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
-                <!--<div class="aui-list-item-title">日语点歌</div>-->
-                <!--</a>-->
-                <!--</li>-->
-                <!--<li class="aui-list-item" onclick="getLanguageHref(this)" uid="7">-->
-                <!--<a class="aui-list-item-inner aui-list-item-arrow">-->
-                <!--<div class="aui-list-item-title">其他</div>-->
-                <!--</a>-->
-                <!--</li>-->
             </ul>
         </div>
+        <footer class="aui-bar aui-bar-tab choose-footer" id="footer">
+            <a class="aui-bar-tab-item" href="../choose.html">
+                <i class="iconfont icon-home"></i>
+                <div class="aui-bar-tab-label">首页</div>
+            </a>
+            <a class="aui-bar-tab-item" href="../control/control.html">
+                <i class="iconfont icon-yaokong"></i>
+                <div class="aui-bar-tab-label">遥控</div>
+            </a>
+        </footer>
     </section>
 </div>
 <script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="../../js/api.js"></script>
 <script type="text/javascript" src="../../js/vue.min.js"></script>
+<script type="text/javascript" src="../../js/common-song.js"></script>
 <script type="text/javascript" src="language.js"></script>
 
 </body>

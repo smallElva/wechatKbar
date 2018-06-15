@@ -41,7 +41,7 @@ var songsm=new Vue({
             var deviceId =sessionStorage.getItem("deviceId");
             $.ajax({
                 type: "GET",
-                url: "http://yangleo.ittun.com/recSong/alreadySing?serialNo=123456",
+                url: "http://wechat.uniquemusic.cn/recSong/alreadySing?serialNo=123456",
                 // data:{"serialNo":deviceId},
                 dataType: "json",
                 xhrFields: {
@@ -72,8 +72,8 @@ var songsm=new Vue({
         choose: function (obj) {
             //拿到存储在sessionStorage中的设备号
             var deviceId =sessionStorage.getItem("deviceId");
-            var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=123456");
-            // var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
+            var websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?serialNo=123456");
+            // var websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?serialNo=" +deviceId);
             websocket.onopen = function () {
                 var songObj = {"action":"select", "value":obj, "serialNo": "123456"}; //定义选歌对象
                 var songJson = JSON.stringify(songObj); //定义选歌JSON

@@ -2,7 +2,7 @@
  * Created by enter on 2018/1/20.
  */
 $(function(){
-
+    FastClick.attach(document.body);
     //创建MeScroll对象,内部已默认开启下拉刷新,自动执行up.callback,重置列表数据;
     var mescroll = new MeScroll("mescroll", {
         up: {

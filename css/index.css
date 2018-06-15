@@ -24,6 +24,7 @@
 .index-info-div{
     padding: .5rem .75rem;
     background: #fff;
+    border-top: 1px solid #f2f0f0;
 }
 .index-info-div .iconfont{
     -webkit-align-self: center;
@@ -33,14 +34,14 @@
     color: #fc3d3d;
 }
 .index-info-content{
-    position: relative;
-    top: -0.5rem;
-    left: 0;
-    z-index: 2;
-    background: #fff;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    box-shadow: 0 -20px 30px rgba(0,0,0,0.04);
+    /*position: relative;*/
+    /*top: -0.5rem;*/
+    /*left: 0;*/
+    /*z-index: 2;*/
+    /*background: #fff;*/
+    /*border-top-left-radius: 1rem;*/
+    /*border-top-right-radius: 1rem;*/
+    /*box-shadow: 0 -20px 30px rgba(0,0,0,0.04);*/
 }
 .index-info-content-fixed{
     background: #373b3e;

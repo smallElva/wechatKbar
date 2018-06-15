@@ -5,11 +5,11 @@ var record =
     {
         id: "",
         recordUserName: "...",
-        myRecordSongName: "...",
-        perListenNum: "...",
-        perLikeNum: "...",
-        recordScore: "...",
-        audios: ""
+        songName: "...",
+        playRecord: "...",
+        thumbs: "...",
+        score: "...",
+        path:""
     };
 var recordm = new Vue({
     el: '#myRecord-page-app',
@@ -23,7 +23,7 @@ var recordm = new Vue({
             var href = location.href;
             var id = href.split('id=')[1];
             $.ajax({
-                url: 'http://yangleo.ittun.com/recSong/getMySound',
+                url: 'http://wechat.uniquemusic.cn/recSong/getMySound',
                 type: "GET",
                 data:{id:id},
                 timeout: 15000,
@@ -44,7 +44,6 @@ var recordm = new Vue({
 });
 
 $(function () {
-
     //点赞方法
     $('#thumbsUp').one("click",function(){
         var thumbsNum = parseInt($('.like-num').text());

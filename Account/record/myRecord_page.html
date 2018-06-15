@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../../css/aui.css" />
     <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_m0tjqxytxg3qh0k9.css" />
     <link rel="stylesheet" type="text/css" href="../../css/common.css" />
-    <link rel="stylesheet" type="text/css" href="myRecordPage.css" />
+    <link rel="stylesheet" type="text/css" href="../record/myRecordPage.css" />
 
 </head>
 <body class="black-body">
@@ -27,22 +27,22 @@
             </div>
         </div>
         <div class="myRecord-page" v-cloak>
-            <p class="songName" v-text="myRecordSongName"></p>
+            <p class="songName" v-text="songName"></p>
             <div class="singingName"><span class="wechatName" v-text="recordUserName"></span></div>
             <div class="myRecord-title-text">
                 <div class="myRecord-title-icons">
-                    <i class="iconfont icon-erji"></i><span class="listen-num" v-text="perListenNum"></span>
+                    <i class="iconfont icon-erji"></i><span class="listen-num" v-text="playRecord"></span>
                 </div>
                 <div class="myRecord-title-icons">
-                    <span class="myRecord-title-score">评分<span class="recordScore" v-text="recordScore"></span>分</span>
+                    <span class="myRecord-title-score">评分<span class="recordScore" v-text="score"></span>分</span>
                 </div>
                 <div class="myRecord-title-icons" id="thumbsUp">
-                    <i class="iconfont icon-zan"></i><span class="like-num" v-text="perLikeNum"></span>
+                    <i class="iconfont icon-zan"></i><span class="like-num" v-text="thumbs"></span>
                 </div>
             </div>
         </div>
         <div class="audio-wrapper">
-            <audio v-bind:src="audios" preload="auto"></audio>
+            <audio v-bind:src="path" preload="auto"></audio>
             <div class="audio-bars">
                 <div class="progress-bar-bg" id="progressBarBg"><span id="progressDot"></span>
                     <div class="progress-bar" id="progressBar"></div>
@@ -69,10 +69,10 @@
 <script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="../../js/api.js"></script>
 <script type="text/javascript" src="../../js/vue.min.js"></script>
-<script type="text/javascript" src="../../wx/wx_share.js"></script>
 <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-<script type="text/javascript" src="audio.js"></script>
-<script type="text/javascript" src="myRecord-page.js"></script>
+<script type="text/javascript" src="../../wx/wx_share.js"></script>
+<script type="text/javascript" src="../record/audio.js"></script>
+<script type="text/javascript" src="../record/myRecord-page.js"></script>
 <!--<script>-->
     <!--var songName = $('.songName').text();-->
     <!--var wechatName = $('.wechatName').text();-->

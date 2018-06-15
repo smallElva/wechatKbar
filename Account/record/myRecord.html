@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../../css/mescroll.min.css" />
     <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_m0tjqxytxg3qh0k9.css" />
     <link rel="stylesheet" type="text/css" href="../../css/common.css" />
-    <link rel="stylesheet" type="text/css" href="../account.css" />
+    <link rel="stylesheet" type="text/css" href="/Account/record/../account.css" />
 </head>
 <body class="white-body">
     <div id="record-content">
@@ -24,54 +24,32 @@
             </div>
         </div>
         <section class="content-section">
-            <ul class="aui-list aui-media-list myRecord-list" id="myRecord-list" v-cloak>
-                <li class="aui-list-item aui-list-item-middle" v-bind:uid="item.id" v-for="(item,$index) in records" v-on:click.stop="showLayout(item.id,$index)">
-                    <div class="aui-media-list-item-inner">
-                        <img src="../../img/account/record-img.png" class="myRecord-list-img">
-                        <div class="aui-list-item-inner">
-                            <div class="aui-list-item-text myRecord-list-text">
-                                <div class="aui-list-item-title myRecord-song-name">{{item.myRecordSongName}}</div>
-                                <div class="aui-list-item-right myRecord-share" ><i class="iconfont icon-more"></i></div>
-                            </div>
-                            <div class="aui-list-item-text">
-                                <div class="aui-list-item-title myRecord-icons">
-                                    <div class="myRecord-text-icons myRecord-listen-icons">
-                                        <i class="iconfont icon-erji"></i><span class="per-num">{{item.perListenNum}}</span>
-                                    </div>
-                                    <div class="myRecord-text-icons">
-                                        <i class="iconfont icon-zan-anxia"></i><span class="per-num">{{item.perLikeNum}}</span>
-                                    </div>
+            <div class="mescroll" id="mescroll">
+                <ul class="aui-list aui-media-list myRecord-list" id="myRecord-list" v-cloak>
+                    <li class="aui-list-item aui-list-item-middle" v-bind:uid="item.id" v-for="(item,$index) in records" v-on:click.stop="showLayout(item.id,$index)">
+                        <div class="aui-media-list-item-inner">
+                            <img src="../../img/account/record-img.png" class="myRecord-list-img">
+                            <div class="aui-list-item-inner">
+                                <div class="aui-list-item-text myRecord-list-text">
+                                    <div class="aui-list-item-title myRecord-song-name">{{item.songName}}</div>
+                                    <div class="aui-list-item-right myRecord-share" ><i class="iconfont icon-more"></i></div>
                                 </div>
-                                <div class="aui-list-item-right per-myRecord-time">{{item.perMyRecordTime}}</div>
+                                <div class="aui-list-item-text">
+                                    <div class="aui-list-item-title myRecord-icons">
+                                        <div class="myRecord-text-icons myRecord-listen-icons">
+                                            <i class="iconfont icon-erji"></i><span class="per-num">{{item.playRecord}}</span>
+                                        </div>
+                                        <div class="myRecord-text-icons">
+                                            <i class="iconfont icon-zan-anxia"></i><span class="per-num">{{item.thumbs}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="aui-list-item-right per-myRecord-time">{{item.uploadTime}}</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-                <!--<li class="aui-list-item aui-list-item-middle">-->
-                    <!--<div class="aui-media-list-item-inner">-->
-                        <!--<a class="aui-list-item-media myRecord-list-item-media" href="myRecord_page.html">-->
-                            <!--<img src="../../img/account/record-img.png" class="myRecord-list-img">-->
-                        <!--</a>-->
-                        <!--<div class="aui-list-item-inner">-->
-                            <!--<div class="aui-list-item-text myRecord-list-text">-->
-                                <!--<div class="aui-list-item-title myRecord-song-name">匆匆那年</div>-->
-                                <!--<div class="aui-list-item-right myRecord-share" v-on:click="showLayout"><i class="iconfont icon-more"></i></div>-->
-                            <!--</div>-->
-                            <!--<div class="aui-list-item-text">-->
-                                <!--<div class="aui-list-item-title myRecord-icons">-->
-                                    <!--<div class="myRecord-text-icons myRecord-listen-icons">-->
-                                        <!--<i class="iconfont icon-erji"></i><span class="per-num">31</span>-->
-                                    <!--</div>-->
-                                    <!--<div class="myRecord-text-icons">-->
-                                        <!--<i class="iconfont icon-zan-anxia"></i><span class="per-num">41</span>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="aui-list-item-right per-myRecord-time">2018-01-09</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</li>-->
-            </ul>
+                    </li>
+                </ul>
+            </div>
         </section>
 
         <!--遮罩层-->
@@ -88,6 +66,7 @@
 <script type="text/javascript" src="../../js/mescroll.min.js" ></script>
 <script type="text/javascript" src="../../js/vue.min.js" ></script>
 <script type="text/javascript" src="../../js/aui-dialog.js" ></script>
-<script type="text/javascript" src="myRecord.js" ></script>
+<!--<script type="text/javascript" src="../record/myRecord.js" ></script>-->
+<script type="text/javascript" src="/Account/record/myRecord.js" ></script>
 </body>
 </html>

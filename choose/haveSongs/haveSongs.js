@@ -49,7 +49,7 @@ var vm = new Vue({
             var deviceId =sessionStorage.getItem("deviceId");
             $.ajax({
                 type: "GET",
-                url: "http://yangleo.ittun.com/recSong/getAlreadyPoint?serialNo=123456",
+                url: "http://wechat.uniquemusic.cn/recSong/getAlreadyPoint?serialNo=123456",
                 // data:{"serialNo":deviceId},
                 dataType: "json",
                 xhrFields: {
@@ -93,7 +93,7 @@ var vm = new Vue({
             // });
             //拿到存储在sessionStorage中的设备号
             var deviceId =sessionStorage.getItem("deviceId");
-            var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=123456");
+            var websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?serialNo=123456");
             websocket.onopen = function () {
                 var songObj = {"action":"delete", "value":id, "serialNo": "123456"}; //定义选歌对象
                 var songJson = JSON.stringify(songObj); //定义选歌JSON
@@ -117,7 +117,7 @@ var vm = new Vue({
             // });
             //拿到存储在sessionStorage中的设备号
             var deviceId =sessionStorage.getItem("deviceId");
-            var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=123456");
+            var websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?serialNo=123456");
             websocket.onopen = function () {
                 var songObj = {"action":"top", "value":id, "serialNo": "123456"}; //定义选歌对象
                 var songJson = JSON.stringify(songObj); //定义选歌JSON
@@ -139,8 +139,8 @@ $(function () {
     // var websocket = null;
     // //判断当前浏览器是否支持WebSocket
     // if ('WebSocket' in window) {
-    //     websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=123456");
-    //     // websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
+    //     websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?serialNo=123456");
+    //     // websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?serialNo=" +deviceId);
     // }
     // else {
     //     alert('当前浏览器 Not support websocket')

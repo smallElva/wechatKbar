@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../../css/aui.css" />
     <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_aelpphhcwr1qncdi.css" />
     <link rel="stylesheet" type="text/css" href="../../css/common.css" />
-    <link rel="stylesheet" type="text/css" href="../account.css" />
+    <link rel="stylesheet" type="text/css" href="../feedback/../account.css" />
 </head>
 <body class="white-body">
 <div class="fixed-header-top">
@@ -22,23 +22,31 @@
     <div class="advice-form">
         <textarea placeholder="请输入您的宝贵意见！" class="advice-textarea" id="adviceTextarea"></textarea>
         <input placeholder="请输入您的手机号码！（必填）" class="advice-input" id="advicePhone">
-        <form class="advice-choose" action="feedback.html" method="post" id="adviceForm">
+        <form class="advice-choose" id="adviceForm">
             <p class="advice-choose-t">您是通过何种渠道了解“人人唱”自助KTV？</p>
             <div class="aui-row">
                 <div class="aui-col-xs-6">
                     <div class="advice-radio">
-                        <input type="radio" class="aui-radio" name="adviceWay" checked> 广告、宣传页
+                        <label for="adviceWay1">
+                            <input type="radio" class="aui-radio" name="adviceWay" id="adviceWay1" checked> 广告、宣传页
+                        </label>
                     </div>
                     <div class="advice-radio">
-                        <input type="radio" class="aui-radio" name="adviceWay"> 朋友介绍
+                        <label for="adviceWay2">
+                            <input type="radio" class="aui-radio" name="adviceWay" id="adviceWay2"> 朋友介绍
+                        </label>
                     </div>
                 </div>
                 <div class="aui-col-xs-6">
                     <div class="advice-radio">
-                        <input type="radio" class="aui-radio" name="adviceWay"> 实体包房了解
+                        <label for="adviceWay3">
+                            <input type="radio" class="aui-radio" name="adviceWay" id="adviceWay3"> 实体包房了解
+                        </label>
                     </div>
                     <div class="advice-radio">
-                        <input type="radio" class="aui-radio" name="adviceWay"> 其他
+                        <label for="adviceWay4">
+                            <input type="radio" class="aui-radio" name="adviceWay" id="adviceWay4"> 其他
+                        </label>
                     </div>
                 </div>
             </div>
@@ -52,7 +60,7 @@
 <script type="text/javascript" src="../../js/jquery-3.2.1.min.js" ></script>
 <script type="text/javascript" src="../../js/api.js" ></script>
 <script type="text/javascript" src="../../js/aui-toast.js" ></script>
-<script type="text/javascript" src="feedback.js" ></script>
+<script type="text/javascript" src="../feedback/feedback.js" ></script>
 
 
 </body>

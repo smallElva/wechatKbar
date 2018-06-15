@@ -1,6 +1,7 @@
 /**
  * Created by enter on 2018/4/2.
  */
+var curWord = null;//定义搜索词，初始化为空
 //创建vue对象
 var vm = new Vue({
     el: "#language-app",
@@ -27,10 +28,6 @@ var vm = new Vue({
                     icon: "../../img/nodata.png", //图标,默认null
                     tip: "亲,暂无相关数据~" //提示
                 }
-                //vue的案例请勿配置clearId和clearEmptyId,否则列表的数据模板会被清空
-                //vue的案例请勿配置clearId和clearEmptyId,否则列表的数据模板会被清空
-//						clearId: "dataList",
-//						clearEmptyId: "dataList"
             },
             down:{
                 isLock:true
@@ -47,7 +44,7 @@ var vm = new Vue({
 
             $.ajax({
                 type: "GET",
-                url: "http://yangleo.ittun.com/song/hotSearchPage",
+                url: "http://wechat.uniquemusic.cn/song/hotSearchPage",
                 data: {langId:langId,pageNum: page.num,pageSize: page.size,songName:curWord},
                 dataType: "json",
                 xhrFields: {
@@ -71,34 +68,22 @@ var vm = new Vue({
                 }
             });
         },
-        choose: function (obj) {
-            obj.hasChoose = true; //点击选歌将数据的选择状态改变
+        choose: function (obj,id) {
+            //拿到存储在sessionStorage中的设备号
+            var deviceId =sessionStorage.getItem("deviceId");
+            var websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?serialNo=123456");
+            // var websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?serialNo=" +deviceId);
+            websocket.onopen = function () {
+                var songObj = {"action":"select", "value":id, "serialNo": "123456"}; //定义选歌对象
+                var songJson = JSON.stringify(songObj); //定义选歌JSON
+                websocket.send(songJson);
+            };
+
+            obj.sfdg=true; //点击选歌将数据的选择状态改变
         }
     }
 });
 
 
-var curWord = null;//定义搜索词，初始化为空
-/*移动端按下软键盘搜索按钮触发搜索事件*/
-$("#search-input").on('keypress',function(e) {
-    var keycode = e.keyCode;
-    if(keycode=='13') {
-        e.preventDefault();
-        searchSongs();
-    }
-});
-/*点击搜索符号触发搜索事件*/
-$(".aui-searchbar .icon-sousuo").click(function(){
-    searchSongs();
-});
-/*搜索歌曲方法*/
-function searchSongs() {
-    var keyword= $("#search-input").val();
-    if(keyword) {
-        //重置列表数据
-        curWord=keyword; //更新关键词
-        vm.mescroll.resetUpScroll();
-    }
-}
 
 

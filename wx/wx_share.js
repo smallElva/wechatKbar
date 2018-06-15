@@ -14,7 +14,7 @@ $(function(){
    	function sign(){
    		$.ajax({
    			type: 'GET',
-   	      	url: 'http://yangleo.ittun.com/signature',
+   	      	url: 'http://wechat.uniquemusic.cn/signature',
             data:{url:href},
             xhrFields: {
                 withCredentials: true

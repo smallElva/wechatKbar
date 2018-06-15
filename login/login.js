@@ -23,7 +23,7 @@ $(function(){
         $("#login_num").val(cusername);
         $("#login_pwd").val(cpassword);
     }
-    // 回车键登录
+    //回车键登录
     $("body").keydown(function() {
         if (event.keyCode == "13") {//keyCode=13是回车键
             login();
@@ -31,16 +31,16 @@ $(function(){
     });
 
     //登录
-    $(document).on('click','#loginIn',function(){
+    $('#loginIn').click(function(){
         login();
     });
 
     //登录验证
     function login(){
-        var Laccount = $('#login_num').val();
-        var Lpassword = $('#login_pwd').val();
-        var reg = /^1[3|4|5|7|8]\d{9}$/;
-        var filter=/(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{6,16}$/;
+        var Laccount = $('#login_num').val().trim();
+        var Lpassword = $('#login_pwd').val().trim();
+        var reg = /^1[3|4|5|7|8]\d{9}$/;  //13680200070
+        var filter=/^\d{6}\b/;
 
         if( !Laccount){
             showDefault('fail_user_empty');
@@ -59,18 +59,27 @@ $(function(){
             return false;
         }
         $.ajax({
-            url:"",
+            url:"http://wechat.uniquemusic.cn/owner/login",
             type:"POST",
-            data:{num:Laccount,password:Lpassword},
+            contentType: 'application/json',
+            dataType: "json",
+            data:JSON.stringify({"iphone":Laccount, "password":Lpassword}),
+            // data:JSON.stringify({"iphone":Laccount,"password":Lpassword}),
             success:function(result){
-                if($("#rememberLogin").is(":checked")){
-                    setCookie('customername', $('#username').val().trim(), 7);
-                    setCookie('customerpass', $('#password').val().trim(), 7)
+                if(result.status==200){
+                    if($("#rememberLogin").is(":checked")){
+                        setCookie('customername', Laccount, 7);
+                        setCookie('customerpass', Lpassword, 7)
+                    }else{
+                        clearCookie('customername');
+                        clearCookie('customerpass');
+                    }
+                    $('#login-form').submit();
+                    window.location.href = "../owner.html";
                 }else{
-                    clearCookie('customername');
-                    clearCookie('customerpass');
+                    showDefault('fail');
                 }
-                window.location.href = result.url;
+
             },
             fail:function (msg) {
                 showDefault('fail');
@@ -82,7 +91,9 @@ $(function(){
      */
 
 
-     //手机号验证
+    /**
+     * ================================================手机号验证start=================================================
+     */
      $(document).on('click','#send_yz',function(){
          var findPwdNum = $('#findPwd_num').val();
          var reg = /^1[3|4|5|7|8]\d{9}$/;
@@ -129,7 +140,7 @@ $(function(){
              data:{validCode:""},
              success:function (result){
                  if(result.code == 1){
-                     window.location.href=result.url;
+                     window.location.href="../login/rePassword.html";
                  }else {
                      clearCount("send_yz");
                      alert(result.msg);
@@ -138,8 +149,51 @@ $(function(){
          })
 
      });
+    /**
+     * ================================================手机号验证end=================================================
+     */
 
 
+     /**
+     * ================================================修改密码start=================================================
+     */
+    $(document).on('click','#reLoginIn',function(){
+        var newPwd = $('#newPwd').val().trim();
+        var reNewPwd = $('#reNewPwd').val().trim();
+        var regTest = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$/;
+        if (!newPwd) {
+            showDefault('fail_newPwd_empty');
+            return false;
+        }
+        if(!regTest.test(newPwd)){
+            showDefault('fail_newPwd_error');
+            return false;
+        }
+        if (!reNewPwd) {
+            showDefault('fail_reNewPwd_empty');
+            return false;
+        }
+        if(!regTest.test(reNewPwd)){
+            showDefault('fail_newPwd_error');
+            return false;
+        }
+        if(newPwd!=reNewPwd){
+            showDefault('fail_reNewPwd_error');
+            return false;
+        }
+        $.ajax({
+            url:"",
+            type:"POST",
+            data:{validCode:""},
+            success:function (result){
+                if(result.code == 1){
+                    window.location.href="./owner.html";
+                }else {
+                    alert(result.msg);
+                }
+            }
+        })
+    })
 
 });
 apiready = function(){
@@ -190,9 +244,33 @@ function showDefault(type){
                 duration:1000
             });
             break;
+        case "fail_newPwd_empty":
+            toast.fail({
+                title:"密码不得为空",
+                duration:1000
+            });
+            break;
+        case "fail_reNewPwd_empty":
+            toast.fail({
+                title:"确认密码不得为空",
+                duration:1000
+            });
+            break;
+        case "fail_newPwd_error":
+            toast.fail({
+                title:"密码需为（6-16）位数字或字母",
+                duration:1000
+            });
+            break;
+        case "fail_reNewPwd_error":
+            toast.fail({
+                title:"两次密码不一致",
+                duration:1000
+            });
+            break;
         case "fail":
             toast.fail({
-                title:"提交失败",
+                title:"用户名或密码错误",
                 duration:1000
             });
             break;

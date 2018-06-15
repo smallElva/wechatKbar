@@ -33,6 +33,7 @@
     <file url="file://$PROJECT_DIR$/chargeSet/charge.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/chargeSet/chargeSet.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/chargeSet/chargeSet.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/choose/choose-test.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/choose.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/choose.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/control/control.js" charset="UTF-8" />
@@ -40,21 +41,19 @@
     <file url="file://$PROJECT_DIR$/choose/haveSang/haveSang.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/haveSang/share.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/haveSongs/haveSongs.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/choose/haveSongs/list.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/hotSong/hotSong.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/language/language.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/language/language.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/language/language_page.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/choose/mtv/mtv.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/musicScore/musicScore.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/newSong/newSong.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/packages/packages.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/packages/packages.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/choose/packages/packages.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/search/search.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/singer/singer.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/singer/singerList.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/singer/singerPage.js" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/choose/singer/songs.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/choose/songName/songName.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/css/common.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/css/index.css" charset="UTF-8" />
@@ -62,6 +61,7 @@
     <file url="file://$PROJECT_DIR$/fix/fix.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/fix/fix.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/common-song.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/fastclick.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/index.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/share.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/login/login.css" charset="UTF-8" />

@@ -2,6 +2,7 @@
  * Created by enter on 2018/3/20.
  */
 $(function () {
+
     window.addEventListener("resize", function () {
         myChartLine.resize();
     });

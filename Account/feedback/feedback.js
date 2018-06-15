@@ -6,6 +6,8 @@ $(function () {
     $('#submitBtn').click(function () {
         var adviceTextarea=$('#adviceTextarea').val();
         var advicePhone=$('#advicePhone').val();
+        var radio=$('input[name="adviceWay"]');
+        var selectvalue=null;   //  selectvalue为radio中选中的值
         var reg = /^1[3|4|5|7|8]\d{9}$/;
         if(!adviceTextarea){
             showDefault('fail_advice_empty');
@@ -19,7 +21,37 @@ $(function () {
             showDefault('fail_phone_error');
             return false;
         }
-        $("#adviceForm").submit();
+
+        for(var i=0;i<radio.length;i++){
+            if(radio[i].checked==true) {
+                selectvalue=i+1;
+                break;
+            }
+        }
+        var ajaxData={
+            "openId":"oVdmm1YNhZFSkuA-pZltU5Kt4BcY",
+            "content":adviceTextarea,
+            "phone":advicePhone,
+            "propagate":selectvalue
+        };
+        $.ajax({
+            type:'POST',
+            url :'http://wechat.uniquemusic.cn/lackSong/insertOpinion',
+            data:JSON.stringify(ajaxData),
+            contentType :'application/json',
+            dataType:'json',
+            success :function(msg) {
+                showDefault('success');
+                setTimeout(function(){
+                    // $("#adviceForm").submit();
+                    window.location.href="/Account/feedback/feedback.html";
+                }, 1000);
+            },
+            error :function(e) {
+                showDefault('fail');
+            }
+        })
+
     });
     //缺歌反馈点击提交
     $('#submitBtnSong').click(function () {
@@ -33,14 +65,37 @@ $(function () {
             showDefault('fail_singer_empty');
             return false;
         }
-        $("#lackSongForm").submit();
+
+        var ajaxSongData={
+            "openId":"oVdmm1YNhZFSkuA-pZltU5Kt4BcY",
+            "songName":songName,
+            "singerName":singerName
+        };
+        $.ajax({
+            type:'POST',
+            url :'http://wechat.uniquemusic.cn/lackSong/insertOpinion',
+            data:JSON.stringify(ajaxSongData),
+            contentType :'application/json',
+            dataType:'json',
+            success :function(msg) {
+                showDefault('success');
+                setTimeout(function(){
+                    // $("#lackSongForm").submit();
+                    window.location.href="/Account/feedback/feedback.html";
+                }, 1000);
+            },
+            error :function(e) {
+                showDefault('fail');
+            }
+        })
+
     });
     //版权申诉点击提交
     $('#copySubmitBtn').click(function () {
         var copySongName=$('#copySongName').val();
         var copySingerName=$('#copySingerName').val();
         var copyPhoneNum=$('#copyPhoneNum').val();
-        var reg = /^1[3|4|5|7|8]\d{9}$/;
+        var regs = /^1[3|4|5|7|8]\d{9}$/;
         if(!copySongName){
             showDefault('fail_song_empty');
             return false;
@@ -53,11 +108,35 @@ $(function () {
             showDefault('fail_phone_empty');
             return false;
         }
-        if(!reg.test(copyPhoneNum)){
+        if(!regs.test(copyPhoneNum)){
             showDefault('fail_phone_error');
             return false;
         }
-        $("#copyForm").submit();
+
+        var ajaxCopyData={
+            "openId":"oVdmm1YNhZFSkuA-pZltU5Kt4BcY",
+            "songName":copySongName,
+            "singerName":copySingerName,
+            "phone":copyPhoneNum
+        };
+        $.ajax({
+            type:'POST',
+            url :'http://wechat.uniquemusic.cn/lackSong/insertCopyrightAppeal',
+            data:JSON.stringify(ajaxCopyData),
+            contentType :'application/json',
+            dataType:'json',
+            success :function(msg) {
+                showDefault('success');
+                setTimeout(function(){
+                    // $("#copyForm").submit();
+                    window.location.href="/Account/feedback/feedback.html";
+                }, 1000);
+            },
+            error :function(e) {
+                showDefault('fail');
+            }
+        })
+
     })
 });
 
@@ -106,7 +185,7 @@ function showDefault(type){
 
         case "fail":
             toast.fail({
-                title:"提交失败",
+                title:"提交失败，请重试！",
                 duration:1000
             });
             break;

@@ -46,7 +46,7 @@ var vm = new Vue({
 
             $.ajax({
                 type: "GET",
-                url: "http://yangleo.ittun.com/song/getSingerId?singerId="+id,
+                url: "http://wechat.uniquemusic.cn/song/getSingerId?singerId="+id,
                 data: {pageNum: page.num,pageSize: page.size},
                 dataType: "json",
                 xhrFields: {
@@ -72,19 +72,50 @@ var vm = new Vue({
                 }
             });
         },
-        choose: function (id,e) {
-            var el = e.currentTarget;
+        choose: function (obj,id) {
             //拿到存储在sessionStorage中的设备号
             var deviceId =sessionStorage.getItem("deviceId");
-            var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=123456");
-            // var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
-            websocket.onopen = function () {
-                var songObj = {"action":"select", "value":id, "serialNo": "123456"}; //定义选歌对象
-                var songJson = JSON.stringify(songObj); //定义选歌JSON
-                websocket.send(songJson);
+            var websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?serialNo=123456");
+            // var websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?serialNo=" +deviceId);
+            websocket.onmessage = function(msg) {
+                var deal = JSON.parse(msg.data).action;
+                if(deal && deal!=''){
+                    var songObj = {"action":"select", "value":id, "serialNo": "123456"}; //定义选歌对象
+                    var songJson = JSON.stringify(songObj); //定义选歌JSON
+                    websocket.send(songJson);
+                    obj.sfdg=true; //点击选歌将数据的选择状态改变
+                }else{
+                    dialog.alert({
+                        title:"是否购买套餐畅享K歌体验？",
+                        buttons:['取消','确定']
+                    },function(ret){
+                        if(ret.buttonIndex==2){ //点击确认后跳转到购买套餐页面
+                            wx.scanQRCode();
+                        }
+                    });
+                }
             };
-
-            $(el).find('.select-song-icon').removeClass('icon-maikefeng').addClass('icon-maikefeng-dianji red-icon') //点击选歌将数据的选择状态改变
+        },
+        controls:function () {
+            //拿到存储在sessionStorage中的设备号
+            var deviceId =sessionStorage.getItem("deviceId");
+            var websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?serialNo=123456");
+            // var websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?serialNo=" +deviceId);
+            websocket.onmessage = function(msg) {
+                var deal = JSON.parse(msg.data).action;
+                if(deal && deal!=''){
+                    window.location.href = "../control/control.html";
+                }else{
+                    dialog.alert({
+                        title:"是否购买套餐畅享K歌体验？",
+                        buttons:['取消','确定']
+                    },function(ret){
+                        if(ret.buttonIndex==2){ //点击确认后跳转到购买套餐页面
+                            wx.scanQRCode();
+                        }
+                    });
+                }
+            };
         }
     }
 });
@@ -109,3 +140,12 @@ if(vm.mescroll.os.ios){
         }
     }
 }
+
+apiready = function(){
+    api.parseTapmode();
+};
+
+/***
+ * 初始化弹窗
+ */
+var dialog = new auiDialog();

@@ -16,7 +16,7 @@ var vmm=new Vue({
         showData: function () {
             $.ajax({
                 type: 'GET',
-                url: "http://yangleo.ittun.com/singerType/list",
+                url: "http://wechat.uniquemusic.cn/singerType/list",
                 dataType: "json",
                 xhrFields: {
                     withCredentials: true

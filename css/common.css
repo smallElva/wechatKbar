@@ -31,7 +31,8 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
+    background: #fff;
 }
 .content{
     padding-top: 2.75rem;
@@ -44,14 +45,14 @@ body{
 }
 /*头部*/
 .backColor{
-    background: #373b3e;
-}
-.header-radius{
     background: #fff;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    position: relative;
 }
+/*.header-radius{*/
+    /*background: #fff;*/
+    /*border-top-left-radius: 1rem;*/
+    /*border-top-right-radius: 1rem;*/
+    /*position: relative;*/
+/*}*/
 .prev-div{
     height: 2.4rem;
     line-height: 2.4rem;

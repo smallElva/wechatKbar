@@ -88,7 +88,7 @@ $(function () {
         setTimeout(function () {
             $.ajax({
                 type: 'GET',
-                url: 'nearby.json',
+                url: '/nearby/nearby.json',
 //		                url: '../res/pdlist1.json?pdType='+pdType+'&num='+pageNum+'&size='+pageSize,
                 dataType: 'json',
                 success: function(data){
@@ -109,6 +109,6 @@ $(function () {
 });
 
 function getStoreInfo(id) {
-    window.location.href = "./nearbyMap.html?id=" + id;
+    window.location.href = "/nearby/nearbyMap.html?id=" + id;
 }
 

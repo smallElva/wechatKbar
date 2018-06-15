@@ -2,6 +2,7 @@
  * Created by enter on 2018/3/22.
  */
 $(function () {
+
     $('#closeMask').click(function () {
         $('#mask').hide();
     });
@@ -18,7 +19,7 @@ $(function () {
     var websocket = null;
     //判断当前浏览器是否支持WebSocket
     if ('WebSocket' in window) {
-        websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
+        websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?serialNo=" +deviceId);
     }
     else {
         alert('当前浏览器 Not support websocket')

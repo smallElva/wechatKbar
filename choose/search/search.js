@@ -43,7 +43,7 @@ var vm = new Vue({
             var self = this;
             $.ajax({
                 type: "GET",
-                url: 'http://yangleo.ittun.com/song/searchSongSinger',
+                url: 'http://wechat.uniquemusic.cn/song/searchSongSinger',
                 data: {type:type,pageNum: page.num,pageSize: page.size,searchKey:curWord},
                 dataType: "json",
                 xhrFields: {
@@ -67,19 +67,29 @@ var vm = new Vue({
                 }
             });
         },
-        choose: function (id,e) {
-            var el = e.currentTarget;
+        choose: function (obj,id) {
             //拿到存储在sessionStorage中的设备号
             var deviceId =sessionStorage.getItem("deviceId");
-            var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=123456");
-            // var websocket = new WebSocket("ws://192.168.1.116:8086/webSocketServer?serialNo=" +deviceId);
-            websocket.onopen = function () {
-                var songObj = {"action":"select", "value":id, "serialNo": "123456"}; //定义选歌对象
-                var songJson = JSON.stringify(songObj); //定义选歌JSON
-                websocket.send(songJson);
+            var websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?serialNo=123456");
+            // var websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?serialNo=" +deviceId);
+            websocket.onmessage = function(msg) {
+                var deal = JSON.parse(msg.data).action;
+                if(deal && deal!=''){
+                    var songObj = {"action":"select", "value":id, "serialNo": "123456"}; //定义选歌对象
+                    var songJson = JSON.stringify(songObj); //定义选歌JSON
+                    websocket.send(songJson);
+                    obj.sfdg=true; //点击选歌将数据的选择状态改变
+                }else{
+                    dialog.alert({
+                        title:"是否购买套餐畅享K歌体验？",
+                        buttons:['取消','确定']
+                    },function(ret){
+                        if(ret.buttonIndex==2){ //点击确认后跳转到购买套餐页面
+                            wx.scanQRCode();
+                        }
+                    });
+                }
             };
-
-            $(el).find('.select-song-icon').removeClass('icon-maikefeng').addClass('icon-maikefeng-dianji red-icon') //点击选歌将数据的选择状态改变
         },
         getSingerSongInfo: function(id) {
             window.location.href = "../singer/singerPage.html?id=" + id;
@@ -93,30 +103,41 @@ var curWord=null;
 //定义搜索类型，type: 0表示歌曲，1表示歌手；初始化为歌曲
 var type=0;
 //搜索按钮
-/*移动端按下软键盘搜索按钮触发搜索事件*/
-$("#search-input").on('keypress',function(e) {
-    var keycode = e.keyCode;
-    if(keycode=='13') {
-        e.preventDefault();
-        searchSongs();
-    }
-});
-/*点击搜索符号触发搜索事件*/
-$(".aui-searchbar .icon-sousuo").click(function(){
-    searchSongs();
-});
-/*搜索歌曲方法*/
-function searchSongs() {
-    var keyword= $("#search-input").val();
-    if(keyword){
-        curWord=keyword; //更新关键词
+// /*移动端按下软键盘搜索按钮触发搜索事件*/
+// $("#search-input").on('keypress',function(e) {
+//     var keycode = e.keyCode;
+//     if(keycode=='13') {
+//         e.preventDefault();
+//         searchSongs();
+//     }
+// });
+// /*点击搜索符号触发搜索事件*/
+// $(".aui-searchbar .icon-sousuo").click(function(){
+//     searchSongs();
+// });
+// /*搜索歌曲方法*/
+// function searchSongs() {
+//     var keyword= $("#search-input").val();
+//     if(keyword){
+//         curWord=keyword; //更新关键词
+//         vm.mescroll.resetUpScroll(); //重新搜索,重置列表数据
+//     }
+// }
+$(function () {
+    /*切换歌曲歌手方法*/
+    $('#tab .aui-tab-item').click(function () {
+        $(this).addClass('aui-active').siblings().removeClass('aui-active');
+        var uid = parseInt($(this).attr('uid'));
+        type=uid; //更新搜索类型
         vm.mescroll.resetUpScroll(); //重新搜索,重置列表数据
-    }
-}
-/*切换歌曲歌手方法*/
-$('#tab .aui-tab-item').click(function () {
-    $(this).addClass('aui-active').siblings().removeClass('aui-active');
-    var uid = parseInt($(this).attr('uid'));
-    type=uid; //更新搜索类型
-    vm.mescroll.resetUpScroll(); //重新搜索,重置列表数据
+    });
 });
+
+
+apiready = function(){
+    api.parseTapmode();
+};
+/***
+ * 初始化弹窗
+ */
+var dialog = new auiDialog();

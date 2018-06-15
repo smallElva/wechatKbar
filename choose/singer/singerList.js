@@ -1,6 +1,7 @@
 /**
  * Created by enter on 2018/4/2.
  */
+var curWord = null;//定义一个搜索的关键词，初始化为空
 //创建vue对象
 var vm = new Vue({
     el: "#singerList-app",
@@ -42,7 +43,7 @@ var vm = new Vue({
             var singerTypeId = href.split('singerTypeId=')[1];
             $.ajax({
                 type: "GET",
-                url: "http://yangleo.ittun.com/singer/searchList",
+                url: "http://wechat.uniquemusic.cn/singer/searchList",
                 data: {singerTypeId:singerTypeId,pageNum: page.num,pageSize: page.size,searchKey:curWord},
                 dataType: "json",
                 xhrFields: {
@@ -73,25 +74,25 @@ var vm = new Vue({
 });
 
 
-var curWord = null;//定义一个搜索的关键词，初始化为空
+
 /*移动端按下软键盘搜索按钮触发搜索事件*/
-$("#search-input").on('keypress',function(e) {
-    var keycode = e.keyCode;
-    if(keycode=='13') {
-        e.preventDefault();
-        searchSongs();
-    }
-});
-/*点击搜索符号触发搜索事件*/
-$(".aui-searchbar .icon-sousuo").click(function(){
-    searchSongs();
-});
-/*搜索歌曲方法*/
-function searchSongs() {
-    var keyword= $("#search-input").val();
-    if(keyword) {
-        //重置列表数据
-        curWord=keyword; //更新关键词
-        vm.mescroll.resetUpScroll();
-    }
-}
+// $("#search-input").on('keypress',function(e) {
+//     var keycode = e.keyCode;
+//     if(keycode=='13') {
+//         e.preventDefault();
+//         searchSongs();
+//     }
+// });
+// /*点击搜索符号触发搜索事件*/
+// $(".aui-searchbar .icon-sousuo").click(function(){
+//     searchSongs();
+// });
+// /*搜索歌曲方法*/
+// function searchSongs() {
+//     var keyword= $("#search-input").val();
+//     if(keyword) {
+//         //重置列表数据
+//         curWord=keyword; //更新关键词
+//         vm.mescroll.resetUpScroll();
+//     }
+// }

@@ -42,7 +42,7 @@
             <div id="upscrollWarp">
                 <!--展示上拉加载的数据列表-->
                 <ul class="aui-list aui-media-list song-list" id="dataList" v-cloak>
-                    <li class="aui-list-item aui-list-item-middle" v-for="item in songlist" v-on:click="choose(item.mmvId,$event)">
+                    <li class="aui-list-item aui-list-item-middle" v-for="item in songlist" v-on:click="choose(item,item.mmvId)">
                         <div class="aui-media-list-item-inner">
                             <div class="aui-list-item-inner">
                                 <div class="aui-list-item-text">
@@ -56,9 +56,8 @@
                                         <div class="perSingerName">{{item.singerName}}</div>
                                     </div>
                                     <div class="aui-list-item-right">
-                                        <i class="iconfont icon-maikefeng select-song-icon"></i>
-                                        <!--<i class="iconfont icon-maikefeng-dianji red-icon select-song-icon" v-if="item.hasChoose"></i>-->
-                                        <!--<i class="iconfont icon-maikefeng select-song-icon" v-else></i>-->
+                                        <i class="iconfont icon-maikefeng-dianji red-icon select-song-icon" v-if="item.sfdg"></i>
+                                        <i class="iconfont icon-maikefeng select-song-icon" v-else></i>
                                     </div>
                                 </div>
                             </div>
@@ -67,10 +66,27 @@
                 </ul>
             </div>
         </div>
+        <footer class="aui-bar aui-bar-tab choose-footer" id="footer">
+            <a class="aui-bar-tab-item" href="../choose.html">
+                <i class="iconfont icon-home"></i>
+                <div class="aui-bar-tab-label">首页</div>
+            </a>
+            <a class="aui-bar-tab-item" v-on:click="controls">
+                <i class="iconfont icon-yaokong"></i>
+                <div class="aui-bar-tab-label">遥控</div>
+            </a>
+        </footer>
     </section>
 <script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    define = null;
+    require = null;
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script type="text/javascript" src="../../js/mescroll.min.js"></script>
 <script type="text/javascript" src="../../js/api.js"></script>
+<script type="text/javascript" src="../../js/aui-dialog.js"></script>
+<script type="text/javascript" src="../../wx/wx_share.js"></script>
 <script type="text/javascript" src="../../js/vue.min.js"></script>
 <script type="text/javascript" src="../../js/common-song.js"></script>
 <script type="text/javascript" src="singerPage.js"></script>
