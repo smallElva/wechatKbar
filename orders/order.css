@@ -49,3 +49,16 @@
     font-size: .8rem;
     color: #ff6642;
 }
+
+.order-list-item-media img {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+.noData{
+    display: none;
+    padding: 5rem 0;
+    font-size: 0.8rem;
+    color: #2e2e2e;
+    text-align: center;
+    background: #fff;
+}

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://E:/sellelva/src/components/cartcontrol/cartcontrol.vue" charset="UTF-8" />
+    <file url="file://E:/sellelva/src/components/shopcart/shopcart.vue" charset="UTF-8" />
+    <file url="file://E:/sellelva/src/components/star/star.vue" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Account/account.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Account/feedback/feedback.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Account/myOrder.js" charset="UTF-8" />

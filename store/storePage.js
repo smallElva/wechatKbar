@@ -6,10 +6,10 @@
 var store =
     {
         id: "0",
-        storeImg: "../img/store/store.png",
+        picture: "../img/store/store.png",
         storeName: "...",
-        storeCall: "...",
-        storeAdd: "...",
+        storePhone: "...",
+        address: "...",
         storePage_a: ""
     };
 new Vue({
@@ -24,11 +24,16 @@ new Vue({
             var href = location.href;
             var id = href.split('id=')[1];
             $.ajax({
-                url: 'Data/'+ id,
-                type: "GET",
-                success: function (json) {
-                    json = JSON.parse(json);
-                    $.extend(true, store, json);
+                type: 'post',
+                url: "http://192.168.1.121:8082/store/getStoreList",
+                contentType: 'application/json',
+                data:JSON.stringify({"id": id}),
+                dataType: "json",
+                success: function (result) {
+                    var lists = JSON.parse(result.data);
+                    for (var i = 0; i < lists.list.length; i++) {
+                        $.extend(true, store, lists.list[0]);
+                    }
                 }
             });
         },
@@ -46,11 +51,14 @@ apiready = function () {
     api.parseTapmode();
 };
 var dialog = new auiDialog();
-
+var nameVal = $('.store_name');
+var callVal = $('.store_call');
+var addVal = $('.store_add');
+var href = location.href;
+var id = href.split('id=')[1];
 function openDialog(type){
     switch (type) {
         case "store_name":
-            var nameVal = $('.store_name');
             dialog.prompt({
                 title:"门店名称",
                 text:nameVal.html(),
@@ -58,14 +66,22 @@ function openDialog(type){
                 buttons:['取消','确定']
             },function(ret){
                 if(ret.buttonIndex == 2 && !(ret.text=="")){
-                    nameVal.html(ret.text);
+                    $.ajax({
+                        type: 'post',
+                        url: "http://192.168.1.121:8082/store/updateStoreById",
+                        contentType: 'application/json',
+                        data:JSON.stringify({"id": id,"name": ret.text}),
+                        dataType: "json",
+                        success: function (result) {
+                            nameVal.html(ret.text);
+                        }
+                    });
                 }else{
                     nameVal.html(nameVal.html());
                 }
             });
             break;
         case "store_call":
-            var callVal = $('.store_call');
             dialog.prompt({
                 title:"联系电话",
                 text:callVal.html(),
@@ -73,14 +89,22 @@ function openDialog(type){
                 buttons:['取消','确定']
             },function(ret){
                 if(ret.buttonIndex == 2 && !(ret.text=="")){
-                    callVal.html(ret.text);
+                    $.ajax({
+                        type: 'post',
+                        url: "http://192.168.1.121:8082/store/updateStoreById",
+                        contentType: 'application/json',
+                        data:JSON.stringify({"id": id,"phone": ret.text}),
+                        dataType: "json",
+                        success: function (result) {
+                            callVal.html(ret.text);
+                        }
+                    });
                 } else{
                     callVal.html(callVal.html());
                 }
             });
             break;
         case "store_add":
-            var addVal = $('.store_add');
             dialog.prompt({
                 title:"门店地址",
                 text:addVal.html(),
@@ -88,7 +112,16 @@ function openDialog(type){
                 buttons:['取消','确定']
             },function(ret){
                 if(ret.buttonIndex == 2 && !(ret.text=="")){
-                    addVal.html(ret.text);
+                    $.ajax({
+                        type: 'post',
+                        url: "http://192.168.1.121:8082/store/updateStoreById",
+                        contentType: 'application/json',
+                        data:JSON.stringify({"id": id,"address": ret.text}),
+                        dataType: "json",
+                        success: function (result) {
+                            addVal.html(ret.text);
+                        }
+                    });
                 }else{
                     addVal.html(addVal.html());
                 }
@@ -99,3 +132,4 @@ function openDialog(type){
 
     }
 }
+

@@ -6,6 +6,7 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>套餐收费</title>
     <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/mescroll.min.css"/>
     <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_aelpphhcwr1qncdi.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
     <link rel="stylesheet" type="text/css" href="../chargeSet/charge.css" />
@@ -26,9 +27,9 @@
     <div class="aui-popup aui-popup-top order-popup-top store-right" id="store-top">
         <div class="aui-popup-arrow"></div>
         <div class="aui-popup-content">
-            <ul class="aui-list">
-                <li class="aui-list-item" v-for="item in stores" v-on:click="showStore">
-                    <div class="aui-list-item-inner bill-store-name" v-bind:aui="item.id">
+            <ul class="aui-list" v-cloak>
+                <li class="aui-list-item" v-for="item in stores" onclick="showStore(this)" v-bind:aui="item.id">
+                    <div class="aui-list-item-inner bill-store-name" >
                         {{item.storeName}}
                     </div>
                 </li>
@@ -46,38 +47,40 @@
         </div>
     </div>
     <section class="content-section">
-        <div class="aui-content-padded">
-            <div class="aui-grid">
-                <ul class="aui-row-padded chargeSet-list" id="chargeContent">
-                    <li class="aui-col-xs-6" v-for="chargeItem in charges">
-                        <div class="chargeSet-block">
-                            <div class="equip-num">设备号：<span>{{chargeItem.chargeEquipNum}}</span></div>
-                            <div class="equip-num">套餐类型：<span>{{chargeItem.chargeType}}</span></div>
-                            <div class="equip-num">价格（元）：<span>{{chargeItem.chargeMoney}}</span></div>
-                        </div>
-                    </li>
-                    <!--<li class="aui-col-xs-6">-->
-                    <!--<div class="chargeSet-block">-->
-                    <!--<div class="equip-num">设备号：<span>123456789</span></div>-->
-                    <!--<div class="equip-num">套餐类型：<span>单首</span></div>-->
-                    <!--<div class="equip-num">价格（元）：<span>50</span></div>-->
-                    <!--</div>-->
-                    <!--</li>-->
-                    <!--<li class="aui-col-xs-6">-->
-                    <!--<div class="chargeSet-block">-->
-                    <!--<div class="equip-num">设备号：<span>123456789</span></div>-->
-                    <!--<div class="equip-num">套餐类型：<span>单首</span></div>-->
-                    <!--<div class="equip-num">价格（元）：<span>50</span></div>-->
-                    <!--</div>-->
-                    <!--</li>-->
-                    <!--<li class="aui-col-xs-6">-->
-                    <!--<div class="chargeSet-block">-->
-                    <!--<div class="equip-num">设备号：<span>123456789</span></div>-->
-                    <!--<div class="equip-num">套餐类型：<span>单首</span></div>-->
-                    <!--<div class="equip-num">价格（元）：<span>50</span></div>-->
-                    <!--</div>-->
-                    <!--</li>-->
-                </ul>
+        <div class="mescroll" id="mescroll">
+            <div class="aui-content-padded">
+                <div class="aui-grid">
+                    <ul class="aui-row-padded chargeSet-list" id="chargeContent">
+                        <li class="aui-col-xs-6" v-for="chargeItem in charges">
+                            <div class="chargeSet-block">
+                                <div class="equip-num">设备号：<span>{{chargeItem.deviceId}}</span></div>
+                                <div class="equip-num">套餐类型：<span v-if="chargeItem.type == 1">单首</span><span v-else-if="chargeItem.type == 2">{{chargeItem.mealDuration}}分钟</span></div>
+                                <div class="equip-num">价格（元）：<span>{{chargeItem.price}}</span></div>
+                            </div>
+                        </li>
+                        <!--<li class="aui-col-xs-6">-->
+                        <!--<div class="chargeSet-block">-->
+                        <!--<div class="equip-num">设备号：<span>123456789</span></div>-->
+                        <!--<div class="equip-num">套餐类型：<span>单首</span></div>-->
+                        <!--<div class="equip-num">价格（元）：<span>50</span></div>-->
+                        <!--</div>-->
+                        <!--</li>-->
+                        <!--<li class="aui-col-xs-6">-->
+                        <!--<div class="chargeSet-block">-->
+                        <!--<div class="equip-num">设备号：<span>123456789</span></div>-->
+                        <!--<div class="equip-num">套餐类型：<span>单首</span></div>-->
+                        <!--<div class="equip-num">价格（元）：<span>50</span></div>-->
+                        <!--</div>-->
+                        <!--</li>-->
+                        <!--<li class="aui-col-xs-6">-->
+                        <!--<div class="chargeSet-block">-->
+                        <!--<div class="equip-num">设备号：<span>123456789</span></div>-->
+                        <!--<div class="equip-num">套餐类型：<span>单首</span></div>-->
+                        <!--<div class="equip-num">价格（元）：<span>50</span></div>-->
+                        <!--</div>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -85,6 +88,7 @@
 
 <script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
 <script type="text/javascript" src="../js/api.js" ></script>
+<script type="text/javascript" src="../js/mescroll.min.js"></script>
 <script type="text/javascript" src="../js/vue.min.js" ></script>
 <script type="text/javascript" src="../chargeSet/chargeSet.js" ></script>
 

@@ -11,8 +11,9 @@
     border-bottom: none;
     background: none;
 }
-.store-list-item .store-list-img{
+.store-list-item .store-list-img img{
     width: 3.5rem;
+    height: 3.5rem;
 }
 .aui-list .store-list-name{
     font-size: .9rem;

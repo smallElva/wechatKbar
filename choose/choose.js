@@ -16,12 +16,9 @@ $(function () {
     var state = url.split('serialNo=')[1];
 
     //获取设备号，存储在sessionStorage中；
-    if (typeof(Storage) !== "undefined") {
-        sessionStorage.setItem('deviceId',state);
-    }
-    else{
-        sessionStorage.setItem('deviceId','');
-    }
+    var objStorage = {"deviceId": state,"openId": 123};
+    objStorage = JSON.stringify(objStorage); //转化为JSON字符串
+    localStorage.setItem("resultStorage", objStorage);//返回{"deviceId": state,"openId": 123}
 
         /***
          * 请求判断用户登录状态和支付状态

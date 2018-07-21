@@ -22,12 +22,11 @@
         </div>
         <section class="content-section">
             <div class="store-img-div">
-                <img class="store-img" v-bind:src="storeImg">
-                <div class="choose-imgs">点击设置门店图片</div>
+                <img class="store-img" v-bind:src="picture">
             </div>
             <div class="grey-back">
                 <div class="aui-content aui-margin-b-15 store_page_content">
-                    <ul class="aui-list aui-media-list">
+                    <ul class="aui-list aui-media-list" v-cloak>
                         <li class="aui-list-item aui-list-item-middle">
                             <div class="aui-media-list-item-inner">
                                 <div class="aui-list-item-media icon-div">
@@ -49,7 +48,7 @@
                                 <div class="aui-list-item-inner aui-list-item-arrow">
                                     <div class="aui-list-item-text">
                                         <div class="aui-list-item-title aui-font-size-16 store-list-text">联系电话</div>
-                                        <div class="aui-list-item-right store_call" tapmode onclick="openDialog('store_call')">{{storeCall}}</div>
+                                        <div class="aui-list-item-right store_call" tapmode onclick="openDialog('store_call')">{{storePhone}}</div>
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +61,7 @@
                                 <div class="aui-list-item-inner aui-list-item-arrow">
                                     <div class="aui-list-item-text">
                                         <div class="aui-list-item-title aui-font-size-16 store-list-text">门店地址</div>
-                                        <div class="aui-list-item-right store_add" tapmode onclick="openDialog('store_add')">{{storeAdd}}</div>
+                                        <div class="aui-list-item-right store_add" tapmode onclick="openDialog('store_add')">{{address}}</div>
                                     </div>
                                 </div>
                             </div>

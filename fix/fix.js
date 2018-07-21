@@ -42,7 +42,28 @@ $(function () {
             showDefault('fail_advice_empty');
             return false;
         }
-        $("#fixForm").submit();
+        $.ajax({
+            url:"http://192.168.1.121:8082/apply/createRepair",
+            type:"POST",
+            contentType: 'application/json',
+            dataType: "json",
+            data:JSON.stringify({"ownerId":36,"contactName":contactName,"phone":contactPhone,"deviceId":fixEquipName,"content":fixWord}),
+            success:function(result){
+                if(result.status==200){
+                    showDefault('success');
+                    setTimeout(function(){
+                        window.location.href = "../index.html";
+                    }, 1000);
+                }else{
+                    showDefault('fail');
+                }
+
+            },
+            fail:function (msg) {
+                showDefault('fail');
+            }
+        });
+
     });
 
 });

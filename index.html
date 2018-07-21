@@ -91,17 +91,17 @@
         </div>
 
         <div id="upscrollWarp">
-            <ul class="aui-list aui-media-list aui-list-in" id="newsContent">
+            <ul class="aui-list aui-media-list aui-list-in" id="newsContent" v-cloak>
                 <li class="aui-list-item aui-list-item-middle" v-for="item in newslist" v-on:click="openNewsInfo(item.id)">
                     <div class="aui-media-list-item-inner">
                         <div class="aui-list-item-label-icon aui-list-item-label-circle">
-                            <div class="circle new-circle" v-if="item.type==1">
+                            <div class="circle new-circle" v-if="item.type===1">
                                 新
                             </div>
-                            <div class="circle gray-circle" v-else-if="item.type==2">
+                            <div class="circle gray-circle" v-else-if="item.type===2">
                                 已
                             </div>
-                            <div class="circle yellow-circle" v-else="item.type==0">
+                            <div class="circle yellow-circle" v-else="item.type===0">
                                 未
                             </div>
                         </div>
@@ -216,5 +216,6 @@
 <script type="text/javascript" src="js/vue.min.js"></script>
 <script type="text/javascript" src="newsJson.js"></script>
 <script type="text/javascript" src="owner.js"></script>
+
 </body>
 </html>

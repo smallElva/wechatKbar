@@ -75,7 +75,7 @@ $(function(){
                         clearCookie('customerpass');
                     }
                     $('#login-form').submit();
-                    window.location.href = "../owner.html";
+                    window.location.href = "../index.html";
                 }else{
                     showDefault('fail');
                 }
@@ -187,7 +187,7 @@ $(function(){
             data:{validCode:""},
             success:function (result){
                 if(result.code == 1){
-                    window.location.href="./owner.html";
+                    window.location.href="./index.html";
                 }else {
                     alert(result.msg);
                 }

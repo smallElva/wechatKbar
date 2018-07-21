@@ -15,10 +15,12 @@ var boxm=new Vue({
             var href = location.href;
             var id = href.split('id=')[1];
             $.ajax({
-                url: 'Data/boxes/'+ id +'.json',
-                type: "GET",
-                success: function (json) {
-                    var lists = json.list;
+                type: "POST",
+                url: 'http://192.168.1.121:8082/devices/getDevicesStateList/'+ id,
+                contentType: 'application/json',
+                dataType: "json",
+                success: function (result) {
+                    var lists = JSON.parse(result.data);
                     for (var i = 0; i < lists.length; i++) {
                         boxm.boxes.push(lists[i]);
                     }

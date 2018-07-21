@@ -6,6 +6,7 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>包厢状态</title>
     <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/mescroll.min.css"/>
     <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_i46qtuvyzsuac3di.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
     <link rel="stylesheet" type="text/css" href="../box/box.css" />
@@ -20,50 +21,53 @@
     </div>
     <section class="content-section">
         <div id="box-app">
-            <ul class="aui-content-padded aui-list aui-media-list box-list" id="box-content">
-                <li class="aui-list-item box-item" v-for="item in datas">
-                    <a class="aui-media-list-item-inner box-flex" v-on:click="openBoxInfo(event,item.id)">
-                        <div class="aui-list-item-inner box-div">
-                            <div class="aui-list-item-text">
-                                <div class="aui-list-item-title"><i class="iconfont icon-ditu box-store-icon"></i><span class="box-list-store">{{item.orderStoreName}}</span></div>
-                                <div class="aui-list-item-right box-state">消费中：<span>{{item.boxStateUseNum}}</span></div>
+            <div class="mescroll" id="mescroll">
+                <ul class="aui-content-padded aui-list aui-media-list box-list" id="box-content" v-cloak>
+                    <li class="aui-list-item box-item" v-for="item in datas">
+                        <a class="aui-media-list-item-inner box-flex" v-on:click="openBoxInfo(event,item.storeId)">
+                            <div class="aui-list-item-inner box-div">
+                                <div class="aui-list-item-text">
+                                    <div class="aui-list-item-title"><i class="iconfont icon-ditu box-store-icon"></i><span class="box-list-store">{{item.storeName}}</span></div>
+                                    <div class="aui-list-item-right box-state">消费中：<span>{{item.inUse}}</span></div>
+                                </div>
+                                <div class="aui-list-item-text">
+                                    <div class="aui-list-item-title box-status"><i class="iconfont icon-msnui-user"></i><span class="box-list-user">累计用户（人）：</span><span>{{item.useCount}}</span></div>
+                                    <div class="aui-list-item-right box-state">空闲中：<span>{{item.idle}}</span></div>
+                                </div>
+                                <div class="aui-list-item-text">
+                                    <div class="aui-list-item-title box-status"><i class="iconfont icon-qiandai"></i><span class="box-list-benefit">累计收益（元）：</span><span>{{item.priceSum}}</span></div>
+                                    <div class="aui-list-item-right box-state">维修中：<span>{{item.repair}}</span></div>
+                                </div>
                             </div>
-                            <div class="aui-list-item-text">
-                                <div class="aui-list-item-title box-status"><i class="iconfont icon-msnui-user"></i><span class="box-list-user">累计用户（人）：</span><span>{{item.boxListUsers}}</span></div>
-                                <div class="aui-list-item-right box-state">空闲中：<span>{{item.boxStateNoUseNum}}</span></div>
-                            </div>
-                            <div class="aui-list-item-text">
-                                <div class="aui-list-item-title box-status"><i class="iconfont icon-qiandai"></i><span class="box-list-benefit">累计收益（元）：</span><span>{{item.boxListBenefits}}</span></div>
-                                <div class="aui-list-item-right box-state">维修中：<span>{{item.boxStateFixNum}}</span></div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <!--<li class="aui-list-item box-item">-->
-                <!--<a class="aui-media-list-item-inner box-flex" href="#">-->
-                <!--<div class="aui-list-item-inner box-div">-->
-                <!--<div class="aui-list-item-text">-->
-                <!--<div class="aui-list-item-title"><i class="iconfont icon-ditu box-store-icon"></i><span class="box-list-store">坪洲四季城</span></div>-->
-                <!--<div class="aui-list-item-right box-state">消费中：<span>3</span></div>-->
-                <!--</div>-->
-                <!--<div class="aui-list-item-text">-->
-                <!--<div class="aui-list-item-title box-status"><i class="iconfont icon-msnui-user"></i><span class="box-list-user">累计用户（人）：</span><span>5000</span></div>-->
-                <!--<div class="aui-list-item-right box-state">空闲中：<span>0</span></div>-->
-                <!--</div>-->
-                <!--<div class="aui-list-item-text">-->
-                <!--<div class="aui-list-item-title box-status"><i class="iconfont icon-qiandai"></i><span class="box-list-benefit">累计收益（元）：</span><span>5000.00</span></div>-->
-                <!--<div class="aui-list-item-right box-state">维修中：<span>1</span></div>-->
-                <!--</div>-->
-                <!--</div>-->
-                <!--</a>-->
-                <!--</li>-->
-            </ul>
+                        </a>
+                    </li>
+                    <!--<li class="aui-list-item box-item">-->
+                    <!--<a class="aui-media-list-item-inner box-flex" href="#">-->
+                    <!--<div class="aui-list-item-inner box-div">-->
+                    <!--<div class="aui-list-item-text">-->
+                    <!--<div class="aui-list-item-title"><i class="iconfont icon-ditu box-store-icon"></i><span class="box-list-store">坪洲四季城</span></div>-->
+                    <!--<div class="aui-list-item-right box-state">消费中：<span>3</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="aui-list-item-text">-->
+                    <!--<div class="aui-list-item-title box-status"><i class="iconfont icon-msnui-user"></i><span class="box-list-user">累计用户（人）：</span><span>5000</span></div>-->
+                    <!--<div class="aui-list-item-right box-state">空闲中：<span>0</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="aui-list-item-text">-->
+                    <!--<div class="aui-list-item-title box-status"><i class="iconfont icon-qiandai"></i><span class="box-list-benefit">累计收益（元）：</span><span>5000.00</span></div>-->
+                    <!--<div class="aui-list-item-right box-state">维修中：<span>1</span></div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</a>-->
+                    <!--</li>-->
+                </ul>
+            </div>
         </div>
     </section>
 
 <script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
 <script type="text/javascript" src="../js/api.js" ></script>
+<script type="text/javascript" src="../js/mescroll.min.js"></script>
 <script type="text/javascript" src="../js/vue.min.js" ></script>
-<script type="text/javascript" src="../box/box-vue.js" ></script>
+<script type="text/javascript" src="box.js" ></script>
 </body>
 </html>

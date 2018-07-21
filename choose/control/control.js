@@ -8,18 +8,17 @@ $(function () {
     });
 
     //拿到存储在sessionStorage中的设备号
-    if (typeof(Storage) !== "undefined") {
-        var deviceId =sessionStorage.getItem("deviceId");
-    }
-    else{
-        deviceId=sessionStorage.getItem('deviceId');
-    }
+    var resultStorage =sessionStorage.getItem("resultStorage");
+    var deviceId = resultStorage.deviceId;
+    var openId = resultStorage.openId;
 
+    console.dir(deviceId);
+    console.dir(openId);
 
     var websocket = null;
     //判断当前浏览器是否支持WebSocket
     if ('WebSocket' in window) {
-        websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?serialNo=" +deviceId);
+        websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?deviceId="+deviceId+"&openId="+openId+"&type=wechat");
     }
     else {
         alert('当前浏览器 Not support websocket')
@@ -30,227 +29,374 @@ $(function () {
     };
 
 
-
-    var scoreObj = {"action":"score", "value":0, "serialNo": deviceId}; //定义评分对象
+    /**
+        点击评分按钮
+     */
+    var scoreObj = {"deviceId": deviceId}; //定义评分对象
     var scoreJson = JSON.stringify(scoreObj); //定义评分JSON
+    var scoreData = "msg_click_score:" + scoreJson;
     $('#score').click(function () {
-        websocket.send(scoreJson);
+        websocket.send(scoreData);
     });
 
-    var musical_note_obj = {"action":"musical_note", "value":0,"serialNo": deviceId}; //定义乐谱对象
+    /**
+        点击乐谱
+     */
+    var musical_note_obj = {"deviceId": deviceId}; //定义乐谱对象
     var musical_note_Json = JSON.stringify(musical_note_obj);//定义乐谱JSON
+    var musical_noteData = "msg_click_musicalnote:" + musical_note_Json;
     $('#musical_note').click(function () {
-        websocket.send(musical_note_Json);
+        websocket.send(musical_noteData);
     });
 
-    var jumpObj = {"action":"jump", "value":0,"serialNo": deviceId}; //定义跳过前奏对象
+    /**
+        点击跳过前奏
+     */
+    var jumpObj = {"deviceId": deviceId}; //定义跳过前奏对象
     var jumpJson = JSON.stringify(jumpObj);//定义跳过前奏JSON
+    var jumpData = "msg_click_jump:" + jumpJson;
     $('#jump').click(function () {
-        websocket.send(jumpJson);
+        websocket.send(jumpData);
     });
 
-    var replayObj = {"action":"replay", "value":0,"serialNo": deviceId}; //定义重唱对象
+    /**
+        点击重唱
+     */
+    var replayObj = {"deviceId": deviceId}; //定义重唱对象
     var replayJson = JSON.stringify(replayObj);//定义重唱JSON
+    var replayData = "msg_click_replay:" + replayJson;
     $('#replay').click(function () {
-        websocket.send(replayJson);
+        websocket.send(replayData);
     });
 
-    var playObj = {"action":"play", "value":0,"serialNo": deviceId}; //定义播放暂停对象
+    /**
+        点击播放暂停
+     */
+    var playObj = {"deviceId": deviceId}; //定义播放暂停对象
     var playJson = JSON.stringify(playObj);//定义播放暂停JSON
+    var playData = "msg_click_play:" + playJson;
     $('#play').click(function () {
-        websocket.send(playJson);
+        websocket.send(playData);
     });
 
-    var vocalObj = {"action":"vocal", "value":0,"serialNo": deviceId}; //定义原唱/伴唱对象
+    /**
+        点击原唱/伴唱
+     */
+    var vocalObj = {"deviceId": deviceId}; //定义原唱/伴唱对象
     var vocalJson = JSON.stringify(vocalObj);//定义原唱/伴唱JSON
+    var vocalData = "msg_click_vocal:" + vocalJson;
     $('#vocal').click(function () {
-        websocket.send(vocalJson);
+        websocket.send(vocalData);
     });
 
-    var cutObj = {"action":"cut", "value":0,"serialNo": deviceId}; //定义切歌对象
+    /**
+        点击切歌
+     */
+    var cutObj = {"deviceId": deviceId}; //定义切歌对象
     var cutJson = JSON.stringify(cutObj);//定义切歌JSON
+    var cutData = "msg_click_cut:" + cutJson;
     $('#cut').click(function () {
-        websocket.send(cutJson);
+        websocket.send(cutData);
     });
 
-    var musicMinusObj = {"action":"music_vol", "value":0,"serialNo": deviceId}; //定义音量减对象
+    /**
+       点击音量减
+     */
+    var musicMinusObj = {"deviceId": deviceId,"msg": 0}; //定义音量减对象
     var musicMinusJson = JSON.stringify(musicMinusObj);//定义音量减JSON
+    var musicMinusData = "msg_set_music_volume:" + musicMinusJson;
     $('#musicMinus').click(function () {
-        websocket.send(musicMinusJson);
+        websocket.send(musicMinusData);
     });
 
-    var musicPlusObj = {"action":"music_vol", "value":1,"serialNo": deviceId}; //定义音量加对象
+    /**
+        点击音量加
+     */
+    var musicPlusObj = {"deviceId": deviceId,"msg": 1}; //定义音量加对象
     var musicPlusJson = JSON.stringify(musicPlusObj);//定义音量加JSON
+    var musicPlusData = "msg_set_music_volume:" + musicPlusJson;
     $('#musicPlus').click(function () {
-        websocket.send(musicPlusJson);
+        websocket.send(musicPlusData);
     });
 
-    var micMinusObj = {"action":"mic_vol", "value":0,"serialNo": deviceId}; //定义麦克风减对象
+    /**
+        点击麦克风减
+     */
+    var micMinusObj = {"deviceId": deviceId,"msg": 0}; //定义麦克风减对象
     var micMinusJson = JSON.stringify(micMinusObj);//定义麦克风减JSON
+    var micMinusData = "msg_set_mic_volume:" + micMinusJson;
     $('#micMinus').click(function () {
-        websocket.send(micMinusJson);
+        websocket.send(micMinusData);
     });
 
-    var micPlusObj = {"action":"mic_vol", "value":1,"serialNo": deviceId}; //定义麦克风加对象
+    /**
+        点击麦克风加
+     */
+    var micPlusObj = {"deviceId": deviceId,"msg": 1}; //定义麦克风加对象
     var micPlusJson = JSON.stringify(micPlusObj);//定义麦克风加JSON
+    var micPlusData = "msg_set_mic_volume:" + micPlusJson;
     $('#micPlus').click(function () {
-        websocket.send(micPlusJson);
+        websocket.send(micPlusData);
     });
 
-    var atmosphere1Obj = {"action":"atmosphere", "value":0,"serialNo": deviceId}; //定义气氛口哨对象
+    /**
+        点击气氛口哨
+     */
+    var atmosphere1Obj = {"deviceId": deviceId,"msg": 0}; //定义气氛口哨对象
     var atmosphere1Json = JSON.stringify(atmosphere1Obj);//定义气氛口哨JSON
+    var atmosphere1Data = "msg_set_atmosphere:" + atmosphere1Json;
     $('#atmosphere1').click(function () {
-        websocket.send(atmosphere1Json);
+        websocket.send(atmosphere1Data);
     });
 
-    var atmosphere2Obj = {"action":"atmosphere", "value":1,"serialNo": deviceId}; //定义气氛欢呼对象
+    /**
+        点击气氛欢呼
+     */
+    var atmosphere2Obj = {"deviceId": deviceId,"msg": 1}; //定义气氛欢呼对象
     var atmosphere2Json = JSON.stringify(atmosphere2Obj);//定义气氛欢呼JSON
+    var atmosphere2Data = "msg_set_atmosphere:" + atmosphere2Json;
     $('#atmosphere2').click(function () {
-        websocket.send(atmosphere2Json);
+        websocket.send(atmosphere2Data);
     });
 
-    var atmosphere3Obj = {"action":"atmosphere", "value":2,"serialNo": deviceId}; //定义气氛鼓掌对象
+    /**
+        点击气氛鼓掌
+     */
+    var atmosphere3Obj = {"deviceId": deviceId,"msg": 2}; //定义气氛鼓掌对象
     var atmosphere3Json = JSON.stringify(atmosphere3Obj);//定义气氛鼓掌JSON
+    var atmosphere3Data = "msg_set_atmosphere:" + atmosphere3Json;
     $('#atmosphere3').click(function () {
-        websocket.send(atmosphere3Json);
+        websocket.send(atmosphere3Data);
     });
 
-    var atmosphere4Obj = {"action":"atmosphere", "value":3,"serialNo": deviceId}; //定义气氛倒彩对象
+    /**
+        点击气氛倒彩
+     */
+    var atmosphere4Obj = {"deviceId": deviceId,"msg": 3}; //定义气氛倒彩对象
     var atmosphere4Json = JSON.stringify(atmosphere4Obj);//定义气氛倒彩JSON
+    var atmosphere4Data = "msg_set_atmosphere:" + atmosphere4Json;
     $('#atmosphere4').click(function () {
-        websocket.send(atmosphere4Json);
+        websocket.send(atmosphere4Data);
     });
 
-    var instrument1Obj = {"action":"instrument", "value":0,"serialNo": deviceId}; //定义乐器默认对象
+    /**
+        点击乐器默认
+     */
+    var instrument1Obj = {"deviceId": deviceId,"msg": 0}; //定义乐器默认对象
     var instrument1Json = JSON.stringify(instrument1Obj);//定义乐器默认JSON
+    var instrument1Data = "msg_set_instrument:" + instrument1Json;
     $('#instrument1').click(function () {
-        websocket.send(instrument1Json);
+        websocket.send(instrument1Data);
     });
 
-    var instrument2Obj = {"action":"instrument", "value":1,"serialNo": deviceId}; //定义乐器手风琴对象
+    /**
+        点击乐器手风琴
+     */
+    var instrument2Obj = {"deviceId": deviceId,"msg": 1}; //定义乐器手风琴对象
     var instrument2Json = JSON.stringify(instrument2Obj);//定义乐器手风琴JSON
+    var instrument2Data = "msg_set_instrument:" + instrument2Json;
     $('#instrument2').click(function () {
-        websocket.send(instrument2Json);
+        websocket.send(instrument2Data);
     });
 
-    var instrument3Obj = {"action":"instrument", "value":2,"serialNo": deviceId}; //定义乐器口琴对象
+    /**
+        点击乐器口琴
+     */
+    var instrument3Obj = {"deviceId": deviceId,"msg": 2}; //定义乐器口琴对象
     var instrument3Json = JSON.stringify(instrument3Obj);//定义乐器口琴JSON
+    var instrument3Data = "msg_set_instrument:" + instrument3Json;
     $('#instrument3').click(function () {
-        websocket.send(instrument3Json);
+        websocket.send(instrument3Data);
     });
 
-    var instrument4Obj = {"action":"instrument", "value":3,"serialNo": deviceId}; //定义乐器尼龙吉他对象
+    /**
+        点击乐器尼龙吉他
+     */
+    var instrument4Obj = {"deviceId": deviceId,"msg": 3}; //定义乐器尼龙吉他对象
     var instrument4Json = JSON.stringify(instrument4Obj);//定义乐器尼龙吉他JSON
+    var instrument4Data = "msg_set_instrument:" + instrument4Json;
     $('#instrument4').click(function () {
-        websocket.send(instrument4Json);
+        websocket.send(instrument4Data);
     });
 
-    var instrument5Obj = {"action":"instrument", "value":4,"serialNo": deviceId}; //定义乐器小号对象
+    /**
+        点击乐器小号
+     */
+    var instrument5Obj = {"deviceId": deviceId,"msg": 4}; //定义乐器小号对象
     var instrument5Json = JSON.stringify(instrument5Obj);//定义乐器小号JSON
+    var instrument5Data = "msg_set_instrument:" + instrument5Json;
     $('#instrument5').click(function () {
-        websocket.send(instrument5Json);
+        websocket.send(instrument5Data);
     });
 
-    var instrument6Obj = {"action":"instrument", "value":5,"serialNo": deviceId}; //定义乐器萨克斯对象
+    /**
+        点击乐器萨克斯
+     */
+    var instrument6Obj = {"deviceId": deviceId,"msg": 5}; //定义乐器萨克斯对象
     var instrument6Json = JSON.stringify(instrument6Obj);//定义乐器萨克斯JSON
+    var instrument6Data = "msg_set_instrument:" + instrument6Json;
     $('#instrument6').click(function () {
-        websocket.send(instrument6Json);
+        websocket.send(instrument6Data);
     });
 
-    var instrument7Obj = {"action":"instrument", "value":6,"serialNo": deviceId}; //定义乐器双簧管对象
+    /**
+        点击乐器双簧管
+     */
+    var instrument7Obj = {"deviceId": deviceId,"msg": 6}; //定义乐器双簧管对象
     var instrument7Json = JSON.stringify(instrument7Obj);//定义乐器双簧管JSON
+    var instrument7Data = "msg_set_instrument:" + instrument7Json;
     $('#instrument7').click(function () {
-        websocket.send(instrument7Json);
+        websocket.send(instrument7Data);
     });
 
-    var instrument8Obj = {"action":"instrument", "value":7,"serialNo": deviceId}; //定义乐器单簧管对象
+    /**
+        点击乐器单簧管
+     */
+    var instrument8Obj = {"deviceId": deviceId,"msg": 7}; //定义乐器单簧管对象
     var instrument8Json = JSON.stringify(instrument8Obj);//定义乐器单簧管JSON
+    var instrument8Data = "msg_set_instrument:" + instrument8Json;
     $('#instrument8').click(function () {
-        websocket.send(instrument8Json);
+        websocket.send(instrument8Data);
     });
 
-    var instrument9Obj = {"action":"instrument", "value":8,"serialNo": deviceId}; //定义乐器长笛对象
+    /**
+        点击乐器长笛
+     */
+    var instrument9Obj = {"deviceId": deviceId,"msg": 8}; //定义乐器长笛对象
     var instrument9Json = JSON.stringify(instrument9Obj);//定义乐器长笛JSON
+    var instrument9Data = "msg_set_instrument:" + instrument9Json;
     $('#instrument9').click(function () {
-        websocket.send(instrument9Json);
+        websocket.send(instrument9Data);
     });
 
-    var instrument10Obj = {"action":"instrument", "value":9,"serialNo": deviceId}; //定义乐器陶笛对象
+    /**
+        点击乐器陶笛
+     */
+    var instrument10Obj = {"deviceId": deviceId,"msg": 9}; //定义乐器陶笛对象
     var instrument10Json = JSON.stringify(instrument10Obj);//定义乐器陶笛JSON
+    var instrument10Data = "msg_set_instrument:" + instrument10Json;
     $('#instrument10').click(function () {
-        websocket.send(instrument10Json);
+        websocket.send(instrument10Data);
     });
 
-    var keyMinusObj = {"action":"key", "value":0,"serialNo": deviceId}; //定义音调减对象
+    /**
+        点击音调减
+     */
+    var keyMinusObj = {"deviceId": deviceId,"msg": 0}; //定义音调减对象
     var keyMinusJson = JSON.stringify(keyMinusObj);//定义音调减JSON
+    var keyMinusData = "msg_set_key:" + keyMinusJson;
     $('#keyMinus').click(function () {
-        websocket.send(keyMinusJson);
+        websocket.send(keyMinusData);
     });
 
-    var keyPlusObj = {"action":"key", "value":1,"serialNo": deviceId}; //定义音调加对象
+    /**
+        点击音调加
+     */
+    var keyPlusObj = {"deviceId": deviceId,"msg": 1}; //定义音调加对象
     var keyPlusJson = JSON.stringify(keyPlusObj);//定义音调加JSON
+    var keyPlusData = "msg_set_key:" + keyPlusJson;
     $('#keyPlus').click(function () {
-        websocket.send(keyPlusJson);
+        websocket.send(keyPlusData);
     });
 
-    var keyOriObj = {"action":"key", "value":-1,"serialNo": deviceId}; //定义音调恢复默认对象
+    /**
+        点击音调恢复默认
+     */
+    var keyOriObj = {"deviceId": deviceId,"msg": -1}; //定义音调恢复默认对象
     var keyOriJson = JSON.stringify(keyOriObj);//定义音调恢复默认JSON
+    var keyOriData = "msg_set_key:" + keyOriJson;
     $('#keyOri').click(function () {
-        websocket.send(keyOriJson);
+        websocket.send(keyOriData);
     });
 
-    var tempoMinusObj = {"action":"tempo", "value":0,"serialNo": deviceId}; //定义速度减对象
+    /**
+        点击速度减
+     */
+    var tempoMinusObj = {"deviceId": deviceId,"msg": 0}; //定义速度减对象
     var tempoMinusJson = JSON.stringify(tempoMinusObj);//定义速度减JSON
+    var tempoMinusData = "msg_set_tempo:" + tempoMinusJson;
     $('#tempoMinus').click(function () {
-        websocket.send(tempoMinusJson);
+        websocket.send(tempoMinusData);
     });
 
-    var tempoPlusObj = {"action":"tempo", "value":1,"serialNo": deviceId}; //定义速度加对象
+    /**
+        点击速度加
+     */
+    var tempoPlusObj = {"deviceId": deviceId,"msg": 1}; //定义速度加对象
     var tempoPlusJson = JSON.stringify(tempoPlusObj);//定义速度加JSON
+    var tempoPlusData = "msg_set_tempo:" + tempoPlusJson;
     $('#tempoPlus').click(function () {
-        websocket.send(tempoPlusJson);
+        websocket.send(tempoPlusData);
     });
 
-    var tempoOriObj = {"action":"tempo", "value":-1,"serialNo": deviceId}; //定义速度恢复默认对象
+    /**
+        点击速度恢复默认
+     */
+    var tempoOriObj = {"deviceId": deviceId,"msg": -1}; //定义速度恢复默认对象
     var tempoOriJson = JSON.stringify(tempoOriObj);//定义速度恢复默认JSON
+    var tempoOriData = "msg_set_tempo:" + tempoOriJson;
     $('#tempoOri').click(function () {
-        websocket.send(tempoOriJson);
+        websocket.send(tempoOriData);
     });
 
-    var echoMinusObj = {"action":"echo", "value":0,"serialNo": deviceId}; //定义混响减对象
+    /**
+        点击混响减
+     */
+    var echoMinusObj = {"deviceId": deviceId,"msg": 0}; //定义混响减对象
     var echoMinusJson = JSON.stringify(echoMinusObj);//定义混响减JSON
+    var echoMinusData = "msg_set_echo:" + echoMinusJson;
     $('#echoMinus').click(function () {
-        websocket.send(echoMinusJson);
+        websocket.send(echoMinusData);
     });
 
-    var echoPlusObj = {"action":"echo", "value":1,"serialNo": deviceId}; //定义混响加对象
+    /**
+        点击混响加
+     */
+    var echoPlusObj = {"deviceId": deviceId,"msg": 1}; //定义混响加对象
     var echoPlusJson = JSON.stringify(echoPlusObj);//定义混响加JSON
+    var echoPlusData = "msg_set_echo:" + echoPlusJson;
     $('#echoPlus').click(function () {
-        websocket.send(echoPlusJson);
+        websocket.send(echoPlusData);
     });
 
-    var echoOriObj = {"action":"echo", "value":-1,"serialNo": deviceId}; //定义混响恢复默认对象
+    /**
+        点击混响恢复默认
+     */
+    var echoOriObj = {"deviceId": deviceId,"msg": -1}; //定义混响恢复默认对象
     var echoOriJson = JSON.stringify(echoOriObj);//定义混响恢复默认JSON
+    var echoOriData = "msg_set_echo:" + echoOriJson;
     $('#echoOri').click(function () {
-        websocket.send(echoOriJson);
+        websocket.send(echoOriData);
     });
 
-    var melodyMinusObj = {"action":"melody_vol", "value":0,"serialNo": deviceId}; //定义主旋律减对象
+    /**
+      点击主旋律减
+     */
+    var melodyMinusObj = {"deviceId": deviceId,"msg": 0}; //定义主旋律减对象
     var melodyMinusJson = JSON.stringify(melodyMinusObj);//定义主旋律减JSON
+    var melodyMinusData = "msg_set_melody_volume:" + melodyMinusJson;
     $('#melodyMinus').click(function () {
-        websocket.send(melodyMinusJson);
+        websocket.send(melodyMinusData);
     });
 
-    var melodyPlusObj = {"action":"melody_vol", "value":1,"serialNo": deviceId}; //定义主旋律加对象
+    /**
+        点击主旋律加
+     */
+    var melodyPlusObj = {"deviceId": deviceId,"msg": 1}; //定义主旋律加对象
     var melodyPlusJson = JSON.stringify(melodyPlusObj);//定义主旋律加JSON
+    var melodyPlusData = "msg_set_melody_volume:" + melodyPlusJson;
     $('#melodyPlus').click(function () {
-        websocket.send(melodyPlusJson);
+        websocket.send(melodyPlusData);
     });
 
-    var melodyOriObj = {"action":"melody_vol", "value":-1,"serialNo": deviceId}; //定义主旋律恢复默认对象
+    /**
+        点击主旋律恢复默认
+     */
+    var melodyOriObj = {"deviceId": deviceId,"msg": -1}; //定义主旋律恢复默认对象
     var melodyOriJson = JSON.stringify(melodyOriObj);//定义主旋律恢复默认JSON
+    var melodyOriData = "msg_set_melody_volume:" + melodyOriJson;
     $('#melodyOri').click(function () {
-        websocket.send(melodyOriJson);
+        websocket.send(melodyOriData);
     });
 });
 

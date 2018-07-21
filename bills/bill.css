@@ -5,7 +5,7 @@
 }
 /*列表*/
 .bill-mescroll{
-    top: 5.75rem;
+    top: 11rem;
 }
 /*ios使用sticky样式实现*/
 .nav-sticky-bill{
@@ -145,6 +145,15 @@
     padding: 0.4rem 0.75rem;
     border-bottom: 1px solid #f2f2f2;
 }
-.order-list-item-media{
-    width: 4rem;
+.order-list-item-media img{
+    width: 3.5rem;
+    height: 3.5rem;
+}
+.noData{
+    display: none;
+    padding: 5rem 0;
+    font-size: 0.8rem;
+    color: #2e2e2e;
+    text-align: center;
+    background: #fff;
 }

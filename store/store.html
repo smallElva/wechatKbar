@@ -6,6 +6,7 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>门店管理</title>
     <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/mescroll.min.css"/>
     <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_546112_aelpphhcwr1qncdi.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
     <link rel="stylesheet" type="text/css" href="../store/store.css" />
@@ -20,43 +21,46 @@
 </div>
 <section class="content-section">
     <div id="store-app">
-        <ul class="aui-content-padded aui-list aui-media-list store-list" id="storeContent">
-            <li class="aui-list-item aui-list-item-middle store-list-item" v-for="item in datas">
-                <a class="aui-media-list-item-inner" v-on:click="openStoreInfo(event,item.id)">
-                    <div class="aui-list-item-media store-list-img">
-                        <img v-bind:src="item.storeImg" class="aui-img-round aui-list-img-sm">
-                    </div>
-                    <div class="aui-list-item-inner">
-                        <div class="aui-list-item-text">
-                            <div class="aui-list-item-title store-list-name">{{item.storeName}}</div>
+        <div class="mescroll" id="mescroll">
+            <ul class="aui-content-padded aui-list aui-media-list store-list" id="storeContent" v-cloak>
+                <li class="aui-list-item aui-list-item-middle store-list-item" v-for="item in datas">
+                    <a class="aui-media-list-item-inner" v-on:click="openStoreInfo(event,item.id)">
+                        <div class="aui-list-item-media store-list-img">
+                            <img :src="item.picture" class="aui-img-round aui-list-img-sm">
                         </div>
-                        <div class="aui-list-item-text store-list-add">
-                            {{item.storeAdd}}
+                        <div class="aui-list-item-inner">
+                            <div class="aui-list-item-text">
+                                <div class="aui-list-item-title store-list-name">{{item.storeName}}</div>
+                            </div>
+                            <div class="aui-list-item-text store-list-add">
+                                {{item.address}}
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </li>
-            <!--<li class="aui-list-item aui-list-item-middle store-list-item">-->
-            <!--<a class="aui-media-list-item-inner" href="#">-->
-            <!--<div class="aui-list-item-media store-list-img">-->
-            <!--<img src="../img/tx.jpg" class="aui-img-round aui-list-img-sm">-->
-            <!--</div>-->
-            <!--<div class="aui-list-item-inner">-->
-            <!--<div class="aui-list-item-text">-->
-            <!--<div class="aui-list-item-title store-list-name">天虹店</div>-->
-            <!--</div>-->
-            <!--<div class="aui-list-item-text store-list-add">-->
-            <!--广东省深圳市宝安区西乡街道天虹商城3楼-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</a>-->
-            <!--</li>-->
-        </ul>
+                    </a>
+                </li>
+                <!--<li class="aui-list-item aui-list-item-middle store-list-item">-->
+                <!--<a class="aui-media-list-item-inner" href="#">-->
+                <!--<div class="aui-list-item-media store-list-img">-->
+                <!--<img src="../img/tx.jpg" class="aui-img-round aui-list-img-sm">-->
+                <!--</div>-->
+                <!--<div class="aui-list-item-inner">-->
+                <!--<div class="aui-list-item-text">-->
+                <!--<div class="aui-list-item-title store-list-name">天虹店</div>-->
+                <!--</div>-->
+                <!--<div class="aui-list-item-text store-list-add">-->
+                <!--广东省深圳市宝安区西乡街道天虹商城3楼-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</a>-->
+                <!--</li>-->
+            </ul>
+        </div>
     </div>
 </section>
 
 <script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
 <script type="text/javascript" src="../js/api.js" ></script>
+<script type="text/javascript" src="../js/mescroll.min.js"></script>
 <script type="text/javascript" src="../js/vue.min.js" ></script>
 <script type="text/javascript" src="../store/store.js" ></script>
 

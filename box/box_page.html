@@ -21,19 +21,24 @@
 </div>
 <section class="content-section">
     <div id="box_page_app">
-        <ul class="aui-list aui-media-list box-page-list">
+        <ul class="aui-list aui-media-list box-page-list" v-cloak>
             <li class="aui-list-item aui-list-item-middle" v-for="item in boxes">
                 <div class="aui-media-list-item-inner">
                     <div class="aui-list-item-inner">
-                        <div class="box-page-div"><i class="iconfont icon-miniKTV box-store-icon"></i><span class="box-list-equip">设备号：</span><span>{{item.boxBlockRoomNum}}</span></div>
-                        <div class="box-page-div box-status"><i class="iconfont icon-msnui-user"></i><span class="box-list-user">累计用户（人）：</span><span>{{item.roomUsersNum}}</span></div>
-                        <div class="box-page-div box-status"><i class="iconfont icon-qiandai"></i><span class="box-list-benefit">累计收益（元）：</span><span>{{item.roomBenefitNum}}</span></div>
+                        <div class="box-page-div"><i class="iconfont icon-miniKTV box-store-icon"></i><span class="box-list-equip">设备号：</span><span>{{item.deviceId}}</span></div>
+                        <div class="box-page-div box-status"><i class="iconfont icon-msnui-user"></i><span class="box-list-user">累计用户（人）：</span><span>{{item.useCount}}</span></div>
+                        <div class="box-page-div box-status"><i class="iconfont icon-qiandai"></i><span class="box-list-benefit">累计收益（元）：</span><span>{{item.price}}</span></div>
                     </div>
                     <div class="aui-list-item-media">
                         <div class="box-page-circle">
-                            <p class="box-page-text">空闲时长</p>
-                            <p class="box-page-value"><span>{{item.boxBlockRoomTime}}</span>小时</p>
+                            <p class="box-page-text" v-if="item.state===0">空闲中</p>
+                            <p class="box-page-text" v-else-if="item.state===1">使用中</p>
+                            <p class="box-page-text" v-else-if="item.state===2">维修中</p>
                         </div>
+                        <!--<div class="box-page-circle">-->
+                            <!--<p class="box-page-text">空闲时长</p>-->
+                            <!--<p class="box-page-value"><span>{{item.boxBlockRoomTime}}</span>小时</p>-->
+                        <!--</div>-->
                     </div>
                 </div>
             </li>
