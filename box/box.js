@@ -5,7 +5,6 @@ var vmm=new Vue({
     el: "#box-app",
     data: {
         datas: []
-
     },
     mounted: function () {
         this.showData();
@@ -14,12 +13,11 @@ var vmm=new Vue({
     methods: {
         showData: function () {
             $.ajax({
-                type: 'Get',
-                url: "Data/box.json",
-                // data:{type:type,ext:ext},
+                type: 'post',
+                url: "http://192.168.1.121:8082/devices/getAllBoxState/33",
                 dataType: "json",
                 success: function (data) {
-                    var lists = data.list;
+                    var lists = JSON.parse(data.data);
                     for (var i = 0; i < lists.length; i++) {
                         vmm.datas.push(lists[i]);
                     }

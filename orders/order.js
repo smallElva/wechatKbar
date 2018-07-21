@@ -11,18 +11,21 @@ var orderm=new Vue({
     },
     mounted: function () {
         this.showData();
-        this.showChargeData();
+        this.showStoreData();
         //需要执行的方法可以在mounted中进行触发，其获取的数据可以赋到data中后，可以放在前面进行渲染
     },
     methods: {
         showData: function () {
             $.ajax({
-                url: 'order.json',
-                type: "GET",
+                url: 'http://192.168.1.121:8082/order/getDetailList',
+                type: "post",
+                dataType: "json",
+                contentType: 'application/json',
+                data:JSON.stringify({"pageNum": 1,"pageSize": 12}),
                 success: function (json) {
-                    var lists = json.orderList;
-                    for (var i = 0; i < lists.length; i++) {
-                        orderm.stores.push(lists[i]);
+                    var lists = JSON.parse(json.data);
+                    for (var i = 0; i < lists.list.length; i++) {
+                        orderm.orders.push(lists.list[i]);
                     }
                 }
             });
@@ -34,33 +37,32 @@ var orderm=new Vue({
             var store = parseInt(e.target.getAttribute('aui'));
             $("#showStore").find('.iconfont').toggleClass('icon-xiangxia icon-xiangshang');
             $.ajax({
-                url: 'Data/store/store'+ store,
-                type: "GET",
-                // data:{shop:store},
+                url: 'http://192.168.1.121:8082/order/getDetailList',
+                type: "post",
+                dataType: "json",
+                contentType: 'application/json',
+                data:JSON.stringify({"storeId": store,"pageNum": 1,"pageSize": 12}),
                 success: function (json) {
-                    orderm.orders=[];
-                    json = JSON.parse(json);
-                    var lists = json.list;
-                    for (var i = 0; i < lists.length; i++) {
-                        orderm.orders.push(lists[i]);
+                    var lists = JSON.parse(json.data);
+                    console.dir(this.orders);
+                    for (var i = 0; i < lists.list.length; i++) {
+                        this.orders.push(lists.list[i]);
                     }
-                    console.dir(orderm.orders);
                 }
             });
         },
-        showChargeData: function () {
+        showStoreData: function () {
             $.ajax({
-                url: 'order.json',
-                type: "GET",
-                success: function (json) {
-                    var lists = json.orderList;
-                    for (var i = 0; i < lists.length; i++) {
-                        var orderesList = lists[i].list;
-                        for(var j=0; j<orderesList.length; j++){
-                            orderm.orders.push(orderesList[j]);
-                        }
+                type: 'post',
+                url: "http://192.168.1.121:8082/store/getStoreList",
+                contentType: 'application/json',
+                data:JSON.stringify({"ownerId": 1,"pageNum": 1,"pageSize": 12}),
+                dataType: "json",
+                success: function (result) {
+                    var lists = JSON.parse(result.data);
+                    for (var i = 0; i < lists.list.length; i++) {
+                        orderm.stores.push(lists.list[i]);
                     }
-                    console.dir(orderm.orders);
                 }
             });
         }
