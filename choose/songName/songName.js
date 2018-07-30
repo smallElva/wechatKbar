@@ -67,13 +67,16 @@ var vm = new Vue({
         },
         choose: function (obj,id) {
             //拿到存储在sessionStorage中的设备号
-            var deviceId =sessionStorage.getItem("deviceId");
-            var websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?serialNo=123456");
-            // var websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?serialNo=" +deviceId);
+            var resultStorage = sessionStorage.getItem("resultStorage");
+            var deviceId = resultStorage.deviceId;
+            var openId = resultStorage.openId;
+            var websocket = new WebSocket("ws://192.168.1.141:8082/webSocketServer?deviceId=123456&openId=oVdmm1f0FIMOtVMwS-tkBKWf79Rx&type=wechat");
+            // var websocket = new WebSocket("ws://118.190.204.56:8081/webSocketServer?deviceId="+deviceId+"&openId="+openId+"&type=wechat");
             websocket.onopen = function () {
-                var songObj = {"action":"select", "value":id, "serialNo": "123456"}; //定义选歌对象
+                var songObj = {"deviceId":"123456","msg":id}; //定义选歌对象
                 var songJson = JSON.stringify(songObj); //定义选歌JSON
-                websocket.send(songJson);
+                var songData = "msg_select_song:" + songJson;
+                websocket.send(songData);
             };
 
             obj.sfdg=true; //点击选歌将数据的选择状态改变
@@ -81,29 +84,3 @@ var vm = new Vue({
     }
 });
 
-
-
-// $(function () {
-//     /*移动端按下软键盘搜索按钮触发搜索事件*/
-//     $("#search-input").on('keypress',function(e) {
-//         var keycode = e.keyCode;
-//         if(keycode=='13') {
-//             e.preventDefault();
-//             searchSongs();
-//         }
-//     });
-//     /*点击搜索符号触发搜索事件*/
-//     $(".aui-searchbar .icon-sousuo").click(function(){
-//         searchSongs();
-//     });
-//     /*搜索歌曲方法*/
-//     function searchSongs() {
-//         var keyword= $("#search-input").val();
-//         if(keyword) {
-//             //重置列表数据
-//             curWord=keyword; //更新关键词
-//             vm.mescroll.resetUpScroll();
-//         }
-//     }
-//
-// });

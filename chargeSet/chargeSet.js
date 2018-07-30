@@ -21,7 +21,7 @@ var storem = new Vue({
                 //以下参数可删除,不配置
                 isBounce: false, //此处禁止ios回弹,解析(务必认真阅读,特别是最后一点): http://www.mescroll.com/qa.html#q10
                 page:{size:10}, //可配置每页8条数据,默认10
-                noMoreSize: 5,
+                noMoreSize: 12,
                 toTop:{ //配置回到顶部按钮
                     html : "<i class='iconfont icon-zhiding'></i>", //标签内容,默认null; 如果同时设置了src,则优先取src
                     offset : 100

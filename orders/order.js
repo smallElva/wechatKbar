@@ -54,7 +54,7 @@ var orderm = new Vue({
                 success: function(result) {
                     //如果是第一页需手动制空列表 (代替clearId和clearEmptyId的配置)
                     if(page.num == 1) self.orders = [];
-                    var curPageData = JSON.parse(result.data);
+                    var curPageData = result.list;
                     //获取数据的总页数
                     var totalPage = curPageData.pages;
                     //更新列表数据
